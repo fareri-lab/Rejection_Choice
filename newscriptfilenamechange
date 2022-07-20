@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 29 11:13:49 2022
+
+@author: jordansiegel
+"""
+
+import os
+
+sub_id= 101
+expdir = os.getcwd()
+subjdir = '%s/data/%s' % (expdir, sub_id)
+# if not os.path.exists(subjdir):
+#     os.makedirs(subjdir)
+    
+
+    
+    
+
+
+folder = '%s/Participant_Images/' %(expdir)
+count = 1
+# count increase by 1 in each iteration
+# iterate all files from a directory
+for file_name in os.listdir(folder):
+    if file_name.endswith ('.JPG'):
+        # Construct old file name
+        source = folder + file_name
+    
+        # Adding the count to the new file name and extension
+        destination = folder + str(sub_id) + "_Image_" + str(count) + ".jpg"
+    
+        # Renaming the file
+        os.rename(source, destination)
+        count += 1
+print('All Files Renamed')
+
+print('New Names are')
+# verify the result
+res = os.listdir(folder)
+print(res)

@@ -1,0 +1,73 @@
+import itertools
+import pandas as pd
+import numpy as np
+import random
+from PIL import Image
+
+sociallevel = ["Rej", "Acc", "Neutral"]
+partnerlist = ['Charlie', 'Sam', 'Riley']
+condition = ''
+partner = ''
+feedback = ''
+condition_selected = random.sample(sociallevel,3)
+partner_selected = random.sample(partnerlist,3)
+block = 0 #before experiment
+nTrials = 30
+alltrials = pd.DataFrame(columns=['TrialNumber','Partner','Condition','Feedback'])
+alltrials['TrialNumber'] = range(1,91)
+alltrials['Partner'] = ''
+alltrials['Feedback'] = ''
+alltrials['Condition']= ''
+
+for i in range(0,3):
+    if condition_selected[i] == 'Rej':
+        pDislike = .7
+        pLike = .3
+        rej = pd.DataFrame(columns=['Partner','Condition','Feedback'])
+        partner = partner_selected[i]
+        condition = condition_selected[i]
+        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        random.shuffle(blocklist)
+        feedback = random.sample(blocklist,30)
+        rej['Feedback']=feedback
+        print(condition_selected[i])
+        print(partner)
+        print(pDislike,pLike)
+        print(block)
+        rej['Partner']=partner
+        rej['Condition']=condition
+        alltrials = pd.concat([alltrials, rej], ignore_index=True)
+    elif condition_selected[i] == 'Acc':
+        pDislike = .3
+        pLike = .7
+        acc = pd.DataFrame(columns=['Partner','Condition','Feedback'])
+        partner = partner_selected[i]
+        condition = condition_selected[i]
+        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        random.shuffle(blocklist)
+        feedback = random.sample(blocklist,30)
+        acc['Feedback']=feedback
+        print(condition_selected[i])
+        print(partner)
+        print(pDislike,pLike)
+        print(block)
+        acc['Partner']=partner
+        acc['Condition']=condition
+        alltrials = pd.concat([alltrials, acc], ignore_index=True)
+    elif condition_selected[i] == 'Neutral':
+        pDislike = .5
+        pLike = .5
+        neu = pd.DataFrame(columns=['Partner','Condition','Feedback'])
+        partner = partner_selected[i]
+        condition = condition_selected[i]
+        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        random.shuffle(blocklist)
+        feedback = random.sample(blocklist,30)
+        neu['Feedback']=feedback
+        print(condition_selected[i])
+        print(partner)
+        print(pDislike,pLike)
+        print(block)
+        neu['Partner']=partner
+        neu['Condition']=condition
+        alltrials = pd.concat([alltrials, neu], ignore_index=True)
