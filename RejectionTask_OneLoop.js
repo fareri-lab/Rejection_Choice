@@ -1,4 +1,4 @@
-﻿/****************************** 
+/****************************** 
  * Rejectiontask_Oneloop Test *
  ******************************/
 
@@ -2357,7 +2357,7 @@ function ChoiceRoutineEachFrame() {
       self_text.setAutoDraw(false);
     }
     // Run 'Each Frame' code from setvariables_code
-    import * as random from 'random';
+    //import * as random from 'random';
     var random_entry;
     random_entry = random.choice(computer_choice);
     
