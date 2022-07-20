@@ -20,12 +20,12 @@ let expInfo = {
 
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from buildspreadsheet
-import * as itertools from 'itertools';
-import * as os from 'os';
-import * as pd from 'pandas';
-import * as np from 'numpy';
-import * as random from 'random';
-import {Image} from 'PIL';
+// import * as itertools from 'itertools';
+// import * as os from 'os';
+// import * as pd from 'pandas';
+// import * as np from 'numpy';
+// import * as random from 'random';
+// import {Image} from 'PIL';
 var acc, alltrials, block, blocklist, condition, condition_selected, feedback, imagedir, nTrials, neu, pDislike, pLike, partner, partner_selected, partnerlist, photo_selected, photolist, rej, sociallevel;
 imagedir = "Participant_Images/";
 sociallevel = ["Rej", "Acc", "Neutral"];
