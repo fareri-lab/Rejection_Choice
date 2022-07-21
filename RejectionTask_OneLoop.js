@@ -116,7 +116,7 @@ let expInfo = {
 //         }
 //     }
 // }
-var saliencerating, salienceratingtext, rating_forsalience, stress_level, stresslevel_text, rating_forstress
+var saliencerating, salienceratingtext, rating_forsalience, stresslevel, stressleveltext, rating_forstress
 
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
