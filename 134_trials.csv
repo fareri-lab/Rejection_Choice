@@ -1,0 +1,91 @@
+TrialNumber,Partner,Condition,Photos,Feedback
+1,Sam,Rej,Participant_Images/101_Image_24.jpg,did not like
+2,Sam,Rej,Participant_Images/101_Image_26.jpg,liked
+3,Sam,Rej,Participant_Images/101_Image_6.jpg,did not like
+4,Sam,Rej,Participant_Images/101_Image_2.jpg,did not like
+5,Sam,Rej,Participant_Images/101_Image_27.jpg,did not like
+6,Sam,Rej,Participant_Images/101_Image_22.jpg,did not like
+7,Sam,Rej,Participant_Images/101_Image_20.jpg,liked
+8,Sam,Rej,Participant_Images/101_Image_13.jpg,did not like
+9,Sam,Rej,Participant_Images/101_Image_16.jpg,did not like
+10,Sam,Rej,Participant_Images/101_Image_14.jpg,did not like
+11,Sam,Rej,Participant_Images/101_Image_17.jpg,liked
+12,Sam,Rej,Participant_Images/101_Image_18.jpg,did not like
+13,Sam,Rej,Participant_Images/101_Image_7.jpg,liked
+14,Sam,Rej,Participant_Images/101_Image_19.jpg,liked
+15,Sam,Rej,Participant_Images/101_Image_23.jpg,liked
+16,Sam,Rej,Participant_Images/101_Image_12.jpg,did not like
+17,Sam,Rej,Participant_Images/101_Image_1.jpg,liked
+18,Sam,Rej,Participant_Images/101_Image_3.jpg,did not like
+19,Sam,Rej,Participant_Images/101_Image_29.jpg,liked
+20,Sam,Rej,Participant_Images/101_Image_15.jpg,liked
+21,Sam,Rej,Participant_Images/101_Image_5.jpg,did not like
+22,Sam,Rej,Participant_Images/101_Image_21.jpg,did not like
+23,Sam,Rej,Participant_Images/101_Image_25.jpg,did not like
+24,Sam,Rej,Participant_Images/101_Image_9.jpg,did not like
+25,Sam,Rej,Participant_Images/101_Image_30.jpg,did not like
+26,Sam,Rej,Participant_Images/101_Image_28.jpg,did not like
+27,Sam,Rej,Participant_Images/101_Image_11.jpg,did not like
+28,Sam,Rej,Participant_Images/101_Image_4.jpg,did not like
+29,Sam,Rej,Participant_Images/101_Image_8.jpg,did not like
+30,Sam,Rej,Participant_Images/101_Image_10.jpg,did not like
+31,Charlie,Acc,Participant_Images/101_Image_11.jpg,liked
+32,Charlie,Acc,Participant_Images/101_Image_20.jpg,liked
+33,Charlie,Acc,Participant_Images/101_Image_9.jpg,liked
+34,Charlie,Acc,Participant_Images/101_Image_25.jpg,did not like
+35,Charlie,Acc,Participant_Images/101_Image_28.jpg,liked
+36,Charlie,Acc,Participant_Images/101_Image_23.jpg,did not like
+37,Charlie,Acc,Participant_Images/101_Image_18.jpg,liked
+38,Charlie,Acc,Participant_Images/101_Image_10.jpg,liked
+39,Charlie,Acc,Participant_Images/101_Image_15.jpg,did not like
+40,Charlie,Acc,Participant_Images/101_Image_22.jpg,liked
+41,Charlie,Acc,Participant_Images/101_Image_24.jpg,did not like
+42,Charlie,Acc,Participant_Images/101_Image_27.jpg,liked
+43,Charlie,Acc,Participant_Images/101_Image_29.jpg,liked
+44,Charlie,Acc,Participant_Images/101_Image_14.jpg,liked
+45,Charlie,Acc,Participant_Images/101_Image_13.jpg,did not like
+46,Charlie,Acc,Participant_Images/101_Image_17.jpg,liked
+47,Charlie,Acc,Participant_Images/101_Image_3.jpg,liked
+48,Charlie,Acc,Participant_Images/101_Image_6.jpg,did not like
+49,Charlie,Acc,Participant_Images/101_Image_21.jpg,liked
+50,Charlie,Acc,Participant_Images/101_Image_26.jpg,did not like
+51,Charlie,Acc,Participant_Images/101_Image_30.jpg,liked
+52,Charlie,Acc,Participant_Images/101_Image_1.jpg,liked
+53,Charlie,Acc,Participant_Images/101_Image_5.jpg,liked
+54,Charlie,Acc,Participant_Images/101_Image_19.jpg,liked
+55,Charlie,Acc,Participant_Images/101_Image_2.jpg,did not like
+56,Charlie,Acc,Participant_Images/101_Image_12.jpg,liked
+57,Charlie,Acc,Participant_Images/101_Image_4.jpg,liked
+58,Charlie,Acc,Participant_Images/101_Image_7.jpg,liked
+59,Charlie,Acc,Participant_Images/101_Image_8.jpg,liked
+60,Charlie,Acc,Participant_Images/101_Image_16.jpg,did not like
+61,Riley,Neutral,Participant_Images/101_Image_3.jpg,did not like
+62,Riley,Neutral,Participant_Images/101_Image_25.jpg,liked
+63,Riley,Neutral,Participant_Images/101_Image_27.jpg,did not like
+64,Riley,Neutral,Participant_Images/101_Image_11.jpg,liked
+65,Riley,Neutral,Participant_Images/101_Image_10.jpg,did not like
+66,Riley,Neutral,Participant_Images/101_Image_19.jpg,liked
+67,Riley,Neutral,Participant_Images/101_Image_13.jpg,did not like
+68,Riley,Neutral,Participant_Images/101_Image_20.jpg,liked
+69,Riley,Neutral,Participant_Images/101_Image_30.jpg,liked
+70,Riley,Neutral,Participant_Images/101_Image_4.jpg,liked
+71,Riley,Neutral,Participant_Images/101_Image_14.jpg,did not like
+72,Riley,Neutral,Participant_Images/101_Image_18.jpg,liked
+73,Riley,Neutral,Participant_Images/101_Image_2.jpg,did not like
+74,Riley,Neutral,Participant_Images/101_Image_29.jpg,did not like
+75,Riley,Neutral,Participant_Images/101_Image_12.jpg,did not like
+76,Riley,Neutral,Participant_Images/101_Image_24.jpg,did not like
+77,Riley,Neutral,Participant_Images/101_Image_7.jpg,did not like
+78,Riley,Neutral,Participant_Images/101_Image_22.jpg,did not like
+79,Riley,Neutral,Participant_Images/101_Image_23.jpg,liked
+80,Riley,Neutral,Participant_Images/101_Image_26.jpg,liked
+81,Riley,Neutral,Participant_Images/101_Image_21.jpg,liked
+82,Riley,Neutral,Participant_Images/101_Image_17.jpg,liked
+83,Riley,Neutral,Participant_Images/101_Image_15.jpg,did not like
+84,Riley,Neutral,Participant_Images/101_Image_8.jpg,did not like
+85,Riley,Neutral,Participant_Images/101_Image_16.jpg,liked
+86,Riley,Neutral,Participant_Images/101_Image_5.jpg,liked
+87,Riley,Neutral,Participant_Images/101_Image_28.jpg,did not like
+88,Riley,Neutral,Participant_Images/101_Image_9.jpg,did not like
+89,Riley,Neutral,Participant_Images/101_Image_6.jpg,liked
+90,Riley,Neutral,Participant_Images/101_Image_1.jpg,liked
