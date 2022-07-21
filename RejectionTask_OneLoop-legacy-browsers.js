@@ -111,6 +111,13 @@ for (var i, _pj_c = 0, _pj_a = util.range(0, 3), _pj_b = _pj_a.length; (_pj_c < 
 
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
+salienceratingtext = "";
+rating_forsalience = "";
+
+// Run 'Before Experiment' code from stresslevelslider
+stresslevel = "";
+stressleveltext = "";
+rating_forstress = "";
 
 // init psychoJS:
 const psychoJS = new PsychoJS({
@@ -496,7 +503,7 @@ async function experimentInit() {
     text: 'Press space to share your next photo.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0], height: 0.09,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
@@ -667,7 +674,7 @@ async function experimentInit() {
   // Initialize components for Routine "SalienceRating"
   SalienceRatingClock = new util.Clock();
   // Run 'Begin Experiment' code from saliencyrating_code
-  slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": null, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "goldenrod", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
   
   saliencequestion_text = new visual.TextStim({
     win: psychoJS.window,
@@ -698,10 +705,53 @@ async function experimentInit() {
     text: 'Press space to enter rating and continue.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.7)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.8)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -4.0 
+  });
+  
+  displayrating_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'displayrating_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, (- 0.65)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -5.0 
+  });
+  
+  // Initialize components for Routine "StressLevel"
+  StressLevelClock = new util.Clock();
+  // Run 'Begin Experiment' code from stresslevelslider
+  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  
+  stresslevel_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'stresslevel_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0.3], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -1.0 
+  });
+  
+  stresslevel_keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
+  displaystressrating_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'displaystressrating_text',
+    text: '',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, (- 0.65)], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -3.0 
   });
   
   // Create some handy timers
@@ -1078,6 +1128,9 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEachFrame());
       entiretaskloopLoopScheduler.add(SalienceRatingRoutineEnd(snapshot));
+      entiretaskloopLoopScheduler.add(StressLevelRoutineBegin(snapshot));
+      entiretaskloopLoopScheduler.add(StressLevelRoutineEachFrame());
+      entiretaskloopLoopScheduler.add(StressLevelRoutineEnd(snapshot));
       entiretaskloopLoopScheduler.add(entiretaskloopLoopEndIteration(entiretaskloopLoopScheduler, snapshot));
     });
     
@@ -2931,23 +2984,26 @@ function SalienceRatingRoutineBegin(snapshot) {
     if ((! ((TrialNumber % 30) === 0))) {
         continueRoutine = false;
     }
-    saliencerating = `How likely are you to share photos with ${Partner} in the future?
-    Use your mouse or left and right arrows to move the arrow to your desired rating.`
+    salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
+    
+    Use your left and right arrows to move the arrow to your desired rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
-    slider.markerPos = 3;
+    salience_slider.markerPos = 3;
     
-    saliencequestion_text.setText(saliencerating);
+    saliencequestion_text.setText(salienceratingtext);
     key_resp.keys = undefined;
     key_resp.rt = undefined;
     _key_resp_allKeys = [];
     salienceavatar_image.setImage(partneravatar);
+    displayrating_text.setText(rating_forsalience);
     // keep track of which components have finished
     SalienceRatingComponents = [];
     SalienceRatingComponents.push(saliencequestion_text);
     SalienceRatingComponents.push(key_resp);
     SalienceRatingComponents.push(salienceavatar_image);
     SalienceRatingComponents.push(saliencecontinue_text);
+    SalienceRatingComponents.push(displayrating_text);
     
     SalienceRatingComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -2983,14 +3039,19 @@ function SalienceRatingRoutineEachFrame() {
     }
     _pj = {};
     _pj_snippets(_pj);
-    slider.draw();
+    salience_slider.draw();
     keys = psychoJS.eventManager.getKeys();
+    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
-            slider.markerPos = (slider.markerPos - 1);
+            salience_slider.markerPos = (salience_slider.markerPos - 0.1);
+            rating_forsalience = salience_slider.getRating();
+            displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
         } else {
             if (_pj.in_es6("right", keys)) {
-                slider.markerPos = (slider.markerPos + 1);
+                salience_slider.markerPos = (salience_slider.markerPos + 0.1);
+                rating_forsalience = salience_slider.getRating();
+                displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
             }
         }
     }
@@ -3049,6 +3110,16 @@ function SalienceRatingRoutineEachFrame() {
       saliencecontinue_text.setAutoDraw(true);
     }
 
+    
+    // *displayrating_text* updates
+    if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      displayrating_text.tStart = t;  // (not accounting for frame time here)
+      displayrating_text.frameNStart = frameN;  // exact frame index
+      
+      displayrating_text.setAutoDraw(true);
+    }
+
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -3083,6 +3154,9 @@ function SalienceRatingRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     });
+    // Run 'End Routine' code from saliencyrating_code
+    entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos(), 1));
+    
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(key_resp.corr, level);
@@ -3105,6 +3179,194 @@ function SalienceRatingRoutineEnd(snapshot) {
   }
 }
 
+function StressLevelRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'StressLevel' ---
+    t = 0;
+    StressLevelClock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    // Run 'Begin Routine' code from stresslevelslider
+    if ((! ((TrialNumber % 30) === 0))) {
+        continueRoutine = false;
+    }
+    stressleveltext = `How stressed are you right now?
+    
+    
+    Use your mouse or left and right arrows to move the arrow to your desired rating.`
+    ;
+    psychoJS.eventManager.clearEvents("keyboard");
+    stress_slider.markerPos = 5;
+    
+    stresslevel_text.setText(stressleveltext);
+    stresslevel_keypress.keys = undefined;
+    stresslevel_keypress.rt = undefined;
+    _stresslevel_keypress_allKeys = [];
+    displaystressrating_text.setText(rating_forstress);
+    // keep track of which components have finished
+    StressLevelComponents = [];
+    StressLevelComponents.push(stresslevel_text);
+    StressLevelComponents.push(stresslevel_keypress);
+    StressLevelComponents.push(displaystressrating_text);
+    
+    StressLevelComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+       });
+    return Scheduler.Event.NEXT;
+  }
+}
+
+function StressLevelRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'StressLevel' ---
+    // get current time
+    t = StressLevelClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    // Run 'Each Frame' code from stresslevelslider
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    stress_slider.draw();
+    keys = psychoJS.eventManager.getKeys();
+    displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+    if (keys.length) {
+        if (_pj.in_es6("left", keys)) {
+            stress_slider.markerPos = (stress_slider.markerPos - 0.1);
+            rating_forstress = stress_slider.getRating();
+            displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+        } else {
+            if (_pj.in_es6("right", keys)) {
+                stress_slider.markerPos = (stress_slider.markerPos + 0.1);
+                rating_forstress = stress_slider.getRating();
+                displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+            }
+        }
+    }
+    
+    
+    // *stresslevel_text* updates
+    if (t >= 0.0 && stresslevel_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      stresslevel_text.tStart = t;  // (not accounting for frame time here)
+      stresslevel_text.frameNStart = frameN;  // exact frame index
+      
+      stresslevel_text.setAutoDraw(true);
+    }
+
+    
+    // *stresslevel_keypress* updates
+    if (t >= 0.0 && stresslevel_keypress.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      stresslevel_keypress.tStart = t;  // (not accounting for frame time here)
+      stresslevel_keypress.frameNStart = frameN;  // exact frame index
+      
+      // keyboard checking is just starting
+      psychoJS.window.callOnFlip(function() { stresslevel_keypress.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { stresslevel_keypress.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { stresslevel_keypress.clearEvents(); });
+    }
+
+    if (stresslevel_keypress.status === PsychoJS.Status.STARTED) {
+      let theseKeys = stresslevel_keypress.getKeys({keyList: ['space'], waitRelease: false});
+      _stresslevel_keypress_allKeys = _stresslevel_keypress_allKeys.concat(theseKeys);
+      if (_stresslevel_keypress_allKeys.length > 0) {
+        stresslevel_keypress.keys = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].name;  // just the last key pressed
+        stresslevel_keypress.rt = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].rt;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+    
+    
+    // *displaystressrating_text* updates
+    if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      displaystressrating_text.tStart = t;  // (not accounting for frame time here)
+      displaystressrating_text.frameNStart = frameN;  // exact frame index
+      
+      displaystressrating_text.setAutoDraw(true);
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    StressLevelComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+      }
+    });
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function StressLevelRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'StressLevel' ---
+    StressLevelComponents.forEach( function(thisComponent) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    });
+    // Run 'End Routine' code from stresslevelslider
+    stresslevel = stress_slider.getRating();
+    entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos(), 1));
+    
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(stresslevel_keypress.corr, level);
+    }
+    psychoJS.experiment.addData('stresslevel_keypress.keys', stresslevel_keypress.keys);
+    if (typeof stresslevel_keypress.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('stresslevel_keypress.rt', stresslevel_keypress.rt);
+        routineTimer.reset();
+        }
+    
+    stresslevel_keypress.stop();
+    // the Routine "StressLevel" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
@@ -3117,6 +3379,8 @@ async function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
   }
+  
+  
   
   
   
