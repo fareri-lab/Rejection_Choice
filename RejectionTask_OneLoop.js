@@ -26,96 +26,96 @@ let expInfo = {
 // import * as np from 'numpy';
 // import * as random from 'random';
 // import {Image} from 'PIL';
-var acc, alltrials, block, blocklist, condition, condition_selected, feedback, imagedir, nTrials, neu, pDislike, pLike, partner, partner_selected, partnerlist, photo_selected, photolist, rej, sociallevel;
-imagedir = "Participant_Images/";
-sociallevel = ["Rej", "Acc", "Neutral"];
-partnerlist = ["Charlie", "Sam", "Riley"];
-photolist = os.listdir(((os.getcwd() + "/") + imagedir));
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var value = _pj_b[_pj_c];
-        if (value.endswith(".jpg")) {
-            _pj_a.push(value);
-        }
-    }
-    return _pj_a;
-}
-.call(this);
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var x = _pj_b[_pj_c];
-        _pj_a.push((imagedir + x));
-    }
-    return _pj_a;
-}
-.call(this);
-condition = "";
-partner = "";
-feedback = "";
-condition_selected = random.sample(sociallevel, 3);
-partner_selected = random.sample(partnerlist, 3);
-block = 0;
-nTrials = 30;
-alltrials = new pd.DataFrame({"columns": ["TrialNumber", "Partner", "Condition", "Photos", "Feedback"]});
-alltrials["Partner"] = "";
-alltrials["Feedback"] = "";
-alltrials["Condition"] = "";
-alltrials["Photos"] = "";
-for (var i, _pj_c = 0, _pj_a = util.range(0, 3), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
-    i = _pj_a[_pj_c];
-    if ((condition_selected[i] === "Rej")) {
-        pDislike = 0.7;
-        pLike = 0.3;
-        rej = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-        partner = partner_selected[i];
-        condition = condition_selected[i];
-        blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-        random.shuffle(blocklist);
-        feedback = random.sample(blocklist, 30);
-        photo_selected = random.sample(photolist, 30);
-        rej["Feedback"] = feedback;
-        rej["Partner"] = partner;
-        rej["Condition"] = condition;
-        rej["Photos"] = photo_selected;
-        alltrials = pd.concat([alltrials, rej], {"ignore_index": true});
-    } else {
-        if ((condition_selected[i] === "Acc")) {
-            pDislike = 0.3;
-            pLike = 0.7;
-            acc = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-            partner = partner_selected[i];
-            condition = condition_selected[i];
-            blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-            random.shuffle(blocklist);
-            feedback = random.sample(blocklist, 30);
-            photo_selected = random.sample(photolist, 30);
-            acc["Feedback"] = feedback;
-            acc["Partner"] = partner;
-            acc["Condition"] = condition;
-            acc["Photos"] = photo_selected;
-            alltrials = pd.concat([alltrials, acc], {"ignore_index": true});
-        } else {
-            if ((condition_selected[i] === "Neutral")) {
-                pDislike = 0.5;
-                pLike = 0.5;
-                neu = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-                partner = partner_selected[i];
-                condition = condition_selected[i];
-                blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-                random.shuffle(blocklist);
-                feedback = random.sample(blocklist, 30);
-                photo_selected = random.sample(photolist, 30);
-                neu["Feedback"] = feedback;
-                neu["Partner"] = partner;
-                neu["Condition"] = condition;
-                neu["Photos"] = photo_selected;
-                alltrials = pd.concat([alltrials, neu], {"ignore_index": true});
-            }
-        }
-    }
-}
+// var acc, alltrials, block, blocklist, condition, condition_selected, feedback, imagedir, nTrials, neu, pDislike, pLike, partner, partner_selected, partnerlist, photo_selected, photolist, rej, sociallevel;
+// imagedir = "Participant_Images/";
+// sociallevel = ["Rej", "Acc", "Neutral"];
+// partnerlist = ["Charlie", "Sam", "Riley"];
+// photolist = os.listdir(((os.getcwd() + "/") + imagedir));
+// photolist = function () {
+//     var _pj_a = [], _pj_b = photolist;
+//     for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
+//         var value = _pj_b[_pj_c];
+//         if (value.endswith(".jpg")) {
+//             _pj_a.push(value);
+//         }
+//     }
+//     return _pj_a;
+// }
+// .call(this);
+// photolist = function () {
+//     var _pj_a = [], _pj_b = photolist;
+//     for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
+//         var x = _pj_b[_pj_c];
+//         _pj_a.push((imagedir + x));
+//     }
+//     return _pj_a;
+// }
+// .call(this);
+// condition = "";
+// partner = "";
+// feedback = "";
+// condition_selected = random.sample(sociallevel, 3);
+// partner_selected = random.sample(partnerlist, 3);
+// block = 0;
+// nTrials = 30;
+// alltrials = new pd.DataFrame({"columns": ["TrialNumber", "Partner", "Condition", "Photos", "Feedback"]});
+// alltrials["Partner"] = "";
+// alltrials["Feedback"] = "";
+// alltrials["Condition"] = "";
+// alltrials["Photos"] = "";
+// for (var i, _pj_c = 0, _pj_a = util.range(0, 3), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
+//     i = _pj_a[_pj_c];
+//     if ((condition_selected[i] === "Rej")) {
+//         pDislike = 0.7;
+//         pLike = 0.3;
+//         rej = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
+//         partner = partner_selected[i];
+//         condition = condition_selected[i];
+//         blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
+//         random.shuffle(blocklist);
+//         feedback = random.sample(blocklist, 30);
+//         photo_selected = random.sample(photolist, 30);
+//         rej["Feedback"] = feedback;
+//         rej["Partner"] = partner;
+//         rej["Condition"] = condition;
+//         rej["Photos"] = photo_selected;
+//         alltrials = pd.concat([alltrials, rej], {"ignore_index": true});
+//     } else {
+//         if ((condition_selected[i] === "Acc")) {
+//             pDislike = 0.3;
+//             pLike = 0.7;
+//             acc = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
+//             partner = partner_selected[i];
+//             condition = condition_selected[i];
+//             blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
+//             random.shuffle(blocklist);
+//             feedback = random.sample(blocklist, 30);
+//             photo_selected = random.sample(photolist, 30);
+//             acc["Feedback"] = feedback;
+//             acc["Partner"] = partner;
+//             acc["Condition"] = condition;
+//             acc["Photos"] = photo_selected;
+//             alltrials = pd.concat([alltrials, acc], {"ignore_index": true});
+//         } else {
+//             if ((condition_selected[i] === "Neutral")) {
+//                 pDislike = 0.5;
+//                 pLike = 0.5;
+//                 neu = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
+//                 partner = partner_selected[i];
+//                 condition = condition_selected[i];
+//                 blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
+//                 random.shuffle(blocklist);
+//                 feedback = random.sample(blocklist, 30);
+//                 photo_selected = random.sample(photolist, 30);
+//                 neu["Feedback"] = feedback;
+//                 neu["Partner"] = partner;
+//                 neu["Condition"] = condition;
+//                 neu["Photos"] = photo_selected;
+//                 alltrials = pd.concat([alltrials, neu], {"ignore_index": true});
+//             }
+//         }
+//     }
+// }
 
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
@@ -1094,7 +1094,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: trial_sheet,
+      trialList: '134_trials.csv',
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
