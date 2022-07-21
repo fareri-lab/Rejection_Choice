@@ -189,7 +189,7 @@ async function updateInfo() {
   expInfo['OS'] = window.navigator.platform;
 
   psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["participant"]}/${expInfo["participant"]}_${expName}_${expInfo["date"]}`);
-
+  var frameDur;
   // store frame rate of monitor if we can measure it successfully
   expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
   if (typeof expInfo['frameRate'] !== 'undefined')
