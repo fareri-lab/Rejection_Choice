@@ -180,7 +180,7 @@ psychoJS.start({
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
-
+var currentLoop;
 async function updateInfo() {
   currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
