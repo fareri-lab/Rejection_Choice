@@ -3146,7 +3146,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if (TrialNumber !== 3) {
+    if (TrialNumber !== 30 || 60 || 90) {
         continueRoutine = false;
   
       } else { 
@@ -3382,7 +3382,12 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
+    if (TrialNumber !== 30 || 60 || 90) {
+        continueRoutine = false;
   
+      } else { 
+        continueRoutine = true; 
+      }
     stressleveltext = `Please rate your current stress level.
     
     
