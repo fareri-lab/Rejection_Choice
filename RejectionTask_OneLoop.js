@@ -3119,12 +3119,15 @@ function SalienceRatingRoutineBegin(snapshot) {
     t = 0;
     SalienceRatingClock.reset(); // clock
     frameN = -1;
-    continueRoutine = true; // until we're told otherwise
+    
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
         continueRoutine = false;
-    }
+      } else { 
+        continueRoutine = true; 
+      }
+    
     
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
     
