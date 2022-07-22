@@ -1,4 +1,4 @@
-﻿/****************************** 
+/****************************** 
  * Rejectiontask_Oneloop Test *
  ******************************/
 
@@ -190,6 +190,25 @@ var stresslevel_keypress;
 var displaystressrating_text;
 var globalClock;
 var routineTimer;
+var saliencerating;
+var salienceratingtext;
+var rating_forsalience; 
+var stresslevel; 
+var stressleveltext; 
+var rating_forstress;
+var partnermatch;
+var partneravatar;
+var feedbackresponses;
+var fdbkimage;
+var startlottery;
+var response_msg;
+var feedback_msg;
+var computer_choice;
+var selfrunOrNot;
+var comprunOrNot;
+var resumetext;
+
+
 async function experimentInit() {
   // Initialize components for Routine "Welcome_Screen"
   Welcome_ScreenClock = new util.Clock();
@@ -206,7 +225,8 @@ async function experimentInit() {
   });
   
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
+
+
   // Run 'Begin Experiment' code from buildspreadsheet
   partnermatch = "";
   partneravatar = "";
@@ -232,9 +252,7 @@ async function experimentInit() {
   // Initialize components for Routine "partner_code"
   partner_codeClock = new util.Clock();
   // Run 'Begin Experiment' code from partnermatchcode
-  partnermatch = "";
-  partneravatar = "";
-  
+
   // Initialize components for Routine "WaitingToMatch"
   WaitingToMatchClock = new util.Clock();
   Match_text = new visual.TextStim({
@@ -428,7 +446,7 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
-  
+
   // Run 'Begin Experiment' code from initiatefeedbackresponses
   feedbackresponses = "";
   fdbkimage = "";
@@ -479,6 +497,7 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
   });
+    
   // Run 'Begin Experiment' code from initiatelottery_code
   startlottery = "";
   
@@ -535,7 +554,6 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
   });
-  
   // Run 'Begin Experiment' code from setvariables_code
   response_msg = " ";
   feedback_msg = " ";
