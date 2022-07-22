@@ -3126,8 +3126,10 @@ function SalienceRatingRoutineBegin(snapshot) {
     let continueRoutine = true;
     if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
         continueRoutine = false;
+        salience_slider.setAutoDraw(false);
       } else { 
         continueRoutine = true; 
+        salience_slider.setAutoDraw(true);
       }
     
     
