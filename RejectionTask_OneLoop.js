@@ -76,7 +76,6 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'},
   {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'}, 
   {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'}, 
   {'name': 'Images/nerdemoji_nobackground.png', 'path': 'Images/nerdemoji_nobackground.png'}, 
@@ -588,7 +587,7 @@ async function experimentInit() {
   Block1_facedowncard = new visual.ImageStim({
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined, 
-    image : 'Images/facedown card.png', mask : undefined,
+    image : 'Images/facedown_card.png', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -661,7 +660,7 @@ async function experimentInit() {
   block1_cardimage = new visual.ImageStim({
     win : psychoJS.window,
     name : 'block1_cardimage', units : undefined, 
-    image : 'Images/facedown card.png', mask : undefined,
+    image : 'Images/facedown_card.png', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
