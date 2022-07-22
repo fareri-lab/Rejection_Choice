@@ -3123,6 +3123,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
+    let continueRoutine == true;
     if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
         continueRoutine = false;
       } else { 
@@ -3187,7 +3188,9 @@ function SalienceRatingRoutineEachFrame() {
     }
     _pj = {};
     _pj_snippets(_pj);
-    salience_slider.draw();
+    if continueRoutine = true;
+      salience_slider.draw();
+      
     keys = psychoJS.eventManager.getKeys();
     displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
     if (keys.length) {
