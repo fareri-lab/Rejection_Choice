@@ -2518,8 +2518,11 @@ function ChoiceRoutineEachFrame() {
       self_text.setAutoDraw(false);
     }
     // Run 'Each Frame' code from setvariables_code
-    random_entry = random.choice(computer_choice);
+    const randomElement = array[Math.floor(Math.random() * array.length)];
+    random_entry = randomElement;
     
+
+
     
     // *choice_keys* updates
     if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
