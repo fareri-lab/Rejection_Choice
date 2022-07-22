@@ -3188,8 +3188,9 @@ function SalienceRatingRoutineEachFrame() {
     }
     _pj = {};
     _pj_snippets(_pj);
-    if continueRoutine = true;
+    if (continueRoutine = true) {
       salience_slider.draw();
+    }
       
     keys = psychoJS.eventManager.getKeys();
     displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
