@@ -3146,13 +3146,12 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    // if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
-    //     continueRoutine = false;
-    //     salience_slider.setAutoDraw(false);
-    //   } else { 
-    //     continueRoutine = true; 
-    //     salience_slider.setAutoDraw(true);
-    //   }
+    if ((TrialNumber !== 3) {
+        continueRoutine = false;
+  
+      } else { 
+        continueRoutine = true; 
+      }
     
     
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
