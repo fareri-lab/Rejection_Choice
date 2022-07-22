@@ -78,7 +78,7 @@ psychoJS.start({
   resources: [
 
   
-    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'},
+    {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'},
   {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'}, 
   {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'}, 
   {'name': 'Images/nerdemoji_nobackground.png', 'path': 'Images/nerdemoji_nobackground.png'}, 
