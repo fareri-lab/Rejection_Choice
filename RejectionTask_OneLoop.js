@@ -2468,6 +2468,7 @@ function ChoiceRoutineBegin(snapshot) {
 
 
 var random_entry;
+var DecisionColor;
 function ChoiceRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Choice' ---
@@ -2550,7 +2551,16 @@ function ChoiceRoutineEachFrame() {
         choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
       }
     }
-    
+    DecisionColor = "cornflowerblue";
+    if ((choice_keys.keys === "c")) {
+        computer_text.setColor(new util.Color(DecisionColor));
+        
+    } else {
+        if ((choice_keys.keys === "s")) {
+            self_text.setColor(new util.Color(DecisionColor));
+      
+      }
+    }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
@@ -2586,19 +2596,19 @@ function ChoiceRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     }
-    var DecisionColor;
-    DecisionColor = "cornflowerblue"
+    
+    
     
     // Run 'End Routine' code from setvariables_code
     if ((choice_keys.keys === "c")) {
         selfrunOrNot = 0;
         comprunOrNot = 1;
-        computer_text.setColor(new util.Color(DecisionColor));
+        computer_text.setColor(new util.Color("white"));
     } else {
         if ((choice_keys.keys === "s")) {
             selfrunOrNot = 1;
             comprunOrNot = 0;
-            self_text.setColor(new util.Color(DecisionColor));
+            self_text.setColor(new util.Color("white"));
         } else {
             selfrunOrNot = 0;
             comprunOrNot = 0;
@@ -2782,9 +2792,10 @@ function LotteryselfchoiceRoutineBegin(snapshot) {
   }
 }
 
-
+var DecisionColor;
 function LotteryselfchoiceRoutineEachFrame() {
   return async function () {
+    DecisionColor = "cornflowerblue";
     //--- Loop for each frame of Routine 'Lotteryselfchoice' ---
     // get current time
     t = LotteryselfchoiceClock.getTime();
