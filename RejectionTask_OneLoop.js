@@ -2518,8 +2518,9 @@ function ChoiceRoutineEachFrame() {
       self_text.setAutoDraw(false);
     }
     // Run 'Each Frame' code from setvariables_code
-    const random = Math.floor(Math.random() * computer_choice.length);
-    random_entry = computer_choice[random]
+    var random_item;
+    random_item = Math.floor(Math.random() * computer_choice.length);
+    random_entry = computer_choice[random_item]
     
 
 
