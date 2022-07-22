@@ -3370,6 +3370,7 @@ var stressleveltext;
 var _stresslevel_keypress_allKeys;
 var StressLevelComponents;
 var stress_slider;
+var continueRoutine;
 var StressLevelClock;
 function StressLevelRoutineBegin(snapshot) {
   return async function () {
@@ -3379,7 +3380,7 @@ function StressLevelRoutineBegin(snapshot) {
     t = 0;
     StressLevelClock.reset(); // clock
     frameN = -1;
-    continueRoutine = true; // until we're told otherwise
+    //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
   
@@ -3411,7 +3412,7 @@ function StressLevelRoutineBegin(snapshot) {
   }
 }
 
-
+var keys;
 var rating_forstress;
 function StressLevelRoutineEachFrame() {
   return async function () {
