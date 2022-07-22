@@ -2586,14 +2586,19 @@ function ChoiceRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     }
+    var DecisionColor;
+    DecisionColor = "cornflowerblue"
+    
     // Run 'End Routine' code from setvariables_code
     if ((choice_keys.keys === "c")) {
         selfrunOrNot = 0;
         comprunOrNot = 1;
+        computer_text.setColor(new util.Color(DecisionColor));
     } else {
         if ((choice_keys.keys === "s")) {
             selfrunOrNot = 1;
             comprunOrNot = 0;
+            self_text.setColor(new util.Color(DecisionColor));
         } else {
             selfrunOrNot = 0;
             comprunOrNot = 0;
@@ -2857,9 +2862,11 @@ function LotteryselfchoiceRoutineEachFrame() {
     // Run 'Each Frame' code from displaylotterychoice_code
     if ((lotteryguess_keys.keys === "l")) {
         feedback_msg = `You have chosen lower.`;
+        lower_text.setColor(new util.Color(DecisionColor));
     } else {
         if ((lotteryguess_keys.keys === "h")) {
             feedback_msg = `You have chosen higher.`;
+            higher_text.setColor(new util.Color(DecisionColor));
         } else {
             feedback_msg = `No response recorded.`;
         }
@@ -2937,7 +2944,11 @@ function LotteryselfchoiceRoutineEnd(snapshot) {
     if (typeof lotteryguess_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('lotteryguess_keys.rt', lotteryguess_keys.rt);
         }
-    
+
+    computer_text.setColor(new util.Color("white"));
+    self_text.setColor(new util.Color("white"));
+    higher_text.setColor(new util.Color("white"));
+    lower_text.setColor(new util.Color("white"));
     lotteryguess_keys.stop();
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
