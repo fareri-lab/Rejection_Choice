@@ -11,104 +11,6 @@ let expInfo = {
 };
 
 // Start code blocks for 'Before Experiment'
-// Run 'Before Experiment' code from buildspreadsheet
-import * as itertools from 'itertools';
-import * as os from 'os';
-import * as pd from 'pandas';
-import * as np from 'numpy';
-import * as random from 'random';
-import {Image} from 'PIL';
-var acc, alltrials, block, blocklist, condition, condition_selected, feedback, imagedir, nTrials, neu, pDislike, pLike, partner, partner_selected, partnerlist, photo_selected, photolist, rej, sociallevel;
-imagedir = "Participant_Images/";
-sociallevel = ["Rej", "Acc", "Neutral"];
-partnerlist = ["Charlie", "Sam", "Riley"];
-photolist = os.listdir(((os.getcwd() + "/") + imagedir));
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var value = _pj_b[_pj_c];
-        if (value.endswith(".jpg")) {
-            _pj_a.push(value);
-        }
-    }
-    return _pj_a;
-}
-.call(this);
-photolist = function () {
-    var _pj_a = [], _pj_b = photolist;
-    for (var _pj_c = 0, _pj_d = _pj_b.length; (_pj_c < _pj_d); _pj_c += 1) {
-        var x = _pj_b[_pj_c];
-        _pj_a.push((imagedir + x));
-    }
-    return _pj_a;
-}
-.call(this);
-condition = "";
-partner = "";
-feedback = "";
-condition_selected = random.sample(sociallevel, 3);
-partner_selected = random.sample(partnerlist, 3);
-block = 0;
-nTrials = 30;
-alltrials = new pd.DataFrame({"columns": ["TrialNumber", "Partner", "Condition", "Photos", "Feedback"]});
-alltrials["Partner"] = "";
-alltrials["Feedback"] = "";
-alltrials["Condition"] = "";
-alltrials["Photos"] = "";
-for (var i, _pj_c = 0, _pj_a = util.range(0, 3), _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
-    i = _pj_a[_pj_c];
-    if ((condition_selected[i] === "Rej")) {
-        pDislike = 0.7;
-        pLike = 0.3;
-        rej = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-        partner = partner_selected[i];
-        condition = condition_selected[i];
-        blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-        random.shuffle(blocklist);
-        feedback = random.sample(blocklist, 30);
-        photo_selected = random.sample(photolist, 30);
-        rej["Feedback"] = feedback;
-        rej["Partner"] = partner;
-        rej["Condition"] = condition;
-        rej["Photos"] = photo_selected;
-        alltrials = pd.concat([alltrials, rej], {"ignore_index": true});
-    } else {
-        if ((condition_selected[i] === "Acc")) {
-            pDislike = 0.3;
-            pLike = 0.7;
-            acc = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-            partner = partner_selected[i];
-            condition = condition_selected[i];
-            blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-            random.shuffle(blocklist);
-            feedback = random.sample(blocklist, 30);
-            photo_selected = random.sample(photolist, 30);
-            acc["Feedback"] = feedback;
-            acc["Partner"] = partner;
-            acc["Condition"] = condition;
-            acc["Photos"] = photo_selected;
-            alltrials = pd.concat([alltrials, acc], {"ignore_index": true});
-        } else {
-            if ((condition_selected[i] === "Neutral")) {
-                pDislike = 0.5;
-                pLike = 0.5;
-                neu = new pd.DataFrame({"columns": ["Partner", "Condition", "Photos", "Feedback"]});
-                partner = partner_selected[i];
-                condition = condition_selected[i];
-                blocklist = ((["did not like"] * Number.parseInt((nTrials * pDislike))) + (["liked"] * Number.parseInt((nTrials * pLike))));
-                random.shuffle(blocklist);
-                feedback = random.sample(blocklist, 30);
-                photo_selected = random.sample(photolist, 30);
-                neu["Feedback"] = feedback;
-                neu["Partner"] = partner;
-                neu["Condition"] = condition;
-                neu["Photos"] = photo_selected;
-                alltrials = pd.concat([alltrials, neu], {"ignore_index": true});
-            }
-        }
-    }
-}
-
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
 salienceratingtext = "";
@@ -166,7 +68,38 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'}
+    {'name': 'Participant_Images/101_Image_6.jpg', 'path': 'Participant_Images/101_Image_6.jpg'},
+    {'name': 'Participant_Images/101_Image_27.jpg', 'path': 'Participant_Images/101_Image_27.jpg'},
+    {'name': 'Participant_Images/101_Image_10.jpg', 'path': 'Participant_Images/101_Image_10.jpg'},
+    {'name': 'Participant_Images/101_Image_15.jpg', 'path': 'Participant_Images/101_Image_15.jpg'},
+    {'name': 'Participant_Images/101_Image_16.jpg', 'path': 'Participant_Images/101_Image_16.jpg'},
+    {'name': 'Participant_Images/101_Image_17.jpg', 'path': 'Participant_Images/101_Image_17.jpg'},
+    {'name': 'Participant_Images/101_Image_19.jpg', 'path': 'Participant_Images/101_Image_19.jpg'},
+    {'name': 'Participant_Images/101_Image_7.jpg', 'path': 'Participant_Images/101_Image_7.jpg'},
+    {'name': 'Participant_Images/101_Image_8.jpg', 'path': 'Participant_Images/101_Image_8.jpg'},
+    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'},
+    {'name': 'Participant_Images/101_Image_26.jpg', 'path': 'Participant_Images/101_Image_26.jpg'},
+    {'name': 'Participant_Images/101_Image_2.jpg', 'path': 'Participant_Images/101_Image_2.jpg'},
+    {'name': 'Participant_Images/101_Image_21.jpg', 'path': 'Participant_Images/101_Image_21.jpg'},
+    {'name': 'Participant_Images/101_Image_9.jpg', 'path': 'Participant_Images/101_Image_9.jpg'},
+    {'name': 'Participant_Images/101_Image_18.jpg', 'path': 'Participant_Images/101_Image_18.jpg'},
+    {'name': 'Participant_Images/101_Image_20.jpg', 'path': 'Participant_Images/101_Image_20.jpg'},
+    {'name': 'Participant_Images/101_Image_25.jpg', 'path': 'Participant_Images/101_Image_25.jpg'},
+    {'name': 'Participant_Images/101_Image_23.jpg', 'path': 'Participant_Images/101_Image_23.jpg'},
+    {'name': 'Participant_Images/101_Image_11.jpg', 'path': 'Participant_Images/101_Image_11.jpg'},
+    {'name': 'Participant_Images/101_Image_1.jpg', 'path': 'Participant_Images/101_Image_1.jpg'},
+    {'name': 'Participant_Images/101_Image_5.jpg', 'path': 'Participant_Images/101_Image_5.jpg'},
+    {'name': 'Participant_Images/101_Image_14.jpg', 'path': 'Participant_Images/101_Image_14.jpg'},
+    {'name': 'Participant_Images/101_Image_28.jpg', 'path': 'Participant_Images/101_Image_28.jpg'},
+    {'name': 'Participant_Images/101_Image_29.jpg', 'path': 'Participant_Images/101_Image_29.jpg'},
+    {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
+    {'name': 'Participant_Images/101_Image_3.jpg', 'path': 'Participant_Images/101_Image_3.jpg'},
+    {'name': 'Participant_Images/101_Image_22.jpg', 'path': 'Participant_Images/101_Image_22.jpg'},
+    {'name': 'Participant_Images/101_Image_30.jpg', 'path': 'Participant_Images/101_Image_30.jpg'},
+    {'name': 'Participant_Images/101_Image_13.jpg', 'path': 'Participant_Images/101_Image_13.jpg'},
+    {'name': 'Participant_Images/101_Image_12.jpg', 'path': 'Participant_Images/101_Image_12.jpg'},
+    {'name': 'Participant_Images/101_Image_4.jpg', 'path': 'Participant_Images/101_Image_4.jpg'},
+    {'name': 'Participant_Images/101_Image_24.jpg', 'path': 'Participant_Images/101_Image_24.jpg'}
   ]
 });
 
@@ -212,15 +145,6 @@ async function experimentInit() {
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   // Run 'Begin Experiment' code from buildspreadsheet
-  subid = expInfo["participant"];
-  alltrials["TrialNumber"] = util.range(1, 91);
-  expdir = os.getcwd();
-  subjdir = `${expdir}/data/${subid}`;
-  if ((! os.path.exists(subjdir))) {
-      os.makedirs(subjdir);
-  }
-  trial_sheet = `${subjdir}/${subid}`;
-  alltrials.to_csv(trial_sheet, {"index": false});
   partnermatch = "";
   partneravatar = "";
   
@@ -1089,7 +1013,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: trial_sheet,
+      trialList: 'Dummy_Spreadsheet.csv',
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
@@ -3193,7 +3117,7 @@ function StressLevelRoutineBegin(snapshot) {
     if ((! ((TrialNumber % 30) === 0))) {
         continueRoutine = false;
     }
-    stressleveltext = `How stressed are you right now?
+    stressleveltext = `Please rate your current stress level.
     
     
     Use your mouse or left and right arrows to move the arrow to your desired rating.`

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.2.1),
-    on Tue Jul  5 13:12:41 2022
+    on Thu Jul 21 12:42:13 2022
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -18,7 +18,7 @@ psychopy.useVersion('2022.2.1')
 # --- Import packages ---
 from psychopy import locale_setup
 from psychopy import prefs
-from psychopy import sound, gui, visual, core, data, event, logging, clock, colors, layout, hardware
+from psychopy import sound, gui, visual, core, data, event, logging, clock, colors, layout
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
                                 STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
 
@@ -46,7 +46,6 @@ partnerlist = ['Charlie', 'Sam', 'Riley']
 photolist = os.listdir(os.getcwd() + '/' + imagedir)
 photolist =[value for value in photolist if value.endswith('.jpg')]
 photolist = [imagedir + x for x in photolist]
-print(photolist)
 condition = ''
 partner = ''
 feedback = ''
@@ -67,7 +66,7 @@ for i in range(0,3):
         rej = pd.DataFrame(columns=['Partner','Condition','Photos','Feedback'])
         partner = partner_selected[i]
         condition = condition_selected[i]
-        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        blocklist = ['did not like'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
         random.shuffle(blocklist)
         feedback = random.sample(blocklist,30)
         photo_selected = random.sample(photolist,30)
@@ -82,7 +81,7 @@ for i in range(0,3):
         acc = pd.DataFrame(columns=['Partner','Condition','Photos','Feedback'])
         partner = partner_selected[i]
         condition = condition_selected[i]
-        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        blocklist = ['did not like'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
         random.shuffle(blocklist)
         feedback = random.sample(blocklist,30) 
         photo_selected = random.sample(photolist,30)
@@ -97,7 +96,7 @@ for i in range(0,3):
         neu = pd.DataFrame(columns=['Partner','Condition','Photos','Feedback'])
         partner = partner_selected[i]
         condition = condition_selected[i]
-        blocklist = ['disliked'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+        blocklist = ['did not like'] * int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
         random.shuffle(blocklist)
         feedback = random.sample(blocklist,30)
         photo_selected = random.sample(photolist,30)
@@ -108,8 +107,13 @@ for i in range(0,3):
         alltrials = pd.concat([alltrials, neu], ignore_index=True)
 # Run 'Before Experiment' code from saliencyrating_code
 saliencerating = ''
-    
+salienceratingtext=''
+rating_forsalience = ''    
 
+# Run 'Before Experiment' code from stresslevelslider
+stresslevel = ''
+stressleveltext = ''
+rating_forstress = ''
 
 
 # Ensure that relative paths start from the same directory as this script
@@ -136,7 +140,7 @@ filename = _thisDir + os.sep + u'data/%s/%s_%s_%s' % (expInfo['participant'],exp
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/jordansiegel/Documents/PhD/Research/Second Year Project/Rejection_Task 2/RejectionTask_OneLoop.py',
+    originPath='/Users/melanieruiz/Desktop/Rejection_Task 2/RejectionTask_OneLoop.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -374,7 +378,7 @@ startlottery = ''
 presstosharenextphoto_text = visual.TextStim(win=win, name='presstosharenextphoto_text',
     text='Press space to share your next photo.',
     font='Open Sans',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+    pos=(0, 0), height=0.09, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=0.0);
@@ -382,7 +386,7 @@ sharenextphoto_key = keyboard.Keyboard()
 
 # --- Initialize components for Routine "Choice" ---
 lotterychoice_text = visual.TextStim(win=win, name='lotterychoice_text',
-    text='You now have the option to play a lottery game! To play a guess whether a facedown card is will be higher or lower than a certain number will be made.\n\n\nYou may have chose to have the computer guess on your behalf or you may make a guess yourself. If you would like the computer to make the guess on your behalf press ‘c’. If you would like to guess yourself press ‘s’. \n\n\nYou will have 3 seconds to decide.\n',
+    text='You now have the option to play a lottery game! To play, a guess whether the upside down card is higher or lower than 5 needs to be made.\n\nYou can either have the computer guess on your behalf or you may make a guess yourself. If you would like the computer to make the guess on your behalf press ‘c’. If you would like to guess yourself press ‘s’. \n\n\nYou will have 3 seconds to decide.\n',
     font='Open Sans',
     pos=(0, 0.3), height=0.07, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -486,17 +490,17 @@ resumetext_text = visual.TextStim(win=win, name='resumetext_text',
 
 # --- Initialize components for Routine "SalienceRating" ---
 # Run 'Begin Experiment' code from saliencyrating_code
-#ratingScale = visual.RatingScale(
-    #win, low=1, high=5, markerStart=3,
-    #leftKeys='1', rightKeys = '2', acceptKeys='space',
-    #scale = saliencerating, labels = [1,2,3,4,5], tickMarks = [1,2,3,4,5],
-    #tickHeight = .5, marker = 'glow', markerColor = 'cornflowerblue', 
-    #markerExpansion = 1, pos = (0,0), size = .5, skipKeys=None)
-
+salience_slider = visual.Slider(win=win, name='slider',
+    startValue=999, size=(1.0, 0.1), pos=(0, -0.4), units=None,
+    labels=(1, 2, 3, 4, 5), ticks=(1, 2, 3, 4, 5), granularity=0.0,
+    style='rating', styleTweaks=('labels45', 'triangleMarker'), opacity=None,
+    labelColor='white', markerColor='cornflowerblue', lineColor='white', colorSpace='rgb',
+    font='Open Sans', labelHeight=0.05, 
+    flip=False, ori=0.0, depth=-5, readOnly=False)
 saliencequestion_text = visual.TextStim(win=win, name='saliencequestion_text',
     text='',
     font='Open Sans',
-    pos=(0, 0.6), height=0.08, wrapWidth=None, ori=0.0, 
+    pos=(0, 0.6), height=0.06, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-1.0);
@@ -510,19 +514,44 @@ salienceavatar_image = visual.ImageStim(
     flipHoriz=False, flipVert=False,
     texRes=128.0, interpolate=True, depth=-3.0)
 saliencecontinue_text = visual.TextStim(win=win, name='saliencecontinue_text',
-    text='Press space to continue.',
+    text='Press space to enter rating and continue.',
     font='Open Sans',
-    pos=(0, -0.7), height=0.07, wrapWidth=None, ori=0.0, 
+    pos=(0, -0.8), height=0.07, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
     languageStyle='LTR',
     depth=-4.0);
-slider = visual.Slider(win=win, name='slider',
-    startValue=None, size=(1.0, 0.1), pos=(0, -0.4), units=None,
-    labels=(1, 2, 3, 4, 5), ticks=(1, 2, 3, 4, 5), granularity=0.0,
+displayrating_text = visual.TextStim(win=win, name='displayrating_text',
+    text='',
+    font='Open Sans',
+    pos=(0, -0.65), height=0.065, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-5.0);
+
+# --- Initialize components for Routine "StressLevel" ---
+# Run 'Begin Experiment' code from stresslevelslider
+stress_slider = visual.Slider(win=win, name='slider',
+    startValue=999, size=(1.0, 0.1), pos=(0, -0.4), units=None,
+    labels=(1, 2, 3, 4, 5, 6, 7, 8, 9), ticks=(1, 2, 3, 4, 5, 6, 7, 8, 9), granularity=0.0,
     style='rating', styleTweaks=('labels45', 'triangleMarker'), opacity=None,
-    labelColor='white', markerColor='white', lineColor='white', colorSpace='rgb',
+    labelColor='white', markerColor='cornflowerblue', lineColor='white', colorSpace='rgb',
     font='Open Sans', labelHeight=0.05,
     flip=False, ori=0.0, depth=-5, readOnly=False)
+stresslevel_text = visual.TextStim(win=win, name='stresslevel_text',
+    text='',
+    font='Open Sans',
+    pos=(0, 0.3), height=0.08, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-1.0);
+stresslevel_keypress = keyboard.Keyboard()
+displaystressrating_text = visual.TextStim(win=win, name='displaystressrating_text',
+    text='',
+    font='Open Sans',
+    pos=(0, -0.65), height=0.08, wrapWidth=None, ori=0.0, 
+    color='white', colorSpace='rgb', opacity=None, 
+    languageStyle='LTR',
+    depth=-3.0);
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -1371,7 +1400,7 @@ for thisEntiretaskloop in entiretaskloop:
     feedbackresponses = (f'{Partner} {Feedback} your photo')
     if Feedback == 'liked':
         fdbkimage ='Images/thumbsup.tiff'
-    elif Feedback == 'disliked':
+    elif Feedback == 'did not like':
         fdbkimage ='Images/thumbsdown.tiff'
     # using non-slip timing so subtract the expected duration of this Routine
     routineTimer.addTime(-3.000000)
@@ -1682,7 +1711,7 @@ for thisEntiretaskloop in entiretaskloop:
         frameN = -1
         
         # --- Run Routine "Choice" ---
-        while continueRoutine and routineTimer.getTime() < 3.0:
+        while continueRoutine and routineTimer.getTime() < 5.0:
             # get current time
             t = routineTimer.getTime()
             tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -1702,7 +1731,7 @@ for thisEntiretaskloop in entiretaskloop:
                 lotterychoice_text.setAutoDraw(True)
             if lotterychoice_text.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > lotterychoice_text.tStartRefresh + 3-frameTolerance:
+                if tThisFlipGlobal > lotterychoice_text.tStartRefresh + 5-frameTolerance:
                     # keep track of stop time/frame for later
                     lotterychoice_text.tStop = t  # not accounting for scr refresh
                     lotterychoice_text.frameNStop = frameN  # exact frame index
@@ -1722,7 +1751,7 @@ for thisEntiretaskloop in entiretaskloop:
                 computer_text.setAutoDraw(True)
             if computer_text.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > computer_text.tStartRefresh + 3-frameTolerance:
+                if tThisFlipGlobal > computer_text.tStartRefresh + 5-frameTolerance:
                     # keep track of stop time/frame for later
                     computer_text.tStop = t  # not accounting for scr refresh
                     computer_text.frameNStop = frameN  # exact frame index
@@ -1742,7 +1771,7 @@ for thisEntiretaskloop in entiretaskloop:
                 self_text.setAutoDraw(True)
             if self_text.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > self_text.tStartRefresh + 3-frameTolerance:
+                if tThisFlipGlobal > self_text.tStartRefresh + 5-frameTolerance:
                     # keep track of stop time/frame for later
                     self_text.tStop = t  # not accounting for scr refresh
                     self_text.frameNStop = frameN  # exact frame index
@@ -1770,7 +1799,7 @@ for thisEntiretaskloop in entiretaskloop:
                 win.callOnFlip(choice_keys.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if choice_keys.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > choice_keys.tStartRefresh + 3-frameTolerance:
+                if tThisFlipGlobal > choice_keys.tStartRefresh + 5-frameTolerance:
                     # keep track of stop time/frame for later
                     choice_keys.tStop = t  # not accounting for scr refresh
                     choice_keys.frameNStop = frameN  # exact frame index
@@ -1822,7 +1851,7 @@ for thisEntiretaskloop in entiretaskloop:
         if choice_keys.keys != None:  # we had a response
             lotteryloop.addData('choice_keys.rt', choice_keys.rt)
         # using non-slip timing so subtract the expected duration of this Routine
-        routineTimer.addTime(-3.000000)
+        routineTimer.addTime(-5.000000)
         
         # set up handler to look after randomisation of conditions etc
         computerchoice = data.TrialHandler(nReps=comprunOrNot, method='random', 
@@ -2194,8 +2223,8 @@ for thisEntiretaskloop in entiretaskloop:
         continueRoutine = True
         # update component parameters for each repeat
         # Run 'Begin Routine' code from code
-        if TrialNumber%30 == 0: # establishes two blocks per 32 trials
-            continueRoutine = False # if not trial 31 or 63, skip routine completely
+        if TrialNumber%30 == 0: # needs to be set to 30 for actual run of task
+            continueRoutine = False # if not trial 31 or 61, or 91 skip routine completely
         if comprunOrNot ==0 and selfrunOrNot == 0:
             resumetext = 'You missed an opportunity to play the lottery. \n\n\n Please respond withtin 3 seconds on your next opportunity. \n\nPress space to continue.'
         else:
@@ -2300,20 +2329,19 @@ for thisEntiretaskloop in entiretaskloop:
     continueRoutine = True
     # update component parameters for each repeat
     # Run 'Begin Routine' code from saliencyrating_code
-    if not TrialNumber%1 == 0: # establishes two blocks per 32 trials
+    if not TrialNumber%30 == 0: # establishes two blocks per 32 trials
         continueRoutine = False # if not trial 31 or 63, skip routine completely
-    saliencerating = (f'How likely are you to share photos with {Partner} in the future?')
+    salienceratingtext = (f'How likely are you to share photos with {Partner} in the future? \n\n Use your left and right arrows to move the arrow to your desired rating.' )
     event.clearEvents('keyboard')
-    slider.markerPos = 3
-    #ratingScale.setScale(saliencerating)
-    saliencequestion_text.setText(saliencerating)
+    salience_slider.markerPos = 3
+    saliencequestion_text.setText(salienceratingtext)
     key_resp.keys = []
     key_resp.rt = []
     _key_resp_allKeys = []
     salienceavatar_image.setImage(partneravatar)
-    slider.reset()
+    displayrating_text.setText(rating_forsalience)
     # keep track of which components have finished
-    SalienceRatingComponents = [saliencequestion_text, key_resp, salienceavatar_image, saliencecontinue_text, slider]
+    SalienceRatingComponents = [saliencequestion_text, key_resp, salienceavatar_image, saliencecontinue_text, displayrating_text]
     for thisComponent in SalienceRatingComponents:
         thisComponent.tStart = None
         thisComponent.tStop = None
@@ -2335,16 +2363,18 @@ for thisEntiretaskloop in entiretaskloop:
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         # Run 'Each Frame' code from saliencyrating_code
-        #ratingScale.draw()
-        #
-        #win.flip()
+        salience_slider.draw()
         keys = event.getKeys()
-        
+        displayrating_text.setText(round(salience_slider.getMarkerPos(),1))
         if len(keys):
             if 'left' in keys:
-                slider.markerPos = slider.markerPos - 1
+                salience_slider.markerPos = salience_slider.markerPos - .1
+                rating_forsalience = salience_slider.getRating()
+                displayrating_text.setText(round(salience_slider.getMarkerPos(),1))
             elif 'right' in keys:
-                slider.markerPos = slider.markerPos  + 1 
+                salience_slider.markerPos = salience_slider.markerPos + .1
+                rating_forsalience = salience_slider.getRating()
+                displayrating_text.setText(round(salience_slider.getMarkerPos(),1))
         
         # *saliencequestion_text* updates
         if saliencequestion_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -2403,14 +2433,16 @@ for thisEntiretaskloop in entiretaskloop:
             thisExp.timestampOnFlip(win, 'saliencecontinue_text.started')
             saliencecontinue_text.setAutoDraw(True)
         
-        # *slider* updates
-        if slider.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # *displayrating_text* updates
+        if displayrating_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            slider.frameNStart = frameN  # exact frame index
-            slider.tStart = t  # local t and not account for scr refresh
-            slider.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(slider, 'tStartRefresh')  # time at next scr refresh
-            slider.setAutoDraw(True)
+            displayrating_text.frameNStart = frameN  # exact frame index
+            displayrating_text.tStart = t  # local t and not account for scr refresh
+            displayrating_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(displayrating_text, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'displayrating_text.started')
+            displayrating_text.setAutoDraw(True)
         
         # check for quit (typically the Esc key)
         if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
@@ -2434,19 +2466,145 @@ for thisEntiretaskloop in entiretaskloop:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # Run 'End Routine' code from saliencyrating_code
-    #rating = ratingScale.getRating()
-    #decisionTime = ratingScale.getRT()
-    #entiretaskloop.addData('Partner_Rating',rating)
-    #entiretaskloop.addData('Reaction_Time', decisionTime)
+    #saliencerating = salience_slider.getRating()
+    entiretaskloop.addData('salience_rating', round(salience_slider.getMarkerPos(),1))
     # check responses
     if key_resp.keys in ['', [], None]:  # No response was made
         key_resp.keys = None
     entiretaskloop.addData('key_resp.keys',key_resp.keys)
     if key_resp.keys != None:  # we had a response
         entiretaskloop.addData('key_resp.rt', key_resp.rt)
-    entiretaskloop.addData('slider.response', slider.getRating())
-    entiretaskloop.addData('slider.rt', slider.getRT())
     # the Routine "SalienceRating" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
+    
+    # --- Prepare to start Routine "StressLevel" ---
+    continueRoutine = True
+    # update component parameters for each repeat
+    # Run 'Begin Routine' code from stresslevelslider
+    if not TrialNumber%30 == 0: # establishes two blocks per 32 trials
+        continueRoutine = False # if not trial 31 or 63, skip routine completely
+    stressleveltext = (f'How stressed are you right now? \n\n\n Use your mouse or left and right arrows to move the arrow to your desired rating.' )
+    event.clearEvents('keyboard')
+    stress_slider.markerPos = 5
+    
+    stresslevel_text.setText(stressleveltext)
+    stresslevel_keypress.keys = []
+    stresslevel_keypress.rt = []
+    _stresslevel_keypress_allKeys = []
+    displaystressrating_text.setText(rating_forstress)
+    # keep track of which components have finished
+    StressLevelComponents = [stresslevel_text, stresslevel_keypress, displaystressrating_text]
+    for thisComponent in StressLevelComponents:
+        thisComponent.tStart = None
+        thisComponent.tStop = None
+        thisComponent.tStartRefresh = None
+        thisComponent.tStopRefresh = None
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    # reset timers
+    t = 0
+    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+    frameN = -1
+    
+    # --- Run Routine "StressLevel" ---
+    while continueRoutine:
+        # get current time
+        t = routineTimer.getTime()
+        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        # Run 'Each Frame' code from stresslevelslider
+        stress_slider.draw()
+        keys = event.getKeys()
+        displaystressrating_text.setText(round(stress_slider.getMarkerPos(),1))
+        if len(keys):
+            if 'left' in keys:
+                stress_slider.markerPos = stress_slider.markerPos - .1
+                rating_forstress = stress_slider.getRating()
+                displayrating_text.setText(round(stress_slider.getMarkerPos(),1))
+            elif 'right' in keys:
+                stress_slider.markerPos = stress_slider.markerPos + .1
+                rating_forstress = stress_slider.getRating()
+                displayrating_text.setText(round(stress_slider.getMarkerPos(),1))
+        
+        # *stresslevel_text* updates
+        if stresslevel_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            stresslevel_text.frameNStart = frameN  # exact frame index
+            stresslevel_text.tStart = t  # local t and not account for scr refresh
+            stresslevel_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(stresslevel_text, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'stresslevel_text.started')
+            stresslevel_text.setAutoDraw(True)
+        
+        # *stresslevel_keypress* updates
+        waitOnFlip = False
+        if stresslevel_keypress.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            stresslevel_keypress.frameNStart = frameN  # exact frame index
+            stresslevel_keypress.tStart = t  # local t and not account for scr refresh
+            stresslevel_keypress.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(stresslevel_keypress, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'stresslevel_keypress.started')
+            stresslevel_keypress.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(stresslevel_keypress.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(stresslevel_keypress.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if stresslevel_keypress.status == STARTED and not waitOnFlip:
+            theseKeys = stresslevel_keypress.getKeys(keyList=['space'], waitRelease=False)
+            _stresslevel_keypress_allKeys.extend(theseKeys)
+            if len(_stresslevel_keypress_allKeys):
+                stresslevel_keypress.keys = _stresslevel_keypress_allKeys[-1].name  # just the last key pressed
+                stresslevel_keypress.rt = _stresslevel_keypress_allKeys[-1].rt
+                # a response ends the routine
+                continueRoutine = False
+        
+        # *displaystressrating_text* updates
+        if displaystressrating_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            displaystressrating_text.frameNStart = frameN  # exact frame index
+            displaystressrating_text.tStart = t  # local t and not account for scr refresh
+            displaystressrating_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(displaystressrating_text, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'displaystressrating_text.started')
+            displaystressrating_text.setAutoDraw(True)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in StressLevelComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # --- Ending Routine "StressLevel" ---
+    for thisComponent in StressLevelComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # Run 'End Routine' code from stresslevelslider
+    stresslevel = stress_slider.getRating()
+    entiretaskloop.addData('stress_level', round(stress_slider.getMarkerPos(),1))
+    # check responses
+    if stresslevel_keypress.keys in ['', [], None]:  # No response was made
+        stresslevel_keypress.keys = None
+    entiretaskloop.addData('stresslevel_keypress.keys',stresslevel_keypress.keys)
+    if stresslevel_keypress.keys != None:  # we had a response
+        entiretaskloop.addData('stresslevel_keypress.rt', stresslevel_keypress.rt)
+    # the Routine "StressLevel" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
     
