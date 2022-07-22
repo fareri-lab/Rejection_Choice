@@ -76,6 +76,7 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
+    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'}
   ]
 });
 
