@@ -1,4 +1,4 @@
-﻿/****************************** 
+/****************************** 
  * Rejectiontask_Oneloop Test *
  ******************************/
 
@@ -20,6 +20,7 @@ let expInfo = {
 
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from saliencyrating_code
+var saliencerating, salienceratingtext, rating_forsalience, stresslevel, stressleveltext, rating_forstress
 saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
@@ -237,7 +238,8 @@ async function experimentInit() {
   });
   
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
+
+  var partnermatch, partneravatar
   // Run 'Begin Experiment' code from buildspreadsheet
   partnermatch = "";
   partneravatar = "";
@@ -262,9 +264,7 @@ async function experimentInit() {
   
   // Initialize components for Routine "partner_code"
   partner_codeClock = new util.Clock();
-  // Run 'Begin Experiment' code from partnermatchcode
-  partnermatch = "";
-  partneravatar = "";
+
   
   // Initialize components for Routine "WaitingToMatch"
   WaitingToMatchClock = new util.Clock();
@@ -459,7 +459,8 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
-  
+
+  var feedbackresponses, fdbkimage
   // Run 'Begin Experiment' code from initiatefeedbackresponses
   feedbackresponses = "";
   fdbkimage = "";
@@ -510,6 +511,8 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
   });
+
+  var startlottery
   // Run 'Begin Experiment' code from initiatelottery_code
   startlottery = "";
   
@@ -566,7 +569,8 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
   });
-  
+
+  var response_msg, feedback_msg,computer_choice, selfrunOrNot,comprunOrNot,resumetext
   // Run 'Begin Experiment' code from setvariables_code
   response_msg = " ";
   feedback_msg = " ";
