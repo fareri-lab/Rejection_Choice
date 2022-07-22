@@ -3146,7 +3146,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if ((TrialNumber !== 3) {
+    if (TrialNumber !== 3) {
         continueRoutine = false;
   
       } else { 
