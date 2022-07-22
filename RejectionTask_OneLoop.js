@@ -3111,6 +3111,7 @@ function ContinueRoutineEnd(snapshot) {
 var salienceratingtext;
 var _key_resp_allKeys;
 var SalienceRatingComponents;
+var continueRoutine;
 function SalienceRatingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
