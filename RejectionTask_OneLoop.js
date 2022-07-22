@@ -719,7 +719,27 @@ async function experimentInit() {
   SalienceRatingClock = new util.Clock();
   // Run 'Begin Experiment' code from saliencyrating_code
   // salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
-  salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0,  "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false, "autoDraw": false});
+  salience_slider = new visual.Slider({
+    "win": psychoJS.window,
+     "name": "slider", 
+     "size": [1.0, 0.1], 
+     "pos": [0, (- 0.4)],
+     "units": null,
+     "labels": [1, 2, 3, 4, 5],
+     "ticks": [1, 2, 3, 4, 5],
+     "granularity": 0.0, 
+      "opacity": null, 
+      "labelColor": "white", 
+      "markerColor": "cornflowerblue",
+      "lineColor": "white", 
+      "colorSpace": "rgb",
+      "font": "Open Sans",
+      "labelHeight": 0.05,
+      "flip": false,
+      "ori": 0.0,
+      "depth": (- 5),
+      "readOnly": false,
+       "autoDraw": false});
   
   saliencequestion_text = new visual.TextStim({
     win: psychoJS.window,
@@ -3112,6 +3132,8 @@ var salienceratingtext;
 var _key_resp_allKeys;
 var SalienceRatingComponents;
 var continueRoutine;
+var salience_slider;
+var SalienceRatingClock;
 function SalienceRatingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3123,14 +3145,14 @@ function SalienceRatingRoutineBegin(snapshot) {
     
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
-    let continueRoutine = true;
-    if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
-        continueRoutine = false;
-        salience_slider.setAutoDraw(false);
-      } else { 
-        continueRoutine = true; 
-        salience_slider.setAutoDraw(true);
-      }
+    // let continueRoutine = true;
+    // if ((TrialNumber !== 30) || (TrialNumber !== 60) ||(TrialNumber !== 90)) {
+    //     continueRoutine = false;
+    //     salience_slider.setAutoDraw(false);
+    //   } else { 
+    //     continueRoutine = true; 
+    //     salience_slider.setAutoDraw(true);
+    //   }
     
     
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
@@ -3153,6 +3175,8 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(salienceavatar_image);
     SalienceRatingComponents.push(saliencecontinue_text);
     SalienceRatingComponents.push(displayrating_text);
+    SalienceRatingComponents.push(salience_slider);
+    SalienceRatingComponents.push(SalienceRatingClock);
     
     for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
@@ -3172,44 +3196,52 @@ function SalienceRatingRoutineEachFrame() {
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
-    var _pj;
-    function _pj_snippets(container) {
-        function in_es6(left, right) {
-            if (((right instanceof Array) || ((typeof right) === "string"))) {
-                return (right.indexOf(left) > (- 1));
-            } else {
-                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
-                    return right.has(left);
-                } else {
-                    return (left in right);
-                }
-            }
-        }
-        container["in_es6"] = in_es6;
-        return container;
+    // var _pj;
+    // function _pj_snippets(container) {
+    //     function in_es6(left, right) {
+    //         if (((right instanceof Array) || ((typeof right) === "string"))) {
+    //             return (right.indexOf(left) > (- 1));
+    //         } else {
+    //             if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+    //                 return right.has(left);
+    //             } else {
+    //                 return (left in right);
+    //             }
+    //         }
+    //     }
+    //     container["in_es6"] = in_es6;
+    //     return container;
+    // }
+    // _pj = {};
+    // _pj_snippets(_pj);
+    // salience_slider.setAutoDraw(true);
+    // 
+    // 
+    // keys = psychoJS.eventManager.getKeys();
+    // displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    // if (keys.length) {
+    //     if (_pj.in_es6("left", keys)) {
+    //         salience_slider.markerPos = (salience_slider.markerPos - 0.1);
+    //         rating_forsalience = salience_slider.getRating();
+    //         displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    //     } else {
+    //         if (_pj.in_es6("right", keys)) {
+    //             salience_slider.markerPos = (salience_slider.markerPos + 0.1);
+    //             rating_forsalience = salience_slider.getRating();
+    //             displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    //         }
+    //     }
+    // }
+    // 
+    // display the rating scale
+    if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      salience_slider.tStart = t;  // (not accounting for frame time here)
+      salience_slider.frameNStart = frameN;  // exact frame index
+
+      salience_slider.setAutoDraw(true);
     }
-    _pj = {};
-    _pj_snippets(_pj);
-    salience_slider.setAutoDraw(true);
-  
-      
-    keys = psychoJS.eventManager.getKeys();
-    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    if (keys.length) {
-        if (_pj.in_es6("left", keys)) {
-            salience_slider.markerPos = (salience_slider.markerPos - 0.1);
-            rating_forsalience = salience_slider.getRating();
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-        } else {
-            if (_pj.in_es6("right", keys)) {
-                salience_slider.markerPos = (salience_slider.markerPos + 0.1);
-                rating_forsalience = salience_slider.getRating();
-                displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-            }
-        }
-    }
-    
-    
+
     // *saliencequestion_text* updates
     if (t >= 0.0 && saliencequestion_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
