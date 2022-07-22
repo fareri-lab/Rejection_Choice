@@ -75,8 +75,6 @@ dialogCancelScheduler.add(quitPsychoJS, '', false);
 psychoJS.start({
   expName: expName,
   expInfo: expInfo,
-  resources: [
-  ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
@@ -566,7 +564,7 @@ async function experimentInit() {
   Block1_facedowncard = new visual.ImageStim({
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined, 
-    image : 'resources/Images/facedown_card.png/', mask : undefined,
+    image : 'Images/facedown_card.png/', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -639,7 +637,7 @@ async function experimentInit() {
   block1_cardimage = new visual.ImageStim({
     win : psychoJS.window,
     name : 'block1_cardimage', units : undefined, 
-    image : 'resources/Images/facedown_card.png/', mask : undefined,
+    image : 'Images/facedown_card.png/', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -1439,13 +1437,13 @@ function partner_codeRoutineEnd(snapshot) {
     // Run 'End Routine' code from partnermatchcode
     partnermatch = `You have matched with: ${Partner}`;
     if ((Partner === "Sam")) {
-        partneravatar = "resources/Images/nerdemoji_nobackground.png/";
+        partneravatar = "Images/nerdemoji_nobackground.png/";
     }
     if ((Partner === "Riley")) {
-        partneravatar = "resources/Images/sunglassemoji_nobackground.png/";
+        partneravatar = "Images/sunglassemoji_nobackground.png/";
     } else {
         if ((Partner === "Charlie")) {
-            partneravatar = "resources/Images/smilingemoji.tiff/";
+            partneravatar = "Images/smilingemoji.tiff/";
         }
     }
     
@@ -2028,10 +2026,10 @@ function Photo_ShareRoutineEnd(snapshot) {
     // Run 'End Routine' code from initiatefeedbackresponses
     feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
-        fdbkimage = "resources/Images/thumbsup.tiff/";
+        fdbkimage = "Images/thumbsup.tiff/";
     } else {
         if ((Feedback === "did not like")) {
-            fdbkimage = "resources/Images/thumbsdown.tiff/";
+            fdbkimage = "Images/thumbsdown.tiff/";
         }
     }
     
