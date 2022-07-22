@@ -3190,7 +3190,7 @@ function SalienceRatingRoutineEachFrame() {
     }
     _pj = {};
     _pj_snippets(_pj);
-    salience_slider.draw();
+    salience_slider.setAutoDraw(true);
   
       
     keys = psychoJS.eventManager.getKeys();
