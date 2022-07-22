@@ -3233,7 +3233,7 @@ function SalienceRatingRoutineEachFrame() {
     //     }
     // }
     // 
-    // display the rating scale
+    // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       salience_slider.tStart = t;  // (not accounting for frame time here)
@@ -3341,7 +3341,7 @@ function SalienceRatingRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from saliencyrating_code
-    entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos(), 1));
+    entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
     
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
@@ -3369,6 +3369,8 @@ function SalienceRatingRoutineEnd(snapshot) {
 var stressleveltext;
 var _stresslevel_keypress_allKeys;
 var StressLevelComponents;
+var stress_slider;
+var StressLevelClock;
 function StressLevelRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3380,9 +3382,7 @@ function StressLevelRoutineBegin(snapshot) {
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    if ((! ((TrialNumber % 30) === 0))) {
-        continueRoutine = false;
-    }
+  
     stressleveltext = `Please rate your current stress level.
     
     
@@ -3401,6 +3401,8 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(stresslevel_text);
     StressLevelComponents.push(stresslevel_keypress);
     StressLevelComponents.push(displaystressrating_text);
+    StressLevelComponents.push(stress_slider);
+    StressLevelComponents.push(StressLevelClock);
     
     for (const thisComponent of StressLevelComponents)
       if ('status' in thisComponent)
@@ -3419,42 +3421,49 @@ function StressLevelRoutineEachFrame() {
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from stresslevelslider
-    var _pj;
-    function _pj_snippets(container) {
-        function in_es6(left, right) {
-            if (((right instanceof Array) || ((typeof right) === "string"))) {
-                return (right.indexOf(left) > (- 1));
-            } else {
-                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
-                    return right.has(left);
-                } else {
-                    return (left in right);
-                }
-            }
-        }
-        container["in_es6"] = in_es6;
-        return container;
+    // var _pj;
+    // function _pj_snippets(container) {
+    //     function in_es6(left, right) {
+    //         if (((right instanceof Array) || ((typeof right) === "string"))) {
+    //             return (right.indexOf(left) > (- 1));
+    //         } else {
+    //             if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+    //                 return right.has(left);
+    //             } else {
+    //                 return (left in right);
+    //             }
+    //         }
+    //     }
+    //     container["in_es6"] = in_es6;
+    //     return container;
+    // }
+    // _pj = {};
+    // _pj_snippets(_pj);
+    // stress_slider.draw();
+    // keys = psychoJS.eventManager.getKeys();
+    // displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+    // if (keys.length) {
+    //     if (_pj.in_es6("left", keys)) {
+    //         stress_slider.markerPos = (stress_slider.markerPos - 0.1);
+    //         rating_forstress = stress_slider.getRating();
+    //         displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+    //     } else {
+    //         if (_pj.in_es6("right", keys)) {
+    //             stress_slider.markerPos = (stress_slider.markerPos + 0.1);
+    //             rating_forstress = stress_slider.getRating();
+    //             displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
+    //         }
+    //     }
+    // }
+    // 
+    // // *stress_slider* updates
+    if (t >= 0.0 && stress_slider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      stress_slider.tStart = t;  // (not accounting for frame time here)
+      stress_slider.frameNStart = frameN;  // exact frame index
+
+      stress_slider.setAutoDraw(true);
     }
-    _pj = {};
-    _pj_snippets(_pj);
-    stress_slider.draw();
-    keys = psychoJS.eventManager.getKeys();
-    displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-    if (keys.length) {
-        if (_pj.in_es6("left", keys)) {
-            stress_slider.markerPos = (stress_slider.markerPos - 0.1);
-            rating_forstress = stress_slider.getRating();
-            displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-        } else {
-            if (_pj.in_es6("right", keys)) {
-                stress_slider.markerPos = (stress_slider.markerPos + 0.1);
-                rating_forstress = stress_slider.getRating();
-                displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-            }
-        }
-    }
-    
-    
     // *stresslevel_text* updates
     if (t >= 0.0 && stresslevel_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -3536,7 +3545,7 @@ function StressLevelRoutineEnd(snapshot) {
     }
     // Run 'End Routine' code from stresslevelslider
     stresslevel = stress_slider.getRating();
-    entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos(), 1));
+    entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos()*10/10));
     
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
