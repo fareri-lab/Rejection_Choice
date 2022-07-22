@@ -82,7 +82,7 @@ psychoJS.start({
   {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'}, 
   {'name': 'Images/facedown_card.png', 'path': 'Images/facedown_card.png'}, 
   {'name': 'Images/nerdemoji_nobackground.png', 'path': 'Images/nerdemoji_nobackground.png'}, 
-  {'name': 'Images/smilingemoji.tiff', 'path': 'Images/smilingemoji.tiff'}, 
+  {'name': 'Images/smilingemoji.png', 'path': 'Images/smilingemoji.png'}, 
   {'name': 'Images/sunglassemoji_nobackground.png', 'path': 'Images/sunglassemoji_nobackground.png'}, 
   {'name': 'Images/thumbsdown.png', 'path': 'Images/thumbsdown.png'}, 
   {'name': 'Images/thumbsup.png', 'path': 'Images/thumbsup.png'}, 
@@ -1501,7 +1501,7 @@ function partner_codeRoutineEnd(snapshot) {
         partneravatar = "Images/sunglassemoji_nobackground.png";
     } else {
         if ((Partner === "Charlie")) {
-            partneravatar = "Images/smilingemoji.tiff";
+            partneravatar = "Images/smilingemoji.png";
         }
     }
     
@@ -2084,10 +2084,10 @@ function Photo_ShareRoutineEnd(snapshot) {
     // Run 'End Routine' code from initiatefeedbackresponses
     feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
-        fdbkimage = "Images/thumbsup.tiff";
+        fdbkimage = "Images/thumbsup.png";
     } else {
         if ((Feedback === "did not like")) {
-            fdbkimage = "Images/thumbsdown.tiff";
+            fdbkimage = "Images/thumbsdown.png";
         }
     }
     
