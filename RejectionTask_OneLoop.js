@@ -1,4 +1,4 @@
-﻿/****************************** 
+/****************************** 
  * Rejectiontask_Oneloop Test *
  ******************************/
 
@@ -20,6 +20,7 @@ let expInfo = {
 
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from saliencyrating_code
+var saliencerating, salienceratingtext, rating_forsalience, stresslevel, stressleveltext, rating_forstress
 saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
@@ -205,7 +206,8 @@ async function experimentInit() {
   });
   
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
+
+  var partnermatch, partneravatar
   // Run 'Begin Experiment' code from buildspreadsheet
   partnermatch = "";
   partneravatar = "";
@@ -230,9 +232,7 @@ async function experimentInit() {
   
   // Initialize components for Routine "partner_code"
   partner_codeClock = new util.Clock();
-  // Run 'Begin Experiment' code from partnermatchcode
-  partnermatch = "";
-  partneravatar = "";
+
   
   // Initialize components for Routine "WaitingToMatch"
   WaitingToMatchClock = new util.Clock();
@@ -427,7 +427,8 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
-  
+
+  var feedbackresponses, fdbkimage
   // Run 'Begin Experiment' code from initiatefeedbackresponses
   feedbackresponses = "";
   fdbkimage = "";
@@ -478,6 +479,8 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -1.0 
   });
+
+  var startlottery
   // Run 'Begin Experiment' code from initiatelottery_code
   startlottery = "";
   
@@ -534,7 +537,8 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
   });
-  
+
+  var response_msg, feedback_msg,computer_choice, selfrunOrNot,comprunOrNot,resumetext
   // Run 'Begin Experiment' code from setvariables_code
   response_msg = " ";
   feedback_msg = " ";
@@ -660,7 +664,14 @@ async function experimentInit() {
   // Initialize components for Routine "SalienceRating"
   SalienceRatingClock = new util.Clock();
   // Run 'Begin Experiment' code from saliencyrating_code
-  salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", //"startValue": 999, 
+  "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], 
+  "granularity": 0.0, 
+  //"style": "rating", 
+  //"styleTweaks": ["labels45", "triangleMarker"], 
+  //"opacity": null, 
+  "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", 
+  "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
   
   saliencequestion_text = new visual.TextStim({
     win: psychoJS.window,
@@ -712,7 +723,18 @@ async function experimentInit() {
   // Initialize components for Routine "StressLevel"
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
-  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", //"startValue": 999, 
+  "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5,6,7,8,9], "ticks": [1, 2, 3, 4, 5,6,7,8,9], 
+  "granularity": 0.0, 
+  //"style": "rating", 
+  //"styleTweaks": ["labels45", "triangleMarker"], 
+  //"opacity": null, 
+  "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", 
+  "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+
+
+
+  // new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
   
   stresslevel_text = new visual.TextStim({
     win: psychoJS.window,
