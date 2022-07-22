@@ -566,7 +566,7 @@ async function experimentInit() {
   Block1_facedowncard = new visual.ImageStim({
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined, 
-    image : 'Images/facedown card.png', mask : undefined,
+    image : 'resources/Images/facedown card.png', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -639,7 +639,7 @@ async function experimentInit() {
   block1_cardimage = new visual.ImageStim({
     win : psychoJS.window,
     name : 'block1_cardimage', units : undefined, 
-    image : 'Images/facedown card.png', mask : undefined,
+    image : 'resources/Images/facedown card.png', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -1439,13 +1439,13 @@ function partner_codeRoutineEnd(snapshot) {
     // Run 'End Routine' code from partnermatchcode
     partnermatch = `You have matched with: ${Partner}`;
     if ((Partner === "Sam")) {
-        partneravatar = "Images/nerdemoji_nobackground.png";
+        partneravatar = "resources/Images/nerdemoji_nobackground.png";
     }
     if ((Partner === "Riley")) {
-        partneravatar = "Images/sunglassemoji_nobackground.png";
+        partneravatar = "resources/Images/sunglassemoji_nobackground.png";
     } else {
         if ((Partner === "Charlie")) {
-            partneravatar = "Images/smilingemoji.tiff";
+            partneravatar = "resources/Images/smilingemoji.tiff";
         }
     }
     
@@ -2028,10 +2028,10 @@ function Photo_ShareRoutineEnd(snapshot) {
     // Run 'End Routine' code from initiatefeedbackresponses
     feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
-        fdbkimage = "Images/thumbsup.tiff";
+        fdbkimage = "resources/Images/thumbsup.tiff";
     } else {
         if ((Feedback === "did not like")) {
-            fdbkimage = "Images/thumbsdown.tiff";
+            fdbkimage = "resources/Images/thumbsdown.tiff";
         }
     }
     
