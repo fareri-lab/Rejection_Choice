@@ -596,7 +596,7 @@ async function experimentInit() {
   // Run 'Begin Experiment' code from setvariables_code
   response_msg = " ";
   feedback_msg = " ";
-  const computer_choice = ["lower", "lower", "lower", "lower", "lower", "higher", "higher", "higher", "higher", "higher"];
+  computer_choice = ["lower", "lower", "lower", "lower", "lower", "higher", "higher", "higher", "higher", "higher"];
   selfrunOrNot = "";
   comprunOrNot = "";
   resumetext = "";
