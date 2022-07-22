@@ -493,7 +493,7 @@ async function experimentInit() {
   participantimage_image = new visual.ImageStim({
     win : psychoJS.window,
     name : 'participantimage_image', units : undefined, 
-    image : '', mask : undefined,
+    image : undefined, mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.5, 0.75],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
