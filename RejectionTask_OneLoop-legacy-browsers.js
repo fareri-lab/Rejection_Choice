@@ -68,43 +68,46 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    {'name': 'Participant_Images/101_Image_13.jpg', 'path': 'Participant_Images/101_Image_13.jpg'},
-    {'name': 'Participant_Images/101_Image_9.jpg', 'path': 'Participant_Images/101_Image_9.jpg'},
-    {'name': 'Participant_Images/101_Image_28.jpg', 'path': 'Participant_Images/101_Image_28.jpg'},
-    {'name': 'Participant_Images/101_Image_23.jpg', 'path': 'Participant_Images/101_Image_23.jpg'},
-    {'name': 'Participant_Images/101_Image_17.jpg', 'path': 'Participant_Images/101_Image_17.jpg'},
-    {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
-    {'name': 'Participant_Images/101_Image_26.jpg', 'path': 'Participant_Images/101_Image_26.jpg'},
-    {'name': 'Participant_Images/101_Image_24.jpg', 'path': 'Participant_Images/101_Image_24.jpg'},
-    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'},
-    {'name': 'Participant_Images/101_Image_11.jpg', 'path': 'Participant_Images/101_Image_11.jpg'},
-    {'name': 'Participant_Images/101_Image_30.jpg', 'path': 'Participant_Images/101_Image_30.jpg'},
-    {'name': 'Participant_Images/101_Image_21.jpg', 'path': 'Participant_Images/101_Image_21.jpg'},
-    {'name': 'Participant_Images/101_Image_18.jpg', 'path': 'Participant_Images/101_Image_18.jpg'},
-    {'name': 'Participant_Images/101_Image_7.jpg', 'path': 'Participant_Images/101_Image_7.jpg'},
-    {'name': 'Participant_Images/101_Image_22.jpg', 'path': 'Participant_Images/101_Image_22.jpg'},
-    {'name': 'Participant_Images/101_Image_15.jpg', 'path': 'Participant_Images/101_Image_15.jpg'},
-    {'name': 'Participant_Images/101_Image_16.jpg', 'path': 'Participant_Images/101_Image_16.jpg'},
-    {'name': 'Participant_Images/101_Image_10.jpg', 'path': 'Participant_Images/101_Image_10.jpg'},
-    {'name': 'Participant_Images/101_Image_14.jpg', 'path': 'Participant_Images/101_Image_14.jpg'},
-    {'name': 'Participant_Images/101_Image_6.jpg', 'path': 'Participant_Images/101_Image_6.jpg'},
-    {'name': 'Participant_Images/101_Image_19.jpg', 'path': 'Participant_Images/101_Image_19.jpg'},
-    {'name': 'Participant_Images/101_Image_25.jpg', 'path': 'Participant_Images/101_Image_25.jpg'},
-    {'name': 'Participant_Images/101_Image_1.jpg', 'path': 'Participant_Images/101_Image_1.jpg'},
-    {'name': 'Participant_Images/101_Image_4.jpg', 'path': 'Participant_Images/101_Image_4.jpg'},
-    {'name': 'Participant_Images/101_Image_8.jpg', 'path': 'Participant_Images/101_Image_8.jpg'},
-    {'name': 'Participant_Images/101_Image_2.jpg', 'path': 'Participant_Images/101_Image_2.jpg'},
     {'name': 'Participant_Images/101_Image_3.jpg', 'path': 'Participant_Images/101_Image_3.jpg'},
-    {'name': 'Participant_Images/101_Image_27.jpg', 'path': 'Participant_Images/101_Image_27.jpg'},
-    {'name': 'Participant_Images/101_Image_20.jpg', 'path': 'Participant_Images/101_Image_20.jpg'},
+    {'name': 'Participant_Images/101_Image_24.jpg', 'path': 'Participant_Images/101_Image_24.jpg'},
+    {'name': 'Participant_Images/101_Image_21.jpg', 'path': 'Participant_Images/101_Image_21.jpg'},
+    {'name': 'Participant_Images/101_Image_13.jpg', 'path': 'Participant_Images/101_Image_13.jpg'},
+    {'name': 'Participant_Images/101_Image_8.jpg', 'path': 'Participant_Images/101_Image_8.jpg'},
+    {'name': 'Participant_Images/101_Image_9.jpg', 'path': 'Participant_Images/101_Image_9.jpg'},
+    {'name': 'Participant_Images/101_Image_6.jpg', 'path': 'Participant_Images/101_Image_6.jpg'},
+    {'name': 'Participant_Images/101_Image_10.jpg', 'path': 'Participant_Images/101_Image_10.jpg'},
+    {'name': 'Participant_Images/101_Image_15.jpg', 'path': 'Participant_Images/101_Image_15.jpg'},
+    {'name': 'Participant_Images/101_Image_14.jpg', 'path': 'Participant_Images/101_Image_14.jpg'},
+    {'name': 'Participant_Images/101_Image_16.jpg', 'path': 'Participant_Images/101_Image_16.jpg'},
+    {'name': 'Participant_Images/101_Image_22.jpg', 'path': 'Participant_Images/101_Image_22.jpg'},
     {'name': 'Participant_Images/101_Image_5.jpg', 'path': 'Participant_Images/101_Image_5.jpg'},
+    {'name': 'Participant_Images/101_Image_2.jpg', 'path': 'Participant_Images/101_Image_2.jpg'},
+    {'name': 'Participant_Images/101_Image_17.jpg', 'path': 'Participant_Images/101_Image_17.jpg'},
+    {'name': 'Participant_Images/101_Image_30.jpg', 'path': 'Participant_Images/101_Image_30.jpg'},
+    {'name': 'Participant_Images/101_Image_19.jpg', 'path': 'Participant_Images/101_Image_19.jpg'},
+    {'name': 'Participant_Images/101_Image_11.jpg', 'path': 'Participant_Images/101_Image_11.jpg'},
+    {'name': 'Participant_Images/101_Image_28.jpg', 'path': 'Participant_Images/101_Image_28.jpg'},
     {'name': 'Participant_Images/101_Image_12.jpg', 'path': 'Participant_Images/101_Image_12.jpg'},
-    {'name': 'Participant_Images/101_Image_29.jpg', 'path': 'Participant_Images/101_Image_29.jpg'}
+    {'name': 'Participant_Images/101_Image_23.jpg', 'path': 'Participant_Images/101_Image_23.jpg'},
+    {'name': 'Participant_Images/101_Image_7.jpg', 'path': 'Participant_Images/101_Image_7.jpg'},
+    {'name': 'Participant_Images/101_Image_25.jpg', 'path': 'Participant_Images/101_Image_25.jpg'},
+    {'name': 'Participant_Images/101_Image_27.jpg', 'path': 'Participant_Images/101_Image_27.jpg'},
+    {'name': 'Participant_Images/101_Image_1.jpg', 'path': 'Participant_Images/101_Image_1.jpg'},
+    {'name': 'Participant_Images/101_Image_26.jpg', 'path': 'Participant_Images/101_Image_26.jpg'},
+    {'name': 'Participant_Images/101_Image_29.jpg', 'path': 'Participant_Images/101_Image_29.jpg'},
+    {'name': 'Participant_Images/101_Image_4.jpg', 'path': 'Participant_Images/101_Image_4.jpg'},
+    {'name': 'Participant_Images/101_Image_18.jpg', 'path': 'Participant_Images/101_Image_18.jpg'},
+    {'name': 'Images/facedown card.png', 'path': 'Images/facedown card.png'},
+    {'name': 'Participant_Images/101_Image_20.jpg', 'path': 'Participant_Images/101_Image_20.jpg'},
+    {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'}
   ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
 
+
+var currentLoop;
+var frameDur;
 async function updateInfo() {
   currentLoop = psychoJS.experiment;  // right now there are no loops
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
@@ -127,6 +130,89 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
+
+var Welcome_ScreenClock;
+var Welcome;
+var endwelcomescreen_keys;
+var partnermatch;
+var partneravatar;
+var testClock;
+var First_InstructionsClock;
+var FirstInstructions;
+var endinstructionscreen_keys;
+var partner_codeClock;
+var WaitingToMatchClock;
+var Match_text;
+var syncing_text;
+var text_0;
+var Transparent;
+var Loading_25;
+var text_25;
+var Loading_50;
+var text_50;
+var Loading_75;
+var text_75;
+var Loading_100;
+var text_100;
+var Partner_MatchClock;
+var Youhavematched;
+var partneremoji_image;
+var endpartnermatch_keys;
+var PressToContinue;
+var Photo_ShareClock;
+var photobeingshared_text;
+var waitforfeedback_text;
+var feedbackresponses;
+var fdbkimage;
+var participantimage_image;
+var WaitingforfeedbackClock;
+var waiting_text;
+var feedbackClock;
+var displayfeedback_text;
+var fdbkimage_image;
+var startlottery;
+var continuesharingClock;
+var presstosharenextphoto_text;
+var sharenextphoto_key;
+var ChoiceClock;
+var lotterychoice_text;
+var computer_text;
+var self_text;
+var response_msg;
+var feedback_msg;
+var computer_choice;
+var selfrunOrNot;
+var comprunOrNot;
+var resumetext;
+var choice_keys;
+var LotterycomputerchoiceClock;
+var lotterycard;
+var Block1_facedowncard;
+var computerresponse;
+var LotteryselfchoiceClock;
+var pickacard_text;
+var higher_text;
+var lower_text;
+var lotteryguess_keys;
+var responsefeedback;
+var block1_cardimage;
+var ContinueClock;
+var resumeafterlottery_keys;
+var resumetext_text;
+var SalienceRatingClock;
+var salience_slider;
+var saliencequestion_text;
+var key_resp;
+var salienceavatar_image;
+var saliencecontinue_text;
+var displayrating_text;
+var StressLevelClock;
+var stress_slider;
+var stresslevel_text;
+var stresslevel_keypress;
+var displaystressrating_text;
+var globalClock;
+var routineTimer;
 async function experimentInit() {
   // Initialize components for Routine "Welcome_Screen"
   Welcome_ScreenClock = new util.Clock();
@@ -685,6 +771,12 @@ async function experimentInit() {
   return Scheduler.Event.NEXT;
 }
 
+
+var t;
+var frameN;
+var continueRoutine;
+var _endwelcomescreen_keys_allKeys;
+var Welcome_ScreenComponents;
 function Welcome_ScreenRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -710,6 +802,7 @@ function Welcome_ScreenRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function Welcome_ScreenRoutineEachFrame() {
   return async function () {
@@ -778,6 +871,7 @@ function Welcome_ScreenRoutineEachFrame() {
   };
 }
 
+
 function Welcome_ScreenRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Welcome_Screen' ---
@@ -808,6 +902,8 @@ function Welcome_ScreenRoutineEnd(snapshot) {
   }
 }
 
+
+var testComponents;
 function testRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -828,6 +924,7 @@ function testRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function testRoutineEachFrame() {
   return async function () {
@@ -862,6 +959,7 @@ function testRoutineEachFrame() {
   };
 }
 
+
 function testRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'test' ---
@@ -881,6 +979,9 @@ function testRoutineEnd(snapshot) {
   }
 }
 
+
+var _endinstructionscreen_keys_allKeys;
+var First_InstructionsComponents;
 function First_InstructionsRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -906,6 +1007,7 @@ function First_InstructionsRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function First_InstructionsRoutineEachFrame() {
   return async function () {
@@ -974,6 +1076,7 @@ function First_InstructionsRoutineEachFrame() {
   };
 }
 
+
 function First_InstructionsRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'First_Instructions' ---
@@ -1004,6 +1107,8 @@ function First_InstructionsRoutineEnd(snapshot) {
   }
 }
 
+
+var entiretaskloop;
 function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1062,6 +1167,8 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
   }
 }
 
+
+var lotteryloop;
 function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1103,6 +1210,8 @@ function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
   }
 }
 
+
+var computerchoice;
 function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1133,6 +1242,7 @@ function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
   }
 }
 
+
 async function computerchoiceLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(computerchoice);
@@ -1143,6 +1253,7 @@ async function computerchoiceLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
+
 
 function computerchoiceLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1161,6 +1272,8 @@ function computerchoiceLoopEndIteration(scheduler, snapshot) {
   };
 }
 
+
+var selfchoice;
 function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
   return async function() {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
@@ -1191,6 +1304,7 @@ function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
   }
 }
 
+
 async function selfchoiceLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(selfchoice);
@@ -1201,6 +1315,7 @@ async function selfchoiceLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
+
 
 function selfchoiceLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1219,6 +1334,7 @@ function selfchoiceLoopEndIteration(scheduler, snapshot) {
   };
 }
 
+
 async function lotteryloopLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(lotteryloop);
@@ -1229,6 +1345,7 @@ async function lotteryloopLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
+
 
 function lotteryloopLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1249,6 +1366,7 @@ function lotteryloopLoopEndIteration(scheduler, snapshot) {
   };
 }
 
+
 async function entiretaskloopLoopEnd() {
   // terminate loop
   psychoJS.experiment.removeLoop(entiretaskloop);
@@ -1259,6 +1377,7 @@ async function entiretaskloopLoopEnd() {
     currentLoop = psychoJS.experiment;  // so we use addData from the experiment
   return Scheduler.Event.NEXT;
 }
+
 
 function entiretaskloopLoopEndIteration(scheduler, snapshot) {
   // ------Prepare for next entry------
@@ -1279,6 +1398,8 @@ function entiretaskloopLoopEndIteration(scheduler, snapshot) {
   };
 }
 
+
+var partner_codeComponents;
 function partner_codeRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1299,6 +1420,7 @@ function partner_codeRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function partner_codeRoutineEachFrame() {
   return async function () {
@@ -1333,6 +1455,7 @@ function partner_codeRoutineEachFrame() {
   };
 }
 
+
 function partner_codeRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'partner_code' ---
@@ -1365,6 +1488,9 @@ function partner_codeRoutineEnd(snapshot) {
   }
 }
 
+
+var _pj;
+var WaitingToMatchComponents;
 function WaitingToMatchRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1422,6 +1548,8 @@ function WaitingToMatchRoutineBegin(snapshot) {
   }
 }
 
+
+var frameRemains;
 function WaitingToMatchRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'WaitingToMatch' ---
@@ -1623,6 +1751,7 @@ function WaitingToMatchRoutineEachFrame() {
   };
 }
 
+
 function WaitingToMatchRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'WaitingToMatch' ---
@@ -1639,6 +1768,9 @@ function WaitingToMatchRoutineEnd(snapshot) {
   }
 }
 
+
+var _endpartnermatch_keys_allKeys;
+var Partner_MatchComponents;
 function Partner_MatchRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1691,6 +1823,7 @@ function Partner_MatchRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function Partner_MatchRoutineEachFrame() {
   return async function () {
@@ -1779,6 +1912,7 @@ function Partner_MatchRoutineEachFrame() {
   };
 }
 
+
 function Partner_MatchRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Partner_Match' ---
@@ -1809,6 +1943,8 @@ function Partner_MatchRoutineEnd(snapshot) {
   }
 }
 
+
+var Photo_ShareComponents;
 function Photo_ShareRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1834,6 +1970,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function Photo_ShareRoutineEachFrame() {
   return async function () {
@@ -1910,6 +2047,7 @@ function Photo_ShareRoutineEachFrame() {
   };
 }
 
+
 function Photo_ShareRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Photo_Share' ---
@@ -1936,6 +2074,8 @@ function Photo_ShareRoutineEnd(snapshot) {
   }
 }
 
+
+var WaitingforfeedbackComponents;
 function WaitingforfeedbackRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -1958,6 +2098,7 @@ function WaitingforfeedbackRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function WaitingforfeedbackRoutineEachFrame() {
   return async function () {
@@ -2006,6 +2147,7 @@ function WaitingforfeedbackRoutineEachFrame() {
   };
 }
 
+
 function WaitingforfeedbackRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Waitingforfeedback' ---
@@ -2022,6 +2164,8 @@ function WaitingforfeedbackRoutineEnd(snapshot) {
   }
 }
 
+
+var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2054,6 +2198,7 @@ function feedbackRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function feedbackRoutineEachFrame() {
   return async function () {
@@ -2116,6 +2261,7 @@ function feedbackRoutineEachFrame() {
   };
 }
 
+
 function feedbackRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'feedback' ---
@@ -2132,6 +2278,9 @@ function feedbackRoutineEnd(snapshot) {
   }
 }
 
+
+var _sharenextphoto_key_allKeys;
+var continuesharingComponents;
 function continuesharingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2164,6 +2313,7 @@ function continuesharingRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function continuesharingRoutineEachFrame() {
   return async function () {
@@ -2232,6 +2382,7 @@ function continuesharingRoutineEachFrame() {
   };
 }
 
+
 function continuesharingRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'continuesharing' ---
@@ -2262,6 +2413,9 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
+
+var _choice_keys_allKeys;
+var ChoiceComponents;
 function ChoiceRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2291,6 +2445,8 @@ function ChoiceRoutineBegin(snapshot) {
   }
 }
 
+
+var random_entry;
 function ChoiceRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Choice' ---
@@ -2341,8 +2497,6 @@ function ChoiceRoutineEachFrame() {
       self_text.setAutoDraw(false);
     }
     // Run 'Each Frame' code from setvariables_code
-    import * as random from 'random';
-    var random_entry;
     random_entry = random.choice(computer_choice);
     
     
@@ -2398,6 +2552,7 @@ function ChoiceRoutineEachFrame() {
   };
 }
 
+
 function ChoiceRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Choice' ---
@@ -2438,6 +2593,8 @@ function ChoiceRoutineEnd(snapshot) {
   }
 }
 
+
+var LotterycomputerchoiceComponents;
 function LotterycomputerchoiceRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2466,6 +2623,7 @@ function LotterycomputerchoiceRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function LotterycomputerchoiceRoutineEachFrame() {
   return async function () {
@@ -2542,6 +2700,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
   };
 }
 
+
 function LotterycomputerchoiceRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Lotterycomputerchoice' ---
@@ -2558,6 +2717,9 @@ function LotterycomputerchoiceRoutineEnd(snapshot) {
   }
 }
 
+
+var _lotteryguess_keys_allKeys;
+var LotteryselfchoiceComponents;
 function LotteryselfchoiceRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2591,6 +2753,7 @@ function LotteryselfchoiceRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function LotteryselfchoiceRoutineEachFrame() {
   return async function () {
@@ -2734,6 +2897,7 @@ function LotteryselfchoiceRoutineEachFrame() {
   };
 }
 
+
 function LotteryselfchoiceRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Lotteryselfchoice' ---
@@ -2760,6 +2924,9 @@ function LotteryselfchoiceRoutineEnd(snapshot) {
   }
 }
 
+
+var _resumeafterlottery_keys_allKeys;
+var ContinueComponents;
 function ContinueRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2796,6 +2963,7 @@ function ContinueRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+
 
 function ContinueRoutineEachFrame() {
   return async function () {
@@ -2864,6 +3032,7 @@ function ContinueRoutineEachFrame() {
   };
 }
 
+
 function ContinueRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'Continue' ---
@@ -2894,6 +3063,10 @@ function ContinueRoutineEnd(snapshot) {
   }
 }
 
+
+var salienceratingtext;
+var _key_resp_allKeys;
+var SalienceRatingComponents;
 function SalienceRatingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -2937,6 +3110,9 @@ function SalienceRatingRoutineBegin(snapshot) {
   }
 }
 
+
+var keys;
+var rating_forsalience;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
@@ -3070,6 +3246,7 @@ function SalienceRatingRoutineEachFrame() {
   };
 }
 
+
 function SalienceRatingRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'SalienceRating' ---
@@ -3103,6 +3280,10 @@ function SalienceRatingRoutineEnd(snapshot) {
   }
 }
 
+
+var stressleveltext;
+var _stresslevel_keypress_allKeys;
+var StressLevelComponents;
 function StressLevelRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3144,6 +3325,8 @@ function StressLevelRoutineBegin(snapshot) {
   }
 }
 
+
+var rating_forstress;
 function StressLevelRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'StressLevel' ---
@@ -3257,6 +3440,8 @@ function StressLevelRoutineEachFrame() {
   };
 }
 
+
+var stresslevel;
 function StressLevelRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'StressLevel' ---
@@ -3291,12 +3476,14 @@ function StressLevelRoutineEnd(snapshot) {
   }
 }
 
+
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
     return Scheduler.Event.NEXT;
     };
 }
+
 
 async function quitPsychoJS(message, isCompleted) {
   // Check for and save orphaned data

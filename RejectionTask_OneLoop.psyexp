@@ -2968,8 +2968,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="import random&amp;#10;random_entry = random.choice(computer_choice)" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="import * as random from 'random';&amp;#10;var random_entry;&amp;#10;random_entry = random.choice(computer_choice);&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="#import random&amp;#10;random_entry = random.choice(computer_choice)" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="random_entry = random.choice(computer_choice);&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="if ((choice_keys.keys === &quot;c&quot;)) {&amp;#10;    selfrunOrNot = 0;&amp;#10;    comprunOrNot = 1;&amp;#10;} else {&amp;#10;    if ((choice_keys.keys === &quot;s&quot;)) {&amp;#10;        selfrunOrNot = 1;&amp;#10;        comprunOrNot = 0;&amp;#10;    } else {&amp;#10;        selfrunOrNot = 0;&amp;#10;        comprunOrNot = 0;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
