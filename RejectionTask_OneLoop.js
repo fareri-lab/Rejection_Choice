@@ -3323,6 +3323,46 @@ function SalienceRatingRoutineEachFrame() {
       displayrating_text.setAutoDraw(true);
     
     }
+    salience_ratingvalue = salience_slider.getRating();
+    function financial(x) {
+      return Number.parseFloat(x).toFixed(2);
+       }
+         if (salience_ratingvalue < 0.015) {
+           salience_slider.setMarkerPos(0.01)
+           salience_slider.setRating(0.01)
+           displayrating_text.setText(financial(salience_ratingvalue.toString()));
+           displayrating_text.setAutoDraw(true);
+         }
+         else if (0.015 < salience_ratingvalue && salience_ratingvalue < 0.025) {
+               salience_slider.setMarkerPos(0.02)
+               salience_slider.setRating(0.02)
+               displayrating_text.setText(financial(salience_ratingvalue.toString()));
+               displayrating_text.setAutoDraw(true);
+
+         }
+
+         else if (0.025 < salience_ratingvalue && salience_ratingvalue < 0.035) {
+               salience_slider.setMarkerPos(0.03)
+               salience_slider.setRating(0.03)
+               displayrating_text.setText(financial(salience_ratingvalue.toString()));
+               displayrating_text.setAutoDraw(true);
+
+         }
+           else if (0.035 < salience_ratingvalue && salience_ratingvalue < 0.045) {
+               salience_slider.setMarkerPos(0.04)
+               salience_slider.setRating(0.04)
+               displayrating_text.setText(financial(salience_ratingvalue.toString()));
+               displayrating_text.setAutoDraw(true);
+
+         }
+         else if (0.045 < salience_ratingvalue && salience_ratingvalue <= 0.05) {
+             salience_slider.setMarkerPos(0.05)
+             salience_slider.setRating(0.05)
+             displayrating_text.setText(financial(salience_ratingvalue.toString()));
+             displayrating_text.setAutoDraw(true);
+
+         }
+
   
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
