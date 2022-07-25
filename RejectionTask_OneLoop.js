@@ -3613,4 +3613,3 @@ async function quitPsychoJS(message, isCompleted) {
     psychoJS.experiment.nextEntry();
    };
 }    
-]
