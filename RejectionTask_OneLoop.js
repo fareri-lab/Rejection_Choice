@@ -3146,11 +3146,11 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if (TrialNumber !== 30 || 60 || 90) {
-        continueRoutine = false;
+    if (TrialNumber == 30 || 60 || 90) {
+        continueRoutine = true;
   
       } else { 
-        continueRoutine = true; 
+        continueRoutine = false; 
       }
     
     
@@ -3588,7 +3588,6 @@ async function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
   }
-  
   
   
   
