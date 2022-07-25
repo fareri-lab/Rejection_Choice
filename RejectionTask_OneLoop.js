@@ -3146,11 +3146,11 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if ( (TrialNumber == 30 && !60 && !90) || (60 && !30 && !90) || (90 && !30 && !90) ) {
-        continueRoutine = true;
+    if ( (TrialNumber !== (30 && !60 && !90) || (60 && !30 && !90) || (90 && !30 && !90) ) {
+        continueRoutine = false;
   
       } else { 
-        continueRoutine = false; 
+        continueRoutine = true; 
       }
     
     
