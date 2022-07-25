@@ -3184,7 +3184,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     key_resp.rt = undefined;
     _key_resp_allKeys = [];
     salienceavatar_image.setImage(partneravatar);
-    displayrating_text.setText(rating_forsalience);
+    // displayrating_text.setText(rating_forsalience); //get rid of NAN
     // keep track of which components have finished
     SalienceRatingComponents = [];
     SalienceRatingComponents.push(saliencequestion_text);
@@ -3243,11 +3243,14 @@ function SalienceRatingRoutineEachFrame() {
             salience_slider.markerPos = (salience_slider.markerPos - 1);
             rating_forsalience = salience_slider.getRating();
             displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
+            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()*10/10))
+            
         } else {
             if (_pj.in_es6("right", keys)) {
                 salience_slider.markerPos = (salience_slider.markerPos + 1);
                 rating_forsalience = salience_slider.getRating();
                 displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
+                salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()*10/10))
             }
         }
     }
