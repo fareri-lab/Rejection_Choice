@@ -3319,7 +3319,7 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       displayrating_text.tStart = t;  // (not accounting for frame time here)
       displayrating_text.frameNStart = frameN;  // exact frame index
-      displayrating_text.setText(salience_slider.getMarkerPos(), 1);
+      displayrating_text.setText(salience_slider.getRating(), 1);
       displayrating_text.setAutoDraw(true);
     
     }
