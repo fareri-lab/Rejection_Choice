@@ -3314,14 +3314,42 @@ function SalienceRatingRoutineEachFrame() {
 
     
     // *displayrating_text* updates
-    if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      displayrating_text.tStart = t;  // (not accounting for frame time here)
-      displayrating_text.frameNStart = frameN;  // exact frame index
-      displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-      displayrating_text.setAutoDraw(true);
-      
-    }
+    // if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
+    //   // keep track of start time/frame for later
+    //   displayrating_text.tStart = t;  // (not accounting for frame time here)
+    //   displayrating_text.frameNStart = frameN;  // exact frame index
+    //   displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    //   displayrating_text.setAutoDraw(true);
+    // 
+    //}
+    salience_ratingvalue = salience_slider.getRating();
+    function financial(x) {
+      return Number.parseFloat(x).toFixed(2);
+        }
+          if (salience_ratingvalue < 0.015) {
+            displayrating_text.setText(financial(salience_ratingvalue.toString()));
+            displayrating_text.setAutoDraw(true);
+          }
+          else if (0.015 < salience_ratingvalue && salience_ratingvalue < 0.025) {
+                displayrating_text.setText(financial(salience_ratingvalue.toString()));
+                displayrating_text.setAutoDraw(true);
+
+          }
+
+          else if (0.025 < salience_ratingvalue && salience_ratingvalue < 0.035) {
+                displayrating_text.setText(financial(salience_ratingvalue.toString()));
+                displayrating_text.setAutoDraw(true);
+
+          }
+            else if (0.035 < salience_ratingvalue && salience_ratingvalue < 0.045) {
+                displayrating_text.setText(financial(salience_ratingvalue.toString()));
+                displayrating_text.setAutoDraw(true);
+
+          }
+          else if (0.045 < salience_ratingvalue && salience_ratingvalue <= 0.05) {
+              displayrating_text.setText(financial(salience_ratingvalue.toString()));
+              displayrating_text.setAutoDraw(true);
+          }
 
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
@@ -3359,9 +3387,9 @@ function SalienceRatingRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from saliencyrating_code
-    entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
-    
-    // update the trial handler
+    //entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
+    entiretaskloop.addData("salience_rating", financial(RatingScale.getRating()))
+    // update the trial handler);
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(key_resp.corr, level);
     }
