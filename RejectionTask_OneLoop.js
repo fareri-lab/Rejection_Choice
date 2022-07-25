@@ -3236,7 +3236,7 @@ function SalienceRatingRoutineEachFrame() {
     // salience_slider.setAutoDraw(true);
     function financial(x) {
       return Number.parseFloat(x).toFixed(2);
-    
+    }
     keys = psychoJS.eventManager.getKeys();
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
