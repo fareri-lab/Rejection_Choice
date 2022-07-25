@@ -3146,14 +3146,32 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if ((TrialNumber !== 30) || (TrialNumber !== 60) || (TrialNumber !== 90)) {
-        continueRoutine = false;
+    //if (TrialNumber !== 30) {
+        //continueRoutine = false;
   
-      } else { 
-        continueRoutine = true; 
-      }
-    
-    
+      //} else { 
+        //continueRoutine = true; 
+      //}
+    // if (TrialNumber !== 60) {
+    //       continueRoutine = false;
+    // 
+    //     } else { 
+    //       continueRoutine = true; 
+    //     }    
+    // if (TrialNumber !== 90) {
+    //         continueRoutine = false;
+    // 
+    //       } else { 
+    //         continueRoutine = true; 
+    //       }
+    const trials = [3, 6, 9]
+
+    if (trials.includes(TrialNumber) == true) {
+      continueRoutine = true;
+
+    } else {
+      continueRoutine = false;
+    }
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
     
     Use your left and right arrows to move the arrow to your desired rating.`
