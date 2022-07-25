@@ -3242,15 +3242,15 @@ function SalienceRatingRoutineEachFrame() {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 1);
             rating_forsalience = salience_slider.getRating();
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
-            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()*10/10))
+            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
             
         } else {
             if (_pj.in_es6("right", keys)) {
                 salience_slider.markerPos = (salience_slider.markerPos + 1);
                 rating_forsalience = salience_slider.getRating();
-                displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
-                salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()*10/10))
+                displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+                salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
             }
         }
     }
