@@ -3234,20 +3234,22 @@ function SalienceRatingRoutineEachFrame() {
     _pj = {};
     _pj_snippets(_pj);
     // salience_slider.setAutoDraw(true);
-    
+    function financial(x) {
+      return Number.parseFloat(x).toFixed(2);
     
     keys = psychoJS.eventManager.getKeys();
-    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 0.1);
             rating_forsalience = salience_slider.getRating();
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
+            displayrating_text.setText(financial(rating_forsalience.toString()));
+
         } else {
             if (_pj.in_es6("right", keys)) {
                 salience_slider.markerPos = (salience_slider.markerPos + 0.1);
                 rating_forsalience = salience_slider.getRating();
-                displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
+                displayrating_text.setText(financial(rating_forsalience.toString()));
+
             }
         }
     }
