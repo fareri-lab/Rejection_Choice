@@ -3233,7 +3233,7 @@ function SalienceRatingRoutineEachFrame() {
     }
     _pj = {};
     _pj_snippets(_pj);
-    salience_slider.setAutoDraw(true);
+    // salience_slider.setAutoDraw(true);
     
     
     keys = psychoJS.eventManager.getKeys();
@@ -3242,12 +3242,12 @@ function SalienceRatingRoutineEachFrame() {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 0.1);
             rating_forsalience = salience_slider.getRating();
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
         } else {
             if (_pj.in_es6("right", keys)) {
                 salience_slider.markerPos = (salience_slider.markerPos + 0.1);
                 rating_forsalience = salience_slider.getRating();
-                displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+                displayrating_text.setText(Math.round(salience_slider.getMarkerPos()*10/10));
             }
         }
     }
@@ -3405,8 +3405,8 @@ function SalienceRatingRoutineEnd(snapshot) {
                 }
 
     // Run 'End Routine' code from saliencyrating_code
-    //entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
-    entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
+    entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
+    //entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
     // update the trial handler);
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(key_resp.corr, level);
