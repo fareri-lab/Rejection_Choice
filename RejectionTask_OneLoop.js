@@ -3205,6 +3205,7 @@ function SalienceRatingRoutineBegin(snapshot) {
 
 var keys;
 var rating_forsalience;
+var salience_ratingvalue;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
@@ -3388,7 +3389,7 @@ function SalienceRatingRoutineEnd(snapshot) {
     }
     // Run 'End Routine' code from saliencyrating_code
     //entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
-    entiretaskloop.addData("salience_rating", financial(RatingScale.getRating()))
+    entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
     // update the trial handler);
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(key_resp.corr, level);
