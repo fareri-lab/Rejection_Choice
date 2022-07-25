@@ -3400,12 +3400,14 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    if (TrialNumber !== 30 || 60 || 90) {
-        continueRoutine = false;
-  
-      } else { 
-        continueRoutine = true; 
-      }
+    const trials = [3, 6, 9]
+
+    if (trials.includes(TrialNumber) == true) {
+      continueRoutine = true;
+
+    } else {
+      continueRoutine = false;
+    }
     stressleveltext = `Please rate your current stress level.
     
     
