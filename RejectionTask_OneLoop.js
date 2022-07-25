@@ -3237,7 +3237,7 @@ function SalienceRatingRoutineEachFrame() {
     
     
     keys = psychoJS.eventManager.getKeys();
-    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    displayrating_text.setText('Click line');
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 1);
