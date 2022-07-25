@@ -3387,6 +3387,10 @@ function SalienceRatingRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     }
+    function financial(x) {
+                  return Number.parseFloat(x).toFixed(2);
+                }
+
     // Run 'End Routine' code from saliencyrating_code
     //entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
     entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
