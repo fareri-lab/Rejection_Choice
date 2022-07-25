@@ -3174,7 +3174,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     }
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
     
-    Use your left and right arrows to move the arrow to your desired rating.`
+    Use your mouse to move the marker to your desired rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     salience_slider.markerPos = 3;
@@ -3320,6 +3320,7 @@ function SalienceRatingRoutineEachFrame() {
       displayrating_text.frameNStart = frameN;  // exact frame index
       
       displayrating_text.setAutoDraw(true);
+      displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
     }
 
     // check for quit (typically the Esc key)
@@ -3411,7 +3412,7 @@ function StressLevelRoutineBegin(snapshot) {
     stressleveltext = `Please rate your current stress level.
     
     
-    Use your mouse or left and right arrows to move the arrow to your desired rating.`
+    Use your mouse to move the marker to your desired rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     stress_slider.markerPos = 5;
