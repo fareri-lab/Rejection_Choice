@@ -3314,15 +3314,15 @@ function SalienceRatingRoutineEachFrame() {
     }
 
     
-    // *displayrating_text* updates
-    // if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
-    //   // keep track of start time/frame for later
-    //   displayrating_text.tStart = t;  // (not accounting for frame time here)
-    //   displayrating_text.frameNStart = frameN;  // exact frame index
-    //   displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    //   displayrating_text.setAutoDraw(true);
-    // 
-    //}
+  //  *displayrating_text* updates
+    if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      displayrating_text.tStart = t;  // (not accounting for frame time here)
+      displayrating_text.frameNStart = frameN;  // exact frame index
+      displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+      displayrating_text.setAutoDraw(true);
+    
+    }
     salience_ratingvalue = salience_slider.getRating();
     function financial(x) {
       return Number.parseFloat(x).toFixed(2);
