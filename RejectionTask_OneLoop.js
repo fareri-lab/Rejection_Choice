@@ -3211,46 +3211,47 @@ function SalienceRatingRoutineEachFrame() {
     //--- Loop for each frame of Routine 'SalienceRating' ---
     // get current time
     t = SalienceRatingClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    frameN = frameN + 1;
+    // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
-    // var _pj;
-    // function _pj_snippets(container) {
-    //     function in_es6(left, right) {
-    //         if (((right instanceof Array) || ((typeof right) === "string"))) {
-    //             return (right.indexOf(left) > (- 1));
-    //         } else {
-    //             if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
-    //                 return right.has(left);
-    //             } else {
-    //                 return (left in right);
-    //             }
-    //         }
-    //     }
-    //     container["in_es6"] = in_es6;
-    //     return container;
-    // }
-    // _pj = {};
-    // _pj_snippets(_pj);
-    // salience_slider.setAutoDraw(true);
-    // 
-    // 
-    // keys = psychoJS.eventManager.getKeys();
-    // displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    // if (keys.length) {
-    //     if (_pj.in_es6("left", keys)) {
-    //         salience_slider.markerPos = (salience_slider.markerPos - 0.1);
-    //         rating_forsalience = salience_slider.getRating();
-    //         displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    //     } else {
-    //         if (_pj.in_es6("right", keys)) {
-    //             salience_slider.markerPos = (salience_slider.markerPos + 0.1);
-    //             rating_forsalience = salience_slider.getRating();
-    //             displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    //         }
-    //     }
-    // }
-    // 
+    var _pj;
+    function _pj_snippets(container) {
+        function in_es6(left, right) {
+            if (((right instanceof Array) || ((typeof right) === "string"))) {
+                return (right.indexOf(left) > (- 1));
+            } else {
+                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                    return right.has(left);
+                } else {
+                    return (left in right);
+                }
+            }
+        }
+        container["in_es6"] = in_es6;
+        return container;
+    }
+    _pj = {};
+    _pj_snippets(_pj);
+    salience_slider.setAutoDraw(true);
+    
+    
+    keys = psychoJS.eventManager.getKeys();
+    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    if (keys.length) {
+        if (_pj.in_es6("left", keys)) {
+            salience_slider.markerPos = (salience_slider.markerPos - 0.1);
+            rating_forsalience = salience_slider.getRating();
+            displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+        } else {
+            if (_pj.in_es6("right", keys)) {
+                salience_slider.markerPos = (salience_slider.markerPos + 0.1);
+                rating_forsalience = salience_slider.getRating();
+                displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+            }
+        }
+    }
+    
     // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
