@@ -3318,9 +3318,9 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       displayrating_text.tStart = t;  // (not accounting for frame time here)
       displayrating_text.frameNStart = frameN;  // exact frame index
-      
-      displayrating_text.setAutoDraw(true);
       displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+      displayrating_text.setAutoDraw(true);
+      
     }
 
     // check for quit (typically the Esc key)
@@ -3531,6 +3531,9 @@ function StressLevelRoutineEachFrame() {
       displaystressrating_text.frameNStart = frameN;  // exact frame index
       
       displaystressrating_text.setAutoDraw(true);
+
+
+      
     }
 
     // check for quit (typically the Esc key)
@@ -3610,4 +3613,4 @@ async function quitPsychoJS(message, isCompleted) {
     psychoJS.experiment.nextEntry();
    };
 }    
-  
+]
