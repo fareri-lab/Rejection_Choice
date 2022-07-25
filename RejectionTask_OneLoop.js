@@ -3579,7 +3579,7 @@ function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
     return Scheduler.Event.NEXT;
-    };
+    }
 }
 
 
