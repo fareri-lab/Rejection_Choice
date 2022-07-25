@@ -3146,7 +3146,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
-    if (TrialNumber == 30 || 60 || 90) {
+    if (TrialNumber !== 30 || 60 || 90) {
         continueRoutine = true;
   
       } else { 
@@ -3589,48 +3589,3 @@ async function quitPsychoJS(message, isCompleted) {
     psychoJS.experiment.nextEntry();
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  psychoJS.window.close();
-  psychoJS.quit({message: message, isCompleted: isCompleted});
-  
-  return Scheduler.Event.QUIT;
-}
