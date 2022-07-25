@@ -779,7 +779,7 @@ async function experimentInit() {
   displayrating_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'displayrating_text',
-    text: '',
+    text: 'Click line',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, (- 0.65)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
@@ -3237,7 +3237,7 @@ function SalienceRatingRoutineEachFrame() {
     
     
     keys = psychoJS.eventManager.getKeys();
-    displayrating_text.setText('Click line');
+    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 1);
