@@ -800,7 +800,7 @@ async function experimentInit() {
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
   // stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
-  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5,6,7,8,9], "ticks": [1, 2, 3, 4, 5,6,7,8,9], "granularity": 0.0,  "opacity": 1, "labelColor": "white", "markerColor": "green", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5,6,7,8,9], "ticks": [1, 2, 3, 4, 5,6,7,8,9], "granularity": 0.0,  "opacity": 1, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
 
   stresslevel_text = new visual.TextStim({
     win: psychoJS.window,
@@ -819,7 +819,7 @@ async function experimentInit() {
   displaystressrating_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'displaystressrating_text',
-    text: '',
+    text: 'Use arrow keys',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, (- 0.65)], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -3353,25 +3353,25 @@ function SalienceRatingRoutineEachFrame() {
       // salience_slider.setAutoDraw(true);
       
       
-      keys = psychoJS.eventManager.getKeys();
-  //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-      
-      if (keys.length) {
-          if (_pj.in_es6("left", keys)) {
-              salience_slider.markerPos = (salience_slider.markerPos - 1);
-              rating_forsalience = salience_slider.getRating();
-              displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-              salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-              
-          } else {
-              if (_pj.in_es6("right", keys)) {
-                  salience_slider.markerPos = (salience_slider.markerPos + 1);
-                  rating_forsalience = salience_slider.getRating();
-                  displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-                  salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-              }
-          }
-      }
+  //     keys = psychoJS.eventManager.getKeys();
+  // //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+  // 
+  //     if (keys.length) {
+  //         if (_pj.in_es6("left", keys)) {
+  //             salience_slider.markerPos = (salience_slider.markerPos - 1);
+  //             rating_forsalience = salience_slider.getRating();
+  //             displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+  //             salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+  // 
+  //         } else {
+  //             if (_pj.in_es6("right", keys)) {
+  //                 salience_slider.markerPos = (salience_slider.markerPos + 1);
+  //                 rating_forsalience = salience_slider.getRating();
+  //                 displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+  //                 salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+  //             }
+  //         }
+  //     }
 
     // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
       const validclicks = [1,2,3,4,5]
@@ -3551,7 +3551,7 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    const trials = [3, 6, 9]
+    const trials = [1, 3, 6, 9]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3565,13 +3565,13 @@ function StressLevelRoutineBegin(snapshot) {
     Use your mouse to move the marker to your desired rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
-    stress_slider.markerPos = 5;
+    // stress_slider.markerPos = 5;
     
     stresslevel_text.setText(stressleveltext);
     stresslevel_keypress.keys = undefined;
     stresslevel_keypress.rt = undefined;
     _stresslevel_keypress_allKeys = [];
-    displaystressrating_text.setText(rating_forstress);
+  //  displaystressrating_text.setText(rating_forstress);
     // keep track of which components have finished
     StressLevelComponents = [];
     StressLevelComponents.push(stresslevel_text);
@@ -3672,7 +3672,46 @@ function StressLevelRoutineEachFrame() {
         continueRoutine = false;
       }
     }
-    
+    var _pj;
+      function _pj_snippets(container) {
+          function in_es6(left, right) {
+              if (((right instanceof Array) || ((typeof right) === "string"))) {
+                  return (right.indexOf(left) > (- 1));
+              } else {
+                  if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                      return right.has(left);
+                  } else {
+                      return (left in right);
+                  }
+              }
+          }
+          container["in_es6"] = in_es6;
+          return container;
+      }
+      _pj = {};
+      _pj_snippets(_pj);
+      // salience_slider.setAutoDraw(true);
+      
+      
+      keys = psychoJS.eventManager.getKeys();
+  //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+  
+      if (keys.length) {
+          if (_pj.in_es6("left", keys)) {
+              stress_slider.markerPos = (stress_slider.markerPos - 1);
+              rating_forstress = stress_slider.getRating();
+              displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
+              stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
+  
+          } else {
+              if (_pj.in_es6("right", keys)) {
+                  stress_slider.markerPos = (stress_slider.markerPos + 1);
+                  rating_forstress = stress_slider.getRating();
+                  displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
+                  stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
+              }
+          }
+      }
     
     // *displaystressrating_text* updates
     if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
