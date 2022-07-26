@@ -3361,21 +3361,61 @@ function SalienceRatingRoutineEachFrame() {
               }
           }
       }
+
       // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
       const validclicks = [1,2,3,4,5]
         if (userMouse.isPressedIn(salience_slider)) {
-          marker_pos =   userMouse.isPressedIn(salience_slider);
-            if (validclicks.includes(marker_pos) == true) {
-              gotValidClick = true;
-              salience_slider.setMarkerPos(marker_pos);
-              displayrating_text.setText(marker_pos);
-            }else {
-              gotValidClick = false;
-              salience_slider.setMarkerPos(null)
-              displayrating_text.setText('Do not click');
+          ratingvalue = salience_slider.getRating();
+            if (1 < ratingvalue && ratingvalue < 1.5) {
+                  salience_slider.setMarkerPos(1)
+                  salience_slider.setRating(1)
+                  displayrating_text.setText(ratingvalue);
+                  displayrating_text.setAutoDraw(true);
 
             }
+
+            else if (1.5 < ratingvalue && ratingvalue < 2.5) {
+                  salience_slider.setMarkerPos(2)
+                  salience_slider.setRating(2)
+                  displayrating_text.setText(ratingvalue);
+                  displayrating_text.setAutoDraw(true);
+
+            }
+              else if (2.5 < ratingvalue && ratingvalue < 3.5) {
+                  salience_slider.setMarkerPos(3)
+                  salience_slider.setRating(3)
+                  displayrating_text.setText(ratingvalue);
+                  displayrating_text.setAutoDraw(true);
+
+            }
+            else if (3.5 < ratingvalue && ratingvalue < 4.5) {
+                salience_slider.setMarkerPos(4)
+                salience_slider.setRating(4)
+                displayrating_text.setText(ratingvalue);
+                displayrating_text.setAutoDraw(true);
+              }
+            else if (4.5 < ratingvalue && ratingvalue < 5) {
+                salience_slider.setMarkerPos(5)
+                salience_slider.setRating(5)
+                displayrating_text.setText(ratingvalue);
+                displayrating_text.setAutoDraw(true);
+                
           }
+            }
+
+
+          
+          //   if (validclicks.includes(marker_pos) == true) {
+          //     gotValidClick = true;
+          //     salience_slider.setMarkerPos(marker_pos);
+          //     displayrating_text.setText(marker_pos);
+          //   }else {
+          //     gotValidClick = false;
+          //     salience_slider.setMarkerPos(null)
+          //     displayrating_text.setText('Do not click');
+          // 
+          //   }
+          // }
       
     // salience_ratingvalue = salience_slider.getRating();
     // function financial(x) {
