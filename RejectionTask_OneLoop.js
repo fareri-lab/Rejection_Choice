@@ -621,7 +621,7 @@ async function experimentInit() {
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined, 
     image : 'Images/facedown_card.png', mask : undefined,
-    ori : 0.0, pos : [0, 0], size : [0.75, 1],
+    ori : 0.0, pos : [0, -0.1], size : [0.75, 1],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -2.0 
@@ -631,8 +631,8 @@ async function experimentInit() {
     name: 'computerresponse',
     text: '',
     font: 'Open Sans',
-    units: undefined, 
-    pos: [0, (- 0.4)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    units: 8pt, 
+    pos: [0, (- 0.5)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -3.0 
