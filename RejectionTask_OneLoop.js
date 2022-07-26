@@ -3215,46 +3215,8 @@ function SalienceRatingRoutineEachFrame() {
     // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
-    var _pj;
-    function _pj_snippets(container) {
-        function in_es6(left, right) {
-            if (((right instanceof Array) || ((typeof right) === "string"))) {
-                return (right.indexOf(left) > (- 1));
-            } else {
-                if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
-                    return right.has(left);
-                } else {
-                    return (left in right);
-                }
-            }
-        }
-        container["in_es6"] = in_es6;
-        return container;
-    }
-    _pj = {};
-    _pj_snippets(_pj);
-    // salience_slider.setAutoDraw(true);
-    
-    
-    keys = psychoJS.eventManager.getKeys();
-//    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-    
-    if (keys.length) {
-        if (_pj.in_es6("left", keys)) {
-            salience_slider.markerPos = (salience_slider.markerPos - 1);
-            rating_forsalience = salience_slider.getRating();
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-            
-        } else {
-            if (_pj.in_es6("right", keys)) {
-                salience_slider.markerPos = (salience_slider.markerPos + 1);
-                rating_forsalience = salience_slider.getRating();
-                displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-                salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-            }
-        }
-    }
+  // where keys code was originally
+
 
     // start_position = salience_slider.markerPos
     // new_position = salience_slider.getcurrentmarkerppos()
@@ -3333,10 +3295,50 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       displayrating_text.tStart = t;  // (not accounting for frame time here)
       displayrating_text.frameNStart = frameN;  // exact frame index
-      displayrating_text.setText(salience_slider.getMarkerPos());
+      //displayrating_text.setText(salience_slider.getMarkerPos());
       displayrating_text.setAutoDraw(true);
     
     }
+    var _pj;
+      function _pj_snippets(container) {
+          function in_es6(left, right) {
+              if (((right instanceof Array) || ((typeof right) === "string"))) {
+                  return (right.indexOf(left) > (- 1));
+              } else {
+                  if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
+                      return right.has(left);
+                  } else {
+                      return (left in right);
+                  }
+              }
+          }
+          container["in_es6"] = in_es6;
+          return container;
+      }
+      _pj = {};
+      _pj_snippets(_pj);
+      // salience_slider.setAutoDraw(true);
+      
+      
+      keys = psychoJS.eventManager.getKeys();
+  //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+      
+      if (keys.length) {
+          if (_pj.in_es6("left", keys)) {
+              salience_slider.markerPos = (salience_slider.markerPos - 1);
+              rating_forsalience = salience_slider.getRating();
+              displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+              salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+              
+          } else {
+              if (_pj.in_es6("right", keys)) {
+                  salience_slider.markerPos = (salience_slider.markerPos + 1);
+                  rating_forsalience = salience_slider.getRating();
+                  displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+                  salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+              }
+          }
+      }
     // salience_ratingvalue = salience_slider.getRating();
     // function financial(x) {
     //   return Number.parseFloat(x).toFixed(2);
