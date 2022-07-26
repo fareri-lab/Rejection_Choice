@@ -3285,7 +3285,7 @@ function SalienceRatingRoutineEachFrame() {
     if (key_resp.status === PsychoJS.Status.STARTED) {
       let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
       _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
-      if (userMouse.isPressedIn(salience_slider) && _key_resp_allKeys.length > 0) {
+      if (_key_resp_allKeys.length > 0 && userMouse.isPressedIn(salience_slider)) {
         key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
         key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
         // a response ends the routine
