@@ -3697,6 +3697,7 @@ function StressLevelRoutineEachFrame() {
   //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
   
       if (keys.length) {
+          stress_slider.setMarkerPos(3);
           if (_pj.in_es6("left", keys)) {
               stress_slider.markerPos = (stress_slider.markerPos - 1);
               rating_forstress = stress_slider.getRating();
