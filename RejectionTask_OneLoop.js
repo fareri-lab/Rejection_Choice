@@ -3237,7 +3237,8 @@ function SalienceRatingRoutineEachFrame() {
     
     
     keys = psychoJS.eventManager.getKeys();
-    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+//    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
+    
     if (keys.length) {
         if (_pj.in_es6("left", keys)) {
             salience_slider.markerPos = (salience_slider.markerPos - 1);
@@ -3254,6 +3255,15 @@ function SalienceRatingRoutineEachFrame() {
             }
         }
     }
+
+    // start_position = salience_slider.markerPos
+    // new_position = salience_slider.getcurrentmarkerppos()
+    // 
+    // if new_position != start_position:
+    //   marker = Math.round(salience_slider.getMarkerPos())
+    //   displayrating_text.setText(marker);
+    //   salience_slider.setMarkerPos(marker)
+    // 
     
     // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
