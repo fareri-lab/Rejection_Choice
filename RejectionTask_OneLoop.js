@@ -3365,7 +3365,7 @@ function SalienceRatingRoutineEachFrame() {
           salience_slider.markerPos = salience_slider.markerPos;
           rating_forsalience = rating_forsalience;
         //  displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-        //  salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+          salience_slider.setMarkerPos(0)
 
         }
     // salience_ratingvalue = salience_slider.getRating();
