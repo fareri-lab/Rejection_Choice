@@ -631,8 +631,8 @@ async function experimentInit() {
     name: 'computerresponse',
     text: '',
     font: 'Open Sans',
-    units: '8px', 
-    pos: [0, (- 0.5)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    units: undefined, 
+    pos: [0, (- 0.5)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -3.0 
