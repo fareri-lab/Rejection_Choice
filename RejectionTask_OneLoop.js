@@ -3361,14 +3361,21 @@ function SalienceRatingRoutineEachFrame() {
           }
       }
       // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
+      const validclicks = [1,2,3,4,5]
         if (userMouse.isPressedIn(salience_slider)) {
-        
-        //   salience_slider.markerPos = salience_slider.markerPos;
-        //   rating_forsalience = rating_forsalience;
-          displayrating_text.setText("Clicked");
-        //   salience_slider.setMarkerPos(0)
+          marker_pos =   salience_slider.getMarkerPos();
+            if (marker_pos.includes(validclicks) == true) {
+              gotValidClick = true;
+              salience_slider.setMarkerPos(marker_pos);
+              displayrating_text.setText(marker_pos);
+            }else {
+              gotValidClick = false;
+              salience_slider.setMarkerPos(None)
+              displayrating_text.setText('Do not click');
 
-        }
+            }
+          }
+      
     // salience_ratingvalue = salience_slider.getRating();
     // function financial(x) {
     //   return Number.parseFloat(x).toFixed(2);
