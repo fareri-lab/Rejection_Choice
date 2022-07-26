@@ -3172,7 +3172,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     //       } else { 
     //         continueRoutine = true; 
     //       }
-    const trials = [3, 6, 9]
+    const trials = [1, 3, 6, 9]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3225,6 +3225,7 @@ var keys;
 var rating_forsalience;
 var salience_ratingvalue;
 var gotValidClick;
+var marker_pos;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
@@ -3499,7 +3500,7 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    const trials = [1, 3, 6, 9]
+    const trials = [3, 6, 9]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
