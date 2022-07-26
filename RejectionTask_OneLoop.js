@@ -3403,7 +3403,7 @@ function SalienceRatingRoutineEachFrame() {
                 displayrating_text.setAutoDraw(true);
 
           }
-          else if (3.5 < ratingvalue) && ratingvalue < 4.5) {
+          else if (3.5 < ratingvalue && ratingvalue < 4.5) {
               salience_slider.setMarkerPos(4)
               salience_slider.setRating(4)
               displayrating_text.setText(4);
