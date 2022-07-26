@@ -3360,14 +3360,14 @@ function SalienceRatingRoutineEachFrame() {
               }
           }
       }
-      const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
-          if (userMouse.isPressedIn(salience_slider)) {
-            salience_slider.markerPos = salience_slider.markerPos;
-            rating_forsalience = rating_forsalience;
-            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-  
-          }
+      // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
+        if (userMouse.isPressedIn(salience_slider)) {
+          salience_slider.markerPos = salience_slider.markerPos;
+          rating_forsalience = rating_forsalience;
+          displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+          salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+
+        }
     // salience_ratingvalue = salience_slider.getRating();
     // function financial(x) {
     //   return Number.parseFloat(x).toFixed(2);
