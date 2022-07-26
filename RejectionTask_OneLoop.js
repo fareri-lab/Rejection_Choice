@@ -3363,46 +3363,46 @@ function SalienceRatingRoutineEachFrame() {
           }
       }
 
-      // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
-      const validclicks = [1,2,3,4,5]
-        if (userMouse.isPressedIn(salience_slider)) {
-          ratingvalue = salience_slider.getRating();
-            if (1 < ratingvalue && ratingvalue < 1.5) {
-                  salience_slider.setMarkerPos(1)
-                  salience_slider.setRating(1)
-                  displayrating_text.setText(1);
-                  displayrating_text.setAutoDraw(true);
-
-            }
-
-            else if (1.5 < ratingvalue && ratingvalue < 2.5) {
-                  salience_slider.setMarkerPos(2)
-                  salience_slider.setRating(2)
-                  displayrating_text.setText(2);
-                  displayrating_text.setAutoDraw(true);
-
-            }
-              else if (2.5 < ratingvalue && ratingvalue < 3.5) {
-                  salience_slider.setMarkerPos(3)
-                  salience_slider.setRating(3)
-                  displayrating_text.setText(3);
-                  displayrating_text.setAutoDraw(true);
-
-            }
-            else if (3.5 < ratingvalue && ratingvalue < 4.5) {
-                salience_slider.setMarkerPos(4)
-                salience_slider.setRating(4)
-                displayrating_text.setText(4);
+    // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
+    const validclicks = [1,2,3,4,5]
+      if (userMouse.isPressedIn(salience_slider)) {
+        ratingvalue = salience_slider.getRating();
+          if (1 < ratingvalue && ratingvalue < 1.5) {
+                salience_slider.setMarkerPos(1)
+                salience_slider.setRating(1)
+                displayrating_text.setText(1);
                 displayrating_text.setAutoDraw(true);
-              }
-            else if (4.5 < ratingvalue && ratingvalue < 5) {
-                salience_slider.setMarkerPos(5)
-                salience_slider.setRating(5)
-                displayrating_text.setText(5);
-                displayrating_text.setAutoDraw(true);
-                
+
           }
+
+          else if (1.5 < ratingvalue && ratingvalue < 2.5) {
+                salience_slider.setMarkerPos(2)
+                salience_slider.setRating(2)
+                displayrating_text.setText(2);
+                displayrating_text.setAutoDraw(true);
+
+          }
+            else if (2.5 < ratingvalue && ratingvalue < 3.5) {
+                salience_slider.setMarkerPos(3)
+                salience_slider.setRating(3)
+                displayrating_text.setText(3);
+                displayrating_text.setAutoDraw(true);
+
+          }
+          else if (3.5 < ratingvalue && ratingvalue < 4.5) {
+              salience_slider.setMarkerPos(4)
+              salience_slider.setRating(4)
+              displayrating_text.setText(4);
+              displayrating_text.setAutoDraw(true);
             }
+          else if (4.5 < ratingvalue && ratingvalue < 5) {
+              salience_slider.setMarkerPos(5)
+              salience_slider.setRating(5)
+              displayrating_text.setText(5);
+              displayrating_text.setAutoDraw(true);
+              
+        }
+          }
 
 
           
