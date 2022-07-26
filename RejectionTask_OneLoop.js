@@ -3281,23 +3281,23 @@ function SalienceRatingRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { key_resp.start(); }); // start on screen flip
       psychoJS.window.callOnFlip(function() { key_resp.clearEvents(); });
     }
+    if (userMouse.isPressedIn(salience_slider)) {
+        if (key_resp.status === PsychoJS.Status.STARTED) {
+          let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
+          _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
+          
+            if (_key_resp_allKeys.length > 0) {
+              key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
+              key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
+              // a response ends the routine
+              continueRoutine = false;
 
-    if (key_resp.status === PsychoJS.Status.STARTED) {
-      let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
-      _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
-      if (userMouse.isPressedIn(salience_slider)) {
-        if (_key_resp_allKeys.length > 0) {
-          key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
-          key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
-          // a response ends the routine
-          continueRoutine = false;
-
-      } else {
-        continueRoutine = true;
-            
+          } else {
+            continueRoutine = true;
+                
+          }
+        }
       }
-    }
-  }
     
     
     // *salienceavatar_image* updates
