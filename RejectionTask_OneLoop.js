@@ -3367,7 +3367,7 @@ function SalienceRatingRoutineEachFrame() {
     // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
       const validclicks = [1,2,3,4,5]
         if (userMouse.isPressedIn(salience_slider)) {
-          ratingvalue = salience_slider.getRating();
+          ratingvalue = salience_slider.getMarkerPos();
             if (1 < ratingvalue && ratingvalue < 1.5) {
                   salience_slider.setMarkerPos(1)
                   salience_slider.setRating(1)
