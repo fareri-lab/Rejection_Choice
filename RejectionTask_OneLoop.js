@@ -3226,6 +3226,7 @@ var rating_forsalience;
 var salience_ratingvalue;
 var gotValidClick;
 var marker_pos;
+var ratingvalue;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
