@@ -727,26 +727,27 @@ async function experimentInit() {
   // Run 'Begin Experiment' code from saliencyrating_code
   // salience_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5], "ticks": [1, 2, 3, 4, 5], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
   salience_slider = new visual.Slider({
-    "win": psychoJS.window,
-     "name": "slider", 
-     "size": [1.0, 0.1], 
-     "pos": [0, (- 0.4)],
-     "units": null,
-     "labels": [1, 2, 3, 4, 5],
-     "ticks": [1, 2, 3, 4, 5],
-     "granularity": 0.0, 
-      "opacity": null, 
-      "labelColor": "white", 
-      "markerColor": "cornflowerblue",
-      "lineColor": "white", 
-      "colorSpace": "rgb",
-      "font": "Open Sans",
-      "labelHeight": 0.05,
-      "flip": false,
-      "ori": 0.0,
-      "depth": (- 5),
-      "readOnly": false,
-       "autoDraw": false});
+    win: psychoJS.window,
+    name: "slider", 
+    size: [1.0, 0.1], 
+    pos: [0, (- 0.4)],
+    units: 'height',
+    labels: [1, 2, 3, 4, 5],
+    ticks: [1, 2, 3, 4, 5],
+    granularity: 0.0, 
+    opacity: null, 
+    style: [visual.Slider.Style.RATING],
+    labelColor: "white", 
+    markerColor: "cornflowerblue",
+    lineColor: "white", 
+    colorSpace: "rgb",
+    font: "Open Sans",
+    labelHeight: 0.05,
+    flip: false,
+    ori: 0.0,
+    depth: (- 5),
+    readOnly: false,
+    autoDraw: false});
   
   saliencequestion_text = new visual.TextStim({
     win: psychoJS.window,
@@ -3364,45 +3365,45 @@ function SalienceRatingRoutineEachFrame() {
       }
 
     // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
-    const validclicks = [1,2,3,4,5]
-      if (userMouse.isPressedIn(salience_slider)) {
-        ratingvalue = salience_slider.getRating();
-          if (1 < ratingvalue && ratingvalue < 1.5) {
-                salience_slider.setMarkerPos(1)
-                salience_slider.setRating(1)
-                displayrating_text.setText(1);
-                displayrating_text.setAutoDraw(true);
+      const validclicks = [1,2,3,4,5]
+        if (userMouse.isPressedIn(salience_slider)) {
+          ratingvalue = salience_slider.getRating();
+            if (1 < ratingvalue && ratingvalue < 1.5) {
+                  salience_slider.setMarkerPos(1)
+                  salience_slider.setRating(1)
+                  displayrating_text.setText(1);
+                  displayrating_text.setAutoDraw(true);
 
-          }
-
-          else if (1.5 < ratingvalue && ratingvalue < 2.5) {
-                salience_slider.setMarkerPos(2)
-                salience_slider.setRating(2)
-                displayrating_text.setText(2);
-                displayrating_text.setAutoDraw(true);
-
-          }
-            else if (2.5 < ratingvalue && ratingvalue < 3.5) {
-                salience_slider.setMarkerPos(3)
-                salience_slider.setRating(3)
-                displayrating_text.setText(3);
-                displayrating_text.setAutoDraw(true);
-
-          }
-          else if (3.5 < ratingvalue && ratingvalue < 4.5) {
-              salience_slider.setMarkerPos(4)
-              salience_slider.setRating(4)
-              displayrating_text.setText(4);
-              displayrating_text.setAutoDraw(true);
             }
-          else if (4.5 < ratingvalue && ratingvalue < 5) {
-              salience_slider.setMarkerPos(5)
-              salience_slider.setRating(5)
-              displayrating_text.setText(5);
-              displayrating_text.setAutoDraw(true);
-              
-        }
+
+            else if (1.5 < ratingvalue && ratingvalue < 2.5) {
+                  salience_slider.setMarkerPos(2)
+                  salience_slider.setRating(2)
+                  displayrating_text.setText(2);
+                  displayrating_text.setAutoDraw(true);
+
+            }
+              else if (2.5 < ratingvalue && ratingvalue < 3.5) {
+                  salience_slider.setMarkerPos(3)
+                  salience_slider.setRating(3)
+                  displayrating_text.setText(3);
+                  displayrating_text.setAutoDraw(true);
+
+            }
+            else if (3.5 < ratingvalue && ratingvalue < 4.5) {
+                salience_slider.setMarkerPos(4)
+                salience_slider.setRating(4)
+                displayrating_text.setText(4);
+                displayrating_text.setAutoDraw(true);
+              }
+            else if (4.5 < ratingvalue && ratingvalue < 5) {
+                salience_slider.setMarkerPos(5)
+                salience_slider.setRating(5)
+                displayrating_text.setText(5);
+                displayrating_text.setAutoDraw(true);
+                
           }
+            }
 
 
           
