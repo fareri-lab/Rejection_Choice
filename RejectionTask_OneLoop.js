@@ -3251,14 +3251,14 @@ function SalienceRatingRoutineEachFrame() {
     //   salience_slider.setMarkerPos(marker)
     // 
     
-    // // *salience_slider* updates
-    if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      salience_slider.tStart = t;  // (not accounting for frame time here)
-      salience_slider.frameNStart = frameN;  // exact frame index
-
-      salience_slider.setAutoDraw(true);
-    }
+    // // // *salience_slider* updates
+    // if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
+    //   // keep track of start time/frame for later
+    //   salience_slider.tStart = t;  // (not accounting for frame time here)
+    //   salience_slider.frameNStart = frameN;  // exact frame index
+    // 
+    //   salience_slider.setAutoDraw(true);
+    // }
 
     // *saliencequestion_text* updates
     if (t >= 0.0 && saliencequestion_text.status === PsychoJS.Status.NOT_STARTED) {
@@ -3323,6 +3323,15 @@ function SalienceRatingRoutineEachFrame() {
       displayrating_text.setAutoDraw(true);
     
     }
+    // // *salience_slider* updates
+    if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      salience_slider.tStart = t;  // (not accounting for frame time here)
+      salience_slider.frameNStart = frameN;  // exact frame index
+
+      salience_slider.setAutoDraw(true);
+    }
+
     var _pj;
       function _pj_snippets(container) {
           function in_es6(left, right) {
