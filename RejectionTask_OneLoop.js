@@ -731,7 +731,7 @@ async function experimentInit() {
     name: "slider", 
     size: [1.0, 0.1], 
     pos: [0, (- 0.4)],
-    units: 'height',
+    units: null,
     labels: [1, 2, 3, 4, 5],
     ticks: [1, 2, 3, 4, 5],
     granularity: 0.0, 
