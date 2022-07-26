@@ -3365,7 +3365,7 @@ function SalienceRatingRoutineEachFrame() {
       const validclicks = [1,2,3,4,5]
         if (userMouse.isPressedIn(salience_slider)) {
           marker_pos =   salience_slider.getMarkerPos();
-            if (marker_pos.includes(validclicks) == true) {
+            if (validclicks.includes(marker_pos) == true) {
               gotValidClick = true;
               salience_slider.setMarkerPos(marker_pos);
               displayrating_text.setText(marker_pos);
