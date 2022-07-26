@@ -215,6 +215,8 @@ var block1_cardimage;
 var ContinueClock;
 var resumeafterlottery_keys;
 var resumetext_text;
+var userMouse;
+var mouseClock;
 var SalienceRatingClock;
 var salience_slider;
 var saliencequestion_text;
@@ -715,6 +717,11 @@ async function experimentInit() {
     depth: -2.0 
   });
   
+  mouseClock =  new util.Clock();
+  userMouse = new core.Mouse({
+    win: psychoJS.window,
+    name: 'userMouse',
+  });
   // Initialize components for Routine "SalienceRating"
   SalienceRatingClock = new util.Clock();
   // Run 'Begin Experiment' code from saliencyrating_code
@@ -3184,11 +3191,21 @@ function SalienceRatingRoutineBegin(snapshot) {
     key_resp.rt = undefined;
     _key_resp_allKeys = [];
     salienceavatar_image.setImage(partneravatar);
+    userMouse.clickReset();
+    mouseClock.reset()
+    mouserec = userMouse.getPos();
+    userMouse.x = [];
+    userMouse.y = [];
+    userMouse.leftButton = [];
+    userMouse.midButton = [];
+    userMouse.rightButton = [];
+    userMouse.time=[];
     // displayrating_text.setText(rating_forsalience); //get rid of NAN
     // keep track of which components have finished
     SalienceRatingComponents = [];
     SalienceRatingComponents.push(saliencequestion_text);
     SalienceRatingComponents.push(key_resp);
+    SalienceRatingComponents.push(userMouse);
     SalienceRatingComponents.push(salienceavatar_image);
     SalienceRatingComponents.push(saliencecontinue_text);
     SalienceRatingComponents.push(displayrating_text);
@@ -3206,12 +3223,15 @@ function SalienceRatingRoutineBegin(snapshot) {
 var keys;
 var rating_forsalience;
 var salience_ratingvalue;
+var gotValidClick;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
     // get current time
     t = SalienceRatingClock.getTime();
     frameN = frameN + 1;
+    let mousepress = userMouse.getPressed(); // read mouse state
+      const xys = userMouse.getPos(); 
     // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
@@ -3339,6 +3359,14 @@ function SalienceRatingRoutineEachFrame() {
               }
           }
       }
+      const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
+          if (userMouse.isPressedIn(salience_slider)) {
+            salience_slider.markerPos = salience_slider.markerPos;
+            rating_forsalience = rating_forsalience;
+            displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
+            salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
+  
+          }
     // salience_ratingvalue = salience_slider.getRating();
     // function financial(x) {
     //   return Number.parseFloat(x).toFixed(2);
