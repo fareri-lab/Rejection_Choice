@@ -3371,7 +3371,7 @@ function SalienceRatingRoutineEachFrame() {
               displayrating_text.setText(marker_pos);
             }else {
               gotValidClick = false;
-              salience_slider.setMarkerPos(None)
+              salience_slider.setMarkerPos(null)
               displayrating_text.setText('Do not click');
 
             }
