@@ -3602,10 +3602,10 @@ function SalienceRatingRoutineEachFrame() {
     //      }
 
   
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
+    // // check for quit (typically the Esc key)
+    // if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+    //   return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    // }
     
     // check if the Routine should terminate
     if (!continueRoutine) {  // a component has requested a forced-end of Routine
