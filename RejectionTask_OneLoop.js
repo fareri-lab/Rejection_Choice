@@ -3825,7 +3825,7 @@ function StressLevelRoutineEachFrame() {
       return Scheduler.Event.NEXT;
     }
   };
-}
+
 
 
 var stresslevel;
