@@ -3848,13 +3848,13 @@ function StressLevelRoutineEachFrame() {
           }
       }
     
-    // *displaystressrating_text* updates
-    if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      displaystressrating_text.tStart = t;  // (not accounting for frame time here)
-      displaystressrating_text.frameNStart = frameN;  // exact frame index
-      
-      displaystressrating_text.setAutoDraw(true);
+    // // *displaystressrating_text* updates
+    // if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
+    //   // keep track of start time/frame for later
+    //   displaystressrating_text.tStart = t;  // (not accounting for frame time here)
+    //   displaystressrating_text.frameNStart = frameN;  // exact frame index
+    // 
+    //   displaystressrating_text.setAutoDraw(true);
 
 
       
