@@ -3560,8 +3560,7 @@ function SalienceRatingRoutineEachFrame() {
           // 
           //   }
           // }
-      
-
+    }  
     // check if the Routine should terminate
     if (!continueRoutine) {  // a component has requested a forced-end of Routine
       return Scheduler.Event.NEXT;
