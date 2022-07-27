@@ -3335,7 +3335,7 @@ function SalienceRatingRoutineBegin(snapshot) {
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
-  }
+  };
 }
 
 
