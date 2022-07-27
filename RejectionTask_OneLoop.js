@@ -3715,7 +3715,7 @@ function StressLevelRoutineBegin(snapshot) {
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
-  }
+  };
 }
 
 var keys;
