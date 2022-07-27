@@ -3708,12 +3708,12 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
     
-    for (const thisComponent of StressLevelComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
+//     for (const thisComponent of StressLevelComponents)
+//       if ('status' in thisComponent)
+//         thisComponent.status = PsychoJS.Status.NOT_STARTED;
+//     return Scheduler.Event.NEXT;
+//   }
+// }
 
 var keys;
 var rating_forstress;
