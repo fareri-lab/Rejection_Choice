@@ -3327,6 +3327,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(displayrating_text);
     SalienceRatingComponents.push(salience_slider);
     SalienceRatingComponents.push(SalienceRatingClock);
+    SalienceRatingComponent.push(Salience_Button);
     
     for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
@@ -3708,12 +3709,12 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
     
-//     for (const thisComponent of StressLevelComponents)
-//       if ('status' in thisComponent)
-//         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-//     return Scheduler.Event.NEXT;
-//   }
-// }
+    for (const thisComponent of StressLevelComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
 
 var keys;
 var rating_forstress;
@@ -3864,11 +3865,11 @@ function StressLevelRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    // for (const thisComponent of StressLevelComponents)
-    //   if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-    //     continueRoutine = true;
-    //     break;
-    //   }
+    for (const thisComponent of StressLevelComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
     
     // refresh the screen if continuing
     if (continueRoutine) {
