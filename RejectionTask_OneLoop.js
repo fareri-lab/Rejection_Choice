@@ -3864,11 +3864,11 @@ function StressLevelRoutineEachFrame() {
     }
     
     continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of StressLevelComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
+    // for (const thisComponent of StressLevelComponents)
+    //   if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+    //     continueRoutine = true;
+    //     break;
+    //   }
     
     // refresh the screen if continuing
     if (continueRoutine) {
