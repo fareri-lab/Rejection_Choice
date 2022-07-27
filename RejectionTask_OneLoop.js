@@ -896,7 +896,7 @@ Salience_usermouse = new core.Mouse({
 });
   StressLevel_Keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
-})
+
 usermouse =  new util.Clock();
 usermouse = new core.Mouse({
   win: psychoJS.window,
