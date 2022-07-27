@@ -3615,7 +3615,7 @@ function SalienceRatingRoutineEachFrame() {
       return Scheduler.Event.NEXT;
     }
   };
-}
+
 
 
 function SalienceRatingRoutineEnd(snapshot) {
