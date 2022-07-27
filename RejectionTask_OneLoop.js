@@ -3327,7 +3327,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(displayrating_text);
     SalienceRatingComponents.push(salience_slider);
     SalienceRatingComponents.push(SalienceRatingClock);
-    SalienceRatingComponent.push(Salience_Button);
+    SalienceRatingComponents.push(Salience_Button);
     
     for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
