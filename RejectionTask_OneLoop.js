@@ -814,7 +814,7 @@ async function experimentInit() {
 //anchor: 'center',
  })
 
-})
+});
 Salience_usermouseClock =  new util.Clock();
 Salience_usermouse = new core.Mouse({
   win: psychoJS.window,
