@@ -3712,6 +3712,8 @@ function StressLevelRoutineBegin(snapshot) {
     // StressLevelComponents.push(displaystressrating_text);
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
+    StressLevelComponents.push(Stress_Button);
+    StressLevelComponents.push(StressRating_Resp);
     
     for (const thisComponent of StressLevelComponents)
       if ('status' in thisComponent)
