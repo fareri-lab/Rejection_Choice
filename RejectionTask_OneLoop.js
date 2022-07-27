@@ -3448,13 +3448,13 @@ function SalienceRatingRoutineEachFrame() {
     
 
     
-  //  *displayrating_text* updates
-    if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      displayrating_text.tStart = t;  // (not accounting for frame time here)
-      displayrating_text.frameNStart = frameN;  // exact frame index
-      //displayrating_text.setText(salience_slider.getMarkerPos());
-      displayrating_text.setAutoDraw(true);
+  // //  *displayrating_text* updates
+  //   if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
+  //     // keep track of start time/frame for later
+  //     displayrating_text.tStart = t;  // (not accounting for frame time here)
+  //     displayrating_text.frameNStart = frameN;  // exact frame index
+  //     //displayrating_text.setText(salience_slider.getMarkerPos());
+  //     displayrating_text.setAutoDraw(true);
     
     }
     // // *salience_slider* updates
