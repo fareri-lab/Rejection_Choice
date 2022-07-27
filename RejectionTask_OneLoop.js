@@ -807,7 +807,7 @@ async function experimentInit() {
   height: 3,
 });
 
- Saliencerating_resp = new visual.TextStim({
+ Saliencerating_Resp = new visual.TextStim({
  win: psychoJS.window,
  text: 'default text',
  pos: [0,-0.35],
