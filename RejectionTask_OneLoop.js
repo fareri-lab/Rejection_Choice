@@ -23,6 +23,8 @@ let expInfo = {
 saliencerating = "";
 saliencequestiontext = "";
 rating_forsalience = "";
+Saliencerating_Resp = "";
+StressRating_Resp="";
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
