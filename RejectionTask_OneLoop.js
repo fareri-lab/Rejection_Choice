@@ -3325,7 +3325,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(userMouse);
     SalienceRatingComponents.push(salienceavatar_image);
     SalienceRatingComponents.push(saliencecontinue_text);
-    SalienceRatingComponents.push(displayrating_text);
+    // SalienceRatingComponents.push(displayrating_text);
     SalienceRatingComponents.push(salience_slider);
     SalienceRatingComponents.push(SalienceRatingClock);
     SalienceRatingComponents.push(Salience_Button);
@@ -3707,7 +3707,7 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents = [];
     StressLevelComponents.push(StressLevel_text);
     StressLevelComponents.push(StressLevel_Keypress);
-    StressLevelComponents.push(displaystressrating_text);
+    // StressLevelComponents.push(displaystressrating_text);
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
     
