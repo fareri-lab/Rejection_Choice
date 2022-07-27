@@ -812,9 +812,9 @@ async function experimentInit() {
  color: new util.Color('white'),
  height: 0.4,
 //anchor: 'center',
- })
 
 
+})
 Salience_usermouseClock =  new util.Clock();
 Salience_usermouse = new core.Mouse({
   win: psychoJS.window,
@@ -897,8 +897,8 @@ Salience_usermouse = new core.Mouse({
   StressLevel_Keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
 })
-Stress_usermouse =  new util.Clock();
-Stress_usermouse = new core.Mouse({
+usermouse =  new util.Clock();
+usermouse = new core.Mouse({
   win: psychoJS.window,
   name: 'userMouse',
 });
