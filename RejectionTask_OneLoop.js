@@ -257,6 +257,7 @@ var Stress_Button;
 var Salience_usermouse;
 var Stress_usermouse;
 var Salience_usermouseClock;
+var usermouse;
 
 
 
