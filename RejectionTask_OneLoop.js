@@ -3250,7 +3250,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     // update component parameters for each repeat
     Saliencerating_Resp.setColor(new util.Color([1.0, 1.0, 1.0]));
     Saliencerating_Resp.setPos([0, 0.2]);
-    Saliencerating_Resp.setText(choices);
+    //Saliencerating_Resp.setText(choices);
     Saliencerating_Resp.setFont('Arial');
     Saliencerating_Resp.setHeight(0.06);
     pracScale_Resp.setHeight(0.02);
