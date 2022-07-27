@@ -3399,7 +3399,7 @@ function SalienceRatingRoutineEachFrame() {
       Salience_Button.setAutoDraw(true);
       Salience_Button.setAutoDraw(true);
       Saliencerating_Resp.setText('Click Line');
-      Saliencerating_resp.setAutoDraw(true);
+      Saliencerating_Resp.setAutoDraw(true);
 
     }
       
