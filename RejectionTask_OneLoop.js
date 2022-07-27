@@ -256,6 +256,8 @@ var Salience_Button;
 var Stress_Button;
 var Salience_usermouse;
 var Stress_usermouse;
+var Salience_usermouseClock;
+
 
 
 async function experimentInit() {
