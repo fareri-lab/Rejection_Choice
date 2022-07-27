@@ -3468,7 +3468,7 @@ if (!continueRoutine) {  // a component has requested a forced-end of Routine
   //     //displayrating_text.setText(salience_slider.getMarkerPos());
   //     displayrating_text.setAutoDraw(true);
     
-    }
+    
     // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
