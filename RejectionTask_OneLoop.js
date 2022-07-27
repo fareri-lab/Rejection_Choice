@@ -3543,24 +3543,9 @@ function SalienceRatingRoutineEachFrame() {
               salience_slider.setRating(5)
               Saliencerating_Resp.setText(5);
               Saliencerating_Resp.setAutoDraw(true);
-              
-        }
-            //}
+            }
+    }
 
-      
-          
-          //   if (validclicks.includes(marker_pos) == true) {
-          //     gotValidClick = true;
-          //     salience_slider.setMarkerPos(marker_pos);
-          //     displayrating_text.setText(marker_pos);
-          //   }else {
-          //     gotValidClick = false;
-          //     salience_slider.setMarkerPos(null)
-          //     displayrating_text.setText('Do not click');
-          // 
-          //   }
-          // }
-    }  
     // check if the Routine should terminate
     if (!continueRoutine) {  // a component has requested a forced-end of Routine
       return Scheduler.Event.NEXT;
