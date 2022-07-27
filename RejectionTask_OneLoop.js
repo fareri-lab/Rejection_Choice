@@ -21,7 +21,7 @@ let expInfo = {
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
-salienceratingtext = "";
+saliencequestiontext = "";
 rating_forsalience = "";
 
 // Run 'Before Experiment' code from stresslevelslider
@@ -226,13 +226,13 @@ var saliencecontinue_text;
 var displayrating_text;
 var StressLevelClock;
 var stress_slider;
-var stresslevel_text;
-var stresslevel_keypress;
+var StressLevel_text;
+var StressLevel_Keypress;
 var displaystressrating_text;
 var globalClock;
 var routineTimer;
 var saliencerating;
-var salienceratingtext;
+var saliencequestiontext;
 var rating_forsalience; 
 var stresslevel; 
 var stressleveltext; 
@@ -248,6 +248,12 @@ var computer_choice;
 var selfrunOrNot;
 var comprunOrNot;
 var resumetext;
+var StressRating_Resp;
+var Saliencerating_Resp;
+var Salience_Button;
+var Stress_Button;
+var Salience_usermouse;
+var Stress_usermouse;
 
 
 async function experimentInit() {
@@ -783,28 +789,77 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -4.0 
   });
-  
-  displayrating_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'displayrating_text',
-    text: 'Click line',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, (- 0.65)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -5.0 
-  });
+  Salience_Button = new visual.Polygon({
+  win: psychoJS.window,
+  name: 'Button',
+  lineWidth: 1.5,
+  lineColor: new util.Color('white'),
+  fillColor: new util.Color('black'),
+  edges: 4,
+  radius: 1,
+  size: 0.1,
+  ori: 45,
+  text: 'default text',
+  pos: [0,-0.35],
+  color: new util.Color('white'),
+  height: 3,
+});
+
+ Saliencerating_resp = new visual.TextStim({
+ win: psychoJS.window,
+ text: 'default text',
+ pos: [0,-0.35],
+ color: new util.Color('white'),
+ height: 0.4,
+//anchor: 'center',
+ })
+
+})
+Salience_usermouseClock =  new util.Clock();
+Salience_usermouse = new core.Mouse({
+  win: psychoJS.window,
+  name: 'userMouse',
+});
+  // //displayrating_text = new visual.TextStim({
+  //   win: psychoJS.window,
+  //   name: 'displayrating_text',
+  //   text: 'Click line',
+  //   font: 'Open Sans',
+  //   units: undefined, 
+  //   pos: [0, (- 0.65)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
+  //   languageStyle: 'LTR',
+  //   color: new util.Color('white'),  opacity: undefined,
+  //   depth: -5.0 
+  // });
   
   // Initialize components for Routine "StressLevel"
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
   // stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
-  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5,6,7,8,9], "ticks": [1, 2, 3, 4, 5,6,7,8,9], "granularity": 0.0,  "opacity": 1, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  stress_slider = new visual.Slider({
+    win: psychoJS.window, 
+    name: "slider", 
+    size: [1.0, 0.1], 
+    pos: [0, (- 0.4)], 
+    units: null, 
+    labels: [1, 2, 3, 4, 5,6,7,8,9], 
+    ticks: [1, 2, 3, 4, 5,6,7,8,9], 
+    granularity: 0.0,  
+    opacity: 1, 
+    labelColor: "white", 
+    markerColor: "cornflowerblue", 
+    lineColor: "white", 
+    colorSpace: "rgb", 
+    font: "Open Sans", 
+    labelHeight: 0.05, 
+    flip: false, 
+    ori: 0.0, 
+    depth: (- 5), 
+    readOnly: false});
 
-  stresslevel_text = new visual.TextStim({
+  StressLevel_text = new visual.TextStim({
     win: psychoJS.window,
-    name: 'stresslevel_text',
+    name: 'StressLevel_text',
     text: '',
     font: 'Open Sans',
     units: undefined, 
@@ -813,21 +868,57 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
   });
-  
-  stresslevel_keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
-  displaystressrating_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'displaystressrating_text',
-    text: 'Use arrow keys',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, (- 0.65)], height: 0.08,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: -3.0 
-  });
-  
+
+  Stress_Button = new visual.Polygon({
+  win: psychoJS.window,
+  name: 'Button',
+  lineWidth: 1.5,
+  lineColor: new util.Color('white'),
+  fillColor: new util.Color('black'),
+  edges: 4,
+  radius: 1,
+  size: 0.1,
+  ori: 45,
+  text: 'default text',
+  pos: [0,-0.35],
+  color: new util.Color('white'),
+  height: 3,
+ });
+
+  StressRating_Resp = new visual.TextStim({
+  win: psychoJS.window,
+  name: 'RatingScale_Resp',
+  text: 'default text',
+  pos: [0,-0.35],
+  color: new util.Color('white'),
+  height: 0.4,
+  //anchor: 'center',
+  })
+  StressLevel_Keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+
+})
+Stress_usermouse =  new util.Clock();
+Stress_usermouse = new core.Mouse({
+  win: psychoJS.window,
+  name: 'userMouse',
+});
+  // displaystressrating_text = new visual.TextStim({
+  //   win: psychoJS.window,
+  //   name: 'displaystressrating_text',
+  //   text: 'Use arrow keys',
+  //   font: 'Open Sans',
+  //   units: undefined, 
+  //   pos: [0, (- 0.65)], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+  //   languageStyle: 'LTR',
+  //   color: new util.Color('white'),  opacity: undefined,
+  //   depth: -3.0 
+  // });
+
+
+
+
+
+
   // Create some handy timers
   globalClock = new util.Clock();  // to track the time since experiment started
   routineTimer = new util.CountdownTimer();  // to track time remaining of each (non-slip) routine
@@ -3136,7 +3227,7 @@ function ContinueRoutineEnd(snapshot) {
 }
 
 
-var salienceratingtext;
+var saliencequestiontext;
 var _key_resp_allKeys;
 var SalienceRatingComponents;
 var continueRoutine;
@@ -3151,7 +3242,24 @@ function SalienceRatingRoutineBegin(snapshot) {
     t = 0;
     SalienceRatingClock.reset(); // clock
     frameN = -1;
-    
+    // update component parameters for each repeat
+    Saliencerating_Resp.setColor(new util.Color([1.0, 1.0, 1.0]));
+    Saliencerating_Resp.setPos([0, 0.2]);
+    Saliencerating_Resp.setText(choices);
+    Saliencerating_Resp.setFont('Arial');
+    Saliencerating_Resp.setHeight(0.06);
+    pracScale_Resp.setHeight(0.02);
+    pracScale.reset();
+    Salience_usermouse.clickReset();
+    mouseClock.reset()
+    mouserec = Salience_usermouse.getPos();
+    Salience_usermouse.x = [];
+    Salience_usermouse.y = [];
+    Salience_usermouse.leftButton = [];
+    Salience_usermouse.midButton = [];
+    Salience_usermouse.rightButton = [];
+    Salience_usermouse.time=[];
+    prevButtonState = Salience_usermouse.getPressed();
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
@@ -3181,14 +3289,14 @@ function SalienceRatingRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
+    saliencequestiontext = `How likely are you to share photos with ${Partner} in the future?
     
     Use your mouse to move the marker to your desired rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     //salience_slider.markerPos = 3;
     
-    saliencequestion_text.setText(salienceratingtext);
+    saliencequestion_text.setText(saliencequestiontext);
     key_resp.keys = undefined;
     key_resp.rt = undefined;
     _key_resp_allKeys = [];
@@ -3236,6 +3344,11 @@ function SalienceRatingRoutineEachFrame() {
     frameN = frameN + 1;
     let mousepress = userMouse.getPressed(); // read mouse state
       const xys = userMouse.getPos(); 
+      Salience_userMouse.x.push(xys[0]); // add mouse coordinates to x/y list, in principle for data storage, but not implemented right now
+      Salience_userMouse.y.push(xys[1]);
+      Salience_userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
+      Salience_userMouse.midButton.push(buttonpress[1]);
+      Salience_userMouse.rightButton.push(buttonpress[2]);
     // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
@@ -3265,7 +3378,6 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       saliencequestion_text.tStart = t;  // (not accounting for frame time here)
       saliencequestion_text.frameNStart = frameN;  // exact frame index
-      
       saliencequestion_text.setAutoDraw(true);
     }
 
@@ -3275,6 +3387,12 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       key_resp.tStart = t;  // (not accounting for frame time here)
       key_resp.frameNStart = frameN;  // exact frame index
+      Salience_Button.setAutoDraw(true);
+      Salience_Button.setAutoDraw(true);
+      Saliencerating_Resp.setText('Click Line');
+      Saliencerating_resp.setAutoDraw(true);
+
+    }
       
       // keyboard checking is just starting
       psychoJS.window.callOnFlip(function() { key_resp.clock.reset(); });  // t=0 on next screen flip
@@ -3384,36 +3502,36 @@ function SalienceRatingRoutineEachFrame() {
           if (1 < ratingvalue && ratingvalue < 1.5) {
                 salience_slider.setMarkerPos(1)
                 salience_slider.setRating(1)
-                displayrating_text.setText(1);
-                displayrating_text.setAutoDraw(true);
+                Saliencerating_Resp.setText(1);
+                Saliencerating_Resp.setAutoDraw(true);
 
           }
 
           else if (1.5 < ratingvalue && ratingvalue < 2.5) {
-                salience_slider.setMarkerPos(2)
-                salience_slider.setRating(2)
-                displayrating_text.setText(2);
-                displayrating_text.setAutoDraw(true);
+              salience_slider.setMarkerPos(2)
+              salience_slider.setRating(2)
+              Saliencerating_Resp.setText(2);
+              Saliencerating_Resp.setAutoDraw(true);
 
           }
-            else if (2.5 < ratingvalue && ratingvalue < 3.5) {
-                salience_slider.setMarkerPos(3)
-                salience_slider.setRating(3)
-                displayrating_text.setText(3);
-                displayrating_text.setAutoDraw(true);
+          else if (2.5 < ratingvalue && ratingvalue < 3.5) {
+              salience_slider.setMarkerPos(3)
+              salience_slider.setRating(3)
+              Saliencerating_Resp.setText(3);
+              Saliencerating_Resp.setAutoDraw(true);
 
           }
           else if (3.5 < ratingvalue && ratingvalue < 4.5) {
               salience_slider.setMarkerPos(4)
               salience_slider.setRating(4)
-              displayrating_text.setText(4);
-              displayrating_text.setAutoDraw(true);
+              Saliencerating_Resp.setText(4);
+              Saliencerating_Resp.setAutoDraw(true);
             }
           else if (4.5 < ratingvalue && ratingvalue < 5) {
               salience_slider.setMarkerPos(5)
               salience_slider.setRating(5)
-              displayrating_text.setText(5);
-              displayrating_text.setAutoDraw(true);
+              Saliencerating_Resp.setText(5);
+              Saliencerating_Resp.setAutoDraw(true);
               
         }
             //}
@@ -3539,7 +3657,7 @@ function SalienceRatingRoutineEnd(snapshot) {
 
 
 var stressleveltext;
-var _stresslevel_keypress_allKeys;
+var _StressLevel_Keypress_allKeys;
 var StressLevelComponents;
 var stress_slider;
 var continueRoutine;
@@ -3571,15 +3689,15 @@ function StressLevelRoutineBegin(snapshot) {
     psychoJS.eventManager.clearEvents("keyboard");
     // stress_slider.markerPos = 5;
     
-    stresslevel_text.setText(stressleveltext);
-    stresslevel_keypress.keys = undefined;
-    stresslevel_keypress.rt = undefined;
-    _stresslevel_keypress_allKeys = [];
+    StressLevel_text.setText(stressleveltext);
+    StressLevel_Keypress.keys = undefined;
+    StressLevel_Keypress.rt = undefined;
+    _StressLevel_Keypress_allKeys = [];
   //  displaystressrating_text.setText(rating_forstress);
     // keep track of which components have finished
     StressLevelComponents = [];
-    StressLevelComponents.push(stresslevel_text);
-    StressLevelComponents.push(stresslevel_keypress);
+    StressLevelComponents.push(StressLevel_text);
+    StressLevelComponents.push(StressLevel_Keypress);
     StressLevelComponents.push(displaystressrating_text);
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
@@ -3644,34 +3762,34 @@ function StressLevelRoutineEachFrame() {
 
       stress_slider.setAutoDraw(true);
     }
-    // *stresslevel_text* updates
-    if (t >= 0.0 && stresslevel_text.status === PsychoJS.Status.NOT_STARTED) {
+    // *StressLevel_text* updates
+    if (t >= 0.0 && StressLevel_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      stresslevel_text.tStart = t;  // (not accounting for frame time here)
-      stresslevel_text.frameNStart = frameN;  // exact frame index
+      StressLevel_text.tStart = t;  // (not accounting for frame time here)
+      StressLevel_text.frameNStart = frameN;  // exact frame index
       
-      stresslevel_text.setAutoDraw(true);
+      StressLevel_text.setAutoDraw(true);
     }
 
     
-    // *stresslevel_keypress* updates
-    if (t >= 0.0 && stresslevel_keypress.status === PsychoJS.Status.NOT_STARTED) {
+    // *StressLevel_Keypress* updates
+    if (t >= 0.0 && StressLevel_Keypress.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      stresslevel_keypress.tStart = t;  // (not accounting for frame time here)
-      stresslevel_keypress.frameNStart = frameN;  // exact frame index
+      StressLevel_Keypress.tStart = t;  // (not accounting for frame time here)
+      StressLevel_Keypress.frameNStart = frameN;  // exact frame index
       
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { stresslevel_keypress.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { stresslevel_keypress.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { stresslevel_keypress.clearEvents(); });
+      psychoJS.window.callOnFlip(function() { StressLevel_Keypress.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { StressLevel_Keypress.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { StressLevel_Keypress.clearEvents(); });
     }
 
-    if (stresslevel_keypress.status === PsychoJS.Status.STARTED) {
-      let theseKeys = stresslevel_keypress.getKeys({keyList: ['space'], waitRelease: false});
-      _stresslevel_keypress_allKeys = _stresslevel_keypress_allKeys.concat(theseKeys);
-      if (_stresslevel_keypress_allKeys.length > 0) {
-        stresslevel_keypress.keys = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].name;  // just the last key pressed
-        stresslevel_keypress.rt = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].rt;
+    if (StressLevel_Keypress.status === PsychoJS.Status.STARTED) {
+      let theseKeys = StressLevel_Keypress.getKeys({keyList: ['space'], waitRelease: false});
+      _StressLevel_Keypress_allKeys = _StressLevel_Keypress_allKeys.concat(theseKeys);
+      if (_StressLevel_Keypress_allKeys.length > 0) {
+        StressLevel_Keypress.keys = _StressLevel_Keypress_allKeys[_StressLevel_Keypress_allKeys.length - 1].name;  // just the last key pressed
+        StressLevel_Keypress.rt = _StressLevel_Keypress_allKeys[_StressLevel_Keypress_allKeys.length - 1].rt;
         // a response ends the routine
         continueRoutine = false;
       }
@@ -3771,15 +3889,15 @@ function StressLevelRoutineEnd(snapshot) {
     
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
-      currentLoop.addResponse(stresslevel_keypress.corr, level);
+      currentLoop.addResponse(StressLevel_Keypress.corr, level);
     }
-    psychoJS.experiment.addData('stresslevel_keypress.keys', stresslevel_keypress.keys);
-    if (typeof stresslevel_keypress.keys !== 'undefined') {  // we had a response
-        psychoJS.experiment.addData('stresslevel_keypress.rt', stresslevel_keypress.rt);
+    psychoJS.experiment.addData('StressLevel_Keypress.keys', StressLevel_Keypress.keys);
+    if (typeof StressLevel_Keypress.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('StressLevel_Keypress.rt', StressLevel_Keypress.rt);
         routineTimer.reset();
         }
     
-    stresslevel_keypress.stop();
+    StressLevel_Keypress.stop();
     // the Routine "StressLevel" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
