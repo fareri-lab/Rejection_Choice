@@ -3449,6 +3449,13 @@ function SalienceRatingRoutineEachFrame() {
 if (!continueRoutine) {  // a component has requested a forced-end of Routine
     return Scheduler.Event.NEXT;
   }
+  // refresh the screen if continuing
+  if (continueRoutine) {
+    return Scheduler.Event.FLIP_REPEAT;
+  } else {
+    return Scheduler.Event.NEXT;
+  }
+};
 
     
 
@@ -3560,13 +3567,6 @@ if (!continueRoutine) {  // a component has requested a forced-end of Routine
         break;
       }
     
-    // refresh the screen if continuing
-    if (continueRoutine) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
 
 
 
