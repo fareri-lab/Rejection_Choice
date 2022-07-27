@@ -3254,7 +3254,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     Saliencerating_Resp.setFont('Arial');
     Saliencerating_Resp.setHeight(0.06);
     Saliencerating_Resp.setHeight(0.02);
-    Saliencerating_Resp.reset();
+    // Saliencerating_Resp.reset();
     Salience_usermouse.clickReset();
     mouseClock.reset()
     mouserec = Salience_usermouse.getPos();
