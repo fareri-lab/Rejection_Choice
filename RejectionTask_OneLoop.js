@@ -3332,7 +3332,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(Salience_userMouse);
     
     for (const thisComponent of SalienceRatingComponents)
-      if ('status' in thisComponent)
+      if ('status' in SalienceRatingComponents)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
     return Scheduler.Event.NEXT;
   }
