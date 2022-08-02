@@ -814,7 +814,7 @@ async function experimentInit() {
   fillColor: new util.Color('black'),
   edges: 4,
   radius: 1,
-  size: 0.15,
+  size: 2,
   ori: 45,
   text: 'default text',
   pos: [0, (- 0.65)],
