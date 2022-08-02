@@ -3218,7 +3218,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingClock.reset(); // clock
     frameN = -1;
     
-    const trials = [1, 3, 6, 9]
+    const trials = [30,60,90]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3579,7 +3579,7 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    const trials = [1, 3, 6, 9]
+    const trials = [30,60,90]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
