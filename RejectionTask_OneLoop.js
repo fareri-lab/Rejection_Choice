@@ -3799,7 +3799,7 @@ function StressLevelRoutineEachFrame() {
                 displaystressrating_text.setAutoDraw(true);
 
           }
-          else if (3.5 < ratingvalue && ratingvalue < 4) {
+          else if (3.5 < ratingvalue && ratingvalue < 4.5) {
               stress_slider.setMarkerPos(4)
               stress_slider.setRating(4)
               displaystressrating_text.setText(4);
