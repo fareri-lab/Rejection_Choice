@@ -3725,6 +3725,9 @@ function StressLevelRoutineEachFrame() {
       stresslevel_text.frameNStart = frameN;  // exact frame index
       
       stresslevel_text.setAutoDraw(true);
+      Stress_Button.setAutoDraw(true);
+      displaystressrating_text.setText('Click line');
+      displaystressrating_text.setAutoDraw(true);
     }
 
     
