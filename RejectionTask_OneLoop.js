@@ -786,8 +786,8 @@ async function experimentInit() {
     text: 'Click the square button when your desired rating appears',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.9)], //[0, (- 0.8)]
-    height: 0.03, //0.07
+    pos: [0, (- 0.8)], //[0, (- 0.8)]
+    height: 0.04, //0.07
      wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
@@ -800,7 +800,7 @@ async function experimentInit() {
     text: 'Click line',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.65)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.6)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -5.0 
@@ -827,7 +827,7 @@ async function experimentInit() {
   Salience_Button = new visual.Rect ({
    win: psychoJS.window, name: 'polygon', 
    width: [0.25, 0.25][0], height: [0.25, 0.25][1],
-   ori: 0, pos: [0, (- 0.65)],
+   ori: 0, pos: [0, (- 0.6)],
    lineWidth: 1, lineColor: new util.Color('white'),
    fillColor: undefined,
    opacity: 1, depth: -1, interpolate: true,
