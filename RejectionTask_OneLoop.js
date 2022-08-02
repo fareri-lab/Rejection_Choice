@@ -813,6 +813,7 @@ async function experimentInit() {
   lineColor: new util.Color('white'),
   fillColor: new util.Color('black'),
   edges: 4,
+  shape: 'rectangle',
   radius: 1,
   size: (0.15,0.15),
   ori: 45,
