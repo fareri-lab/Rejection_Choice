@@ -3856,7 +3856,7 @@ function StressLevelRoutineEachFrame() {
 
 
       
-    }
+  
 
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
@@ -3883,7 +3883,6 @@ function StressLevelRoutineEachFrame() {
     }
   };
 }
-
 
 // var stresslevel;
 function StressLevelRoutineEnd(snapshot) {
