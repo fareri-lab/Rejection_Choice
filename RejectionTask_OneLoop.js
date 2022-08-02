@@ -3225,27 +3225,6 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingClock.reset(); // clock
     frameN = -1;
     
-    // update component parameters for each repeat
-    // Run 'Begin Routine' code from saliencyrating_code
-    // let continueRoutine = true;
-    //if (TrialNumber !== 30) {
-        //continueRoutine = false;
-  
-      //} else { 
-        //continueRoutine = true; 
-      //}
-    // if (TrialNumber !== 60) {
-    //       continueRoutine = false;
-    // 
-    //     } else { 
-    //       continueRoutine = true; 
-    //     }    
-    // if (TrialNumber !== 90) {
-    //         continueRoutine = false;
-    // 
-    //       } else { 
-    //         continueRoutine = true; 
-    //       }
     const trials = [1, 3, 6, 9]
 
     if (trials.includes(TrialNumber) == true) {
@@ -3655,7 +3634,7 @@ function StressLevelRoutineBegin(snapshot) {
 var keys;
 var rating_forstress;
 var stress_ratingvalue;
-var gotValideClick;
+var gotValidClick;
 var marker_pos;
 var ratingvalue;
 var buttonpress;
@@ -3744,16 +3723,16 @@ function StressLevelRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { stresslevel_keypress.clearEvents(); });
     }
 
-    if (stresslevel_keypress.status === PsychoJS.Status.STARTED) {
-      let theseKeys = stresslevel_keypress.getKeys({keyList: ['space'], waitRelease: false});
-      _stresslevel_keypress_allKeys = _stresslevel_keypress_allKeys.concat(theseKeys);
-      if (_stresslevel_keypress_allKeys.length > 0) {
-        stresslevel_keypress.keys = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].name;  // just the last key pressed
-        stresslevel_keypress.rt = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].rt;
-        // a response ends the routine
-        continueRoutine = false;
-      }
-    }
+    // if (stresslevel_keypress.status === PsychoJS.Status.STARTED) {
+    //   let theseKeys = stresslevel_keypress.getKeys({keyList: ['space'], waitRelease: false});
+    //   _stresslevel_keypress_allKeys = _stresslevel_keypress_allKeys.concat(theseKeys);
+    //   if (_stresslevel_keypress_allKeys.length > 0) {
+    //     stresslevel_keypress.keys = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].name;  // just the last key pressed
+    //     stresslevel_keypress.rt = _stresslevel_keypress_allKeys[_stresslevel_keypress_allKeys.length - 1].rt;
+    //     // a response ends the routine
+    //     continueRoutine = false;
+    //   }
+    // }
     var _pj;
       function _pj_snippets(container) {
           function in_es6(left, right) {
@@ -3931,7 +3910,7 @@ function StressLevelRoutineEnd(snapshot) {
                   return Number.parseFloat(x).toFixed(2);
                 }
     // Run 'End Routine' code from stresslevelslider
-    stresslevel = stress_slider.getRating();
+    // stresslevel = stress_slider.getRating();
     entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos()*10/10));
     
     // update the trial handler
