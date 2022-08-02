@@ -256,7 +256,7 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'Welcome to the Instagram Sharing Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\nPress space to continue.\n',
+    text: 'hi Welcome to the Instagram Sharing Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -730,7 +730,7 @@ async function experimentInit() {
     win: psychoJS.window,
     name: "slider", 
     size: [1.0, 0.1], 
-    pos: [0, (- 0.4)],
+    pos: [0, 0], //[0, (- 0.4)]
     units: null,
     labels: [1, 2, 3, 4, 5],
     ticks: [1, 2, 3, 4, 5],
@@ -755,7 +755,8 @@ async function experimentInit() {
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0.6], height: 0.06,  wrapWidth: undefined, ori: 0.0,
+    // (0,0.)
+    pos: [0, 0.8], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -767,7 +768,8 @@ async function experimentInit() {
     win : psychoJS.window,
     name : 'salienceavatar_image', units : undefined, 
     image : undefined, mask : undefined,
-    ori : 0.0, pos : [0, 0], size : [0.3, 0.55],
+    ori : 0.0, //(0,0)
+    pos : [0, 0.3], size : [0.3, 0.55],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -778,7 +780,9 @@ async function experimentInit() {
     text: 'Press space to enter rating and continue.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.8)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.9)], //[0, (- 0.8)]
+    height: 0.05, //0.07
+     wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -4.0 
