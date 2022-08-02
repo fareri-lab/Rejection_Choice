@@ -3730,6 +3730,7 @@ function StressLevelRoutineEachFrame() {
         // keep track of start time/frame for later
         stresscontinue_text.tStart = t;  // (not accounting for frame time here)
         stresscontinue_text.frameNStart = frameN;  // exact frame index
+        stresscontinue_text.setAutoDraw(true);
     }
     
     // *stresslevel_keypress* updates
