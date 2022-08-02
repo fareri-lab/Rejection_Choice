@@ -775,7 +775,7 @@ async function experimentInit() {
     image : undefined, mask : undefined,
     ori : 0.0, //(0,0)
     pos : [0, 0.3], 
-    size : [0.2, 0.5], //[0.3, 0.55]
+    size : [0.2, 0.6], //[0.3, 0.55]
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -813,9 +813,9 @@ async function experimentInit() {
   lineColor: new util.Color('white'),
   fillColor: new util.Color('black'),
   edges: 4,
-  radius: 1,
+  radius: 0.5,
   size: 0.1,
-  ori: 90,
+  ori: 0,
   text: 'default text',
   pos: [0, (- 0.65)],
   color: new util.Color('white'),
