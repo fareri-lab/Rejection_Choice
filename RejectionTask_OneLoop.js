@@ -215,6 +215,8 @@ var block1_cardimage;
 var ContinueClock;
 var resumeafterlottery_keys;
 var resumetext_text;
+
+// salience slider 
 var userMouse;
 var mouseClock;
 var SalienceRatingClock;
@@ -223,7 +225,10 @@ var saliencequestion_text;
 var key_resp;
 var salienceavatar_image;
 var saliencecontinue_text;
+var Salience_Button;
 var displayrating_text;
+
+//stress slider 
 var StressLevelClock;
 var stress_slider;
 var stresslevel_text;
@@ -770,7 +775,7 @@ async function experimentInit() {
     image : undefined, mask : undefined,
     ori : 0.0, //(0,0)
     pos : [0, 0.3], 
-    size : [0.2, 0.44], //[0.3, 0.55]
+    size : [0.2, 0.5], //[0.3, 0.55]
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
@@ -800,6 +805,24 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -5.0 
   });
+  
+  Salience_Button = new visual.Polygon({
+  win: psychoJS.window,
+  name: 'Salience_Button',
+  lineWidth: 1.5,
+  lineColor: new util.Color('white'),
+  fillColor: new util.Color('black'),
+  edges: 4,
+  radius: 1,
+  size: 0.1,
+  ori: 90,
+  text: 'default text',
+  pos: [0, (- 0.65)],
+  color: new util.Color('white'),
+  height: 3,
+
+  })
+  
   
   // Initialize components for Routine "StressLevel"
   StressLevelClock = new util.Clock();
@@ -3207,6 +3230,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     userMouse.midButton = [];
     userMouse.rightButton = [];
     userMouse.time=[];
+    prevButtonState = userMouse.getPressed();
     // displayrating_text.setText(rating_forsalience); //get rid of NAN
     // keep track of which components have finished
     SalienceRatingComponents = [];
@@ -3218,7 +3242,8 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(displayrating_text);
     SalienceRatingComponents.push(salience_slider);
     SalienceRatingComponents.push(SalienceRatingClock);
-    
+    SalienceRatingComponents.push(Salience_Button);
+      
     for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
         thisComponent.status = PsychoJS.Status.NOT_STARTED;
@@ -3233,14 +3258,21 @@ var salience_ratingvalue;
 var gotValidClick;
 var marker_pos;
 var ratingvalue;
+var buttonpress;
+var finalmouseRT;
 function SalienceRatingRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'SalienceRating' ---
     // get current time
     t = SalienceRatingClock.getTime();
     frameN = frameN + 1;
-    let mousepress = userMouse.getPressed(); // read mouse state
-      const xys = userMouse.getPos(); 
+    let buttonpress = userMouse.getPressed(); // read mouse state
+      const xys = userMouse.getPos();
+      userMouse.x.push(xys[0]); // add mouse coordinates to x/y list, in principle for data storage, but not implemented right now
+      userMouse.y.push(xys[1]);
+      userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
+      userMouse.midButton.push(buttonpress[1]);
+      userMouse.rightButton.push(buttonpress[2]);
     // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
@@ -3310,6 +3342,9 @@ function SalienceRatingRoutineEachFrame() {
       saliencecontinue_text.frameNStart = frameN;  // exact frame index
       
       saliencecontinue_text.setAutoDraw(true);
+      Salience_Button.setAutoDraw(true);
+      displayrating_text.setText('Click line');
+      displayrating_text.setAutoDraw(true);
     }
     
     // *salienceavatar_image* updates
@@ -3325,14 +3360,14 @@ function SalienceRatingRoutineEachFrame() {
 
     
   //  *displayrating_text* updates
-    if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      displayrating_text.tStart = t;  // (not accounting for frame time here)
-      displayrating_text.frameNStart = frameN;  // exact frame index
-      //displayrating_text.setText(salience_slider.getMarkerPos());
-      displayrating_text.setAutoDraw(true);
-    
-    }
+    // if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
+    //   // keep track of start time/frame for later
+    //   displayrating_text.tStart = t;  // (not accounting for frame time here)
+    //   displayrating_text.frameNStart = frameN;  // exact frame index
+    //   //displayrating_text.setText(salience_slider.getMarkerPos());
+    //   displayrating_text.setAutoDraw(true);
+    // 
+    // }
     // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -3421,63 +3456,23 @@ function SalienceRatingRoutineEachFrame() {
               displayrating_text.setAutoDraw(true);
               
         }
-            //}
+            finalmouseRT = mouseClock.getTime(); // get mouse time, again for storage that is not implemented
+            if (!buttonpress.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+              prevButtonState = buttonpress; //button state as of last frame, makes sure holding mouse down has not affected anything
+              //debug code
+              //console.log('new button state detected');
+              if (buttonpress.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+                // check if the mouse was inside our 'clickable' objects
+                gotValidClick = false;
+                if (Salience_Button.contains(userMouse) && ratingvalue > 0) {
+                  {gotValidClick = true};
+                }
+                if (gotValidClick === true) { // abort routine on response
+                    continueRoutine = false;
+                }
+              }
+            }
 
-      
-          
-          //   if (validclicks.includes(marker_pos) == true) {
-          //     gotValidClick = true;
-          //     salience_slider.setMarkerPos(marker_pos);
-          //     displayrating_text.setText(marker_pos);
-          //   }else {
-          //     gotValidClick = false;
-          //     salience_slider.setMarkerPos(null)
-          //     displayrating_text.setText('Do not click');
-          // 
-          //   }
-          // }
-      
-    // salience_ratingvalue = salience_slider.getRating();
-    // function financial(x) {
-    //   return Number.parseFloat(x).toFixed(2);
-    //    }
-    //      if (salience_ratingvalue < 0.015) {
-    //        salience_slider.setMarkerPos(0.01)
-    //        salience_slider.setRating(0.01)
-    //        displayrating_text.setText(financial(salience_ratingvalue.toString()));
-    //        displayrating_text.setAutoDraw(true);
-    //      }
-    //      else if (0.015 < salience_ratingvalue && salience_ratingvalue < 0.025) {
-    //            salience_slider.setMarkerPos(0.02)
-    //            salience_slider.setRating(0.02)
-    //            displayrating_text.setText(financial(salience_ratingvalue.toString()));
-    //            displayrating_text.setAutoDraw(true);
-    // 
-    //      }
-    // 
-    //      else if (0.025 < salience_ratingvalue && salience_ratingvalue < 0.035) {
-    //            salience_slider.setMarkerPos(0.03)
-    //            salience_slider.setRating(0.03)
-    //            displayrating_text.setText(financial(salience_ratingvalue.toString()));
-    //            displayrating_text.setAutoDraw(true);
-    // 
-    //      }
-    //        else if (0.035 < salience_ratingvalue && salience_ratingvalue < 0.045) {
-    //            salience_slider.setMarkerPos(0.04)
-    //            salience_slider.setRating(0.04)
-    //            displayrating_text.setText(financial(salience_ratingvalue.toString()));
-    //            displayrating_text.setAutoDraw(true);
-    // 
-    //      }
-    //      else if (0.045 < salience_ratingvalue && salience_ratingvalue <= 0.05) {
-    //          salience_slider.setMarkerPos(0.05)
-    //          salience_slider.setRating(0.05)
-    //          displayrating_text.setText(financial(salience_ratingvalue.toString()));
-    //          displayrating_text.setAutoDraw(true);
-    // 
-    //      }
-
-  
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
