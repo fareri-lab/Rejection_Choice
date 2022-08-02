@@ -783,11 +783,11 @@ async function experimentInit() {
   saliencecontinue_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'saliencecontinue_text',
-    text: 'Press space to enter rating and continue.',
+    text: 'Click the square button when your desired rating appears',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, (- 0.9)], //[0, (- 0.8)]
-    height: 0.05, //0.07
+    height: 0.03, //0.07
      wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
@@ -3332,20 +3332,20 @@ function SalienceRatingRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { key_resp.clearEvents(); });
     }
 
-    if (key_resp.status === PsychoJS.Status.STARTED) {
-      let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
-      _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
-      if (_key_resp_allKeys.length > 0) {
-        key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
-        key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
-        // a response ends the routine
-        continueRoutine = false;
-
-      } else {
-        continueRoutine = true;
-            
-      }
-    }
+    // if (key_resp.status === PsychoJS.Status.STARTED) {
+    //   let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
+    //   _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
+    //   if (_key_resp_allKeys.length > 0) {
+    //     key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
+    //     key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
+    //     // a response ends the routine
+    //     continueRoutine = false;
+    // 
+    //   } else {
+    //     continueRoutine = true;
+    // 
+    //   }
+    // }
 
     // *saliencecontinue_text* updates
   //  if (t >= 0.0 && saliencecontinue_text.status === PsychoJS.Status.NOT_STARTED) {
