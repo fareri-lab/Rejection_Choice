@@ -3719,18 +3719,20 @@ function StressLevelRoutineEachFrame() {
       stresslevel_text.tStart = t;  // (not accounting for frame time here)
       stresslevel_text.frameNStart = frameN;  // exact frame index
 
-        stresslevel_text.setAutoDraw(true);
-        Stress_Button.setAutoDraw(true);
-        displaystressrating_text.setText('Click line');
-        displaystressrating_text.setAutoDraw(true);
+      stresslevel_text.setAutoDraw(true);
       }
       // *stresscontinue_text* updates
       //  if (t >= 0.0 && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
-      if (key_resp.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+    if (key_resp.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
         // keep track of start time/frame for later
         stresscontinue_text.tStart = t;  // (not accounting for frame time here)
         stresscontinue_text.frameNStart = frameN;  // exact frame index
+
         stresscontinue_text.setAutoDraw(true);
+        
+        Stress_Button.setAutoDraw(true);
+        displaystressrating_text.setText('Click line');
+        displaystressrating_text.setAutoDraw(true);
     }
     
     // *stresslevel_keypress* updates
