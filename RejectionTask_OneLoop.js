@@ -3885,7 +3885,7 @@ function StressLevelRoutineEachFrame() {
 }
 
 
-var stresslevel;
+// var stresslevel;
 function StressLevelRoutineEnd(snapshot) {
   return async function () {
     //--- Ending Routine 'StressLevel' ---
