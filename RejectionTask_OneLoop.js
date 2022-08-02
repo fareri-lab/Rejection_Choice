@@ -3171,6 +3171,7 @@ var continueRoutine;
 var salience_slider;
 var SalienceRatingClock;
 var mouserec;
+var prevButtonState;
 function SalienceRatingRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
