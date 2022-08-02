@@ -783,11 +783,11 @@ async function experimentInit() {
   saliencecontinue_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'saliencecontinue_text',
-    text: 'Click the square button when your desired rating appears',
+    text: 'To continue, click the square when your desired rating appears',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, (- 0.8)], //[0, (- 0.8)]
-    height: 0.04, //0.07
+    height: 0.045, //0.07
      wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
@@ -3223,8 +3223,7 @@ function SalienceRatingRoutineBegin(snapshot) {
       continueRoutine = false;
     }
     salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
-    
-    Use your mouse to move the marker to your desired rating.`
+    Click the line to begin rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     //salience_slider.markerPos = 3;
@@ -3577,7 +3576,7 @@ function StressLevelRoutineBegin(snapshot) {
       continueRoutine = false;
     }
     stressleveltext = `Please rate your current stress level.
-    
+
     
     Use your mouse to move the marker to your desired rating.`
     ;
