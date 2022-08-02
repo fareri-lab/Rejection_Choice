@@ -587,7 +587,7 @@ async function experimentInit() {
     text: 'Computer',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.4)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.3), (- 0.4)], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -599,7 +599,7 @@ async function experimentInit() {
     text: 'Self',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.3, (- 0.4)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.3, (- 0.4)], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
@@ -669,7 +669,7 @@ async function experimentInit() {
     text: 'Higher',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.3, (- 0.6)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.3, (- 0.55)], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
@@ -681,7 +681,7 @@ async function experimentInit() {
     text: 'Lower',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.6)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.3), (- 0.55)], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -3.0 
@@ -3226,7 +3226,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    salienceratingtext = `You have finished sharing your photos with ${Partner}. \n\n How likely are you to share photos with them in the future?
+    salienceratingtext = `You have finished sharing your photos with ${Partner}. \n\n How likely are you to share photos with ${Partner} in the future?
     Click the line to begin rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
