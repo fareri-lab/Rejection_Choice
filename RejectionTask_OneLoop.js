@@ -3705,15 +3705,7 @@ function StressLevelRoutineEachFrame() {
     //     }
     // }
     // 
-    // // *stress_slider* updates
-    if (t >= 0.0 && stress_slider.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      stress_slider.tStart = t;  // (not accounting for frame time here)
-      stress_slider.frameNStart = frameN;  // exact frame index
 
-      stress_slider.setAutoDraw(true);
-    }
-    
     // *stresslevel_text* updates
     if (t >= 0.0 && stresslevel_text.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -3722,20 +3714,8 @@ function StressLevelRoutineEachFrame() {
 
       stresslevel_text.setAutoDraw(true);
       }
-      // *stresscontinue_text* updates
-      //  if (t >= 0.0 && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
-    if (t >= 0.0 && stresscontinue_text.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
-        // keep track of start time/frame for later
-        stresscontinue_text.tStart = t;  // (not accounting for frame time here)
-        stresscontinue_text.frameNStart = frameN;  // exact frame index
 
-        stresscontinue_text.setAutoDraw(true);
-        Stress_Button.setAutoDraw(true);
-        displaystressrating_text.setText('Click line');
-        displaystressrating_text.setAutoDraw(true);
-    }
-    
-    // *stresslevel_keypress* updates
+      // *stresslevel_keypress* updates
     if (t >= 0.0 && stresslevel_keypress.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       stresslevel_keypress.tStart = t;  // (not accounting for frame time here)
@@ -3745,7 +3725,33 @@ function StressLevelRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { stresslevel_keypress.clock.reset(); });  // t=0 on next screen flip
       psychoJS.window.callOnFlip(function() { stresslevel_keypress.start(); }); // start on screen flip
       psychoJS.window.callOnFlip(function() { stresslevel_keypress.clearEvents(); });
+    }  
+
+    // *stresscontinue_text* updates
+    //  if (t >= 0.0 && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+    if (stresslevel_keypress.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+        // keep track of start time/frame for later
+        stresscontinue_text.tStart = t;  // (not accounting for frame time here)
+        stresscontinue_text.frameNStart = frameN;  // exact frame index
+
+        stresscontinue_text.setAutoDraw(true);
+        Stress_Button.setAutoDraw(true);
+        displaystressrating_text.setText('Click line');
+        displaystressrating_text.setAutoDraw(true);
     }
+    // // *stress_slider* updates
+    if (t >= 0.0 && stress_slider.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      stress_slider.tStart = t;  // (not accounting for frame time here)
+      stress_slider.frameNStart = frameN;  // exact frame index
+
+      stress_slider.setAutoDraw(true);
+    }
+    
+
+
+    
+
 
     // if (stresslevel_keypress.status === PsychoJS.Status.STARTED) {
     //   let theseKeys = stresslevel_keypress.getKeys({keyList: ['space'], waitRelease: false});
