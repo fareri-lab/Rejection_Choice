@@ -238,6 +238,7 @@ var stresslevel_text;
 var userMouse;
 var mouseClock;
 var Stress_Button;
+var stresscontinue_text
 var stresslevel_keypress;
 var displaystressrating_text;
 var globalClock;
@@ -3719,7 +3720,7 @@ function StressLevelRoutineEachFrame() {
       stresslevel_text.frameNStart = frameN;  // exact frame index
 }
       // *stresscontinue_text* updates
-    //  if (t >= 0.0 && stressecontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+    //  if (t >= 0.0 && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
     if (key_resp.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
         // keep track of start time/frame for later
         stresscontinue_text.tStart = t;  // (not accounting for frame time here)
