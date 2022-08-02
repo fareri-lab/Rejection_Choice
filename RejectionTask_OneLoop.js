@@ -238,7 +238,7 @@ var stresslevel_text;
 var userMouse;
 var mouseClock;
 var Stress_Button;
-// var stresslevel_keypress;
+var stresslevel_keypress;
 var displaystressrating_text;
 var globalClock;
 var routineTimer;
