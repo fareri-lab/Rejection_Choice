@@ -40,7 +40,7 @@ const psychoJS = new PsychoJS({
 psychoJS.openWindow({
   fullscr: true,
   color: new util.Color([(- 1.0), (- 1.0), (- 1.0)]),
-  units: 'norm',
+  units: 'height',
   waitBlanking: true
 });
 // schedule the experiment:
@@ -268,7 +268,7 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'hi Welcome to the Instagram Sharing Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\nPress space to continue.\n',
+    text: 'hii Welcome to the Instagram Sharing Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
