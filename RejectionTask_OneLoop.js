@@ -227,18 +227,21 @@ var salienceavatar_image;
 var saliencecontinue_text;
 var Salience_Button;
 var displayrating_text;
+var saliencerating;
+var salienceratingtext;
+var rating_forsalience; 
 
 //stress slider 
 var StressLevelClock;
 var stress_slider;
 var stresslevel_text;
-var stresslevel_keypress;
+var userMouse;
+var mouseClock;
+var Stress_Button;
+// var stresslevel_keypress;
 var displaystressrating_text;
 var globalClock;
 var routineTimer;
-var saliencerating;
-var salienceratingtext;
-var rating_forsalience; 
 var stresslevel; 
 var stressleveltext; 
 var rating_forstress;
@@ -840,8 +843,36 @@ async function experimentInit() {
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
   // stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "startValue": 999, "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5, 6, 7, 8, 9], "ticks": [1, 2, 3, 4, 5, 6, 7, 8, 9], "granularity": 0.0, "style": "rating", "styleTweaks": ["labels45", "triangleMarker"], "opacity": null, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
-  stress_slider = new visual.Slider({"win": psychoJS.window, "name": "slider", "size": [1.0, 0.1], "pos": [0, (- 0.4)], "units": null, "labels": [1, 2, 3, 4, 5,6,7,8,9], "ticks": [1, 2, 3, 4, 5,6,7,8,9], "granularity": 0.0,  "opacity": 1, "labelColor": "white", "markerColor": "cornflowerblue", "lineColor": "white", "colorSpace": "rgb", "font": "Open Sans", "labelHeight": 0.05, "flip": false, "ori": 0.0, "depth": (- 5), "readOnly": false});
+  stress_slider = new visual.Slider({
+    win: psychoJS.window, 
+    name: "slider", 
+    size: [1.0, 0.1], 
+    pos: [0, -0.2], //[0,(-0.4)]
+    units: null, 
+    labels: [1, 2, 3, 4, 5,6,7,8,9], 
+    ticks: [1, 2, 3, 4, 5,6,7,8,9], 
+    granularity: 0.0,  
+    opacity: 1, 
+    labelColor: "white", 
+    markerColor: "cornflowerblue", 
+    lineColor: "white", 
+    colorSpace: "rgb", 
+    font: "Open Sans", 
+    labelHeight: 0.05, 
+    flip: false, 
+    ori: 0.0, 
+    depth: (- 5), 
+    readOnly: false});
 
+  Stress_Button = new visual.Rect ({
+     win: psychoJS.window, name: 'polygon', 
+     width: [0.25, 0.25][0], height: [0.25, 0.25][1],
+     ori: 0, pos: [0, (- 0.6)],
+     lineWidth: 1, lineColor: new util.Color('white'),
+     fillColor: undefined,
+     opacity: 1, depth: -1, interpolate: true,
+   });
+   
   stresslevel_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'stresslevel_text',
@@ -859,13 +890,13 @@ async function experimentInit() {
   displaystressrating_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'displaystressrating_text',
-    text: 'Use arrow keys',
+    text: 'Click line',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.65)], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.6)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -3.0 
+    depth: -5.0 
   });
   
   // Create some handy timers
@@ -3524,7 +3555,7 @@ function SalienceRatingRoutineEnd(snapshot) {
                   return Number.parseFloat(x).toFixed(2);
                 }
 
-  psychoJS.experiment.addData('saliencerating', financial(salience_slider.getRating())); //test
+  // psychoJS.experiment.addData('saliencerating', financial(salience_slider.getRating())); //test
                 // psychoJS.experiment.addData('pracScale.rt', userMouse.getPos()); //test
                 // psychoJS.experiment.addData('saliencemouse.rt', pracfinalmouseRT);
     // Run 'End Routine' code from saliencyrating_code
@@ -3559,6 +3590,8 @@ var StressLevelComponents;
 var stress_slider;
 var continueRoutine;
 var StressLevelClock;
+var mouserec;
+var prevButtonState;
 function StressLevelRoutineBegin(snapshot) {
   return async function () {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -3579,9 +3612,7 @@ function StressLevelRoutineBegin(snapshot) {
       continueRoutine = false;
     }
     stressleveltext = `Please rate your current stress level.
-
-    
-    Use your mouse to move the marker to your desired rating.`
+    Click the line to begin rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
     // stress_slider.markerPos = 5;
@@ -3590,6 +3621,16 @@ function StressLevelRoutineBegin(snapshot) {
     stresslevel_keypress.keys = undefined;
     stresslevel_keypress.rt = undefined;
     _stresslevel_keypress_allKeys = [];
+    userMouse.clickReset();
+    mouseClock.reset()
+    mouserec = userMouse.getPos();
+    userMouse.x = [];
+    userMouse.y = [];
+    userMouse.leftButton = [];
+    userMouse.midButton = [];
+    userMouse.rightButton = [];
+    userMouse.time=[];
+    prevButtonState = userMouse.getPressed();
   //  displaystressrating_text.setText(rating_forstress);
     // keep track of which components have finished
     StressLevelComponents = [];
@@ -3598,6 +3639,10 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(displaystressrating_text);
     StressLevelComponents.push(stress_slider);
     StressLevelComponents.push(StressLevelClock);
+    StressLevelComponents.push(userMouse);
+    StressLevelComponents.push(Stress_Button);
+      
+    
     
     for (const thisComponent of StressLevelComponents)
       if ('status' in thisComponent)
@@ -3608,12 +3653,26 @@ function StressLevelRoutineBegin(snapshot) {
 
 var keys;
 var rating_forstress;
+var stress_ratingvalue;
+var gotValideClick;
+var marker_pos;
+var ratingvalue;
+var buttonpress;
+var finalmouseRT;
 function StressLevelRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'StressLevel' ---
     // get current time
     t = StressLevelClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    frameN = frameN + 1;
+    let buttonpress = userMouse.getPressed(); // read mouse state
+      const xys = userMouse.getPos();
+      userMouse.x.push(xys[0]); // add mouse coordinates to x/y list, in principle for data storage, but not implemented right now
+      userMouse.y.push(xys[1]);
+      userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
+      userMouse.midButton.push(buttonpress[1]);
+      userMouse.rightButton.push(buttonpress[2]);
+    // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from stresslevelslider
     // var _pj;
@@ -3712,33 +3771,88 @@ function StressLevelRoutineEachFrame() {
       // salience_slider.setAutoDraw(true);
       
       
-      keys = psychoJS.eventManager.getKeys();
+      // keys = psychoJS.eventManager.getKeys();
   //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
   
-      if (keys.length) {
-          if (_pj.in_es6("left", keys)) {
-              stress_slider.markerPos = (stress_slider.markerPos - 1);
-              rating_forstress = stress_slider.getRating();
-              displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
-              stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
-  
-          } else {
-              if (_pj.in_es6("right", keys)) {
-                  stress_slider.markerPos = (stress_slider.markerPos + 1);
-                  rating_forstress = stress_slider.getRating();
-                  displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
-                  stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
-              }
+      // if (keys.length) {
+      //     if (_pj.in_es6("left", keys)) {
+      //         stress_slider.markerPos = (stress_slider.markerPos - 1);
+      //         rating_forstress = stress_slider.getRating();
+      //         displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
+      //         stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
+      // 
+      //     } else {
+      //         if (_pj.in_es6("right", keys)) {
+      //             stress_slider.markerPos = (stress_slider.markerPos + 1);
+      //             rating_forstress = stress_slider.getRating();
+      //             displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
+      //             stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
+      //         }
+      //     }
+      // }
+      // 
+
+      const validclicks = [1,2,3,4,5]
+        ratingvalue = stress_slider.getMarkerPos();
+          if (1 < ratingvalue && ratingvalue < 1.5) {
+                stress_slider.setMarkerPos(1)
+                stress_slider.setRating(1)
+                displayrating_text.setText(1);
+                displayrating_text.setAutoDraw(true);
+
           }
-      }
-    
+
+          else if (1.5 < ratingvalue && ratingvalue < 2.5) {
+                stress_slider.setMarkerPos(2)
+                stress_slider.setRating(2)
+                displaystressrating_text.setText(2);
+                displaystressrating_text.setAutoDraw(true);
+
+          }
+            else if (2.5 < ratingvalue && ratingvalue < 3.5) {
+                stress_slider.setMarkerPos(3)
+                stress_slider.setRating(3)
+                displaystressrating_text.setText(3);
+                displaystressrating_text.setAutoDraw(true);
+
+          }
+          else if (3.5 < ratingvalue && ratingvalue < 4.5) {
+              stress_slider.setMarkerPos(4)
+              stress_slider.setRating(4)
+              displaystressrating_text.setText(4);
+              displaystressrating_text.setAutoDraw(true);
+            }
+          else if (4.5 < ratingvalue && ratingvalue < 5) {
+              stress_slider.setMarkerPos(5)
+              stress_slider.setRating(5)
+              displaystressrating_text.setText(5);
+              displaystressrating_text.setAutoDraw(true);
+              
+        }
+            finalmouseRT = mouseClock.getTime(); // get mouse time, again for storage that is not implemented
+            if (!buttonpress.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
+              prevButtonState = buttonpress; //button state as of last frame, makes sure holding mouse down has not affected anything
+              //debug code
+              //console.log('new button state detected');
+              if (buttonpress.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+                // check if the mouse was inside our 'clickable' objects
+                gotValidClick = false;
+                if (Stress_Button.contains(userMouse) && ratingvalue > 0) {
+                  {gotValidClick = true};
+                }
+                if (gotValidClick === true) { // abort routine on response
+                    continueRoutine = false;
+                }
+              }
+            }
+
     // *displaystressrating_text* updates
-    if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      displaystressrating_text.tStart = t;  // (not accounting for frame time here)
-      displaystressrating_text.frameNStart = frameN;  // exact frame index
-      
-      displaystressrating_text.setAutoDraw(true);
+    // if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
+    //   // keep track of start time/frame for later
+    //   displaystressrating_text.tStart = t;  // (not accounting for frame time here)
+    //   displaystressrating_text.frameNStart = frameN;  // exact frame index
+    // 
+    //   displaystressrating_text.setAutoDraw(true);
 
 
       
@@ -3780,6 +3894,10 @@ function StressLevelRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     }
+
+    function financial(x) {
+                  return Number.parseFloat(x).toFixed(2);
+                }
     // Run 'End Routine' code from stresslevelslider
     stresslevel = stress_slider.getRating();
     entiretaskloop.addData("stress_level", Math.round(stress_slider.getMarkerPos()*10/10));
