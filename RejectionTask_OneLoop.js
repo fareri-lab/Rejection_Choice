@@ -826,8 +826,8 @@ async function experimentInit() {
 
   Salience_Button = new visual.Rect ({
    win: psychoJS.window, name: 'polygon', 
-   width: [0.5, 0.5][0], height: [0.5, 0.5][1],
-   ori: 0, pos: [0, 0],
+   width: [0.25, 0.25][0], height: [0.25, 0.25][1],
+   ori: 0, pos: [0, (- 0.65)],
    lineWidth: 1, lineColor: new util.Color('white'),
    fillColor: undefined,
    opacity: 1, depth: -1, interpolate: true,
