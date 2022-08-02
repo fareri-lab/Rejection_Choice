@@ -587,7 +587,7 @@ async function experimentInit() {
     text: 'Computer',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.3), (- 0.4)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -599,7 +599,7 @@ async function experimentInit() {
     text: 'Self',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.3, (- 0.4)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.3, (- 0.4)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
@@ -622,7 +622,7 @@ async function experimentInit() {
     text: 'The computer will select whether it believes the card will be higher or lower than 5.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0.6], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0.6], height: 0.09,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -643,9 +643,9 @@ async function experimentInit() {
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.65)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.65)], height: 0.06,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('cornflowerblue'),  opacity: undefined,
     depth: -3.0 
   });
   
@@ -657,7 +657,7 @@ async function experimentInit() {
     text: 'Please select whether you believe the card will be higher or lower than 5. Press ‘h’ for higher or ‘l’ for lower.',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0.65], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0.65], height: 0.09,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -669,7 +669,7 @@ async function experimentInit() {
     text: 'Higher',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0.3, (- 0.5)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    pos: [0.3, (- 0.6)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
@@ -681,7 +681,7 @@ async function experimentInit() {
     text: 'Lower',
     font: 'Open Sans',
     units: undefined, 
-    pos: [(- 0.3), (- 0.5)], height: 0.1,  wrapWidth: undefined, ori: 0.0,
+    pos: [(- 0.3), (- 0.6)], height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -3.0 
@@ -695,9 +695,9 @@ async function experimentInit() {
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, (- 0.59)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, (- 0.7)], height: 0.07,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('cornflowerblue'),  opacity: undefined,
     depth: -6.0 
   });
   
@@ -3076,13 +3076,13 @@ function ContinueRoutineBegin(snapshot) {
     continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from code
-    if (((TrialNumber % 30) === 0)) {
-        continueRoutine = false;
-    }
+    // if (((TrialNumber % 30) === 0)) {
+    //     continueRoutine = false
+    // }
     if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
         resumetext = "You missed an opportunity to play the lottery. \n\n\n Please respond withtin 3 seconds on your next opportunity. \n\nPress space to continue.";
     } else {
-        resumetext = "Press space to resume sharing your photos.";
+        resumetext = "Press space to continue.";
     }
     
     resumeafterlottery_keys.keys = undefined;
@@ -3226,7 +3226,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     } else {
       continueRoutine = false;
     }
-    salienceratingtext = `How likely are you to share photos with ${Partner} in the future?
+    salienceratingtext = `You have finished sharing your photos with ${Partner}. \n\n How likely are you to share photos with them in the future?
     Click the line to begin rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
