@@ -806,27 +806,9 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, (- 0.6)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('cornflowerblue'),  opacity: undefined,
     depth: -5.0 
   });
-  
-  // Salience_Button = new visual.Polygon({
-  // win: psychoJS.window,
-  // name: 'Salience_Button',
-  // lineWidth: 1.5,
-  // lineColor: new util.Color('white'),
-  // fillColor: new util.Color('black'),
-  // edges: 4,
-  // shape: 'rectangle',
-  // radius: 1,
-  // size: (0.15,0.15),
-  // ori: 45,
-  // text: 'default text',
-  // pos: [0, (- 0.65)],
-  // color: new util.Color('white'),
-  // height: 3,
-  // 
-  // })
 
   Salience_Button = new visual.Rect ({
    win: psychoJS.window, name: 'polygon', 
@@ -837,9 +819,6 @@ async function experimentInit() {
    opacity: 1, depth: -1, interpolate: true,
  });
 
-  
-  
-  
   // Initialize components for Routine "StressLevel"
   StressLevelClock = new util.Clock();
   // Run 'Begin Experiment' code from stresslevelslider
@@ -881,7 +860,7 @@ async function experimentInit() {
     text: '',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0.3], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0.4], height: 0.08,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -897,7 +876,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, (- 0.6)], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('cornflowerblue'),  opacity: undefined,
     depth: -5.0 
   });
 
@@ -3607,6 +3586,7 @@ function StressLevelRoutineBegin(snapshot) {
       continueRoutine = false;
     }
     stressleveltext = `Please rate your current stress level.
+
     Click the line to begin rating.`
     ;
     psychoJS.eventManager.clearEvents("keyboard");
