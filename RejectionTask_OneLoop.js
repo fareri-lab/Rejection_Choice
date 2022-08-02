@@ -730,7 +730,7 @@ async function experimentInit() {
     win: psychoJS.window,
     name: "slider", 
     size: [1.0, 0.1], 
-    pos: [0, 0], //[0, (- 0.4)]
+    pos: [0, -0.2], //[0, (- 0.4)]
     units: null,
     labels: [1, 2, 3, 4, 5],
     ticks: [1, 2, 3, 4, 5],
@@ -769,7 +769,8 @@ async function experimentInit() {
     name : 'salienceavatar_image', units : undefined, 
     image : undefined, mask : undefined,
     ori : 0.0, //(0,0)
-    pos : [0, 0.3], size : [0.3, 0.55],
+    pos : [0, 0.3], 
+    size : [0.2, 0.44], //[0.3, 0.55]
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0 
