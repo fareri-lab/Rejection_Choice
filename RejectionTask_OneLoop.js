@@ -3247,6 +3247,8 @@ function SalienceRatingRoutineBegin(snapshot) {
     userMouse.rightButton = [];
     userMouse.time=[];
     prevButtonState = userMouse.getPressed();
+    salience_slider.reset();
+    displayrating_text.setText('Click line');
     // displayrating_text.setText(rating_forsalience); //get rid of NAN
     // keep track of which components have finished
     SalienceRatingComponents = [];
@@ -3606,6 +3608,8 @@ function StressLevelRoutineBegin(snapshot) {
     userMouse.rightButton = [];
     userMouse.time=[];
     prevButtonState = userMouse.getPressed();
+    stress_slider.reset();
+    displaystressrating_text.setText('Click line');
   //  displaystressrating_text.setText(rating_forstress);
     // keep track of which components have finished
     StressLevelComponents = [];
