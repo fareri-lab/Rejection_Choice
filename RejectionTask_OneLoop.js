@@ -899,7 +899,20 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -5.0 
   });
-  
+
+  stresscontinue_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'stresscontinue_text',
+    text: 'To continue, click the square when your desired rating appears',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, (- 0.8)], //[0, (- 0.8)]
+    height: 0.045, //0.07
+     wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -4.0 
+  });
   // Create some handy timers
   globalClock = new util.Clock();  // to track the time since experiment started
   routineTimer = new util.CountdownTimer();  // to track time remaining of each (non-slip) routine
@@ -3621,7 +3634,7 @@ function StressLevelRoutineBegin(snapshot) {
     StressLevelComponents.push(StressLevelClock);
     StressLevelComponents.push(userMouse);
     StressLevelComponents.push(Stress_Button);
-      
+    StressLevelComponents.push(stresscontinue_text);  
     
     
     for (const thisComponent of StressLevelComponents)
@@ -3703,7 +3716,14 @@ function StressLevelRoutineEachFrame() {
       // keep track of start time/frame for later
       stresslevel_text.tStart = t;  // (not accounting for frame time here)
       stresslevel_text.frameNStart = frameN;  // exact frame index
-      
+
+      // *stresscontinue_text* updates
+    //  if (t >= 0.0 && stressecontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+      if (key_resp.status === PsychoJS.Status.STARTED && stresscontinue_text.status === PsychoJS.Status.NOT_STARTED) {
+        // keep track of start time/frame for later
+        stresscontinue_text.tStart = t;  // (not accounting for frame time here)
+        stresscontinue_text.frameNStart = frameN;  // exact frame index
+
       stresslevel_text.setAutoDraw(true);
       Stress_Button.setAutoDraw(true);
       displaystressrating_text.setText('Click line');
