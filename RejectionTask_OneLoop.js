@@ -254,9 +254,9 @@ var StressRating_Resp;
 var Saliencerating_Resp;
 var Salience_Button;
 var Stress_Button;
-var Salience_usermouse;
-var Stress_usermouse;
-var Salience_usermouseClock;
+var Salience_mouse;
+var Stress_mouse;
+var Salience_mouseClock;
 var usermouse;
 var prevButtonState;
 
@@ -821,10 +821,10 @@ async function experimentInit() {
 
 
 })
-Salience_usermouseClock =  new util.Clock();
-Salience_usermouse = new core.Mouse({
+Salience_mouseClock =  new util.Clock();
+Salience_mouse = new core.Mouse({
   win: psychoJS.window,
-  name: 'userMouse',
+  name: 'Salience_mouse',
 });
   // //displayrating_text = new visual.TextStim({
   //   win: psychoJS.window,
@@ -903,7 +903,7 @@ Salience_usermouse = new core.Mouse({
   StressLevel_Keypress = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
 
-usermouse =  new util.Clock();
+// usermouseClock =  new util.Clock();
 usermouse = new core.Mouse({
   win: psychoJS.window,
   name: 'userMouse',
@@ -3239,8 +3239,8 @@ var SalienceRatingComponents;
 var continueRoutine;
 var salience_slider;
 var SalienceRatingClock;
-var mouserec;
-var Salience_userMouse;
+var Salience_mouserec;
+var Salience_mouse;
 var Saliencerating_Resp;
 var Salience_Button;
 function SalienceRatingRoutineBegin(snapshot) {
@@ -3259,16 +3259,16 @@ function SalienceRatingRoutineBegin(snapshot) {
     Saliencerating_Resp.setHeight(0.06);
     Saliencerating_Resp.setHeight(0.02);
     // Saliencerating_Resp.reset();
-    Salience_usermouse.clickReset();
-    mouseClock.reset()
-    mouserec = Salience_usermouse.getPos();
-    Salience_usermouse.x = [];
-    Salience_usermouse.y = [];
-    Salience_usermouse.leftButton = [];
-    Salience_usermouse.midButton = [];
-    Salience_usermouse.rightButton = [];
-    Salience_usermouse.time=[];
-    prevButtonState = Salience_usermouse.getPressed();
+    Salience_mouse.clickReset();
+    Salience_mouseClock.reset()
+    Salience_mouserec = Salience_mouse.getPos();
+    Salience_mouse.x = [];
+    Salience_mouse.y = [];
+    Salience_mouse.leftButton = [];
+    Salience_mouse.midButton = [];
+    Salience_mouse.rightButton = [];
+    Salience_mouse.time=[];
+    prevButtonState = Salience_mouse.getPressed();
     // update component parameters for each repeat
     // Run 'Begin Routine' code from saliencyrating_code
     // let continueRoutine = true;
@@ -3310,15 +3310,15 @@ function SalienceRatingRoutineBegin(snapshot) {
     key_resp.rt = undefined;
     _key_resp_allKeys = [];
     salienceavatar_image.setImage(partneravatar);
-    userMouse.clickReset();
-    mouseClock.reset()
-    mouserec = userMouse.getPos();
-    userMouse.x = [];
-    userMouse.y = [];
-    userMouse.leftButton = [];
-    userMouse.midButton = [];
-    userMouse.rightButton = [];
-    userMouse.time=[];
+    // userMouse.clickReset();
+    // mouseClock.reset()
+    // Salience_mouserec = userMouse.getPos();
+    // userMouse.x = [];
+    // userMouse.y = [];
+    // userMouse.leftButton = [];
+    // userMouse.midButton = [];
+    // userMouse.rightButton = [];
+    // userMouse.time=[];
     // displayrating_text.setText(rating_forsalience); //get rid of NAN
     // keep track of which components have finished
     SalienceRatingComponents = [];
@@ -3331,7 +3331,9 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingComponents.push(salience_slider);
     SalienceRatingComponents.push(SalienceRatingClock);
     SalienceRatingComponents.push(Salience_Button);
-    SalienceRatingComponents.push(Salience_userMouse);
+    SalienceRatingComponents.push(Salience_mouse);
+    SalienceRatingComponents.push(Salience_mouseClock);
+    
     
     for (const thisComponent of SalienceRatingComponents)
       if ('status' in thisComponent)
@@ -3353,13 +3355,13 @@ function SalienceRatingRoutineEachFrame() {
     // get current time
     t = SalienceRatingClock.getTime();
     frameN = frameN + 1;
-    let mousepress = userMouse.getPressed(); // read mouse state
-      const xys = userMouse.getPos(); 
-      Salience_userMouse.x.push(xys[0]); // add mouse coordinates to x/y list, in principle for data storage, but not implemented right now
-      Salience_userMouse.y.push(xys[1]);
-      Salience_userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
-      Salience_userMouse.midButton.push(buttonpress[1]);
-      Salience_userMouse.rightButton.push(buttonpress[2]);
+    let buttonpress = Salience_mouse.getPressed(); // read mouse state
+      const xys = Salience_mouse.getPos(); 
+      Salience_mouse.x.push(xys[0]); // add mouse coordinates to x/y list, in principle for data storage, but not implemented right now
+      Salience_mouse.y.push(xys[1]);
+      Salience_mouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
+      Salience_mouse.midButton.push(buttonpress[1]);
+      Salience_mouse.rightButton.push(buttonpress[2]);
     // number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     // Run 'Each Frame' code from saliencyrating_code
@@ -3390,6 +3392,9 @@ function SalienceRatingRoutineEachFrame() {
       saliencequestion_text.tStart = t;  // (not accounting for frame time here)
       saliencequestion_text.frameNStart = frameN;  // exact frame index
       saliencequestion_text.setAutoDraw(true);
+      Salience_Button.setAutoDraw(true);
+      Saliencerating_Resp.setText('Click Line');
+      Saliencerating_Resp.setAutoDraw(true);
     }
 
     
@@ -3398,10 +3403,7 @@ function SalienceRatingRoutineEachFrame() {
       // keep track of start time/frame for later
       key_resp.tStart = t;  // (not accounting for frame time here)
       key_resp.frameNStart = frameN;  // exact frame index
-      Salience_Button.setAutoDraw(true);
-      Salience_Button.setAutoDraw(true);
-      Saliencerating_Resp.setText('Click Line');
-      Saliencerating_Resp.setAutoDraw(true);
+  
 
     }
       
