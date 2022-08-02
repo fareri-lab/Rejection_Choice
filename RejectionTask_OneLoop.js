@@ -3795,7 +3795,7 @@ function StressLevelRoutineEachFrame() {
       // }
       // 
 
-      const validclicks = [1,2,3,4,5]
+      const validclicks = [1,2,3,4,5,6,7,8,9]
         ratingvalue = stress_slider.getMarkerPos();
           if (1 < ratingvalue && ratingvalue < 1.5) {
                 stress_slider.setMarkerPos(1)
@@ -3832,6 +3832,62 @@ function StressLevelRoutineEachFrame() {
               displaystressrating_text.setAutoDraw(true);
               
         }
+        else if (5 < ratingvalue && ratingvalue < 5.5) {
+            stress_slider.setMarkerPos(5)
+            stress_slider.setRating(5)
+            displaystressrating_text.setText(5);
+            displaystressrating_text.setAutoDraw(true);
+            
+      }
+      else if (5.5 < ratingvalue && ratingvalue < 6) {
+          stress_slider.setMarkerPos(5)
+          stress_slider.setRating(5)
+          displaystressrating_text.setText(5);
+          displaystressrating_text.setAutoDraw(true);
+          
+    }
+    else if (6 < ratingvalue && ratingvalue < 6.5) {
+        stress_slider.setMarkerPos(5)
+        stress_slider.setRating(5)
+        displaystressrating_text.setText(5);
+        displaystressrating_text.setAutoDraw(true);
+        
+  }
+  else if (6.5 < ratingvalue && ratingvalue < 7) {
+      stress_slider.setMarkerPos(5)
+      stress_slider.setRating(5)
+      displaystressrating_text.setText(5);
+      displaystressrating_text.setAutoDraw(true);
+      
+}
+  else if (7 < ratingvalue && ratingvalue < 7.5) {
+      stress_slider.setMarkerPos(5)
+      stress_slider.setRating(5)
+      displaystressrating_text.setText(5);
+      displaystressrating_text.setAutoDraw(true);
+    
+}
+  else if (7.5 < ratingvalue && ratingvalue < 8) {
+      stress_slider.setMarkerPos(5)
+      stress_slider.setRating(5)
+      displaystressrating_text.setText(5);
+      displaystressrating_text.setAutoDraw(true);
+      
+}
+  else if (8 < ratingvalue && ratingvalue < 8.5) {
+      stress_slider.setMarkerPos(5)
+      stress_slider.setRating(5)
+      displaystressrating_text.setText(5);
+      displaystressrating_text.setAutoDraw(true);
+      
+}
+  else if (8.5 < ratingvalue && ratingvalue < 9) {
+      stress_slider.setMarkerPos(5)
+      stress_slider.setRating(5)
+      displaystressrating_text.setText(5);
+      displaystressrating_text.setAutoDraw(true);
+      
+}
             finalmouseRT = mouseClock.getTime(); // get mouse time, again for storage that is not implemented
             if (!buttonpress.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
               prevButtonState = buttonpress; //button state as of last frame, makes sure holding mouse down has not affected anything
