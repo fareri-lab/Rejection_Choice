@@ -3523,7 +3523,9 @@ function SalienceRatingRoutineEnd(snapshot) {
     function financial(x) {
                   return Number.parseFloat(x).toFixed(2);
                 }
-
+                psychoJS.experiment.addData('saliencerating', financial(Salience_Slider.getRating())); //test
+                // psychoJS.experiment.addData('pracScale.rt', userMouse.getPos()); //test
+                // psychoJS.experiment.addData('saliencemouse.rt', pracfinalmouseRT);
     // Run 'End Routine' code from saliencyrating_code
     entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
     //entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
