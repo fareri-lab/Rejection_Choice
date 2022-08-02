@@ -806,23 +806,34 @@ async function experimentInit() {
     depth: -5.0 
   });
   
-  Salience_Button = new visual.Polygon({
-  win: psychoJS.window,
-  name: 'Salience_Button',
-  lineWidth: 1.5,
-  lineColor: new util.Color('white'),
-  fillColor: new util.Color('black'),
-  edges: 4,
-  shape: 'rectangle',
-  radius: 1,
-  size: (0.15,0.15),
-  ori: 45,
-  text: 'default text',
-  pos: [0, (- 0.65)],
-  color: new util.Color('white'),
-  height: 3,
+  // Salience_Button = new visual.Polygon({
+  // win: psychoJS.window,
+  // name: 'Salience_Button',
+  // lineWidth: 1.5,
+  // lineColor: new util.Color('white'),
+  // fillColor: new util.Color('black'),
+  // edges: 4,
+  // shape: 'rectangle',
+  // radius: 1,
+  // size: (0.15,0.15),
+  // ori: 45,
+  // text: 'default text',
+  // pos: [0, (- 0.65)],
+  // color: new util.Color('white'),
+  // height: 3,
+  // 
+  // })
 
-  })
+  Salience_Button = new visual.Rect ({
+   win: psychoJS.window, name: 'polygon', 
+   width: [0.5, 0.5][0], height: [0.5, 0.5][1],
+   ori: 0, pos: [0, 0],
+   lineWidth: 1, lineColor: new util.Color('white'),
+   fillColor: undefined,
+   opacity: 1, depth: -1, interpolate: true,
+ });
+
+  
   
   
   // Initialize components for Routine "StressLevel"
