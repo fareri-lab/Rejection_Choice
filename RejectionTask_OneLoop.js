@@ -572,7 +572,7 @@ async function experimentInit() {
   lotterychoice_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'lotterychoice_text',
-    text: 'You have reached the lottery. Please choose 'c' to have the computer play on your behalf or choose 's' to play the lottery for yourself.',
+    text: 'You have reached the lottery. Please choose [c] to have the computer play on your behalf or choose [s] to play the lottery for yourself.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
@@ -654,7 +654,7 @@ async function experimentInit() {
   pickacard_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'pickacard_text',
-    text: 'Please select whether you believe the card will be higher or lower than 5. Press ‘h’ for higher or ‘l’ for lower.',
+    text: 'Please select whether you believe the card will be higher or lower than 5. Press [h] for higher or [l] for lower.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.65], height: 0.09,  wrapWidth: undefined, ori: 0.0,
