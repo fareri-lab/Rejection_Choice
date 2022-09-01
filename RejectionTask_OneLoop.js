@@ -265,7 +265,7 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\n During the course of sharing your photos you will have opportunities to participate in a lottery for additional earnings, guessing if a facedown card is higher or lower than a designated number. You can either play the lottery for yourself or have the computer play on your behalf. At the end of the task you will be notified how much of a bonus you earned based on yours or the computer selections.\n\n\nPress space to continue.\n',
+    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\n During the course of sharing your photos you will have opportunities to participate in a lottery for additional earnings by guessing if a facedown card is higher or lower than a designated number. You can either play the lottery for yourself or have the computer play on your behalf. At the end of the task you will be notified how much of a bonus you earned based on yours or the computer selections.\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -2647,10 +2647,14 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
+        core.wait(.5)
+        win.flip()
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
+            core.wait(.5)
+            win.flip()
       
       }
     }
