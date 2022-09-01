@@ -215,6 +215,10 @@ var block1_cardimage;
 var ContinueClock;
 var resumeafterlottery_keys;
 var resumetext_text;
+var bonus_screen;
+var bonus_screenclock;
+var thankyou_screen;
+var thankyou_screenclock;
 
 // salience slider 
 var userMouse;
@@ -288,7 +292,7 @@ async function experimentInit() {
   FirstInstructions = new visual.TextStim({
     win: psychoJS.window,
     name: 'FirstInstructions',
-    text: 'To begin, you will be assigned a partner at random by the computer. Next, your instagram photos will be shared with your partner. After each photo is shared, your partner will give you feedback on whether they liked or disliked your photo. You will have the chance to share your photos with 3 different partners during todays task.\n\n\nYou may be eligible throughout the task to participate in a lottery, which you may play yourself or have the computer play on your behalf. Further instructions about this task will be provided should you be eligible to participate.\n\n\nPress space to continue.',
+    text: 'To begin, you will be assigned a partner at random by the computer. Next, your instagram photos will be shared with your partner. After each photo is shared, your partner will give you feedback on whether they liked or disliked your photo. You will have the chance to share your photos with 3 different partners during todays task.\n\n\nPress space to continue.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -893,6 +897,35 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -4.0 
   });
+
+  bonus_screenclock = new util.Clock();
+  bonus_screen = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'bonus_screen',
+    text: 'Congratulatoins!\n\n\nFrom your lottery selections, you have earned an additional $5.00.\n\n\nPress space to continue.\n',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: 0.0 
+  });
+
+  thankyou_screenclock = new util.Clock();
+  thankyou_screen = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'bonus_screen',
+    text: '\n\n\nYou have now reached the end of the task.\n\n\nYou will now be redirected to complete the post-task survey.\n',
+    font: 'Open Sans',
+    units: undefined, 
+    pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: 0.0 
+  });
+  
+  endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+
   // Create some handy timers
   globalClock = new util.Clock();  // to track the time since experiment started
   routineTimer = new util.CountdownTimer();  // to track time remaining of each (non-slip) routine
@@ -2647,16 +2680,13 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-        await delay(500);
-        continueRoutine = false  
 
         
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-            await delay(500);
-            continueRoutine = false
+
               
 
       
