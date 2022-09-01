@@ -2647,14 +2647,13 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-        core.wait(.5)
-        win.flip()
+        setTimeout(win.flip(),500)
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-            core.wait(.5)
-            win.flip()
+            setTimeout(win.flip(),500)
+
       
       }
     }
