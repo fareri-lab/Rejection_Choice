@@ -2647,7 +2647,7 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-        setTimeout(ChoiceRoutineEachFrame,500); 
+        await delay(500);
         continueRoutine = false  
 
         
@@ -2655,8 +2655,9 @@ function ChoiceRoutineEachFrame() {
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-            setTimeout(ChoiceRoutineEachFrame,500); 
-            continueRoutine = false  
+            await delay(500);
+            continueRoutine = false
+              
 
       
       }
