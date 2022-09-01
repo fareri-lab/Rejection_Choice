@@ -265,7 +265,7 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\nPress space to continue.\n',
+    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\n During the course of sharing your photos you will have opportunities to participate in a lottery for additional earnings, guessing if a facedown card is higher or lower than a designated number. You can either play the lottery for yourself or have the computer play on your behalf. At the end of the task you will be notified how much of a bonus you earned based on yours or the computer selections.\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -511,18 +511,18 @@ async function experimentInit() {
     texRes : 128.0, interpolate : true, depth : -3.0 
   });
   // Initialize components for Routine "Waitingforfeedback"
-  WaitingforfeedbackClock = new util.Clock();
-  waiting_text = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'waiting_text',
-    text: 'Waiting…',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0.0], height: 0.15,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
-  });
+// //  WaitingforfeedbackClock = new util.Clock();
+//   waiting_text = new visual.TextStim({
+//     win: psychoJS.window,
+//     name: 'waiting_text',
+//     text: 'Waiting…',
+//     font: 'Open Sans',
+//     units: undefined, 
+//     pos: [0, 0.0], height: 0.15,  wrapWidth: undefined, ori: 0.0,
+//     languageStyle: 'LTR',
+//     color: new util.Color('white'),  opacity: undefined,
+//     depth: 0.0 
+//   });
   
   // Initialize components for Routine "feedback"
   feedbackClock = new util.Clock();
@@ -572,7 +572,7 @@ async function experimentInit() {
   lotterychoice_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'lotterychoice_text',
-    text: 'You now have the option to play a lottery game! To play, a guess whether the upside down card is higher or lower than 5 needs to be made.\n\nYou can either have the computer guess on your behalf or you may make a guess yourself. If you would like the computer to make the guess on your behalf press ‘c’. If you would like to guess yourself press ‘s’. \n\n\nYou will have 3 seconds to decide.\n',
+    text: 'You have reached the lottery. Please choose 'c' to have the computer play on your behalf or choose 's' to play the lottery for yourself.'',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
@@ -1266,9 +1266,9 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       entiretaskloopLoopScheduler.add(Photo_ShareRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(Photo_ShareRoutineEachFrame());
       entiretaskloopLoopScheduler.add(Photo_ShareRoutineEnd(snapshot));
-      entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineBegin(snapshot));
-      entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineEachFrame());
-      entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineEnd(snapshot));
+      // entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineBegin(snapshot));
+      // entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineEachFrame());
+      // entiretaskloopLoopScheduler.add(WaitingforfeedbackRoutineEnd(snapshot));
       entiretaskloopLoopScheduler.add(feedbackRoutineBegin(snapshot));
       entiretaskloopLoopScheduler.add(feedbackRoutineEachFrame());
       entiretaskloopLoopScheduler.add(feedbackRoutineEnd(snapshot));
@@ -2193,94 +2193,94 @@ function Photo_ShareRoutineEnd(snapshot) {
 }
 
 
-var WaitingforfeedbackComponents;
-function WaitingforfeedbackRoutineBegin(snapshot) {
-  return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-    
-    //--- Prepare to start Routine 'Waitingforfeedback' ---
-    t = 0;
-    WaitingforfeedbackClock.reset(); // clock
-    frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    routineTimer.add(5.000000);
-    // update component parameters for each repeat
-    // keep track of which components have finished
-    WaitingforfeedbackComponents = [];
-    WaitingforfeedbackComponents.push(waiting_text);
-    
-    for (const thisComponent of WaitingforfeedbackComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
-    return Scheduler.Event.NEXT;
-  }
-}
-
-
-function WaitingforfeedbackRoutineEachFrame() {
-  return async function () {
-    //--- Loop for each frame of Routine 'Waitingforfeedback' ---
-    // get current time
-    t = WaitingforfeedbackClock.getTime();
-    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    
-    // *waiting_text* updates
-    if (t >= 0.0 && waiting_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      waiting_text.tStart = t;  // (not accounting for frame time here)
-      waiting_text.frameNStart = frameN;  // exact frame index
-      
-      waiting_text.setAutoDraw(true);
-    }
-
-    frameRemains = 0.0 + 5.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    if (waiting_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      waiting_text.setAutoDraw(false);
-    }
-    // check for quit (typically the Esc key)
-    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-    }
-    
-    // check if the Routine should terminate
-    if (!continueRoutine) {  // a component has requested a forced-end of Routine
-      return Scheduler.Event.NEXT;
-    }
-    
-    continueRoutine = false;  // reverts to True if at least one component still running
-    for (const thisComponent of WaitingforfeedbackComponents)
-      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-        continueRoutine = true;
-        break;
-      }
-    
-    // refresh the screen if continuing
-    if (continueRoutine && routineTimer.getTime() > 0) {
-      return Scheduler.Event.FLIP_REPEAT;
-    } else {
-      return Scheduler.Event.NEXT;
-    }
-  };
-}
-
-
-function WaitingforfeedbackRoutineEnd(snapshot) {
-  return async function () {
-    //--- Ending Routine 'Waitingforfeedback' ---
-    for (const thisComponent of WaitingforfeedbackComponents) {
-      if (typeof thisComponent.setAutoDraw === 'function') {
-        thisComponent.setAutoDraw(false);
-      }
-    }
-    // Routines running outside a loop should always advance the datafile row
-    if (currentLoop === psychoJS.experiment) {
-      psychoJS.experiment.nextEntry(snapshot);
-    }
-    return Scheduler.Event.NEXT;
-  }
-}
-
+// var WaitingforfeedbackComponents;
+// function WaitingforfeedbackRoutineBegin(snapshot) {
+//   return async function () {
+//     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+// 
+//     //--- Prepare to start Routine 'Waitingforfeedback' ---
+//     t = 0;
+//     WaitingforfeedbackClock.reset(); // clock
+//     frameN = -1;
+//     continueRoutine = true; // until we're told otherwise
+//     routineTimer.add(5.000000);
+//     // update component parameters for each repeat
+//     // keep track of which components have finished
+//     WaitingforfeedbackComponents = [];
+//     WaitingforfeedbackComponents.push(waiting_text);
+// 
+//     for (const thisComponent of WaitingforfeedbackComponents)
+//       if ('status' in thisComponent)
+//         thisComponent.status = PsychoJS.Status.NOT_STARTED;
+//     return Scheduler.Event.NEXT;
+//   }
+// }
+// 
+// 
+// function WaitingforfeedbackRoutineEachFrame() {
+//   return async function () {
+//     //--- Loop for each frame of Routine 'Waitingforfeedback' ---
+//     // get current time
+//     t = WaitingforfeedbackClock.getTime();
+//     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+//     // update/draw components on each frame
+// 
+//     // *waiting_text* updates
+//     if (t >= 0.0 && waiting_text.status === PsychoJS.Status.NOT_STARTED) {
+//       // keep track of start time/frame for later
+//       waiting_text.tStart = t;  // (not accounting for frame time here)
+//       waiting_text.frameNStart = frameN;  // exact frame index
+// 
+//       waiting_text.setAutoDraw(true);
+//     }
+// 
+//     frameRemains = 0.0 + 5.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+//     if (waiting_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+//       waiting_text.setAutoDraw(false);
+//     }
+//     // check for quit (typically the Esc key)
+//     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+//       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+//     }
+// 
+//     // check if the Routine should terminate
+//     if (!continueRoutine) {  // a component has requested a forced-end of Routine
+//       return Scheduler.Event.NEXT;
+//     }
+// 
+//     continueRoutine = false;  // reverts to True if at least one component still running
+//     for (const thisComponent of WaitingforfeedbackComponents)
+//       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+//         continueRoutine = true;
+//         break;
+//       }
+// 
+//     // refresh the screen if continuing
+//     if (continueRoutine && routineTimer.getTime() > 0) {
+//       return Scheduler.Event.FLIP_REPEAT;
+//     } else {
+//       return Scheduler.Event.NEXT;
+//     }
+//   };
+// }
+// 
+// 
+// function WaitingforfeedbackRoutineEnd(snapshot) {
+//   return async function () {
+//     //--- Ending Routine 'Waitingforfeedback' ---
+//     for (const thisComponent of WaitingforfeedbackComponents) {
+//       if (typeof thisComponent.setAutoDraw === 'function') {
+//         thisComponent.setAutoDraw(false);
+//       }
+//     }
+//     // Routines running outside a loop should always advance the datafile row
+//     if (currentLoop === psychoJS.experiment) {
+//       psychoJS.experiment.nextEntry(snapshot);
+//     }
+//     return Scheduler.Event.NEXT;
+//   }
+// }
+// 
 
 var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
