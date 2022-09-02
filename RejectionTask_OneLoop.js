@@ -4138,5 +4138,9 @@ async function quitPsychoJS(message, isCompleted) {
     psychoJS.experiment.nextEntry();
    };
   psychoJS.window.close();
+  psychoJS.quit({message: message, isCompleted: isCompleted});
+  //  when they press space, redirect to choice task
+  //window.location.replace(weblink);
+
   return Scheduler.Event.QUIT;
 }    
