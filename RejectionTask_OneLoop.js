@@ -296,10 +296,10 @@ async function experimentInit() {
   FirstInstructions = new visual.TextStim({
     win: psychoJS.window,
     name: 'FirstInstructions',
-    text: 'At select times throughout the course of the experiment, you will be asked to play a lottery. \n\n\n During each lottery, the task is to guess if a facedown card is higher or lower than a given number. You can either choose to play the lottery for yourself or have the computer play on your behalf.\n\n\n You will not receive feedback about any of your guesses. However, at the end of the task, one lottery guess will be selected at random and you will be notified of any earnings at the end of the task.\n\n\nPress space to continue.\n',
+    text: 'At select times throughout the course of the experiment, you will be asked to play a lottery. \n\n\n During each lottery, the task is to guess if a facedown card is higher or lower than a given number. You can either choose to play the lottery for yourself or have the computer play on your behalf.\n\n\n You will not receive feedback about any of your guesses. However, at the end of the task, one lottery guess will be selected at random and you will be notified of any earnings at the end of the task.\n\n\n You are now ready to begin sharing your photos. Press space to begin! \n',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
