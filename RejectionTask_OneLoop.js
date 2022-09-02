@@ -197,6 +197,7 @@ var ChoiceClock;
 var lotterychoice_text;
 var computer_text;
 var self_text;
+var conditionalBlank;
 var response_msg;
 var feedback_msg;
 var computer_choice;
@@ -612,6 +613,17 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: -2.0 
   });
+
+  conditionalBlank = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'conditionalconditionalBlank',
+    text: '',
+    font: 'Arial',
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    color: new util.Color('white'),  opacity: 1,
+    depth: -6.0
+  });
+  
   // Run 'Begin Experiment' code from setvariables_code
   response_msg = " ";
   feedback_msg = " ";
@@ -2580,6 +2592,7 @@ function ChoiceRoutineBegin(snapshot) {
     
     //--- Prepare to start Routine 'Choice' ---
     t = 0;
+    conditionalBlank.setText('');
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
@@ -2593,7 +2606,8 @@ function ChoiceRoutineBegin(snapshot) {
     ChoiceComponents.push(lotterychoice_text);
     ChoiceComponents.push(computer_text);
     ChoiceComponents.push(self_text);
-    ChoiceComponents.push(choice_keys);
+    ChoiceComponents.push(conditionalBlank);
+    ChoiceComponents.push(choice_keys);    
     
     for (const thisComponent of ChoiceComponents)
       if ('status' in thisComponent)
@@ -2690,17 +2704,35 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-
+          
         
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-
-              
-
-      
       }
+
+      // *conditionalBlank* updates
+      if (responses.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
+        // keep track of start time/frame for later
+        conditionalBlank.tStart = t;  // (not accounting for frame time here)
+        conditionalBlank.frameNStart = frameN;  // exact frame index
+        conditionalBlank.setAutoDraw(true);
+      }
+
+      if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
+      conditionalBlank.setAutoDraw(false);
+      }
+
+    //   show the response for 2 seconds, then move on to next trial
+      if (conditionalBlank.status == PsychoJS.Status.FINISHED){
+         self_text.setAutoDraw(false);
+         computer_text.setAutoDraw(false);
+         lotterychoice_text.setAutoDraw(false);
+
+         continueRoutine = false;
+       }
+      
     }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
