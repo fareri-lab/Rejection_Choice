@@ -67,6 +67,9 @@ const entiretaskloopLoopScheduler = new Scheduler(psychoJS);
 flowScheduler.add(entiretaskloopLoopBegin(entiretaskloopLoopScheduler));
 flowScheduler.add(entiretaskloopLoopScheduler);
 flowScheduler.add(entiretaskloopLoopEnd);
+flowScheduler.add(End_ScreenRoutineBegin());
+flowScheduler.add(End_ScreenRoutineEachFrame());
+flowScheduler.add(End_ScreenRoutineEnd());
 flowScheduler.add(quitPsychoJS, '', true);
 
 // quit if user presses Cancel in dialog box:
@@ -215,10 +218,11 @@ var block1_cardimage;
 var ContinueClock;
 var resumeafterlottery_keys;
 var resumetext_text;
-var bonus_screen;
-var bonus_screenclock;
-var thankyou_screen;
-var thankyou_screenclock;
+var end_screen;
+var end_screenclock;
+var end_screen_keys;
+// var thankyou_screen;
+// var thankyou_screenclock;
 
 // salience slider 
 var userMouse;
@@ -898,11 +902,11 @@ async function experimentInit() {
     depth: -4.0 
   });
 
-  bonus_screenclock = new util.Clock();
-  bonus_screen = new visual.TextStim({
+end_screenclock = new util.Clock();
+end_screen = new visual.TextStim({
     win: psychoJS.window,
-    name: 'bonus_screen',
-    text: 'Congratulatoins!\n\n\nFrom your lottery selections, you have earned an additional $5.00.\n\n\nPress space to continue.\n',
+    name: 'end_screen',
+    text: 'You have now reached the end of the task. \n\n\n Congratulations! From your randomly selected lottery, you have earned an additional $5.00.\n\n\nPress space to be redirected to complete the post-task survey..\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -910,19 +914,21 @@ async function experimentInit() {
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
   });
+  end_screen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
-  thankyou_screenclock = new util.Clock();
-  thankyou_screen = new visual.TextStim({
-    win: psychoJS.window,
-    name: 'bonus_screen',
-    text: '\n\n\nYou have now reached the end of the task.\n\n\nYou will now be redirected to complete the post-task survey.\n',
-    font: 'Open Sans',
-    units: undefined, 
-    pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
-    languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
-  });
+
+  // thankyou_screenclock = new util.Clock();
+  // thankyou_screen = new visual.TextStim({
+  //   win: psychoJS.window,
+  //   name: 'bonus_screen',
+  //   text: '\n\n\nYou have now reached the end of the task.\n\n\nYou will now be redirected to complete the post-task survey.\n',
+  //   font: 'Open Sans',
+  //   units: undefined, 
+  //   pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+  //   languageStyle: 'LTR',
+  //   color: new util.Color('white'),  opacity: undefined,
+  //   depth: 0.0 
+  // });
   
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
@@ -1275,7 +1281,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     entiretaskloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
+      nReps: 0, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'Dummy_Spreadsheet.csv',
       seed: undefined, name: 'entiretaskloop'
@@ -3986,6 +3992,141 @@ function StressLevelRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
+//--- Prepare to start Routine 'End_Screen' ---
+var t;
+var frameN;
+var continueRoutine;
+var _end_screen_keys_allKeys;
+var End_ScreenComponents;
+function End_ScreenRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'end_Screen' ---
+    t = 0;
+    end_screenclock.reset(); // clock
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    // update component parameters for each repeat
+    end_screen_keys.keys = undefined;
+    end_screen_keys.rt = undefined;
+    _end_screen_keys_allKeys = [];
+    // keep track of which components have finished
+    End_ScreenComponents = [];
+    End_ScreenComponents.push(end_screen);
+    End_ScreenComponents.push(end_screen_keys);
+    
+    for (const thisComponent of End_ScreenComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function End_ScreenRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'end_screen_Screen' ---
+    // get current time
+    t = end_screenclock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *end_screen* updates
+    if (t >= 0.0 && end_screen.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      end_screen.tStart = t;  // (not accounting for frame time here)
+      end_screen.frameNStart = frameN;  // exact frame index
+      
+      end_screen.setAutoDraw(true);
+    }
+
+    
+    // *end_screen_keys* updates
+    if (t >= 0.0 && end_screen_keys.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      end_screen_keys.tStart = t;  // (not accounting for frame time here)
+      end_screen_keys.frameNStart = frameN;  // exact frame index
+      
+      // keyboard checking is just starting
+      psychoJS.window.callOnFlip(function() { end_screen_keys.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { end_screen_keys.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { end_screen_keys.clearEvents(); });
+    }
+
+    if (end_screen_keys.status === PsychoJS.Status.STARTED) {
+      let theseKeys = end_screen_keys.getKeys({keyList: ['space'], waitRelease: false});
+      _end_screen_keys_allKeys = _end_screen_keys_allKeys.concat(theseKeys);
+      if (_end_screen_keys_allKeys.length > 0) {
+        end_screen_keys.keys = _end_screen_keys_allKeys[_end_screen_keys_allKeys.length - 1].name;  // just the last key pressed
+        end_screen_keys.rt = _end_screen_keys_allKeys[_end_screen_keys_allKeys.length - 1].rt;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+    
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of End_ScreenComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function End_ScreenRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'end_Screen' ---
+    for (const thisComponent of End_ScreenComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(end_screen_keys.corr, level);
+    }
+    psychoJS.experiment.addData('end_screen_keys.keys', end_screen_keys.keys);
+    if (typeof end_screen_keys.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('end_screen_keys.rt', end_screen_keys.rt);
+        routineTimer.reset();
+        }
+    
+    end_screen_keys.stop();
+    // the Routine "end_Screen" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+
+
+
+
 
 
 function importConditions(currentLoop) {
