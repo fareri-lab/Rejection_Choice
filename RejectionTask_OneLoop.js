@@ -2618,7 +2618,7 @@ function ChoiceRoutineEachFrame() {
       lotterychoice_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (lotterychoice_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       lotterychoice_text.setAutoDraw(false);
     }
@@ -2632,7 +2632,7 @@ function ChoiceRoutineEachFrame() {
       computer_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (computer_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       computer_text.setAutoDraw(false);
     }
@@ -2646,7 +2646,7 @@ function ChoiceRoutineEachFrame() {
       self_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (self_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       self_text.setAutoDraw(false);
     }
@@ -2670,7 +2670,7 @@ function ChoiceRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
     }
 
-    frameRemains = 0.0 + 5 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       choice_keys.status = PsychoJS.Status.FINISHED;
   }
@@ -3124,7 +3124,7 @@ function ContinueRoutineBegin(snapshot) {
     //     continueRoutine = false
     // }
     if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
-        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please respond within 3 seconds on your next opportunity. \n\nPress space to continue.";
+        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please be sure to respond faster on your next opportunity. \n\nPress space to continue.";
     } else {
         resumetext = "Press space to continue.";
     }
