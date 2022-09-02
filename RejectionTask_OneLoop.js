@@ -3124,7 +3124,7 @@ function ContinueRoutineBegin(snapshot) {
     //     continueRoutine = false
     // }
     if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
-        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please respond withtin 3 seconds on your next opportunity. \n\nPress space to continue.";
+        resumetext = "You missed an opportunity to play the lottery. \n\n\n Please respond within 3 seconds on your next opportunity. \n\nPress space to continue.";
     } else {
         resumetext = "Press space to continue.";
     }
