@@ -2113,7 +2113,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
   //  routineTimer.add(3.000000);
-    routineTimer.add(parseFloat(Wait));
+    routineTimer.add(parseFloat(Waiting));
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
     // keep track of which components have finished
@@ -2147,7 +2147,7 @@ function Photo_ShareRoutineEachFrame() {
       photobeingshared_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + parseFloat(Wait) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (photobeingshared_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       photobeingshared_text.setAutoDraw(false);
     }
@@ -2161,7 +2161,7 @@ function Photo_ShareRoutineEachFrame() {
       waitforfeedback_text.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + parseFloat(Wait) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (waitforfeedback_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       waitforfeedback_text.setAutoDraw(false);
     }
@@ -2175,7 +2175,7 @@ function Photo_ShareRoutineEachFrame() {
       participantimage_image.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + parseFloat(Wait) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (participantimage_image.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       participantimage_image.setAutoDraw(false);
     }
