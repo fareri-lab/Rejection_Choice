@@ -4124,11 +4124,6 @@ function End_ScreenRoutineEnd(snapshot) {
 
 
 
-
-
-
-
-
 function importConditions(currentLoop) {
   return async function () {
     psychoJS.importAttributes(currentLoop.getCurrentTrial());
@@ -4142,4 +4137,6 @@ async function quitPsychoJS(message, isCompleted) {
   if (psychoJS.experiment.isEntryEmpty()) {
     psychoJS.experiment.nextEntry();
    };
+  psychoJS.window.close();
+  return Scheduler.Event.QUIT;
 }    
