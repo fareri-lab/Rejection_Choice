@@ -273,7 +273,7 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback, as well as a few opportunities to play a lottery for an additional bonus.\n\n\n The task during each lottery is to guess if a facedown card is higher or lower than a given number. You can either choose to play the lottery for yourself or have the computer play on your behalf.\n\n\n You will not receive feedback about any of your guesses. However, at the end of the task, one lottery guess will be selected at random and you will be notified of any earnings at the end of the task.\n\n\nPress space to continue.\n',
+    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback, as well as a few opportunities to play a lottery for an additional bonus.\n\n\n To begin, you will be assigned a partner at random by the computer. Next, your instagram photos will be shared with your partner. After each photo is shared, your partner will give you feedback on whether they liked or disliked your photo. You will have the chance to share your photos with 3 different partners during this task.\n\n\nPress space to continue.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
@@ -296,7 +296,7 @@ async function experimentInit() {
   FirstInstructions = new visual.TextStim({
     win: psychoJS.window,
     name: 'FirstInstructions',
-    text: 'To begin, you will be assigned a partner at random by the computer. Next, your instagram photos will be shared with your partner. After each photo is shared, your partner will give you feedback on whether they liked or disliked your photo. You will have the chance to share your photos with 3 different partners during todays task.\n\n\nPress space to continue.',
+    text: 'At select times throughout the course of the experiment, you will be asked to play a lottery. \n\n\n During each lottery, the task is to guess if a facedown card is higher or lower than a given number. You can either choose to play the lottery for yourself or have the computer play on your behalf.\n\n\n You will not receive feedback about any of your guesses. However, at the end of the task, one lottery guess will be selected at random and you will be notified of any earnings at the end of the task.\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
