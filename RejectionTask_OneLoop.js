@@ -273,10 +273,10 @@ async function experimentInit() {
   Welcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'Welcome',
-    text: 'Welcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\n During the course of sharing your photos you will have opportunities to participate in a lottery by guessing if a facedown card is higher or lower than a given number. You can either play the lottery for yourself or have the computer play on your behalf. You will not receive feedback during each lottery trial. At the end of the task, one lottery guess will be selected at random for a chance to earn a monetary bonus and you will be notified of your earnings.\n\n\nPress space to continue.\n',
+    text: '/n/nWelcome to the Social Media Task!\n\n\nToday you will have the opportunity to share some of your Instagram photos with other participants and receive feedback.\n\n\n\n During the course of sharing your photos you will have opportunities to participate in a lottery by guessing if a facedown card is higher or lower than a given number. You can either play the lottery for yourself or have the computer play on your behalf. You will not receive feedback during each lottery trial. At the end of the task, one lottery guess will be selected at random for a chance to earn a monetary bonus and you will be notified of your earnings.\n\n\nPress space to continue.\n',
     font: 'Open Sans',
     units: undefined, 
-    pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
@@ -906,7 +906,7 @@ end_screenclock = new util.Clock();
 end_screen = new visual.TextStim({
     win: psychoJS.window,
     name: 'end_screen',
-    text: 'You have now reached the end of the task. \n\n\n Congratulations! From your randomly selected lottery, you have earned an additional $5.00.\n\n\nPress space to be redirected to complete the post-task survey..\n',
+    text: 'You have now reached the end of the task. \n\n\n Congratulations! From your randomly selected lottery, you have earned an additional $5.00.\n\n\nPress space to be redirected to complete the post-task survey.\n',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
