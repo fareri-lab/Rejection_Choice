@@ -1281,7 +1281,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     entiretaskloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 0, method: TrialHandler.Method.SEQUENTIAL,
+      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'Dummy_Spreadsheet.csv',
       seed: undefined, name: 'entiretaskloop'
