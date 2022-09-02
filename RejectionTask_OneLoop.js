@@ -316,7 +316,7 @@ async function experimentInit() {
   Match_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'Match_text',
-    text: 'You will now be matched with a game partner selected at random by the computer.',
+    text: 'You will now be matched with a game partner selected at random by the computer. \n\n Please wait.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.3], height: 0.08,  wrapWidth: undefined, ori: 0.0,
