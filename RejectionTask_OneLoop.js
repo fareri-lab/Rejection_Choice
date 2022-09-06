@@ -2598,8 +2598,7 @@ function ChoiceRoutineBegin(snapshot) {
     conditionalBlank.setColor('red')
     ChoiceClock.reset(); // clock
     frameN = -1;
-    computer_text.setText('Computer');
-    self_text.setText('Computer');
+
     // continueRoutine = true; // until we're told otherwise
     // routineTimer.add(10.000000);
     // update component parameters for each repeat
