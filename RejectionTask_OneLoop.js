@@ -2583,8 +2583,7 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
-var continueRoutine;
-var these_Keys
+
 var _choice_keys_allKeys;
 var ChoiceComponents;
 function ChoiceRoutineBegin(snapshot) {
@@ -2617,16 +2616,14 @@ function ChoiceRoutineBegin(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-var frameRemains;
-var t;
-var continueRoutine;
+
+
 var random_entry;
 var DecisionColor;
 function ChoiceRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Choice' ---
     // get current time
-    let continueRoutine = true; // until we're told otherwise
     t = ChoiceClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
@@ -2715,7 +2712,6 @@ function ChoiceRoutineEachFrame() {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
       }
-    }
 
       // *conditionalBlank* updates
       if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
@@ -2738,7 +2734,7 @@ function ChoiceRoutineEachFrame() {
          continueRoutine = false;
        }
       
-    //}
+    }
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
