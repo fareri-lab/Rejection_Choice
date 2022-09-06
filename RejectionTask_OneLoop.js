@@ -279,7 +279,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('green'),  opacity: undefined,
+    color: new util.Color('yellow'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2596,7 +2596,7 @@ function ChoiceRoutineBegin(snapshot) {
     conditionalBlank.setColor('red')
     ChoiceClock.reset(); // clock
     frameN = -1;
-    let continueRoutine = true; // until we're told otherwise
+    continueRoutine = true; // until we're told otherwise
     routineTimer.add(10.000000);
     // update component parameters for each repeat
     choice_keys.keys = undefined;
@@ -2702,6 +2702,12 @@ function ChoiceRoutineEachFrame() {
         choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
       }
     }
+    //!!!
+    if (choice_keys.keys.length > 0){
+         choice_keys.status = PsychoJS.Status.FINISHED; //don't allow more than one response
+
+     }
+    
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
@@ -2714,7 +2720,7 @@ function ChoiceRoutineEachFrame() {
       }
 
       // *conditionalBlank* updates
-      if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
+      if (choice_keys.keys.length > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
         // keep track of start time/frame for later
         conditionalBlank.tStart = t;  // (not accounting for frame time here)
         conditionalBlank.frameNStart = frameN;  // exact frame index
@@ -2722,7 +2728,7 @@ function ChoiceRoutineEachFrame() {
       }
 
       if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
-      conditionalBlank.setAutoDraw(false);
+        conditionalBlank.setAutoDraw(false);
       }
 
     //   show the response for 2 seconds, then move on to next trial
