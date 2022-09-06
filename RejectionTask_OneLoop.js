@@ -279,7 +279,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('purple'),  opacity: undefined,
+    color: new util.Color('pink'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2167,7 +2167,13 @@ function Photo_ShareRoutineEachFrame() {
     
     // *waitforfeedback_text* updates
  
-
+    if (t >= 0.0 && waitforfeedback_text.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      waitforfeedback_text.tStart = t;  // (not accounting for frame time here)
+      waitforfeedback_text.frameNStart = frameN;  // exact frame index
+      
+      waitforfeedback_text.setAutoDraw(true);
+    }
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (waitforfeedback_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
@@ -2700,14 +2706,14 @@ function ChoiceRoutineEachFrame() {
         computer_text.setColor(new util.Color(DecisionColor));
         routineTimer.reset();
         routineTimer.add(2.0000);
-        continueRoutine = False;
+        continueRoutine = false;
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
             routineTimer.reset();
             routineTimer.add(2.0000);
-            continueRoutine = False;
+            continueRoutine = false;
       }
 
       // *conditionalBlank* updates
