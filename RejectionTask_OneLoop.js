@@ -632,8 +632,8 @@ async function experimentInit() {
   comprunOrNot = "";
   resumetext = "";
   
-  choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
+  //choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  choice_keys = new core.BuilderKeyResponse(psychoJS);
   // Initialize components for Routine "Lotterycomputerchoice"
   LotterycomputerchoiceClock = new util.Clock();
   lotterycard = new visual.TextStim({
