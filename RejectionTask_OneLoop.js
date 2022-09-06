@@ -2712,6 +2712,7 @@ function ChoiceRoutineEachFrame() {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
       }
+    }
 
       // *conditionalBlank* updates
       if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
@@ -2734,7 +2735,7 @@ function ChoiceRoutineEachFrame() {
          continueRoutine = false;
        }
       
-    }
+    //}
     // check for quit (typically the Esc key)
     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
