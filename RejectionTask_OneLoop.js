@@ -2714,7 +2714,7 @@ function ChoiceRoutineEachFrame() {
       }
 
       // *conditionalBlank* updates
-      if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
+      if (len(choice_keys.keys) > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
         // keep track of start time/frame for later
         conditionalBlank.tStart = t;  // (not accounting for frame time here)
         conditionalBlank.frameNStart = frameN;  // exact frame index
