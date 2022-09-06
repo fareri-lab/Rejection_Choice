@@ -2676,38 +2676,77 @@ function ChoiceRoutineEachFrame() {
     
 
 
-    
-    // *choice_keys* updates
+  // 
+  //   // *choice_keys* updates
+  //   if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
+  //     // keep track of start time/frame for later
+  //     choice_keys.tStart = t;  // (not accounting for frame time here)
+  //     choice_keys.frameNStart = frameN;  // exact frame index
+  // 
+  //     // keyboard checking is just starting
+  //     psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
+  //     psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
+  //     psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
+  //   }
+  // 
+  //   frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+  //   if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+  //     choice_keys.status = PsychoJS.Status.FINISHED;
+  // }
+  // 
+  //   if (choice_keys.status === PsychoJS.Status.STARTED) {
+  //     let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
+  //     _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
+  //     if (_choice_keys_allKeys.length > 0) {
+  //       choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
+  //       choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
+  //     }
+  //   }
+  //   //!!!
+  //   if (choice_keys.keys.length > 0){
+  //        choice_keys.status = PsychoJS.Status.FINISHED; //don't allow more than one response
+  // 
+  //    }
+  
     if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       choice_keys.tStart = t;  // (not accounting for frame time here)
       choice_keys.frameNStart = frameN;  // exact frame index
-      
+      choice_keys.status = PsychoJS.Status.STARTED;
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
-      psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
+      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); }); // t = 0 on screen flip
+      psychoJS.eventManager.clearEvents({eventType:'keyboard'});
     }
 
-    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    //after 10 seconds, they can't respond
+    frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       choice_keys.status = PsychoJS.Status.FINISHED;
+      continueRoutine = false;
+    }
+
+
+
+    //get keys that they chose
+    if (choice_keys.status === PsychoJS.Status.STARTED) {
+      let theseKeys = psychoJS.eventManager.getKeys({keyList:['1', '2']});
+      if (theseKeys.length > 0) {  // at least one key was pressed
+        choice_keys.keys = theseKeys[theseKeys.length-1];  // just the last key pressed
+        choice_keys.rt = choice_keys.clock.getTime();
+       }
+      // check for quit:
+      if (theseKeys.indexOf('escape') > -1) {
+        psychoJS.experiment.experimentEnded = true;
+      }
+
+
   }
 
-    if (choice_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
-      _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
-      if (_choice_keys_allKeys.length > 0) {
-        choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
-        choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
-      }
-    }
-    //!!!
     if (choice_keys.keys.length > 0){
          choice_keys.status = PsychoJS.Status.FINISHED; //don't allow more than one response
 
      }
-    
+     
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
