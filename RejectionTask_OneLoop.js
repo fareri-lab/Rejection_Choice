@@ -279,7 +279,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('green'),  opacity: undefined,
+    color: new util.Color('purple'),  opacity: undefined,
     depth: 0.0 
   });
   
