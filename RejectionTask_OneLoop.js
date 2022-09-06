@@ -2617,7 +2617,10 @@ function ChoiceRoutineBegin(snapshot) {
   }
 }
 
-
+var choice_keys;
+var continueRoutine;
+var theseKeys;
+var _choice_keys_allKeys;
 var random_entry;
 var DecisionColor;
 function ChoiceRoutineEachFrame() {
