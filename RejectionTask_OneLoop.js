@@ -2599,7 +2599,7 @@ function ChoiceRoutineBegin(snapshot) {
     ChoiceClock.reset(); // clock
     frameN = -1;
     computer_text.setText('Computer');
-    self_text.setText('Self');
+    self_text.setText('Computer');
     // continueRoutine = true; // until we're told otherwise
     // routineTimer.add(10.000000);
     // update component parameters for each repeat
@@ -2645,9 +2645,7 @@ function ChoiceRoutineEachFrame() {
 
     frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (lotterychoice_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      lotterychoice_text.status = PsychoJS.Status.FINISHED;
-      continueRoutine = false;
-      //lotterychoice_text.setAutoDraw(false);
+      lotterychoice_text.setAutoDraw(false);
     }
     
     // *computer_text* updates
@@ -2661,10 +2659,7 @@ function ChoiceRoutineEachFrame() {
 
     frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (computer_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      computer_text.status = PsychoJS.Status.FINISHED;
-      continueRoutine = false;
-      
-      //computer_text.setAutoDraw(false);
+      computer_text.setAutoDraw(false);
     }
     
     // *self_text* updates
@@ -2678,9 +2673,7 @@ function ChoiceRoutineEachFrame() {
 
     frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (self_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-      self_text.status = PsychoJS.Status.FINISHED;
-      continueRoutine = false;
-      //self_text.setAutoDraw(false);
+      self_text.setAutoDraw(false);
     }
     // Run 'Each Frame' code from setvariables_code
     var random_item;
@@ -2705,7 +2698,6 @@ function ChoiceRoutineEachFrame() {
     frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       choice_keys.status = PsychoJS.Status.FINISHED;
-      continueRoutine = false; //just added
   }
 
     if (choice_keys.status === PsychoJS.Status.STARTED) {
