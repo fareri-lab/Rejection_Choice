@@ -2599,7 +2599,7 @@ function ChoiceRoutineBegin(snapshot) {
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(10.000000);
+    //routineTimer.add(10.000000);
     choice_keys = new core.BuilderKeyResponse(psychoJS); 
     // update component parameters for each repeat
     // choice_keys.keys = undefined;
@@ -2847,13 +2847,16 @@ function ChoiceRoutineEnd(snapshot) {
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
-        }
+        routineTimer.reset();
+        } //!!!
     
-    choice_keys.stop();
+    //choice_keys.stop();
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
     }
+
+    routineTimer.reset(); //!!!
     return Scheduler.Event.NEXT;
   }
 }
