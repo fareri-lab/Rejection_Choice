@@ -2600,10 +2600,11 @@ function ChoiceRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     routineTimer.add(10.000000);
+    choice_keys = new core.BuilderKeyResponse(psychoJS); 
     // update component parameters for each repeat
-    choice_keys.keys = undefined;
-    choice_keys.rt = undefined;
-    _choice_keys_allKeys = [];
+    // choice_keys.keys = undefined;
+    // choice_keys.rt = undefined;
+    // _choice_keys_allKeys = [];
     // keep track of which components have finished
     ChoiceComponents = [];
     ChoiceComponents.push(lotterychoice_text);
