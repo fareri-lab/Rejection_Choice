@@ -2124,7 +2124,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     Photo_ShareClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(Waiting);
+    routineTimer.add(3.0000);
     //routineTimer.add(parseFloat(Waiting));
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
