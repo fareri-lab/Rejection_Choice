@@ -2591,13 +2591,12 @@ function ChoiceRoutineBegin(snapshot) {
     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
     
     //--- Prepare to start Routine 'Choice' ---
-    let continueRoutine = true;
     t = 0;
     conditionalBlank.setText('');
     ChoiceClock.reset(); // clock
     frameN = -1;
-    // continueRoutine = true; // until we're told otherwise
-    // routineTimer.add(10.000000);
+    continueRoutine = true; // until we're told otherwise
+    routineTimer.add(10.000000);
     // update component parameters for each repeat
     choice_keys.keys = undefined;
     choice_keys.rt = undefined;
