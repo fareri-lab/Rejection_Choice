@@ -2166,13 +2166,7 @@ function Photo_ShareRoutineEachFrame() {
     }
     
     // *waitforfeedback_text* updates
-    if (t >= 0.0 && waitforfeedback_text.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      waitforfeedback_text.tStart = t;  // (not accounting for frame time here)
-      waitforfeedback_text.frameNStart = frameN;  // exact frame index
-      
-      waitforfeedback_text.setAutoDraw(true);
-    }
+ 
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
@@ -2704,12 +2698,16 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-          
-        
+        routineTimer.reset();
+        routineTimer.add(2.0000);
+        continueRoutine = False;
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
+            routineTimer.reset();
+            routineTimer.add(2.0000);
+            continueRoutine = False;
       }
 
       // *conditionalBlank* updates
