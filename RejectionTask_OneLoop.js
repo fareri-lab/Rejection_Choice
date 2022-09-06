@@ -279,7 +279,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('blue'),  opacity: undefined,
+    color: new util.Color('orange'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -633,7 +633,7 @@ async function experimentInit() {
   resumetext = "";
   
   //choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  choice_keys = new core.BuilderKeyResponse(psychoJS);
+  choice_keys = new core.BuilderKeyResponse(psychoJS); 
   // Initialize components for Routine "Lotterycomputerchoice"
   LotterycomputerchoiceClock = new util.Clock();
   lotterycard = new visual.TextStim({
@@ -2583,7 +2583,9 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
-
+var choice_keys;
+var continueRoutine;
+var theseKeys;
 var _choice_keys_allKeys;
 var ChoiceComponents;
 function ChoiceRoutineBegin(snapshot) {
