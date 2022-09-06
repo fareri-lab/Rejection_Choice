@@ -619,7 +619,7 @@ async function experimentInit() {
     name: 'conditionalconditionalBlank',
     text: '',
     font: 'Arial',
-    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
+    pos: [0, 0], height: 0.5,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
     depth: -6.0
   });
@@ -2592,7 +2592,8 @@ function ChoiceRoutineBegin(snapshot) {
     
     //--- Prepare to start Routine 'Choice' ---
     t = 0;
-    conditionalBlank.setText('');
+    conditionalBlank.setText('hi');
+    conditionalBlank.setColor('red')
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
