@@ -2582,9 +2582,9 @@ function continuesharingRoutineEnd(snapshot) {
     return Scheduler.Event.NEXT;
   }
 }
-var choice_keys;
+
 var continueRoutine;
-var theseKeys;
+var these_Keys
 var _choice_keys_allKeys;
 var ChoiceComponents;
 function ChoiceRoutineBegin(snapshot) {
@@ -2594,11 +2594,9 @@ function ChoiceRoutineBegin(snapshot) {
     //--- Prepare to start Routine 'Choice' ---
     let continueRoutine = true;
     t = 0;
-    conditionalBlank.setText('hi');
-    conditionalBlank.setColor('red')
+    conditionalBlank.setText('');
     ChoiceClock.reset(); // clock
     frameN = -1;
-
     // continueRoutine = true; // until we're told otherwise
     // routineTimer.add(10.000000);
     // update component parameters for each repeat
