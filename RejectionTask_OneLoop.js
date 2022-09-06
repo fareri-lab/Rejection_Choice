@@ -279,7 +279,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('orange'),  opacity: undefined,
+    color: new util.Color('green'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -619,7 +619,7 @@ async function experimentInit() {
     name: 'conditionalconditionalBlank',
     text: '',
     font: 'Arial',
-    pos: [0, 0], height: 0.5,  wrapWidth: undefined, ori: 0,
+    pos: [0, 0], height: 0.1,  wrapWidth: undefined, ori: 0,
     color: new util.Color('white'),  opacity: 1,
     depth: -6.0
   });
@@ -632,8 +632,8 @@ async function experimentInit() {
   comprunOrNot = "";
   resumetext = "";
   
-  //choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  choice_keys = new core.BuilderKeyResponse(psychoJS); 
+  choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
   // Initialize components for Routine "Lotterycomputerchoice"
   LotterycomputerchoiceClock = new util.Clock();
   lotterycard = new visual.TextStim({
@@ -2113,7 +2113,7 @@ function Partner_MatchRoutineEnd(snapshot) {
   }
 }
 
-
+var Waiting;
 var Photo_ShareComponents;
 function Photo_ShareRoutineBegin(snapshot) {
   return async function () {
@@ -2124,7 +2124,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     Photo_ShareClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(3.000000);
+    routineTimer.add(Waiting);
     //routineTimer.add(parseFloat(Waiting));
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
@@ -2583,9 +2583,7 @@ function continuesharingRoutineEnd(snapshot) {
   }
 }
 
-var choice_keys;
-var continueRoutine;
-var theseKeys;
+
 var _choice_keys_allKeys;
 var ChoiceComponents;
 function ChoiceRoutineBegin(snapshot) {
@@ -2594,17 +2592,15 @@ function ChoiceRoutineBegin(snapshot) {
     
     //--- Prepare to start Routine 'Choice' ---
     t = 0;
-    conditionalBlank.setText('hi');
-    conditionalBlank.setColor('red')
+    conditionalBlank.setText('');
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    //routineTimer.add(10.000000);
-    choice_keys = new core.BuilderKeyResponse(psychoJS); 
+    routineTimer.add(10.000000);
     // update component parameters for each repeat
-    // choice_keys.keys = undefined;
-    // choice_keys.rt = undefined;
-    // _choice_keys_allKeys = [];
+    choice_keys.keys = undefined;
+    choice_keys.rt = undefined;
+    _choice_keys_allKeys = [];
     // keep track of which components have finished
     ChoiceComponents = [];
     ChoiceComponents.push(lotterychoice_text);
@@ -2620,10 +2616,7 @@ function ChoiceRoutineBegin(snapshot) {
   }
 }
 
-var choice_keys;
-var continueRoutine;
-var theseKeys;
-var _choice_keys_allKeys;
+
 var random_entry;
 var DecisionColor;
 function ChoiceRoutineEachFrame() {
@@ -2682,90 +2675,45 @@ function ChoiceRoutineEachFrame() {
     
 
 
-  // 
-  //   // *choice_keys* updates
-  //   if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
-  //     // keep track of start time/frame for later
-  //     choice_keys.tStart = t;  // (not accounting for frame time here)
-  //     choice_keys.frameNStart = frameN;  // exact frame index
-  // 
-  //     // keyboard checking is just starting
-  //     psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
-  //     psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
-  //     psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
-  //   }
-  // 
-  //   frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-  //   if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-  //     choice_keys.status = PsychoJS.Status.FINISHED;
-  // }
-  // 
-  //   if (choice_keys.status === PsychoJS.Status.STARTED) {
-  //     let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
-  //     _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
-  //     if (_choice_keys_allKeys.length > 0) {
-  //       choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
-  //       choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
-  //     }
-  //   }
-  //   //!!!
-  //   if (choice_keys.keys.length > 0){
-  //        choice_keys.status = PsychoJS.Status.FINISHED; //don't allow more than one response
-  // 
-  //    }
-  
+    
+    // *choice_keys* updates
     if (t >= 0.0 && choice_keys.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       choice_keys.tStart = t;  // (not accounting for frame time here)
       choice_keys.frameNStart = frameN;  // exact frame index
-      choice_keys.status = PsychoJS.Status.STARTED;
+      
       // keyboard checking is just starting
-      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); }); // t = 0 on screen flip
-      psychoJS.eventManager.clearEvents({eventType:'keyboard'});
+      psychoJS.window.callOnFlip(function() { choice_keys.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { choice_keys.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { choice_keys.clearEvents(); });
     }
 
-    //after 10 seconds, they can't respond
-    frameRemains = 0.0 + 10.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 10 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (choice_keys.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       choice_keys.status = PsychoJS.Status.FINISHED;
-      continueRoutine = false;
-    }
-
-
-
-    //get keys that they chose
-    if (choice_keys.status === PsychoJS.Status.STARTED) {
-      let theseKeys = psychoJS.eventManager.getKeys({keyList:['1', '2']});
-      if (theseKeys.length > 0) {  // at least one key was pressed
-        choice_keys.keys = theseKeys[theseKeys.length-1];  // just the last key pressed
-        choice_keys.rt = choice_keys.clock.getTime();
-       }
-      // check for quit:
-      if (theseKeys.indexOf('escape') > -1) {
-        psychoJS.experiment.experimentEnded = true;
-      }
-
-
   }
 
-    if (choice_keys.keys.length > 0){
-         choice_keys.status = PsychoJS.Status.FINISHED; //don't allow more than one response
-
-     }
-     
+    if (choice_keys.status === PsychoJS.Status.STARTED) {
+      let theseKeys = choice_keys.getKeys({keyList: ['c', 's'], waitRelease: false});
+      _choice_keys_allKeys = _choice_keys_allKeys.concat(theseKeys);
+      if (_choice_keys_allKeys.length > 0) {
+        choice_keys.keys = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].name;  // just the last key pressed
+        choice_keys.rt = _choice_keys_allKeys[_choice_keys_allKeys.length - 1].rt;
+      }
+    }
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
+          
         
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-            
       }
 
       // *conditionalBlank* updates
-      if (choice_keys.keys.length > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
+      if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
         // keep track of start time/frame for later
         conditionalBlank.tStart = t;  // (not accounting for frame time here)
         conditionalBlank.frameNStart = frameN;  // exact frame index
@@ -2773,7 +2721,7 @@ function ChoiceRoutineEachFrame() {
       }
 
       if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
-        conditionalBlank.setAutoDraw(false);
+      conditionalBlank.setAutoDraw(false);
       }
 
     //   show the response for 2 seconds, then move on to next trial
@@ -2847,16 +2795,13 @@ function ChoiceRoutineEnd(snapshot) {
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
-        routineTimer.reset();
-        } //!!!
+        }
     
-    //choice_keys.stop();
+    choice_keys.stop();
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
       psychoJS.experiment.nextEntry(snapshot);
     }
-
-    routineTimer.reset(); //!!!
     return Scheduler.Event.NEXT;
   }
 }
