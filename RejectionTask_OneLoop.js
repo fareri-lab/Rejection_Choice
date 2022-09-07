@@ -2710,26 +2710,6 @@ function ChoiceRoutineEachFrame() {
             self_text.setColor(new util.Color(DecisionColor));
 
       }
-
-      // *conditionalBlank* updates
-      if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
-        // keep track of start time/frame for later
-        conditionalBlank.tStart = t;  // (not accounting for frame time here)
-        conditionalBlank.frameNStart = frameN;  // exact frame index
-        conditionalBlank.setAutoDraw(true);
-      }
-
-      if (conditionalBlank.status === PsychoJS.Status.STARTED && t >= (conditionalBlank.tStart + 2.0)) {
-      conditionalBlank.setAutoDraw(false);
-      }
-
-    //   show the response for 2 seconds, then move on to next trial
-      if (conditionalBlank.status == PsychoJS.Status.FINISHED){
-         self_text.setAutoDraw(false);
-         computer_text.setAutoDraw(false);
-         lotterychoice_text.setAutoDraw(false);
-
-         continueRoutine = false;
        }
       
     }
