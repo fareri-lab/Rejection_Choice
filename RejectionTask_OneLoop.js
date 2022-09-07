@@ -581,7 +581,7 @@ async function experimentInit() {
   lotterychoice_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'lotterychoice_text',
-    text: 'You have reached the lottery. Please choose [c] to have the computer play on your behalf or choose [s] to play the lottery for yourself.',
+    text: 'You have reached the lottery. Please choose [c] to have the computer play on your behalf or choose [s] to play the lottery for yourself. You have 4 seconds to choose.',
     font: 'Open Sans',
     units: undefined, 
     pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
@@ -2596,7 +2596,7 @@ function ChoiceRoutineBegin(snapshot) {
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(10.000000);
+    routineTimer.add(4.000000);
     // update component parameters for each repeat
     choice_keys.keys = undefined;
     choice_keys.rt = undefined;
@@ -2704,16 +2704,11 @@ function ChoiceRoutineEachFrame() {
     DecisionColor = "cornflowerblue";
     if ((choice_keys.keys === "c")) {
         computer_text.setColor(new util.Color(DecisionColor));
-        routineTimer.reset();
-        routineTimer.add(2.0000);
-        continueRoutine = false;
         
     } else {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
-            routineTimer.reset();
-            routineTimer.add(2.0000);
-            continueRoutine = false;
+
       }
 
       // *conditionalBlank* updates
@@ -2821,7 +2816,7 @@ function LotterycomputerchoiceRoutineBegin(snapshot) {
     LotterycomputerchoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(6.000000);
+    routineTimer.add(4.000000);
     // update component parameters for each repeat
     // Run 'Begin Routine' code from skipcomputerchoice_code
     response_msg = `The computer has chosen ${random_entry}.`;
@@ -2878,7 +2873,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
     }
     
     // *computerresponse* updates
-    if (t >= 2 && computerresponse.status === PsychoJS.Status.NOT_STARTED) {
+    if (t >= 1 && computerresponse.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       computerresponse.tStart = t;  // (not accounting for frame time here)
       computerresponse.frameNStart = frameN;  // exact frame index
