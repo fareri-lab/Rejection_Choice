@@ -281,7 +281,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('blue'),  opacity: undefined,
+    color: new util.Color('teal'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -304,7 +304,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('aliceblue'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2134,7 +2134,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
-    routineTimer.add(5.52); 
+    routineTimer.add(FruitLoop); 
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
@@ -2172,7 +2172,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FruitLoop - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (photobeingshared_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       photobeingshared_text.setAutoDraw(false);
     }
@@ -2187,7 +2187,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FruitLoop - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (waitforfeedback_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       waitforfeedback_text.setAutoDraw(false);
     }
@@ -2202,7 +2202,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
     //frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FruitLoop - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (participantimage_image.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       participantimage_image.setAutoDraw(false);
     }
@@ -2242,7 +2242,7 @@ function Photo_ShareRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from initiatefeedbackresponses
-    feedbackresponses = `${FruitLoop} ${Feedback} your photo`;
+    feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
         fdbkimage = "Images/thumbsup.png";
     } else {
