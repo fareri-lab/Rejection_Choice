@@ -281,7 +281,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('pink'),  opacity: undefined,
+    color: new util.Color('orange'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2242,7 +2242,7 @@ function Photo_ShareRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from initiatefeedbackresponses
-    feedbackresponses = `${Waiting} ${Feedback} your photo`;
+    feedbackresponses = `${Hey} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
         fdbkimage = "Images/thumbsup.png";
     } else {
