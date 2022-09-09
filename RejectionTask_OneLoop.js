@@ -2135,7 +2135,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
-  //  routineTimer.add(5.52); 
+    routineTimer.add(5.52); 
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
@@ -2157,6 +2157,7 @@ function Photo_ShareRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Photo_Share' ---
     // get current time
+    routineTimer.reset(Waiting);
     t = Photo_ShareClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
