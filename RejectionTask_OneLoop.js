@@ -89,6 +89,8 @@ psychoJS.start({
   {'name': 'Images/sunglassemoji_nobackground.png', 'path': 'Images/sunglassemoji_nobackground.png'}, 
   {'name': 'Images/thumbsdown.png', 'path': 'Images/thumbsdown.png'}, 
   {'name': 'Images/thumbsup.png', 'path': 'Images/thumbsup.png'}, 
+  {'name': 'Images/cowboyemoji.png', 'path': 'Images/cowboyemoji.png'}, 
+  {'name': 'Images/huggingemoji.png', 'path': 'Images/huggingemoji.png'}, 
   {'name': 'Participant_Images/101_Image_5.jpg', 'path': 'Participant_Images/101_Image_5.jpg'},
   {'name': 'Participant_Images/101_Image_13.jpg', 'path': 'Participant_Images/101_Image_13.jpg'},
   {'name': 'Participant_Images/101_Image_12.jpg', 'path': 'Participant_Images/101_Image_12.jpg'},
