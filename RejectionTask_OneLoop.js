@@ -151,7 +151,8 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-
+var Waiting;
+Waiting = '';
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -281,7 +282,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('blue'),  opacity: undefined,
+    color: new util.Color('green'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2134,7 +2135,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
-    routineTimer.add(`${Waiting}`); 
+    routineTimer.add(Waiting); 
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
