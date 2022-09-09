@@ -282,7 +282,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('orange'),  opacity: undefined,
+    color: new util.Color('purple'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -2135,7 +2135,7 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
-    routineTimer.add(Waiting); 
+    routineTimer.add(5.52); 
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
