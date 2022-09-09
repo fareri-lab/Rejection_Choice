@@ -2854,7 +2854,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
       lotterycard.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 6 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (lotterycard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       lotterycard.setAutoDraw(false);
     }
@@ -2868,7 +2868,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
       Block1_facedowncard.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 6 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (Block1_facedowncard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       Block1_facedowncard.setAutoDraw(false);
     }
@@ -2882,7 +2882,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
       computerresponse.setAutoDraw(true);
     }
 
-    frameRemains = 2 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 2 + 2 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (computerresponse.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       computerresponse.setAutoDraw(false);
     }
