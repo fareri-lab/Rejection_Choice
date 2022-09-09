@@ -2169,7 +2169,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + Waiting - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (photobeingshared_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       photobeingshared_text.setAutoDraw(false);
     }
@@ -2184,7 +2184,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + Waiting - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (waitforfeedback_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       waitforfeedback_text.setAutoDraw(false);
     }
@@ -2199,7 +2199,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
     //frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + Waiting - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (participantimage_image.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       participantimage_image.setAutoDraw(false);
     }
