@@ -1,4 +1,4 @@
-TrialNumber,Partner,Condition,Photos,Feedback,FruitLoop
+TrialNumber,Partner,Condition,Photos,Feedback, FeedbackWait
 1,Alex,Rej,Participant_Images/101_Image_24.jpg,did not like,1.585040616
 2,Alex,Rej,Participant_Images/101_Image_26.jpg,did not like,2.2423492
 3,Alex,Rej,Participant_Images/101_Image_6.jpg,liked,3.554419308
