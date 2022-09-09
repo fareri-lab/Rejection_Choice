@@ -2134,7 +2134,8 @@ function Photo_ShareRoutineBegin(snapshot) {
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
     //routineTimer.add(3.000000);
-    //routineTimer.add(parseFloat(Waiting));
+    routineTimer.add(`${Waiting}`); 
+  
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
     // keep track of which components have finished
