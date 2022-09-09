@@ -1645,11 +1645,18 @@ function partner_codeRoutineEnd(snapshot) {
     }
     if ((Partner === "Riley")) {
         partneravatar = "Images/sunglassemoji_nobackground.png";
+      }
+    if ((Partner === "Alex")) {
+        partneravatar = "Images/cowboyemoji.png";
+      }
+    if ((Partner === "Taylor")) {
+        partneravatar = "Images/huggingemoji.png";
+      
     } else {
         if ((Partner === "Charlie")) {
             partneravatar = "Images/smilingemoji.png";
         }
-    }
+      }
     
     // the Routine "partner_code" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
