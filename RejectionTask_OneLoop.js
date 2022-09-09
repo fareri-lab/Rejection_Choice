@@ -2242,7 +2242,7 @@ function Photo_ShareRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from initiatefeedbackresponses
-    feedbackresponses = `${Hey} ${Feedback} your photo`;
+    feedbackresponses = `${FruitLoop} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
         fdbkimage = "Images/thumbsup.png";
     } else {
