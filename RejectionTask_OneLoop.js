@@ -487,8 +487,7 @@ async function experimentInit() {
   photobeingshared_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'photobeingshared_text',
-    //text: 'This photo is now being shared', //edit
-    text: '',
+    text: 'This photo is now being shared', 
     font: 'Open Sans',
     units: undefined, 
     pos: [0.0, 0.6], height: 0.09,  wrapWidth: undefined, ori: 0.0,
@@ -2139,7 +2138,6 @@ function Photo_ShareRoutineBegin(snapshot) {
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
-    photobeingshared_text.setText(Waiting);
     // keep track of which components have finished
     Photo_ShareComponents = [];
     Photo_ShareComponents.push(photobeingshared_text);
@@ -2244,7 +2242,7 @@ function Photo_ShareRoutineEnd(snapshot) {
       }
     }
     // Run 'End Routine' code from initiatefeedbackresponses
-    feedbackresponses = `${Partner} ${Feedback} your photo`;
+    feedbackresponses = `${Waiting} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
         fdbkimage = "Images/thumbsup.png";
     } else {
