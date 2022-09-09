@@ -151,8 +151,7 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-var Waiting;
-Waiting = '';
+
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -282,7 +281,7 @@ async function experimentInit() {
     units: undefined, 
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('yellow'),  opacity: undefined,
+    color: new util.Color('red'),  opacity: undefined,
     depth: 0.0 
   });
   
@@ -488,7 +487,8 @@ async function experimentInit() {
   photobeingshared_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'photobeingshared_text',
-    text: 'This photo is now being shared',
+    //text: 'This photo is now being shared', //edit
+    text: '',
     font: 'Open Sans',
     units: undefined, 
     pos: [0.0, 0.6], height: 0.09,  wrapWidth: undefined, ori: 0.0,
@@ -2157,7 +2157,8 @@ function Photo_ShareRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Photo_Share' ---
     // get current time
-    routineTimer.reset(Waiting);
+    //routineTimer.reset(Waiting);
+    photobeingshared_text.setText(Waiting)
     t = Photo_ShareClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
