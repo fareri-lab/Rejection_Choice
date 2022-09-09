@@ -2139,6 +2139,7 @@ function Photo_ShareRoutineBegin(snapshot) {
   
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
+    photobeingshared_text.setText(Waiting);
     // keep track of which components have finished
     Photo_ShareComponents = [];
     Photo_ShareComponents.push(photobeingshared_text);
@@ -2158,7 +2159,7 @@ function Photo_ShareRoutineEachFrame() {
     //--- Loop for each frame of Routine 'Photo_Share' ---
     // get current time
     //routineTimer.reset(Waiting);
-    photobeingshared_text.setText(Waiting)
+    
     t = Photo_ShareClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
