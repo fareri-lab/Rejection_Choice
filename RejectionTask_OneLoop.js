@@ -15,7 +15,6 @@ const { round } = util;
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
 let expInfo = {
     'participant': '',
-    'session': '001',
 };
 
 // Start code blocks for 'Before Experiment'
@@ -46,7 +45,8 @@ psychoJS.schedule(psychoJS.gui.DlgFromDict({
   dictionary: expInfo,
   title: expName
 }));
-
+var prolific_id
+prolific_id = expInfo['participant']
 const flowScheduler = new Scheduler(psychoJS);
 const dialogCancelScheduler = new Scheduler(psychoJS);
 psychoJS.scheduleCondition(function() { return (psychoJS.gui.dialogComponent.button === 'OK'); }, flowScheduler, dialogCancelScheduler);
@@ -4193,7 +4193,7 @@ async function quitPsychoJS(message, isCompleted) {
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   //  when they press space, redirect to choice task
-  window.location.replace(weblink+= '?participant=' + expInfo['participant'] + '&study=' + expInfo['study']);
+  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant'] + '&study=' + expInfo['study']);
 
   return Scheduler.Event.QUIT;
 }    
