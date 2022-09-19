@@ -151,7 +151,8 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-
+var weblink;
+weblink= "https://adelphiderner.qualtrics.com/jfe/form/SV_4GR8sO1rBmqsz3M";
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -1295,7 +1296,8 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     entiretaskloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
+      nReps: 0, method: TrialHandler.Method.SEQUENTIAL,
+      //nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'Dummy_Spreadsheet.csv',
       seed: undefined, name: 'entiretaskloop'
@@ -1354,7 +1356,8 @@ function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     lotteryloop = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: startlottery, method: TrialHandler.Method.RANDOM,
+    //  nReps: startlottery, method: TrialHandler.Method.RANDOM,
+      nReps: 0, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'lotteryloop'
@@ -1396,7 +1399,8 @@ function computerchoiceLoopBegin(computerchoiceLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     computerchoice = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: comprunOrNot, method: TrialHandler.Method.RANDOM,
+      nReps: 0, method: TrialHandler.Method.RANDOM,
+      //nReps: comprunOrNot, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'computerchoice'
@@ -1457,7 +1461,8 @@ function selfchoiceLoopBegin(selfchoiceLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     selfchoice = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: selfrunOrNot, method: TrialHandler.Method.RANDOM,
+      nReps: 0, method: TrialHandler.Method.RANDOM,
+      //nReps: selfrunOrNot, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: undefined,
       seed: undefined, name: 'selfchoice'
@@ -4188,7 +4193,7 @@ async function quitPsychoJS(message, isCompleted) {
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   //  when they press space, redirect to choice task
-  //window.location.replace(weblink);
+  window.location.replace(weblink+= '?participant=' + expInfo['participant'] + '&study=' + expInfo['study']);
 
   return Scheduler.Event.QUIT;
 }    
