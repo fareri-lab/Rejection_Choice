@@ -2,7 +2,7 @@ name: GitlabSync
 
 on:
   workflow_dispatch:
-  #- push
+    - push
   #- delete 
 
 jobs:
