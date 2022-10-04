@@ -15,8 +15,6 @@ const { round } = util;
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
 let expInfo = {
     'participant': '',
-    'session': '001',
-    'extension': ''
 };
 
 // Start code blocks for 'Before Experiment'
@@ -24,8 +22,8 @@ let expInfo = {
 saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
-expInfo['participant'] = participant
-expInfo['extension'] = img_extension
+
+
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
 stressleveltext = "";
