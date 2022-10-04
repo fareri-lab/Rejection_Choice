@@ -23,6 +23,7 @@ saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
 
+var participant = expInfo['participant'];
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
