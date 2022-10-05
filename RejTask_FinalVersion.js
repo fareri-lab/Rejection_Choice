@@ -14,7 +14,7 @@ const { round } = util;
 // store info about the experiment session:
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
 let expInfo = {
-    'participant': '',
+    'participant': 'R_1QfKCII0MPcPQEB',
 };
 
 // Start code blocks for 'Before Experiment'
