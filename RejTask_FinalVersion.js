@@ -657,7 +657,7 @@ async function experimentInit() {
   Block1_facedowncard = new visual.ImageStim({
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined,
-    image : 'Images/facedown_card.png', mask : undefined,
+    image : 'Task_Images/facedown_card.png', mask : undefined,
     ori : 0.0, pos : [0, -0.1], size : [0.75, 1],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -730,7 +730,7 @@ async function experimentInit() {
   block1_cardimage = new visual.ImageStim({
     win : psychoJS.window,
     name : 'block1_cardimage', units : undefined,
-    image : 'Images/facedown_card.png', mask : undefined,
+    image : 'Task_Images/facedown_card.png', mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 1],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
