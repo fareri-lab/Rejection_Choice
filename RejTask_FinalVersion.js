@@ -23,7 +23,9 @@ saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
 
+//set up string handling variables 
 var participant = expInfo['participant'];
+var img_extension = 'jpeg';
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
@@ -72,7 +74,7 @@ flowScheduler.add(End_ScreenRoutineBegin());
 flowScheduler.add(End_ScreenRoutineEachFrame());
 flowScheduler.add(End_ScreenRoutineEnd());
 flowScheduler.add(quitPsychoJS, '', true);
-var img_extension = 'jpeg'
+
 // quit if user presses Cancel in dialog box:
 dialogCancelScheduler.add(quitPsychoJS, '', false);
 
@@ -81,45 +83,48 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
 
-    {'name': 'Folders/facedown_card.png', 'path': 'Folders/facedown_card.png'},
+    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
-    {'name': 'Folders/facedown_card.png', 'path': 'Folders/facedown_card.png'},
-    {'name': 'Folders/nerdemoji_nobackground.png', 'path': 'Folders/nerdemoji_nobackground.png'},
-    {'name': 'Folders/smilingemoji.png', 'path': 'Folders/smilingemoji.png'},
-    {'name': 'Folders/sunglassemoji_nobackground.png', 'path': 'Folders/sunglassemoji_nobackground.png'},
-    {'name': 'Folders/thumbsdown.png', 'path': 'Folders/thumbsdown.png'},
-    {'name': 'Folders/thumbsup.png', 'path': 'Folders/thumbsup.png'},
-
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Folders/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Folders/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension)}
+    {'name': 'Participant_Images/%s/%s_trials.csv' %(participant, participant), 'path': 'Participant_Images/%s/%s_trials.csv' %(participant, participant)},
+    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
+    {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
+    {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
+    {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
+    {'name': 'Task_Images/thumbsdown.png', 'path': 'Task_Images/thumbsdown.png'},
+    {'name': 'Task_Images/thumbsup.png', 'path': 'Task_Images/thumbsup.png'},
+    {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
+    {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
+    
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension)},
+    {'name': 'Participant_Images/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension)}
 ]
 });
 
@@ -1296,7 +1301,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'Participant_Folders/%s/%s_trials.csv' %(participant, participant),
+      trialList: 'Participant_Images/%s/%s_trials.csv' %(participant, participant),
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
