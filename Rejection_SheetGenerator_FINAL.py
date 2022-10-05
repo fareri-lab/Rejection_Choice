@@ -3,7 +3,7 @@
 """
 Created on Thu Aug  4 12:27:50 2022
 
-@author: jordansiegel 
+@author: jordansiegel
 """
 
 import os
@@ -28,7 +28,7 @@ rawqualtrics = rawqualtrics.reset_index()
 
 #gathering sub_ids of completed participants only
 qualtrics = rawqualtrics.loc[rawqualtrics['ResponseId'].isin(completedparticipantlist['sub_id'])]
-               
+
 #%%
 #setcurrentworking directory to a variable
 expdir = os.getcwd()
@@ -37,29 +37,29 @@ image_dir =''
 #make new folders for each participant and then a folder in each new folder
 for i in range(0,len(qualtrics)):
     subj_id = qualtrics['ResponseId'][i]
-    subj_dir = '%s/data/%s' % (expdir, subj_id)
+    subj_dir = '%s/Participant_Images/%s' % (expdir, subj_id)
     if os.path.exists (subj_dir):
         continue
     else:
         os.makedirs(subj_dir)
-        image_dir = '%s/%s_Images' % (subj_dir,subj_id) 
+        image_dir = '%s/%s_Images' % (subj_dir,subj_id)
         os.makedirs(image_dir)
-        
+
     # if not os.path.exists (subj_dir):
     #     os.makedirs(subj_dir)
     # else:
     #     continue
-    
-    # image_dir = '%s/%s_Images' % (subj_dir,subj_id) 
+
+    # image_dir = '%s/%s_Images' % (subj_dir,subj_id)
     # if not os.path.exists (image_dir):
     #     os.makedirs(image_dir)
     # else:
     #     continue
 #%%
 
-source_folder = expdir + '/participant_images/'
+source_folder = expdir + '/Raw_Participant_Images/'
 qual_photo_folders = [f.path for f in os.scandir(source_folder) if f.is_dir()]
-indv_image_folder = expdir + '/data/%s/%s_Images' 
+indv_image_folder = expdir + '/Participant_Images/%s/%s_Images'
 
 for sub in qual_photo_folders:
     for f in os.listdir(sub):
@@ -78,8 +78,8 @@ for image in os.listdir(source_folder):
                 src = os.path.join(source_folder , image)
                 dst = os.path.join(indv_image_folder %(subj,subj),image)
                 shutil.move(src, dst)
-                
-          
+
+
 #creates variables to take files out of folders,move them to a different folder, and delete the original folders
 
 #exceuting moving files from subfolders to a different folder and then deleting the old subfolders
@@ -87,8 +87,8 @@ for image in os.listdir(source_folder):
 #%%
 # count increase by 1 in each iteration
 # iterate all files from a directory
-participantimagefolder = expdir + '/data/' 
-count =1 
+participantimagefolder = expdir + '/Participant_Images/'
+count =1
 for p in os.listdir(participantimagefolder):
         if not p.endswith('.DS_Store'):
             if p.startswith('R_'):
@@ -102,14 +102,14 @@ for p in os.listdir(participantimagefolder):
                             source = indv_image_folder%(p,p) + '/' + photo
                             # Adding the count to the new file name and extension
                             file_name, file_extension = os.path.splitext(photo)
-                            
+
                             destination = indv_image_folder %(p,p) + '/' + p + "_Image_" + str(count) + ".jpeg"
                             # Renaming the file
                             os.rename(source, destination)
                             count += 1
-     
-                           
-                                       
+
+
+
 #%%
 #for loop:
     #for x in
@@ -190,4 +190,3 @@ for folder in os.listdir(participantimagefolder):
         trial_sheet = '%s/%s_trials.csv' %(subjdir,subid)
         alltrials['TrialNumber'] = range(1,len(alltrials)+1)
         alltrials.to_csv(trial_sheet, index= False)
-    
