@@ -86,7 +86,6 @@ psychoJS.start({
     {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
     {'name': 'Participant_Images/%s/%s_trials.csv' %(participant, participant), 'path': 'Participant_Images/%s/%s_trials.csv' %(participant, participant)},
-    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
     {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
     {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
     {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
@@ -657,7 +656,7 @@ async function experimentInit() {
   Block1_facedowncard = new visual.ImageStim({
     win : psychoJS.window,
     name : 'Block1_facedowncard', units : undefined,
-    image : 'Task_Images/facedown_card.png', mask : undefined,
+    image : undefined, mask : undefined,
     ori : 0.0, pos : [0, -0.1], size : [0.75, 1],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -730,7 +729,7 @@ async function experimentInit() {
   block1_cardimage = new visual.ImageStim({
     win : psychoJS.window,
     name : 'block1_cardimage', units : undefined,
-    image : 'Task_Images/facedown_card.png', mask : undefined,
+    image : undefined, mask : undefined,
     ori : 0.0, pos : [0, 0], size : [0.75, 1],
     color : new util.Color([1,1,1]), opacity : undefined,
     flipHoriz : false, flipVert : false,
@@ -2827,7 +2826,7 @@ function LotterycomputerchoiceRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from skipcomputerchoice_code
     response_msg = `The computer has chosen ${random_entry}.`;
-
+    Block1_facedowncard.setImage('Task_Images/facedown_card.png');
     computerresponse.setText(response_msg);
     // keep track of which components have finished
     LotterycomputerchoiceComponents = [];
@@ -2955,6 +2954,7 @@ function LotteryselfchoiceRoutineBegin(snapshot) {
     lotteryguess_keys.rt = undefined;
     _lotteryguess_keys_allKeys = [];
     responsefeedback.setText(feedback_msg);
+    block1_cardimage.setImage('Task_Images/facedown_card.png');
     // keep track of which components have finished
     LotteryselfchoiceComponents = [];
     LotteryselfchoiceComponents.push(pickacard_text);
