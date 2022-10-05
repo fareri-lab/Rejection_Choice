@@ -24,8 +24,8 @@ salienceratingtext = "";
 rating_forsalience = "";
 
 //set up string handling variables 
-var participant = expInfo['participant'];
-var img_extension = 'jpeg';
+var participant = expInfo['participant'].toString();
+var img_extension = 'jpeg'.toString();
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
