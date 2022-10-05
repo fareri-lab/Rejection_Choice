@@ -3,7 +3,7 @@
 """
 Created on Thu Aug  4 12:27:50 2022
 
-@author: jordansiegel
+@author: jordansiegel 
 """
 
 import os
@@ -78,6 +78,7 @@ for image in os.listdir(source_folder):
                 src = os.path.join(source_folder , image)
                 dst = os.path.join(indv_image_folder %(subj,subj),image)
                 shutil.move(src, dst)
+                
           
 #creates variables to take files out of folders,move them to a different folder, and delete the original folders
 
@@ -106,15 +107,27 @@ for p in os.listdir(participantimagefolder):
                             # Renaming the file
                             os.rename(source, destination)
                             count += 1
-               
-             
-           
+                        if not photo.endswith('.jpeg'):
+                            # importing the image 
+                            im = Image.open(destination)
+                            print("The size of the image before conversion : ", end = "")
+                            print(os.path.getsize(destination))
+                              
+                            # converting to jpg
+                            rgb_im = im.convert("RGB")
+                              
+                            # exporting the image
+                            rgb_im.save(destination + ".jpg")
+                            print("The size of the image after conversion : ", end = "")
+                            print(os.path.getsize(destination))   
+                           
+                                       
 #%%
 #for loop:
     #for x in
-
-sociallevel = ["Rej", "Acc", "Neutral"]
-partnerlist = ['Charlie', 'Sam', 'Riley']
+spreadsheet = pd.read_csv('spreadsheet_template.csv')
+sociallevel = ["Rej", "Acc", "Neutral", "Acc","Rej"]
+partnerlist = ['Charlie', 'Sam', 'Riley', 'Alex', 'Taylor']
 condition = ''
 partner = ''
 feedback = ''
@@ -126,17 +139,17 @@ for folder in os.listdir(participantimagefolder):
         os.chdir(imagedir)
         photolist = os.listdir(imagedir)
         photolist = [imagedir + x for x in photolist]
-        condition_selected = random.sample(sociallevel,3)
-        partner_selected = random.sample(partnerlist,3)
+        condition_selected = random.sample(sociallevel,5)
+        partner_selected = random.sample(partnerlist,5)
         block = 0 #before experiment
         nTrials = 30
-        alltrials = pd.DataFrame(columns=['TrialNumber','Partner','Condition','Photos','Feedback'])
+        alltrials = pd.DataFrame(columns=['TrialNumber','Partner','Condition','Photos','Feedback', 'FeedbackWait'])
         alltrials['Partner'] = ''
         alltrials['Feedback'] = ''
         alltrials['Condition']= ''
         alltrials['Photos'] = ''
         # for k in range(0,len(photolist)):
-        for i in range(0,3):
+        for i in range(0,5):
             if condition_selected[i] == 'Rej':
                 pDislike = .7
                 pLike = .3
@@ -184,6 +197,7 @@ for folder in os.listdir(participantimagefolder):
                 alltrials = pd.concat([alltrials, neu], ignore_index=True)
         subid = folder
         expdir = participantimagefolder
+        alltrials['FeedbackWait'] = spreadsheet['FeedbackWait']
         subjdir = '%s/%s' % (expdir, subid)
         trial_sheet = '%s/%s_trials.csv' %(subjdir,subid)
         alltrials['TrialNumber'] = range(1,len(alltrials)+1)
