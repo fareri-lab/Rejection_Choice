@@ -24,8 +24,9 @@ salienceratingtext = "";
 rating_forsalience = "";
 
 //set up string handling variables 
-var participant = expInfo['participant'];
-var img_extension = 'jpeg';
+var participant; 
+participant = expInfo['participant'];
+
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
@@ -1303,7 +1304,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'Participant_Images/%s/%s_trials.csv' %(participant, participant),
+      trialList: 'Participant_Images/'+participant+'/'+participant+'_trials.csv',
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
