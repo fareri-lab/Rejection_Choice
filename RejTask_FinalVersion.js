@@ -14,7 +14,7 @@ const { round } = util;
 // store info about the experiment session:
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
 let expInfo = {
-    'participant': '',
+    'participant': 'R_1QfKCII0MPcPQEB',
 };
 
 // Start code blocks for 'Before Experiment'
@@ -24,8 +24,9 @@ salienceratingtext = "";
 rating_forsalience = "";
 
 //set up string handling variables 
-var participant = expInfo['participant'];
-var img_extension = 'jpeg';
+var participant; 
+participant = expInfo['participant'];
+
 
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
@@ -83,48 +84,50 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
 
-    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
-    {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
-    {'name': 'Participant_Images/%s/%s_trials.csv' %(participant, participant), 'path': 'Participant_Images/%s/%s_trials.csv' %(participant, participant)},
-    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
-    {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
-    {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
-    {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
-    {'name': 'Task_Images/thumbsdown.png', 'path': 'Task_Images/thumbsdown.png'},
-    {'name': 'Task_Images/thumbsup.png', 'path': 'Task_Images/thumbsup.png'},
-    {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
-    {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
-    
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_5.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_13.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_12.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_4.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_6.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_10.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_11.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_7.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_3.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_15.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_29.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_28.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_14.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_2.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_16.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_17.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_1.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_26.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_27.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_19.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_25.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_30.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_24.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_18.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_20.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_21.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_9.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_23.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_22.%s' % (participant,participant,participant, img_extension)},
-    {'name': 'Participant_Images/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension), 'path': 'Participant_Images/%s/%s_Images/%s_Image_8.%s' % (participant,participant,participant, img_extension)}
+  
+
+        {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
+        {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_trials.csv', 'path': 'Participant_Images/'+participant+'/'+participant+'_trials.csv'},
+        {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
+        {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
+        {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
+        {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
+        {'name': 'Task_Images/thumbsdown.png', 'path': 'Task_Images/thumbsdown.png'},
+        {'name': 'Task_Images/thumbsup.png', 'path': 'Task_Images/thumbsup.png'},
+        {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
+        {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
+        
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_5.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_5.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_13.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_13.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_12.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_12.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_4.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_4.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_6.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_6.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_10.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_10.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_11.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_11.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_7.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_7.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_3.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_3.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_15.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_15.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_29.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_29.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_28.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_28.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_14.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_14.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_2.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_2.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_16.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_16.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_17.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_17.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_1.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_1.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_26.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_26.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_27.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_27.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_19.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_19.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_25.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_25.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_30.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_30.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_24.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_24.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_18.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_18.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_20.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_20.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_21.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_21.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_9.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_9.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_23.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_23.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_22.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_22.png' ,},
+        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_8.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_8.png' ,}
 ]
 });
 
@@ -1301,7 +1304,7 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'Participant_Images/%s/%s_trials.csv' %(participant, participant),
+      trialList: 'Participant_Images/'+participant+'/'+participant+'_trials.csv',
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
