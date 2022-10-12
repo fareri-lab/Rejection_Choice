@@ -2720,6 +2720,7 @@ function ChoiceRoutineEachFrame() {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
       }
+    }
 
       // *conditionalBlank* updates
       if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
