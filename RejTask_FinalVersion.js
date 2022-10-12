@@ -13,7 +13,8 @@ const { round } = util;
 
 // store info about the experiment session:
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
-let expInfo = {'participant': ""};
+
+// let expInfo = {'participant': ""};
 
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from saliencyrating_code
