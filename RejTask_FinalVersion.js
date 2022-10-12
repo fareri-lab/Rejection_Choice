@@ -14,7 +14,7 @@ const { round } = util;
 // store info about the experiment session:
 let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
 let expInfo = {
-    'participant': 'R_1QfKCII0MPcPQEB',
+    'participant': '',
 };
 
 // Start code blocks for 'Before Experiment'
@@ -1702,7 +1702,7 @@ function WaitingToMatchRoutineBegin(snapshot) {
     }
     _pj = {};
     _pj_snippets(_pj);
-    if ((! _pj.in_es6(TrialNumber, [1, 31, 61]))) {
+    if ((! _pj.in_es6(TrialNumber, [1, 31, 61, 91, 121]))) {
         continueRoutine = false;
     }
 
@@ -1980,7 +1980,7 @@ function Partner_MatchRoutineBegin(snapshot) {
     }
     _pj = {};
     _pj_snippets(_pj);
-    if ((! _pj.in_es6(TrialNumber, [1, 31, 61]))) {
+    if ((! _pj.in_es6(TrialNumber, [1, 31, 61, 91, 121]))) {
         continueRoutine = false;
     }
 
@@ -3307,7 +3307,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingClock.reset(); // clock
     frameN = -1;
 
-    const trials = [30,60,90]
+    const trials = [30,60,90, 120,150]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3668,7 +3668,7 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    const trials = [30,60,90]
+    const trials = [30,60,90, 120, 150]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
