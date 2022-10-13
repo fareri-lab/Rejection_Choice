@@ -12,25 +12,27 @@ const { round } = util;
 
 
 // store info about the experiment session:
-let expName = 'RejectionTask_OneLoop';  // from the Builder filename that created this script
+let expName = 'RejTask';  // from the Builder filename that created this script
+let expInfo = {
+    'participant': ''
+};
 
-let expInfo = {'participant': 'mel_test'};
-
+// add info from the URL:
+util.addInfoFromUrl(expInfo);
+console.log(expInfo['participant'])
 // Start code blocks for 'Before Experiment'
 // Run 'Before Experiment' code from saliencyrating_code
 saliencerating = "";
 salienceratingtext = "";
 rating_forsalience = "";
 
-//set up string handling variables 
-var participant; 
-participant = expInfo['participant'];
-
-
 // Run 'Before Experiment' code from stresslevelslider
 stresslevel = "";
 stressleveltext = "";
 rating_forstress = "";
+
+
+
 
 // init psychoJS:
 const psychoJS = new PsychoJS({
@@ -80,53 +82,55 @@ dialogCancelScheduler.add(quitPsychoJS, '', false);
 
 psychoJS.start({
   expName: expName,
-  expInfo: expInfo,
+  expInfo: expInfo});
+
+
+psychoJS.start({
   resources: [
 
-  
-
-        {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
+    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
         {'name': 'Dummy_Spreadsheet.csv', 'path': 'Dummy_Spreadsheet.csv'},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_trials.csv', 'path': 'Participant_Images/'+participant+'/'+participant+'_trials.csv'},
-        {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
-        {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
-        {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
-        {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
-        {'name': 'Task_Images/thumbsdown.png', 'path': 'Task_Images/thumbsdown.png'},
-        {'name': 'Task_Images/thumbsup.png', 'path': 'Task_Images/thumbsup.png'},
-        {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
-        {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
-        
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_5.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_5.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_13.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_13.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_12.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_12.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_4.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_4.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_6.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_6.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_10.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_10.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_11.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_11.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_7.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_7.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_3.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_3.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_15.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_15.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_29.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_29.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_28.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_28.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_14.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_14.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_2.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_2.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_16.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_16.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_17.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_17.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_1.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_1.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_26.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_26.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_27.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_27.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_19.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_19.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_25.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_25.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_30.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_30.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_24.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_24.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_18.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_18.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_20.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_20.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_21.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_21.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_9.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_9.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_23.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_23.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_22.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_22.png' ,},
-        {'name': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_8.png', 'path': 'Participant_Images/'+participant+'/'+participant+'_Images/'+participant+'_Image_8.png' ,}
+        {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`},
+    {'name': 'Task_Images/facedown_card.png', 'path': 'Task_Images/facedown_card.png'},
+    {'name': 'Task_Images/nerdemoji_nobackground.png', 'path': 'Task_Images/nerdemoji_nobackground.png'},
+    {'name': 'Task_Images/smilingemoji.png', 'path': 'Task_Images/smilingemoji.png'},
+    {'name': 'Task_Images/sunglassemoji_nobackground.png', 'path': 'Task_Images/sunglassemoji_nobackground.png'},
+    {'name': 'Task_Images/thumbsdown.png', 'path': 'Task_Images/thumbsdown.png'},
+    {'name': 'Task_Images/thumbsup.png', 'path': 'Task_Images/thumbsup.png'},
+    {'name': 'Task_Images/cowboyemoji.png', 'path': 'Task_Images/cowboyemoji.png'},
+    {'name': 'Task_Images/huggingemoji.png', 'path': 'Task_Images/huggingemoji.png'},
+
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_5.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_13.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_12.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_4.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_6.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_10.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_11.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_7.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_3.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_15.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_29.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_28.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_14.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_2.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_16.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_17.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_1.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_26.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_27.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_19.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_25.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_30.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_24.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_18.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_20.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_21.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_9.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_23.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_22.png` ,},
+    {'name': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.png`, 'path': `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_Images/${expInfo["participant"]}_Image_8.png` ,}
+
 ]
 });
 
@@ -157,7 +161,8 @@ async function updateInfo() {
   return Scheduler.Event.NEXT;
 }
 
-
+var weblink;
+weblink= "https://adelphiderner.qualtrics.com/jfe/form/SV_4GR8sO1rBmqsz3M";
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -211,6 +216,7 @@ var feedback_msg;
 var computer_choice;
 var selfrunOrNot;
 var comprunOrNot;
+var playlottery;
 var resumetext;
 var choice_keys;
 var LotterycomputerchoiceClock;
@@ -287,7 +293,7 @@ async function experimentInit() {
     units: undefined,
     pos: [0, 0], height: 0.065,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
-    color: new util.Color('white'),  opacity: undefined,
+    color: new util.Color('cornflowerblue'),  opacity: undefined,
     depth: 0.0
   });
 
@@ -328,7 +334,7 @@ async function experimentInit() {
     text: 'You will now be matched with a game partner selected at random by the computer. \n\n Please wait...',
     font: 'Open Sans',
     units: undefined,
-    pos: [0, 0.3], height: 0.08,  wrapWidth: undefined, ori: 0.0,
+    pos: [0, 0.0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0
@@ -589,7 +595,7 @@ async function experimentInit() {
   lotterychoice_text = new visual.TextStim({
     win: psychoJS.window,
     name: 'lotterychoice_text',
-    text: 'You have reached the lottery. Please choose [c] to have the computer play on your behalf or choose [s] to play the lottery for yourself.',
+    text: 'You have reached the lottery. Please choose [c] to have the computer play on your behalf or choose [s] to play the lottery for yourself. You have four seconds to choose.',
     font: 'Open Sans',
     units: undefined,
     pos: [0, 0.3], height: 0.07,  wrapWidth: undefined, ori: 0.0,
@@ -638,6 +644,7 @@ async function experimentInit() {
   computer_choice = ["lower", "lower", "lower", "lower", "lower", "higher", "higher", "higher", "higher", "higher"];
   selfrunOrNot = "";
   comprunOrNot = "";
+  playlottery = "";
   resumetext = "";
 
   choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -935,21 +942,6 @@ end_screen = new visual.TextStim({
     depth: 0.0
   });
   end_screen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-
-
-  // thankyou_screenclock = new util.Clock();
-  // thankyou_screen = new visual.TextStim({
-  //   win: psychoJS.window,
-  //   name: 'bonus_screen',
-  //   text: '\n\n\nYou have now reached the end of the task.\n\n\nYou will now be redirected to complete the post-task survey.\n',
-  //   font: 'Open Sans',
-  //   units: undefined,
-  //   pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
-  //   languageStyle: 'LTR',
-  //   color: new util.Color('white'),  opacity: undefined,
-  //   depth: 0.0
-  // });
-
   endwelcomescreen_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
 
   // Create some handy timers
@@ -1301,9 +1293,10 @@ function entiretaskloopLoopBegin(entiretaskloopLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     entiretaskloop = new TrialHandler({
       psychoJS: psychoJS,
+      //nReps: 5, method: TrialHandler.Method.SEQUENTIAL,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'Participant_Images/'+participant+'/'+participant+'_trials.csv',
+      trialList: `Participant_Images/${expInfo["participant"]}/${expInfo["participant"]}_trials.csv`,
       seed: undefined, name: 'entiretaskloop'
     });
     psychoJS.experiment.addLoop(entiretaskloop); // add the loop to the experiment
@@ -1358,7 +1351,7 @@ function lotteryloopLoopBegin(lotteryloopLoopScheduler, snapshot) {
     TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
 
     // set up handler to look after randomisation of conditions etc
-    lotteryloop = new TrialHandler({
+    lotteryloop = new TrialHandler({ 
       psychoJS: psychoJS,
       nReps: startlottery, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
@@ -1647,15 +1640,22 @@ function partner_codeRoutineEnd(snapshot) {
     // Run 'End Routine' code from partnermatchcode
     partnermatch = `You have matched with: ${Partner}`;
     if ((Partner === "Sam")) {
-        partneravatar = "Images/nerdemoji_nobackground.png";
+        partneravatar = "Task_Images/nerdemoji_nobackground.png";
     }
     if ((Partner === "Riley")) {
-        partneravatar = "Images/sunglassemoji_nobackground.png";
+        partneravatar = "Task_Images/sunglassemoji_nobackground.png";
+      }
+    if ((Partner === "Alex")) {
+        partneravatar = "Task_Images/cowboyemoji.png";
+      }
+    if ((Partner === "Taylor")) {
+        partneravatar = "Task_Images/huggingemoji.png";
+
     } else {
         if ((Partner === "Charlie")) {
-            partneravatar = "Images/smilingemoji.png";
+            partneravatar = "Task_Images/smilingemoji.png";
         }
-    }
+      }
 
     // the Routine "partner_code" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
@@ -2132,8 +2132,9 @@ function Photo_ShareRoutineBegin(snapshot) {
     Photo_ShareClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(3.000000);
-    //routineTimer.add(parseFloat(Waiting));
+    //routineTimer.add(3.000000);
+    routineTimer.add(FeedbackWait);
+
     // update component parameters for each repeat
     participantimage_image.setImage(Photos);
     // keep track of which components have finished
@@ -2154,6 +2155,8 @@ function Photo_ShareRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'Photo_Share' ---
     // get current time
+    //routineTimer.reset(Waiting);
+
     t = Photo_ShareClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
@@ -2168,7 +2171,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FeedbackWait - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (photobeingshared_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       photobeingshared_text.setAutoDraw(false);
     }
@@ -2183,7 +2186,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
   //  frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FeedbackWait - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (waitforfeedback_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       waitforfeedback_text.setAutoDraw(false);
     }
@@ -2198,7 +2201,7 @@ function Photo_ShareRoutineEachFrame() {
     }
 
     //frameRemains = 0.0 + parseFloat(Waiting) - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-    frameRemains = 0.0 + 3 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + FeedbackWait - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (participantimage_image.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       participantimage_image.setAutoDraw(false);
     }
@@ -2240,10 +2243,10 @@ function Photo_ShareRoutineEnd(snapshot) {
     // Run 'End Routine' code from initiatefeedbackresponses
     feedbackresponses = `${Partner} ${Feedback} your photo`;
     if ((Feedback === "liked")) {
-        fdbkimage = "Images/thumbsup.png";
+        fdbkimage = "Task_Images/thumbsup.png";
     } else {
         if ((Feedback === "did not like")) {
-            fdbkimage = "Images/thumbsdown.png";
+            fdbkimage = "Task_Images/thumbsdown.png";
         }
     }
 
@@ -2255,95 +2258,6 @@ function Photo_ShareRoutineEnd(snapshot) {
   }
 }
 
-
-// var WaitingforfeedbackComponents;
-// function WaitingforfeedbackRoutineBegin(snapshot) {
-//   return async function () {
-//     TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-//
-//     //--- Prepare to start Routine 'Waitingforfeedback' ---
-//     t = 0;
-//     WaitingforfeedbackClock.reset(); // clock
-//     frameN = -1;
-//     continueRoutine = true; // until we're told otherwise
-//     routineTimer.add(5.000000);
-//     // update component parameters for each repeat
-//     // keep track of which components have finished
-//     WaitingforfeedbackComponents = [];
-//     WaitingforfeedbackComponents.push(waiting_text);
-//
-//     for (const thisComponent of WaitingforfeedbackComponents)
-//       if ('status' in thisComponent)
-//         thisComponent.status = PsychoJS.Status.NOT_STARTED;
-//     return Scheduler.Event.NEXT;
-//   }
-// }
-//
-//
-// function WaitingforfeedbackRoutineEachFrame() {
-//   return async function () {
-//     //--- Loop for each frame of Routine 'Waitingforfeedback' ---
-//     // get current time
-//     t = WaitingforfeedbackClock.getTime();
-//     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-//     // update/draw components on each frame
-//
-//     // *waiting_text* updates
-//     if (t >= 0.0 && waiting_text.status === PsychoJS.Status.NOT_STARTED) {
-//       // keep track of start time/frame for later
-//       waiting_text.tStart = t;  // (not accounting for frame time here)
-//       waiting_text.frameNStart = frameN;  // exact frame index
-//
-//       waiting_text.setAutoDraw(true);
-//     }
-//
-//     frameRemains = 0.0 + 5.0 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
-//     if (waiting_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
-//       waiting_text.setAutoDraw(false);
-//     }
-//     // check for quit (typically the Esc key)
-//     if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
-//       return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
-//     }
-//
-//     // check if the Routine should terminate
-//     if (!continueRoutine) {  // a component has requested a forced-end of Routine
-//       return Scheduler.Event.NEXT;
-//     }
-//
-//     continueRoutine = false;  // reverts to True if at least one component still running
-//     for (const thisComponent of WaitingforfeedbackComponents)
-//       if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
-//         continueRoutine = true;
-//         break;
-//       }
-//
-//     // refresh the screen if continuing
-//     if (continueRoutine && routineTimer.getTime() > 0) {
-//       return Scheduler.Event.FLIP_REPEAT;
-//     } else {
-//       return Scheduler.Event.NEXT;
-//     }
-//   };
-// }
-//
-//
-// function WaitingforfeedbackRoutineEnd(snapshot) {
-//   return async function () {
-//     //--- Ending Routine 'Waitingforfeedback' ---
-//     for (const thisComponent of WaitingforfeedbackComponents) {
-//       if (typeof thisComponent.setAutoDraw === 'function') {
-//         thisComponent.setAutoDraw(false);
-//       }
-//     }
-//     // Routines running outside a loop should always advance the datafile row
-//     if (currentLoop === psychoJS.experiment) {
-//       psychoJS.experiment.nextEntry(snapshot);
-//     }
-//     return Scheduler.Event.NEXT;
-//   }
-// }
-//
 
 var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
@@ -2604,7 +2518,7 @@ function ChoiceRoutineBegin(snapshot) {
     ChoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(10.000000);
+    routineTimer.add(4.000000);
     // update component parameters for each repeat
     choice_keys.keys = undefined;
     choice_keys.rt = undefined;
@@ -2719,7 +2633,6 @@ function ChoiceRoutineEachFrame() {
         if ((choice_keys.keys === "s")) {
             self_text.setColor(new util.Color(DecisionColor));
       }
-    }
 
       // *conditionalBlank* updates
       if (choice_keys.keys > 0 && conditionalBlank.status === PsychoJS.Status.NOT_STARTED) {
@@ -2785,15 +2698,18 @@ function ChoiceRoutineEnd(snapshot) {
     if ((choice_keys.keys === "c")) {
         selfrunOrNot = 0;
         comprunOrNot = 1;
+        playlottery = 0;
         computer_text.setColor(new util.Color("white"));
     } else {
         if ((choice_keys.keys === "s")) {
             selfrunOrNot = 1;
             comprunOrNot = 0;
+            playlottery = 1;
             self_text.setColor(new util.Color("white"));
         } else {
             selfrunOrNot = 0;
             comprunOrNot = 0;
+            playlottery = 999;
         }
     }
 
@@ -2802,6 +2718,7 @@ function ChoiceRoutineEnd(snapshot) {
       currentLoop.addResponse(choice_keys.corr, level);
     }
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
+    psychoJS.experiment.addData('playlottery', playlottery;
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
         }
@@ -2826,7 +2743,7 @@ function LotterycomputerchoiceRoutineBegin(snapshot) {
     LotterycomputerchoiceClock.reset(); // clock
     frameN = -1;
     continueRoutine = true; // until we're told otherwise
-    routineTimer.add(6.000000);
+    routineTimer.add(4.000000);
     // update component parameters for each repeat
     // Run 'Begin Routine' code from skipcomputerchoice_code
     response_msg = `The computer has chosen ${random_entry}.`;
@@ -2863,7 +2780,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
       lotterycard.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 6 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (lotterycard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       lotterycard.setAutoDraw(false);
     }
@@ -2877,13 +2794,13 @@ function LotterycomputerchoiceRoutineEachFrame() {
       Block1_facedowncard.setAutoDraw(true);
     }
 
-    frameRemains = 0.0 + 6 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 0.0 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (Block1_facedowncard.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       Block1_facedowncard.setAutoDraw(false);
     }
 
     // *computerresponse* updates
-    if (t >= 2 && computerresponse.status === PsychoJS.Status.NOT_STARTED) {
+    if (t >= 1 && computerresponse.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
       computerresponse.tStart = t;  // (not accounting for frame time here)
       computerresponse.frameNStart = frameN;  // exact frame index
@@ -2891,7 +2808,7 @@ function LotterycomputerchoiceRoutineEachFrame() {
       computerresponse.setAutoDraw(true);
     }
 
-    frameRemains = 2 + 4 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
+    frameRemains = 2 + 2 - psychoJS.window.monitorFramePeriod * 0.75;  // most of one frame period left
     if (computerresponse.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       computerresponse.setAutoDraw(false);
     }
@@ -3307,7 +3224,7 @@ function SalienceRatingRoutineBegin(snapshot) {
     SalienceRatingClock.reset(); // clock
     frameN = -1;
 
-    const trials = [30,60,90, 120,150]
+    const trials = [30,60,90,120,150]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3380,30 +3297,7 @@ function SalienceRatingRoutineEachFrame() {
       userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
       userMouse.midButton.push(buttonpress[1]);
       userMouse.rightButton.push(buttonpress[2]);
-    // number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    // Run 'Each Frame' code from saliencyrating_code
-  // where keys code was originally
 
-
-    // start_position = salience_slider.markerPos
-
-  // new_position = salience_slider.getcurrentmarkerppos()
-    //
-    // if new_position != start_position:
-    //   marker = Math.round(salience_slider.getMarkerPos())
-    //   displayrating_text.setText(marker);
-    //   salience_slider.setMarkerPos(marker)
-    //
-
-    // // // *salience_slider* updates
-    // if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
-    //   // keep track of start time/frame for later
-    //   salience_slider.tStart = t;  // (not accounting for frame time here)
-    //   salience_slider.frameNStart = frameN;  // exact frame index
-    //
-    //   salience_slider.setAutoDraw(true);
-    // }
 
     // *saliencequestion_text* updates
     if (t >= 0.0 && saliencequestion_text.status === PsychoJS.Status.NOT_STARTED) {
@@ -3427,20 +3321,6 @@ function SalienceRatingRoutineEachFrame() {
       psychoJS.window.callOnFlip(function() { key_resp.clearEvents(); });
     }
 
-    // if (key_resp.status === PsychoJS.Status.STARTED) {
-    //   let theseKeys = key_resp.getKeys({keyList: ['space'], waitRelease: false});
-    //   _key_resp_allKeys = _key_resp_allKeys.concat(theseKeys);
-    //   if (_key_resp_allKeys.length > 0) {
-    //     key_resp.keys = _key_resp_allKeys[_key_resp_allKeys.length - 1].name;  // just the last key pressed
-    //     key_resp.rt = _key_resp_allKeys[_key_resp_allKeys.length - 1].rt;
-    //     // a response ends the routine
-    //     continueRoutine = false;
-    //
-    //   } else {
-    //     continueRoutine = true;
-    //
-    //   }
-    // }
 
     // *saliencecontinue_text* updates
   //  if (t >= 0.0 && saliencecontinue_text.status === PsychoJS.Status.NOT_STARTED) {
@@ -3467,15 +3347,7 @@ function SalienceRatingRoutineEachFrame() {
 
 
 
-  //  *displayrating_text* updates
-    // if (t >= 0.0 && displayrating_text.status === PsychoJS.Status.NOT_STARTED) {
-    //   // keep track of start time/frame for later
-    //   displayrating_text.tStart = t;  // (not accounting for frame time here)
-    //   displayrating_text.frameNStart = frameN;  // exact frame index
-    //   //displayrating_text.setText(salience_slider.getMarkerPos());
-    //   displayrating_text.setAutoDraw(true);
-    //
-    // }
+
     // // *salience_slider* updates
     if (t >= 0.0 && salience_slider.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
@@ -3503,30 +3375,7 @@ function SalienceRatingRoutineEachFrame() {
       }
       _pj = {};
       _pj_snippets(_pj);
-      // salience_slider.setAutoDraw(true);
 
-
-  //     keys = psychoJS.eventManager.getKeys();
-  // //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-  //
-  //     if (keys.length) {
-  //         if (_pj.in_es6("left", keys)) {
-  //             salience_slider.markerPos = (salience_slider.markerPos - 1);
-  //             rating_forsalience = salience_slider.getRating();
-  //             displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-  //             salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-  //
-  //         } else {
-  //             if (_pj.in_es6("right", keys)) {
-  //                 salience_slider.markerPos = (salience_slider.markerPos + 1);
-  //                 rating_forsalience = salience_slider.getRating();
-  //                 displayrating_text.setText(Math.round(salience_slider.getMarkerPos()));
-  //                 salience_slider.setMarkerPos(Math.round(salience_slider.getMarkerPos()))
-  //             }
-  //         }
-  //     }
-
-    // const mouseInfo = this.psychoJS.eventManager.getMouseInfo();
       const validclicks = [1,2,3,4,5]
         ratingvalue = salience_slider.getMarkerPos();
           if (1 < ratingvalue && ratingvalue < 1.5) {
@@ -3620,10 +3469,7 @@ function SalienceRatingRoutineEnd(snapshot) {
                   return Number.parseFloat(x).toFixed(2);
                 }
 
-  // psychoJS.experiment.addData('saliencerating', financial(salience_slider.getRating())); //test
-                // psychoJS.experiment.addData('pracScale.rt', userMouse.getPos()); //test
-                // psychoJS.experiment.addData('saliencemouse.rt', pracfinalmouseRT);
-    // Run 'End Routine' code from saliencyrating_code
+
     entiretaskloop.addData("salience_rating", Math.round(salience_slider.getMarkerPos()*10/10));
     //entiretaskloop.addData("salience_rating", financial(salience_slider.getRating()))
     // update the trial handler);
@@ -3668,7 +3514,7 @@ function StressLevelRoutineBegin(snapshot) {
     //continueRoutine = true; // until we're told otherwise
     // update component parameters for each repeat
     // Run 'Begin Routine' code from stresslevelslider
-    const trials = [30,60,90, 120, 150]
+    const trials = [30,60,90,120,150]
 
     if (trials.includes(TrialNumber) == true) {
       continueRoutine = true;
@@ -3740,44 +3586,7 @@ function StressLevelRoutineEachFrame() {
       userMouse.leftButton.push(buttonpress[0]); // store buttons in button list, likewise for storage
       userMouse.midButton.push(buttonpress[1]);
       userMouse.rightButton.push(buttonpress[2]);
-    // number of completed frames (so 0 is the first frame)
-    // update/draw components on each frame
-    // Run 'Each Frame' code from stresslevelslider
-    // var _pj;
-    // function _pj_snippets(container) {
-    //     function in_es6(left, right) {
-    //         if (((right instanceof Array) || ((typeof right) === "string"))) {
-    //             return (right.indexOf(left) > (- 1));
-    //         } else {
-    //             if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {
-    //                 return right.has(left);
-    //             } else {
-    //                 return (left in right);
-    //             }
-    //         }
-    //     }
-    //     container["in_es6"] = in_es6;
-    //     return container;
-    // }
-    // _pj = {};
-    // _pj_snippets(_pj);
-    // stress_slider.draw();
-    // keys = psychoJS.eventManager.getKeys();
-    // displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-    // if (keys.length) {
-    //     if (_pj.in_es6("left", keys)) {
-    //         stress_slider.markerPos = (stress_slider.markerPos - 0.1);
-    //         rating_forstress = stress_slider.getRating();
-    //         displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-    //     } else {
-    //         if (_pj.in_es6("right", keys)) {
-    //             stress_slider.markerPos = (stress_slider.markerPos + 0.1);
-    //             rating_forstress = stress_slider.getRating();
-    //             displayrating_text.setText(Math.round(stress_slider.getMarkerPos(), 1));
-    //         }
-    //     }
-    // }
-    //
+
 
     // *stresslevel_text* updates
     if (t >= 0.0 && stresslevel_text.status === PsychoJS.Status.NOT_STARTED) {
@@ -3854,29 +3663,7 @@ function StressLevelRoutineEachFrame() {
       }
       _pj = {};
       _pj_snippets(_pj);
-      // salience_slider.setAutoDraw(true);
 
-
-      // keys = psychoJS.eventManager.getKeys();
-  //    displayrating_text.setText(Math.round(salience_slider.getMarkerPos(), 1));
-
-      // if (keys.length) {
-      //     if (_pj.in_es6("left", keys)) {
-      //         stress_slider.markerPos = (stress_slider.markerPos - 1);
-      //         rating_forstress = stress_slider.getRating();
-      //         displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
-      //         stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
-      //
-      //     } else {
-      //         if (_pj.in_es6("right", keys)) {
-      //             stress_slider.markerPos = (stress_slider.markerPos + 1);
-      //             rating_forstress = stress_slider.getRating();
-      //             displaystressrating_text.setText(Math.round(stress_slider.getMarkerPos()));
-      //             stress_slider.setMarkerPos(Math.round(stress_slider.getMarkerPos()))
-      //         }
-      //     }
-      // }
-      //
 
       const validclicks = [1,2,3,4,5,6,7,8,9]
         ratingvalue = stress_slider.getMarkerPos();
@@ -3960,15 +3747,6 @@ function StressLevelRoutineEachFrame() {
                 }
               }
             }
-
-    // *displaystressrating_text* updates
-    // if (t >= 0.0 && displaystressrating_text.status === PsychoJS.Status.NOT_STARTED) {
-    //   // keep track of start time/frame for later
-    //   displaystressrating_text.tStart = t;  // (not accounting for frame time here)
-    //   displaystressrating_text.frameNStart = frameN;  // exact frame index
-    //
-    //   displaystressrating_text.setAutoDraw(true);
-
 
 
 
@@ -4185,7 +3963,7 @@ async function quitPsychoJS(message, isCompleted) {
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   //  when they press space, redirect to choice task
-  //window.location.replace(weblink);
+  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant']);
 
   return Scheduler.Event.QUIT;
 }
