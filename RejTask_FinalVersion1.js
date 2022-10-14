@@ -2718,7 +2718,7 @@ function ChoiceRoutineEnd(snapshot) {
       currentLoop.addResponse(choice_keys.corr, level);
     }
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
-    psychoJS.experiment.addData('playlottery', playlottery;
+    psychoJS.experiment.addData('playlottery', playlottery);
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
         }
