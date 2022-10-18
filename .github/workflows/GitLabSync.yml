@@ -1,9 +1,6 @@
 name: GitlabSync
 
-on: 
-   - workflow_dispatch
-   - push
-   - delete
+on: [workflow_dispatch]
 
 jobs:
   sync:
