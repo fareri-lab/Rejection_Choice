@@ -163,7 +163,6 @@ async function updateInfo() {
 
 var weblink;
 weblink= "https://adelphiderner.qualtrics.com/jfe/form/SV_4GR8sO1rBmqsz3M";
-var bonus;
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -217,7 +216,8 @@ var feedback_msg;
 var computer_choice;
 var selfrunOrNot;
 var comprunOrNot;
-var playlottery;
+var choicemiss;
+var lotterymiss;
 var misses;
 var resumetext;
 var choice_keys;
@@ -646,9 +646,8 @@ async function experimentInit() {
   computer_choice = ["lower", "lower", "lower", "lower", "lower", "higher", "higher", "higher", "higher", "higher"];
   selfrunOrNot = "";
   comprunOrNot = "";
-  playlottery = "";
-  misses= 0;
-  bonus= "";
+  choicemiss = "";
+  lotterymiss = "";
   resumetext = "";
 
   choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -2702,19 +2701,21 @@ function ChoiceRoutineEnd(snapshot) {
     if ((choice_keys.keys === "c")) {
         selfrunOrNot = 0;
         comprunOrNot = 1;
-        playlottery = 0;
+        choicemiss = 0;
+        lotterymiss= 0;
         computer_text.setColor(new util.Color("white"));
     } else {
         if ((choice_keys.keys === "s")) {
             selfrunOrNot = 1;
             comprunOrNot = 0;
-            playlottery = 1;
+            choicemiss = 0;
+            lotterymiss= 0;
             self_text.setColor(new util.Color("white"));
         } else {
-            selfrunOrNot = 0;
-            comprunOrNot = 0;
-            playlottery = 999;
-            misses = misses+1;
+            selfrunOrNot = 999;
+            comprunOrNot = 999;
+            
+            
         }
     }
 
@@ -2722,8 +2723,9 @@ function ChoiceRoutineEnd(snapshot) {
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(choice_keys.corr, level);
     }
+    psychoJS.experiment.addData('selfrunOrNot', selfrunOrNot);
+    psychoJS.experiment.addData('comprunOrNot', comprunOrNot);
     psychoJS.experiment.addData('choice_keys.keys', choice_keys.keys);
-    psychoJS.experiment.addData('playlottery', playlottery);
     if (typeof choice_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('choice_keys.rt', choice_keys.rt);
         }
@@ -2978,12 +2980,16 @@ function LotteryselfchoiceRoutineEachFrame() {
     if ((lotteryguess_keys.keys === "l")) {
         feedback_msg = `You have chosen lower.`;
         lower_text.setColor(new util.Color(DecisionColor));
+        lotterymiss= 0;
     } else {
         if ((lotteryguess_keys.keys === "h")) {
             feedback_msg = `You have chosen higher.`;
             higher_text.setColor(new util.Color(DecisionColor));
+            lotterymiss= 0;
         } else {
             feedback_msg = `No response recorded.`;
+            lotterymiss= 1;
+            
         }
     }
     responsefeedback.setText(feedback_msg);
@@ -3055,6 +3061,8 @@ function LotteryselfchoiceRoutineEnd(snapshot) {
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(lotteryguess_keys.corr, level);
     }
+    psychoJS.experiment.addData('lotterymiss', lotterymiss);
+    psychoJS.experiment.addData('choicemiss', choicemiss);
     psychoJS.experiment.addData('lotteryguess_keys.keys', lotteryguess_keys.keys);
     if (typeof lotteryguess_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('lotteryguess_keys.rt', lotteryguess_keys.rt);
@@ -3092,6 +3100,8 @@ function ContinueRoutineBegin(snapshot) {
     // }
     if (((comprunOrNot === 0) && (selfrunOrNot === 0))) {
         resumetext = "You missed an opportunity to play the lottery. \n\n\n Please be sure to respond faster on your next opportunity. \n\nPress space to continue.";
+        lotterymiss= 0;
+        choicemiss = 1;
     } else {
         resumetext = "Press space to continue.";
     }
@@ -3937,7 +3947,11 @@ function End_ScreenRoutineEnd(snapshot) {
         psychoJS.experiment.addData('end_screen_keys.rt', end_screen_keys.rt);
         routineTimer.reset();
         }
-    psychoJS.experiment.addData('misses', misses);
+    psychoJS.experiment.addData('Total_LotteryMiss',sum(lotterymiss));
+    psychoJS.experiment.addData('Total_ChoiceMiss',sum(choicemiss));
+    psychoJS.experiment.addData('Total_Self',sum(selfrunOrNot));
+    psychoJS.experiment.addData('Total_Computer',sum(comprunOrNot));
+    psychoJS.experiment.addData('Prop_LotteryMiss',(sum(selfrunOrNot)/sum(lotterymiss)));
     end_screen_keys.stop();
     // the Routine "end_Screen" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
@@ -3968,14 +3982,9 @@ async function quitPsychoJS(message, isCompleted) {
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   //  when they press space, redirect to choice task
-  if ((misses > 9)) {
-    bonus= "n";
-      
-  } else {
-    bonus = "y"
-  }
+
   
-  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant'] + 'b=' + bonus);
+  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant']);
 
   return Scheduler.Event.QUIT;
 }
