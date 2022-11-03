@@ -163,6 +163,7 @@ async function updateInfo() {
 
 var weblink;
 weblink= "https://adelphiderner.qualtrics.com/jfe/form/SV_4GR8sO1rBmqsz3M";
+var bonus;
 var Welcome_ScreenClock;
 var Welcome;
 var endwelcomescreen_keys;
@@ -217,6 +218,7 @@ var computer_choice;
 var selfrunOrNot;
 var comprunOrNot;
 var playlottery;
+var misses;
 var resumetext;
 var choice_keys;
 var LotterycomputerchoiceClock;
@@ -645,6 +647,8 @@ async function experimentInit() {
   selfrunOrNot = "";
   comprunOrNot = "";
   playlottery = "";
+  misses= 0;
+  bonus= "";
   resumetext = "";
 
   choice_keys = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -933,7 +937,7 @@ end_screenclock = new util.Clock();
 end_screen = new visual.TextStim({
     win: psychoJS.window,
     name: 'end_screen',
-    text: 'You have now reached the end of the task. \n\n\n Congratulations! From your randomly selected lottery, you have earned an additional $5.00.\n\n\nPress space to be redirected to complete the post-task survey.\n',
+    text: 'Congratulations! You have now reached the end of the task. \n\n\nPress space to be redirected to complete the post-task survey.\n',
     font: 'Open Sans',
     units: undefined,
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
@@ -2710,6 +2714,7 @@ function ChoiceRoutineEnd(snapshot) {
             selfrunOrNot = 0;
             comprunOrNot = 0;
             playlottery = 999;
+            misses = misses+1;
         }
     }
 
@@ -3932,7 +3937,7 @@ function End_ScreenRoutineEnd(snapshot) {
         psychoJS.experiment.addData('end_screen_keys.rt', end_screen_keys.rt);
         routineTimer.reset();
         }
-
+    psychoJS.experiment.addData('misses', misses);
     end_screen_keys.stop();
     // the Routine "end_Screen" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
@@ -3963,7 +3968,14 @@ async function quitPsychoJS(message, isCompleted) {
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   //  when they press space, redirect to choice task
-  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant']);
+  if ((misses > 9)) {
+    bonus= "n";
+      
+  } else {
+    bonus = "y"
+  }
+  
+  window.location.replace(weblink+= '?PROLIFIC_ID=' + expInfo['participant'] + 'b=' + bonus);
 
   return Scheduler.Event.QUIT;
 }
