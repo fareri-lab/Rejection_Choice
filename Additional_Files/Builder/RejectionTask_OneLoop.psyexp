@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <PsychoPy2experiment encoding="utf-8" version="2022.2.1">
   <Settings>
     <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
