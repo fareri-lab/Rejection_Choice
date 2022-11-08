@@ -15,10 +15,10 @@ import shutil
 # read in raw qualtrics data and excel sheet of completed participants
 # make csv into data frame
 homedir = os.getcwd()
-rawqualtrics = pd.read_csv('qualtrics_data_8.4.csv')
+rawqualtrics = pd.read_csv('RejectionChoice_PhotoUpload118022.csv')
 completedparticipantlist = pd.read_excel('participantlist.xlsx')
 completedparticipantlist = completedparticipantlist.loc[
-    completedparticipantlist['Uploaded? (y/n)'] == 'n']
+    completedparticipantlist['PhotosUploaded? (y/n)'] == 'n']
 
 # %%
 # remove uneeded rows from data frame from raw qualtrics data
@@ -29,7 +29,7 @@ rawqualtrics = rawqualtrics.reset_index()
 
 # gathering sub_ids of completed participants only
 qualtrics = rawqualtrics.loc[rawqualtrics['ResponseId'].isin(
-    completedparticipantlist['Response_ID'])]
+    completedparticipantlist['photouploadsub_id'])]
 qualtrics = qualtrics.reset_index()
 
 # %%
@@ -40,7 +40,7 @@ expdir = os.getcwd()
 image_dir = ''
 # make new folders for each participant and then a folder in each new folder
 for i in range(0, len(qualtrics)):
-    subj_id = qualtrics['PROLIFIC_ID'][i]
+    subj_id = qualtrics['PROLIFIC_PID'][i]
     subj_dir = '%s/Participant_Images/%s' % (expdir, subj_id)
     if os.path.exists(subj_dir):
         continue
@@ -83,7 +83,7 @@ for image in os.listdir(source_folder):
     # for every subject listed in the qualtrics dataframe
     for sub in range(0, len(qualtrics)):
         responseId = qualtrics['ResponseId'][sub]
-        prolificId = qualtrics['PROLIFIC_ID'][sub]
+        prolificId = qualtrics['PROLIFIC_PID'][sub]
         if len(os.listdir(indv_image_folder % (prolificId, prolificId))) == 30:
             continue
         else:
@@ -107,7 +107,7 @@ participantimagefolder = expdir + '/Participant_Images/' #parent folder for all 
 count = 1
 for sub in range(0, len(qualtrics)):
     responseId = qualtrics['ResponseId'][sub]
-    prolificId = qualtrics['PROLIFIC_ID'][sub]
+    prolificId = qualtrics['PROLIFIC_PID'][sub]
     for p in os.listdir(participantimagefolder): #p = participant; for all ndividual folders in particpant image folder
         if not p.endswith('.DS_Store'): #we do not want DS store
             if p.startswith(prolificId): 
@@ -116,7 +116,7 @@ for sub in range(0, len(qualtrics)):
                     if "_Image_" in photo:
                         continue
                     else:
-                        if photo.endswith('.jpg') or photo.endswith('.jpeg') or photo.endswith('.png'):
+                        if photo.endswith('.jpg') or photo.endswith('.jpeg') or photo.endswith('.png') or photo.endswith('.JPG') or photo.endswith('.JPEG') or photo.endswith('.PNG'):
                             # Construct old file name
                             source = indv_image_folder % (p, p) + '/' + photo
                             # Adding the count to the new file name and extension
@@ -142,7 +142,7 @@ feedback = ''
 
 for sub in range(0, len(qualtrics)):
     responseId = qualtrics['ResponseId'][sub]
-    prolificId = qualtrics['PROLIFIC_ID'][sub]
+    prolificId = qualtrics['PROLIFIC_PID'][sub]
     for folder in os.listdir(participantimagefolder):
         # if not folder.endswith('.DS_Store'):
         if folder.startswith(prolificId):
@@ -231,3 +231,6 @@ for sub in range(0, len(qualtrics)):
 #Delete all extraneous photos in Raw_Participant_Folder (sourcefolder)
 for f in os.listdir(source_folder):
     os.remove(os.path.join(source_folder, f))
+os.chdir(source_folder)
+with open("blank_file", "w") as f:
+        f.write("2")
