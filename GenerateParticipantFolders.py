@@ -144,89 +144,89 @@ for sub in range(0, len(qualtrics)):
     responseId = qualtrics['ResponseId'][sub]
     prolificId = qualtrics['PROLIFIC_PID'][sub]
     for folder in os.listdir(participantimagefolder):
-        # if not folder.endswith('.DS_Store'):
-        if folder.startswith(prolificId):
-            imagedir = indv_image_folder % (folder, folder) + '/'
-            print(imagedir)
-    
-            os.chdir(imagedir)
-            photolist = os.listdir(imagedir)
-            pavlovia_path = imagedir.replace(
-                homedir + '/', "")
-            photolist = [pavlovia_path + x for x in photolist]
-    
-            condition_selected = random.sample(sociallevel, 5)
-            partner_selected = random.sample(partnerlist, 5)
-            block = 0  # before experiment
-            nTrials = 30
-            alltrials = pd.DataFrame(columns=[
-                                     'TrialNumber', 'Partner', 'Condition', 'Photos', 'Feedback', 'FeedbackWait'])
-            alltrials['Partner'] = ''
-            alltrials['Feedback'] = ''
-            alltrials['Condition'] = ''
-            alltrials['Photos'] = ''
-            # for k in range(0,len(photolist)):
-            for i in range(0, 5):
-                if condition_selected[i] == 'Rej':
-                    pDislike = .7
-                    pLike = .3
-                    rej = pd.DataFrame(
-                        columns=['Partner', 'Condition', 'Photos', 'Feedback'])
-                    partner = partner_selected[i]
-                    condition = condition_selected[i]
-                    blocklist = ['did not like'] * \
-                        int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
-                    random.shuffle(blocklist)
-                    feedback = random.sample(blocklist, 30)
-                    photo_selected = random.sample(photolist, 30)
-                    rej['Feedback'] = feedback
-                    rej['Partner'] = partner
-                    rej['Condition'] = condition
-                    rej['Photos'] = photo_selected
-                    alltrials = pd.concat([alltrials, rej], ignore_index=True)
-    
-                elif condition_selected[i] == 'Acc':
-                    pDislike = .3
-                    pLike = .7
-                    acc = pd.DataFrame(
-                        columns=['Partner', 'Condition', 'Photos', 'Feedback'])
-                    partner = partner_selected[i]
-                    condition = condition_selected[i]
-                    blocklist = ['did not like'] * \
-                        int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
-                    random.shuffle(blocklist)
-                    feedback = random.sample(blocklist, 30)
-                    photo_selected = random.sample(photolist, 30)
-                    acc['Feedback'] = feedback
-                    acc['Partner'] = partner
-                    acc['Condition'] = condition
-                    acc['Photos'] = photo_selected
-                    alltrials = pd.concat([alltrials, acc], ignore_index=True)
-    
-                elif condition_selected[i] == 'Neutral':
-                    pDislike = .5
-                    pLike = .5
-                    neu = pd.DataFrame(
-                        columns=['Partner', 'Condition', 'Photos', 'Feedback'])
-                    partner = partner_selected[i]
-                    condition = condition_selected[i]
-                    blocklist = ['did not like'] * \
-                        int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
-                    random.shuffle(blocklist)
-                    feedback = random.sample(blocklist, 30)
-                    photo_selected = random.sample(photolist, 30)
-                    neu['Feedback'] = feedback
-                    neu['Partner'] = partner
-                    neu['Condition'] = condition
-                    neu['Photos'] = photo_selected
-                    alltrials = pd.concat([alltrials, neu], ignore_index=True)
-            subid = folder
-            expdir = participantimagefolder
-            alltrials['FeedbackWait'] = spreadsheet['FeedbackWait']
-            subjdir = '%s/%s' % (expdir, subid)
-            trial_sheet = '%s/%s_trials.csv' % (subjdir, subid)
-            alltrials['TrialNumber'] = range(1, len(alltrials)+1)
-            alltrials.to_csv(trial_sheet, index=False)
+        if not folder.endswith('.DS_Store'):
+            if folder.startswith(prolificId):
+                imagedir = indv_image_folder % (folder, folder) + '/'
+                print(imagedir)
+        
+                os.chdir(imagedir)
+                photolist = os.listdir(imagedir)
+                pavlovia_path = imagedir.replace(
+                    homedir + '/', "")
+                photolist = [pavlovia_path + x for x in photolist]
+        
+                condition_selected = random.sample(sociallevel, 5)
+                partner_selected = random.sample(partnerlist, 5)
+                block = 0  # before experiment
+                nTrials = 30
+                alltrials = pd.DataFrame(columns=[
+                                         'TrialNumber', 'Partner', 'Condition', 'Photos', 'Feedback', 'FeedbackWait'])
+                alltrials['Partner'] = ''
+                alltrials['Feedback'] = ''
+                alltrials['Condition'] = ''
+                alltrials['Photos'] = ''
+                # for k in range(0,len(photolist)):
+                for i in range(0, 5):
+                    if condition_selected[i] == 'Rej':
+                        pDislike = .7
+                        pLike = .3
+                        rej = pd.DataFrame(
+                            columns=['Partner', 'Condition', 'Photos', 'Feedback'])
+                        partner = partner_selected[i]
+                        condition = condition_selected[i]
+                        blocklist = ['did not like'] * \
+                            int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+                        random.shuffle(blocklist)
+                        feedback = random.sample(blocklist, 30)
+                        photo_selected = random.sample(photolist, 30)
+                        rej['Feedback'] = feedback
+                        rej['Partner'] = partner
+                        rej['Condition'] = condition
+                        rej['Photos'] = photo_selected
+                        alltrials = pd.concat([alltrials, rej], ignore_index=True)
+        
+                    elif condition_selected[i] == 'Acc':
+                        pDislike = .3
+                        pLike = .7
+                        acc = pd.DataFrame(
+                            columns=['Partner', 'Condition', 'Photos', 'Feedback'])
+                        partner = partner_selected[i]
+                        condition = condition_selected[i]
+                        blocklist = ['did not like'] * \
+                            int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+                        random.shuffle(blocklist)
+                        feedback = random.sample(blocklist, 30)
+                        photo_selected = random.sample(photolist, 30)
+                        acc['Feedback'] = feedback
+                        acc['Partner'] = partner
+                        acc['Condition'] = condition
+                        acc['Photos'] = photo_selected
+                        alltrials = pd.concat([alltrials, acc], ignore_index=True)
+        
+                    elif condition_selected[i] == 'Neutral':
+                        pDislike = .5
+                        pLike = .5
+                        neu = pd.DataFrame(
+                            columns=['Partner', 'Condition', 'Photos', 'Feedback'])
+                        partner = partner_selected[i]
+                        condition = condition_selected[i]
+                        blocklist = ['did not like'] * \
+                            int(nTrials * pDislike) + ['liked'] * int(nTrials * pLike)
+                        random.shuffle(blocklist)
+                        feedback = random.sample(blocklist, 30)
+                        photo_selected = random.sample(photolist, 30)
+                        neu['Feedback'] = feedback
+                        neu['Partner'] = partner
+                        neu['Condition'] = condition
+                        neu['Photos'] = photo_selected
+                        alltrials = pd.concat([alltrials, neu], ignore_index=True)
+                subid = folder
+                expdir = participantimagefolder
+                alltrials['FeedbackWait'] = spreadsheet['FeedbackWait']
+                subjdir = '%s/%s' % (expdir, subid)
+                trial_sheet = '%s/%s_trials.csv' % (subjdir, subid)
+                alltrials['TrialNumber'] = range(1, len(alltrials)+1)
+                alltrials.to_csv(trial_sheet, index=False)
 #%%
 #Delete all extraneous photos in Raw_Participant_Folder (sourcefolder)
 for f in os.listdir(source_folder):
