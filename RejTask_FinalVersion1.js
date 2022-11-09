@@ -933,7 +933,7 @@ end_screenclock = new util.Clock();
 end_screen = new visual.TextStim({
     win: psychoJS.window,
     name: 'end_screen',
-    text: 'You have now reached the end of the task. \n\n\n Congratulations! From your randomly selected lottery, you have earned an additional $5.00.\n\n\nPress space to be redirected to complete the post-task survey.\n',
+    text: 'You have now reached the end of the task. \n\n\nPress space to be redirected to complete the post-task survey.\n',
     font: 'Open Sans',
     units: undefined,
     pos: [0, 0], height: 0.08,  wrapWidth: undefined, ori: 0.0,
