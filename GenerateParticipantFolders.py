@@ -109,7 +109,7 @@ for sub in range(0, len(qualtrics)):
     responseId = qualtrics['ResponseId'][sub]
     prolificId = qualtrics['PROLIFIC_PID'][sub]
     for p in os.listdir(participantimagefolder): #p = participant; for all ndividual folders in particpant image folder
-        if not p.endswith('.DS_Store'): #we do not want DS store
+        if not p.endswith('.DS_Store') or p.endswith('blank_file'): #we do not want DS store or blank file
             if p.startswith(prolificId): 
                 count = 1
                 for photo in os.listdir(indv_image_folder % (p, p)):
@@ -144,7 +144,7 @@ for sub in range(0, len(qualtrics)):
     responseId = qualtrics['ResponseId'][sub]
     prolificId = qualtrics['PROLIFIC_PID'][sub]
     for folder in os.listdir(participantimagefolder):
-        if not folder.endswith('.DS_Store'):
+        if not folder.endswith('.DS_Store') or folder.endswith('blank_file'):
             if folder.startswith(prolificId):
                 imagedir = indv_image_folder % (folder, folder) + '/'
                 print(imagedir)
