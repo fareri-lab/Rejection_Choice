@@ -15,7 +15,7 @@ import shutil
 # read in raw qualtrics data and excel sheet of completed participants
 # make csv into data frame
 homedir = os.getcwd()
-rawqualtrics = pd.read_csv('RejectionChoice_PhotoUpload118022.csv')
+rawqualtrics = pd.read_csv('RejectionChoice_PhotoUpload_11162022.csv')
 completedparticipantlist = pd.read_excel('participantlist.xlsx')
 completedparticipantlist = completedparticipantlist.loc[
     completedparticipantlist['PhotosUploaded? (y/n)'] == 'n']
@@ -229,8 +229,8 @@ for sub in range(0, len(qualtrics)):
                 alltrials.to_csv(trial_sheet, index=False)
 #%%
 #Delete all extraneous photos in Raw_Participant_Folder (sourcefolder)
-for f in os.listdir(source_folder):
-    os.remove(os.path.join(source_folder, f))
-os.chdir(source_folder)
-with open("blank_file", "w") as f:
-        f.write("2")
+# for f in os.listdir(source_folder):
+#     os.remove(os.path.join(source_folder, f))
+# os.chdir(source_folder)
+# with open("blank_file", "w") as f:
+#         f.write("2")
