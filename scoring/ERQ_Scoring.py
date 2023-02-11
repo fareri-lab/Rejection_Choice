@@ -17,8 +17,10 @@ participants = participants.loc[
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
 
 
+pretask_survey = [pretask for pretask in os.listdir() if pretask.startswith('RejectionChoice_PreTask')][0]
 #read in raw qualtrics data
-alldata = pd.read_csv('RejectionChoice_PreTask_December21.csv')
+alldata = pd.read_csv(pretask_survey)
+
 alldata = alldata.iloc[4:]
 alldata = alldata.sort_values(by=['Prolific_ID'])
 alldata.pop("attnchk")  # remove attention checks
