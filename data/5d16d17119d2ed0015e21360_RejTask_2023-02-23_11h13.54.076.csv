@@ -1,0 +1,39 @@
+﻿endwelcomescreen_keys.keys,endwelcomescreen_keys.rt,endinstructionscreen_keys.keys,endinstructionscreen_keys.rt,endpartnermatch_keys.keys,endpartnermatch_keys.rt,sharenextphoto_key.keys,sharenextphoto_key.rt,salience_rating,key_resp.keys,stress_level,stresslevel_keypress.keys,entiretaskloop.thisRepN,entiretaskloop.thisTrialN,entiretaskloop.thisN,entiretaskloop.thisIndex,entiretaskloop.ran,TrialNumber,Partner,Condition,Photos,Feedback,FeedbackWait,choice_keys.keys,playlottery,resumeafterlottery_keys.keys,resumeafterlottery_keys.rt,lotteryloop.thisRepN,lotteryloop.thisTrialN,lotteryloop.thisN,lotteryloop.thisIndex,lotteryloop.ran
+space,2.5999,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,space,2.4504,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,space,0.9967,space,0.2028,NAN,,NAN,,0,0,0,0,1,1,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_5.jpeg,did not like,3.613205605,,,,,,,,,
+,,,,,,space,17.3961,NAN,,NAN,,0,1,1,1,1,2,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_16.jpeg,did not like,4.988446431,,,,,,,,,
+,,,,,,space,0.1672,NAN,,NAN,,0,2,2,2,1,3,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_23.jpeg,did not like,3.470791822,,,,,,,,,
+,,,,,,space,0.0564,NAN,,NAN,,0,3,3,3,1,4,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_20.jpeg,did not like,3.820572462,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,12.5664,0,0,0,0,1
+,,,,,,,,NAN,,NAN,,0,4,4,4,1,5,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_8.jpeg,liked,2.455989137,,,,,,,,,
+,,,,,,space,14.8577,NAN,,NAN,,0,5,5,5,1,6,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_25.jpeg,did not like,3.79605092,,,,,,,,,
+,,,,,,space,0.1949,NAN,,NAN,,0,6,6,6,1,7,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_18.jpeg,liked,3.562416326,,,,,,,,,
+,,,,,,space,12.2935,NAN,,NAN,,0,7,7,7,1,8,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_1.jpeg,did not like,2.843822497,,,,,,,,,
+,,,,,,space,0.4511,NAN,,NAN,,0,8,8,8,1,9,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_22.jpeg,did not like,3.546495948,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,0.0528,0,0,0,0,1
+,,,,,,,,NAN,,NAN,,0,9,9,9,1,10,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_27.jpeg,did not like,1.672012706,,,,,,,,,
+,,,,,,space,10.7039,NAN,,NAN,,0,10,10,10,1,11,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_7.jpeg,did not like,4.942172136,,,,,,,,,
+,,,,,,space,9.5549,NAN,,NAN,,0,11,11,11,1,12,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_28.jpeg,did not like,2.50187214,,,,,,,,,
+,,,,,,space,7.4137,NAN,,NAN,,0,12,12,12,1,13,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_6.jpeg,did not like,2.071164779,,,,,,,,,
+,,,,,,space,1.1673,NAN,,NAN,,0,13,13,13,1,14,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_24.jpeg,liked,5.336503566,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,7.3549,0,0,0,0,1
+,,,,,,,,NAN,,NAN,,0,14,14,14,1,15,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_17.jpeg,did not like,2.642157193,,,,,,,,,
+,,,,,,space,5.2711,NAN,,NAN,,0,15,15,15,1,16,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_4.jpeg,did not like,4.456234322,,,,,,,,,
+,,,,,,space,8.4409,NAN,,NAN,,0,16,16,16,1,17,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_12.jpeg,liked,4.438512181,,,,,,,,,
+,,,,,,space,4.3853,NAN,,NAN,,0,17,17,17,1,18,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_9.jpeg,liked,2.682944783,,,,,,,,,
+,,,,,,space,3.7882,NAN,,NAN,,0,18,18,18,1,19,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_19.jpeg,did not like,4.51984296,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,3.8994,0,0,0,0,1
+,,,,,,,,NAN,,NAN,,0,19,19,19,1,20,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_13.jpeg,did not like,3.195382774,,,,,,,,,
+,,,,,,space,5.6416,NAN,,NAN,,0,20,20,20,1,21,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_15.jpeg,did not like,1.779333479,,,,,,,,,
+,,,,,,space,1.3179,NAN,,NAN,,0,21,21,21,1,22,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_30.jpeg,liked,4.312468682,,,,,,,,,
+,,,,,,space,13.5763,NAN,,NAN,,0,22,22,22,1,23,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_2.jpeg,did not like,4.940433059,,,,,,,,,
+,,,,,,space,1.4122,NAN,,NAN,,0,23,23,23,1,24,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_11.jpeg,liked,2.7105123,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,0.2405,0,0,0,0,1
+,,,,,,,,NAN,,NAN,,0,24,24,24,1,25,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_3.jpeg,did not like,3.602308302,,,,,,,,,
+,,,,,,space,5.3103,NAN,,NAN,,0,25,25,25,1,26,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_14.jpeg,liked,4.106391878,,,,,,,,,
+,,,,,,space,11.9923,NAN,,NAN,,0,26,26,26,1,27,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_29.jpeg,did not like,3.799433026,,,,,,,,,
+,,,,,,space,20.3453,NAN,,NAN,,0,27,27,27,1,28,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_10.jpeg,liked,5.246980764,,,,,,,,,
+,,,,,,space,0.3828,NAN,,NAN,,0,28,28,28,1,29,Riley,Rej,Participant_Images/5d16d17119d2ed0015e21360/5d16d17119d2ed0015e21360_Images/5d16d17119d2ed0015e21360_Image_21.jpeg,did not like,3.30081769,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,999,space,0.227,0,0,0,0,1
