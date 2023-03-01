@@ -864,7 +864,7 @@ async function experimentInit() {
     size: [1.0, 0.1],
     pos: [0, -0.2], //[0,(-0.4)]
     units: null,
-    labels: [1 (Negatively), 2, 3, 4, 5,6,7,8,9 (Positively)],
+    labels: ['1 (Negatively)', '2', '3', '4', '5','6','7','8','9 (Positively)'],
     ticks: [1, 2, 3, 4, 5,6,7,8,9],
     granularity: 0.0,
     opacity: null,
