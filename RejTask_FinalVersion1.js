@@ -533,19 +533,7 @@ async function experimentInit() {
     flipHoriz : false, flipVert : false,
     texRes : 128.0, interpolate : true, depth : -3.0
   });
-  // Initialize components for Routine "Waitingforfeedback"
-// //  WaitingforfeedbackClock = new util.Clock();
-//   waiting_text = new visual.TextStim({
-//     win: psychoJS.window,
-//     name: 'waiting_text',
-//     text: 'Waiting…',
-//     font: 'Open Sans',
-//     units: undefined,
-//     pos: [0, 0.0], height: 0.15,  wrapWidth: undefined, ori: 0.0,
-//     languageStyle: 'LTR',
-//     color: new util.Color('white'),  opacity: undefined,
-//     depth: 0.0
-//   });
+
 
   // Initialize components for Routine "feedback"
   feedbackClock = new util.Clock();
@@ -864,7 +852,7 @@ async function experimentInit() {
     size: [1.0, 0.1],
     pos: [0, -0.2], //[0,(-0.4)]
     units: null,
-    labels: ['1 (Negatively)', '2', '3', '4', '5','6','7','8','9 (Positively)'],
+    labels: ['1 (Bad)', '2', '3', '4', '5','6','7','8','9 (Good)'],
     ticks: [1, 2, 3, 4, 5,6,7,8,9],
     granularity: 0.0,
     opacity: null,
@@ -3206,7 +3194,7 @@ function ContinueRoutineEnd(snapshot) {
   }
 }
 
-
+// insert stress slider here 
 var salienceratingtext;
 var _key_resp_allKeys;
 var SalienceRatingComponents;
