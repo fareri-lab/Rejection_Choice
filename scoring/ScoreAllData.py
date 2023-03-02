@@ -12,15 +12,16 @@ from pathlib import Path
 
 
 path = Path(r"%s"%(os.getcwd()))
-#participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent))
-#participants = participants.loc[
-    #participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
-#participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-#participants = participants.sort_values(by=['PROLIFIC_ID'])
+participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent))
+participants = participants.loc[
+    participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
+participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
+participants = participants.sort_values(by=['PROLIFIC_ID'])
 
-#selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path))
-#selfreportdata['PROLIFIC_ID'] = participants["PROLIFIC_ID"]
-#selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path))
+selfreportdata['PROLIFIC_ID'] = participants["PROLIFIC_ID"]
+selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path), index=False)
+
 phase = input('Pre? Post? or Both? ')
 
 #import pre-surveys
