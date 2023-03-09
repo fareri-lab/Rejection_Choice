@@ -17,7 +17,7 @@ from scipy.stats import ttest_rel
 import matplotlib.pyplot as plt
 
 current_dir = os.getcwd()
-updatedchoicedata = pd.read_csv('updatedchoicedata.csv')
+updatedchoicedata = pd.read_csv('updatedtaskdata_3.2.23.csv')
 
 #%%
 
