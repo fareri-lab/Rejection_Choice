@@ -1051,6 +1051,8 @@ function Welcome_ScreenRoutineEnd(snapshot) {
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(endwelcomescreen_keys.corr, level);
     }
+    //add particpiant ID to PROLIFIC_ID column
+    psychoJS.experiment.addData('PROLIFIC_ID', expInfo['participant'])
     psychoJS.experiment.addData('endwelcomescreen_keys.keys', endwelcomescreen_keys.keys);
     if (typeof endwelcomescreen_keys.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('endwelcomescreen_keys.rt', endwelcomescreen_keys.rt);
