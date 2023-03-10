@@ -17,7 +17,7 @@ from scipy.stats import ttest_rel
 import matplotlib.pyplot as plt
 
 current_dir = os.getcwd()
-updatedchoicedata = pd.read_csv('updatedtaskdata_3.2.23.csv')
+updatedchoicedata = pd.read_csv('shortformdata.csv')
 
 #%%
 
@@ -29,24 +29,24 @@ acceptcondition = updatedchoicedata[updatedchoicedata['condition'] == 2]
 #%%
 
 #proportion of self-choice in neutral condition
-neutralchoice_mean = neutralcondition['choiceresponse'].mean()
-neutralchoice_std = neutralcondition['choiceresponse'].std()
+neutralchoice_mean = neutralcondition['choice'].mean()
+neutralchoice_std = neutralcondition['choice'].std()
 print('neutral_by_choice')
 print(neutralchoice_mean)
 print(neutralchoice_std)
 
 #%%
 #proportion of self-choice in rejection condition
-rejectionchoice_mean = rejectioncondition['choiceresponse'].mean()
-rejectionchoice_std = rejectioncondition['choiceresponse'].std()
+rejectionchoice_mean = rejectioncondition['choice'].mean()
+rejectionchoice_std = rejectioncondition['choice'].std()
 print('rej_by_choice')
 print(rejectionchoice_mean)
 print(rejectionchoice_std)
 
 #%%
 #proportion of self-choice in acceptance condition
-acceptchoice_mean = acceptcondition['choiceresponse'].mean()
-acceptchoice_std = acceptcondition['choiceresponse'].std() 
+acceptchoice_mean = acceptcondition['choice'].mean()
+acceptchoice_std = acceptcondition['choice'].std() 
 print('acc_by_choice')                
 print(acceptchoice_mean)
 print(acceptchoice_std)
@@ -101,7 +101,7 @@ print(accstress_std)
 
 #%%
 #paired samples t-test for condition by choice
-t_stat, p_value = ttest_rel(rejectioncondition['choiceresponse'],acceptcondition['choiceresponse'])
+t_stat, p_value = ttest_rel(rejectioncondition['choice'],acceptcondition['choice'])
 print("T-statistic value:", t_stat)
 print('P-value:', p_value)
 
