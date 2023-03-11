@@ -56,7 +56,7 @@ for csv in os.listdir(data_path):
     for sub in range(0,len(participants)):
         if csv.startswith(participants['PROLIFIC_ID'][sub]):
             participantdata = pd.read_csv(data_path+csv)
-            
+            participantdata['PROLIFIC_ID']=participantdata['PROLIFIC_ID'][0]
 # participantdata = pd.read_csv('/users/jordansiegel/Documents/GitHub/Rejection_Choice/data/5a4636c92f91ec0001dcba07_RejTask_2022-11-21_17h24.19.149.csv')
 
 #%%
