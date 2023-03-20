@@ -115,3 +115,4 @@ print('P-value:', p_value)
 t_stat, p_value = ttest_rel(rejectioncondition['stress'],acceptcondition['stress'])
 print("T-statistic value:", t_stat)
 print('P-value:', p_value)
+#%%
