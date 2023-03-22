@@ -13,14 +13,15 @@ from pathlib import Path
 path = Path(r"%s"%(os.getcwd()))
 # read in participant list
 current_dir = os.getcwd()
-participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
+participants = pd.read_excel('%s/participantlist_TEST.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 
 no_data = participants.loc[
     participants['post-task survey'] == 0].reset_index()
-
-no_data = no_data[[i for i in no_data['surveys_missing']if 'RR' in i]]
+if len(no_data) > 1:
+    no_data = no_data[no_data['surveys_missing'].str.contains("RR")]
+    no_data = pd.DataFrame(data= no_data['PROLIFIC_ID'])
 
 participants = participants.loc[
     participants['post-task survey'] == 1].reset_index()
@@ -66,7 +67,6 @@ RR_clean = RR_clean.replace(np.nan, 0)
 #%%
 RR_score = pd.DataFrame(columns = RR_clean.columns, index = RR_clean.index)
 
-#%%
 
 #%%
 for k in range(0,len(RR_clean)):
@@ -75,7 +75,11 @@ for k in range(0,len(RR_clean)):
         
 RR_score= RR_score.astype(int)
 RR_score["RR_totalscore"] = RR_score.sum(axis=1)
-
+#those with no data needs a total score column too
+if len(no_data) > 1:
+    RR_score.loc[len(RR_score)+1] = '-'
+    participants.loc(len(RR_score)+1) = no_data['PROLIFIC_ID'] #!!!!!!!
+RR_score.insert(0, 'PROLIFIC_ID', participants)
 #%%
 
 
@@ -88,5 +92,5 @@ RR_score["RR_totalscore"] = RR_score.sum(axis=1)
 #%%
 selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
 selfreportdata['RR'] = RR_score["RR_totalscore"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+# selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
 
