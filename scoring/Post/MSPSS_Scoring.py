@@ -17,6 +17,8 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
+participants = participants.loc[
+    participants['post-task survey'] == 1].reset_index()
 
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
@@ -24,13 +26,13 @@ posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in o
 alldata = pd.read_csv(posttask_survey)
 
 alldata = alldata.iloc[4:]
-alldata = alldata.sort_values(by=['post_task'])
+alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
 #%%
 #columns list
 MSPSS_cols = [col for col in alldata.columns if 'MSPSS_' in col]
-ProlificID_cols = [col for col in alldata.columns if 'post_task' in col]
+ProlificID_cols = [col for col in alldata.columns if 'PROLIFIC_ID' in col]
 
 MSPSS = alldata.filter(regex='MSPSS_|post_task')
 
@@ -39,7 +41,7 @@ MSPSS_clean = pd.DataFrame()
 
 
 for i in range(0, len(MSPSS)):
-    if MSPSS.loc[i,'post_task'] in participants['PROLIFIC_ID'].values:
+    if MSPSS.loc[i,'PROLIFIC_ID'] in participants['PROLIFIC_ID'].values:
        MSPSS_clean[i] = MSPSS.loc[i]    
 
 finaldata = pd.DataFrame()
@@ -47,9 +49,9 @@ finaldata = pd.DataFrame()
 
 MSPSS_clean = MSPSS_clean.transpose()
 MSPSS_clean = MSPSS_clean.reset_index()
-finaldata['Prolific_ID'] = MSPSS_clean['post_task']
+finaldata['Prolific_ID'] = MSPSS_clean['PROLIFIC_ID']
 MSPSS_clean = MSPSS_clean.drop(['index'], axis = 1)
-MSPSS_clean = MSPSS_clean.drop(['post_task'], axis = 1)
+MSPSS_clean = MSPSS_clean.drop(['PROLIFIC_ID'], axis = 1)
 MSPSS_clean = MSPSS_clean.replace(np.nan, 0)
 MSPSS_clean = MSPSS_clean.astype(int)
 

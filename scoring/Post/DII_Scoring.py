@@ -18,20 +18,22 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
+participants = participants.loc[
+    participants['post-task survey'] == 1].reset_index()
 
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
 #read in raw qualtrics data
 alldata = pd.read_csv(posttask_survey)
 alldata = alldata.iloc[4:]
-alldata = alldata.sort_values(by=['post_task'])
+alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
 #%%
 
 #columns list
 DII_cols = [col for col in alldata.columns if 'DII_' in col]
-ProlificID_cols = [col for col in alldata.columns if 'post_task' in col]
+ProlificID_cols = [col for col in alldata.columns if 'PROLIFIC_ID' in col]
 
 DII = alldata.filter(regex='DII_|post_task')
 
@@ -40,7 +42,7 @@ DII_clean = pd.DataFrame()
 
 
 for i in range(0, len(DII)):
-    if DII.loc[i,'post_task'] in participants['PROLIFIC_ID'].values:
+    if DII.loc[i,'PROLIFIC_ID'] in participants['PROLIFIC_ID'].values:
        DII_clean[i] = DII.loc[i]    
 
 finaldata = pd.DataFrame()
@@ -48,9 +50,9 @@ finaldata = pd.DataFrame()
 
 DII_clean = DII_clean.transpose()
 DII_clean = DII_clean.reset_index()
-finaldata['Prolific_ID'] = DII_clean['post_task']
+finaldata['Prolific_ID'] = DII_clean['PROLIFIC_ID']
 DII_clean = DII_clean.drop(['index'], axis = 1)
-DII_clean = DII_clean.drop(['post_task'], axis = 1)
+DII_clean = DII_clean.drop(['PROLIFIC_ID'], axis = 1)
 DII_clean = DII_clean.replace(np.nan, 0)
 DII_clean = DII_clean.astype(int)
 #%%

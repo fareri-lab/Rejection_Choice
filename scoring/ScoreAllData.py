@@ -36,7 +36,7 @@ elif phase == 'Both':
     os.chdir('%s/Pre' %(path))
     import AQ_Scoring, BRCS_Scoring, ERQ_Scoring, NTBS_Scoring, PSS_Scoring, RSQ_Scoring, SCS_Scoring, SRQ_Scoring
     os.chdir('%s/Post' %(path))
-    import DAST_Scoring, DII_Scoring, LSAS_Scoring, MSPSS_Scoring, RR_Scoring
+    import DAST_Scoring, DII_Scoring, MSPSS_Scoring, RR_Scoring #LSAS_Scoring
 else:
     print('Please enter Pre, Post, or Both')
     
