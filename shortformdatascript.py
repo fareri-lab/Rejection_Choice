@@ -15,10 +15,15 @@ import os
 current_dir = os.getcwd()
 
 participants = pd.read_excel('participantlist.xlsx')
+#toberecoded = participants.loc[participants['afterstresschange']== 0].reset_index(drop=True)
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
-participants = participants['PROLIFIC_ID']
-participants = pd.DataFrame(data = participants.sort_values().reset_index(drop=True))
+columns = ['PROLIFIC_ID','afterstresschange']
+participants =participants[columns]
+participants = pd.DataFrame(data = participants.sort_values(by='PROLIFIC_ID').reset_index(drop=True))
+
+
+
 
 #%%
 
@@ -32,7 +37,7 @@ longformtaskdata = pd.read_csv('RejChoice_MasterData.csv')
 path = Path(r"%s"%(os.getcwd()))
 p = Path('%s/data' %(path))
 
-cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress']
+cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange']
 #%%
 
 #make rejection data frame
@@ -48,7 +53,9 @@ acc_df = pd.DataFrame(index=participants.index, columns = cols)
 
 #make neutral data frame
 neu_df = pd.DataFrame(index=participants.index, columns = cols)
+#%%
 
+stressdiffscore = pd.DataFrame(index=participants.index, columns= ['PROLIFIC_ID', 'rejstress', 'accstress', 'difference', 'ifnegvalue'])
 
 #%%
 data_path = os.getcwd()+'/data/'
@@ -99,7 +106,10 @@ for csv in os.listdir(data_path):
                     acc_df['PROLIFIC_ID'] [sub]= acccondition['PROLIFIC_ID'][0]
                     neu_df['PROLIFIC_ID'] [sub]= neucondition['PROLIFIC_ID'][0]
                     #%%
-                    
+                    rej_df['afterstresschange'] [sub]= participants['afterstresschange'][sub]
+                    acc_df['afterstresschange'] [sub]= participants['afterstresschange'][sub]
+                    neu_df['afterstresschange'] [sub]=  participants['afterstresschange'][sub]
+                    #%%
                     #calculate mean salience rating across rejection condition for one participant
                     rejection_salience = pd.DataFrame()
                     rejection_salience['salience_rating'] = rejcondition['salience_rating']
@@ -224,9 +234,87 @@ for csv in os.listdir(data_path):
                     print(neutral_choicemean)
                     
                     neu_df['choice'] [sub] = neutral_choicemean
+                    #%%
+                    stressdiffscore['PROLIFIC_ID'] [sub]= rej_df['PROLIFIC_ID'][sub]
 
         #%%
 shortform_data = pd.DataFrame(columns = cols)
+shortform_data['recoded_stress'] = ''
 shortform_data = shortform_data.append(neu_df).append(rej_df).append(acc_df)
 shortform_data=shortform_data.sort_values(['PROLIFIC_ID', 'condition']).reset_index(drop=True)
+
+for i in range(0,len(shortform_data)):
+    if shortform_data.loc[i,'afterstresschange'] == 0:
+        if shortform_data.loc[i,'stress'] == 9:
+            shortform_data['recoded_stress' ][i] = 1
+            
+        elif shortform_data.loc[i,'stress'] == 8.5:
+            shortform_data['recoded_stress'][i] = 1.5
+             
+        elif shortform_data.loc[i,'stress'] == 8:
+            shortform_data['recoded_stress'][i] = 2
+        
+        elif shortform_data.loc[i,'stress'] == 7.5:
+            shortform_data['recoded_stress'][i] = 2.5
+            
+        elif shortform_data.loc[i,'stress'] == 7:
+            shortform_data['recoded_stress'][i] = 3
+        
+        elif shortform_data.loc[i,'stress'] == 6.5:
+            shortform_data['recoded_stress'][i] = 3.5
+            
+        elif shortform_data.loc[i,'stress'] == 6:
+            shortform_data['recoded_stress'][i] = 4
+        
+        elif shortform_data.loc[i,'stress'] == 5.5:
+            shortform_data['recoded_stress'][i] = 4.5
+            
+        elif shortform_data.loc[i,'stress'] == 5:
+            shortform_data['recoded_stress'][i] = 5
+    
+        elif shortform_data.loc[i,'stress'] == 4.5:
+            shortform_data['recoded_stress'][i] = 5.5
+            
+        elif shortform_data.loc[i,'stress'] == 4:
+            shortform_data['recoded_stress'][i] = 6
+            
+        elif shortform_data.loc[i,'stress'] == 3.5:
+            shortform_data['recoded_stress'][i] = 6.5
+            
+        elif shortform_data.loc[i,'stress'] == 3:
+            shortform_data['recoded_stress'][i] = 7
+        
+        elif shortform_data.loc[i,'stress'] == 2.5:
+            shortform_data['recoded_stress'][i] = 7.5
+            
+        elif shortform_data.loc[i,'stress'] == 2:
+            shortform_data['recoded_stress'][i] = 8
+            
+        elif shortform_data.loc[i,'stress'] == 1.5:
+            shortform_data['recoded_stress'][i] = 8.5
+            
+        elif shortform_data.loc[i,'stress'] == 1:
+            shortform_data['recoded_stress'][i] = 9
+            
+    elif shortform_data.loc[i,'afterstresschange'] == 1:
+        shortform_data['recoded_stress' ][i] =   shortform_data['stress' ][i]
+        
+
+#%%
+acceptance_recoded  = shortform_data.loc[
+    shortform_data['condition'] == 2].reset_index(drop=True)
+rejection_recoded  = shortform_data.loc[
+    shortform_data['condition'] == 1].reset_index(drop=True)
+
+shortform_data['difference'] = rejection_recoded['recoded_stress'] - acceptance_recoded['recoded_stress']
+for i in range(0,len(stressdiffscore['difference'])):
+    if stressdiffscore['difference'][i] < 0:
+        stressdiffscore['ifnegvalue'][i] = 1 
+    else:
+        stressdiffscore['ifnegvalue'][i] = 0
+#%%
+
+
 shortform_data.to_csv('shortformdata.csv', index=False)
+
+
