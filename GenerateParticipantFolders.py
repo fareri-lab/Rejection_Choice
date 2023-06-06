@@ -15,7 +15,7 @@ import shutil
 # read in raw qualtrics data and excel sheet of completed participants
 # make csv into data frame
 homedir = os.getcwd()
-rawqualtrics = pd.read_csv('RejectionChoice_PhotoUpload3302023.csv')
+rawqualtrics = pd.read_csv('RejectionChoice_PhotoUpload_662023.csv')
 completedparticipantlist = pd.read_excel('participantlist.xlsx')
 completedparticipantlist = completedparticipantlist.loc[
     completedparticipantlist['PhotosUploaded? (y/n)'] == 'n']
@@ -33,6 +33,7 @@ qualtrics = rawqualtrics.loc[rawqualtrics['ResponseId'].isin(
 qualtrics = qualtrics.reset_index()
 
 # %%
+#creates blank foldrs for each participant
 # setcurrentworking directory to a variable
 #create participant folders using their PROLIFIC ID, instead of the qualtrics id
 expdir = os.getcwd()
@@ -60,7 +61,7 @@ for i in range(0, len(qualtrics)):
     # else:
     #     continue
 # %%
-#move all individual participant images from Raw_Participant_Images to their own respective participant folders
+#move all raw individual participant images from Raw_Participant_Images to their own respective participant folders
 source_folder = expdir + '/Raw_Participant_Images/'
 qual_photo_folders = [f.path for f in os.scandir(source_folder) if f.is_dir()]
 indv_image_folder = expdir + '/Participant_Images/%s/%s_Images'
@@ -100,7 +101,7 @@ for image in os.listdir(source_folder):
 
 # %%
 
-#rename the images so that they start with the PROLIFIC ID, instead of the qualtrics response ID 
+#RENAME the images so that they start with the PROLIFIC ID, instead of the qualtrics response ID 
 # count increase by 1 in each iteration
 # iterate all files from a directory
 participantimagefolder = expdir + '/Participant_Images/' #parent folder for all participant folders and their renamed images
