@@ -426,8 +426,7 @@ for csv in sorted(os.listdir(data_path)):
             acc_df['ifnegvalue'] = ''
                
             
-            shortform_data = shortform_data.append(rej_df[columns2].iloc[[0]].append(neu_df[columns2].iloc[[0]]).append(acc_df[columns2].iloc[[0]])).reset_index(drop=True)
- to 
+            shortform_data = shortform_data.append(rej_df[columns2].iloc[[0]].append(neu_df[columns2].iloc[[0]]).append(acc_df[columns2].iloc[[0]])).reset_index(drop=True) 
 
 #%%
 
