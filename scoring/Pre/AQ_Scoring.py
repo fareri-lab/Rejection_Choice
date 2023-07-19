@@ -74,6 +74,6 @@ for k in range(0,len(AQ_clean)):
 AQ_score["AQ_score"] = AQ_score.sum(axis=1)
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['AQ'] = AQ_score["AQ_score"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

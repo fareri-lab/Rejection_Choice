@@ -61,6 +61,6 @@ for k in range(0,len(NTBS_clean)):
 NTBS_score= NTBS_score.astype(int)
 NTBS_score["NTBS"] = NTBS_score.sum(axis=1)
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['NTBS'] = NTBS_score["NTBS"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

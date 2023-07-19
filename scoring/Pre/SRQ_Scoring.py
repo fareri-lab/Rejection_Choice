@@ -126,10 +126,10 @@ SRQ_sociability= SRQ_sociability.astype(int)
 SRQ_sociability["SRQ_sociability"] = SRQ_sociability.sum(axis=1)/3
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['SRQ_admiration'] = SRQ_admiration["SRQ_admiration"]
 selfreportdata['SRQ_negsocpot'] = SRQ_negsocpot["SRQ_negsocpot"]
 selfreportdata['SRQ_prosocint'] = SRQ_prosocint["SRQ_prosocint"]
 selfreportdata['SRQ_sexrel'] = SRQ_sexrel["SRQ_sexrel"]
 selfreportdata['SRQ_sociability'] = SRQ_sociability["SRQ_sociability"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

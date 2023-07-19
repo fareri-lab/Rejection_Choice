@@ -91,7 +91,7 @@ RSQ_average['RS_8'] = RSQ_score['RSQ_8a']* RSQ_score['RSQ_8b']
 
 RSQ_average['RSQ_finalscore'] = RSQ_average.sum(axis=1)/8
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['RSQ'] = RSQ_average["RSQ_finalscore"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
 

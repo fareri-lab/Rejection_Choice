@@ -17,8 +17,8 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-participants = participants.loc[
-    participants['post-task survey'] == 1].reset_index()
+# participants = participants.loc[
+#     participants['post-task survey'] == 1].reset_index()
 
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
@@ -40,7 +40,7 @@ DAST = alldata.filter(regex='DAST_|post_task')
 DAST_clean = pd.DataFrame()
 
 for i in range(0,len(DAST)):
-    if DAST.loc[i,'PROLIFIC_ID'] in participants['PROLIFIC_ID'].values:
+    if DAST.loc[i,'post_task'] in participants['PROLIFIC_ID'].values:
        DAST_clean[i] = DAST.loc[i]    
 
 finaldata = pd.DataFrame()
@@ -48,9 +48,9 @@ finaldata = pd.DataFrame()
 
 DAST_clean = DAST_clean.transpose()
 DAST_clean = DAST_clean.reset_index()
-finaldata['Prolific_ID'] = DAST_clean['PROLIFIC_ID']
+finaldata['Prolific_ID'] = DAST_clean['post_task']
 DAST_clean = DAST_clean.drop(['index'], axis = 1)
-DAST_clean = DAST_clean.drop(['PROLIFIC_ID'], axis = 1)
+DAST_clean = DAST_clean.drop(['post_task'], axis = 1)
 DAST_clean= DAST_clean.astype(int)
 #%%
 DAST_score = pd.DataFrame(columns = DAST_clean.columns, index = DAST_clean.index)
@@ -72,6 +72,6 @@ DAST_score= DAST_score.astype(int)
 DAST_score["DAST"] = DAST_score.sum(axis=1)
 #%%
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['DAST'] = DAST_score["DAST"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

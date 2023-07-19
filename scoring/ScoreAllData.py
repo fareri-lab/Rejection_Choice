@@ -18,9 +18,9 @@ participants = participants.loc[
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
 participants = participants.sort_values(by=['PROLIFIC_ID'])
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path))
 selfreportdata['PROLIFIC_ID'] = participants["PROLIFIC_ID"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path), index=False)
 
 phase = input('Pre? Post? or Both? ')
 
@@ -36,7 +36,7 @@ elif phase == 'Both':
     os.chdir('%s/Pre' %(path))
     import AQ_Scoring, BRCS_Scoring, ERQ_Scoring, NTBS_Scoring, PSS_Scoring, RSQ_Scoring, SCS_Scoring, SRQ_Scoring
     os.chdir('%s/Post' %(path))
-    import DAST_Scoring, DII_Scoring, MSPSS_Scoring, RR_Scoring #LSAS_Scoring
+    import DAST_Scoring, DII_Scoring, MSPSS_Scoring, RR_Scoring, LSAS_Scoring
 else:
     print('Please enter Pre, Post, or Both')
     
