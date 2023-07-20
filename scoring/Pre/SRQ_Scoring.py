@@ -129,7 +129,7 @@ SRQ_sociability["SRQ_sociability"] = SRQ_sociability.sum(axis=1)/3
 
 srq = pd.DataFrame()
 srq['Prolific_ID'] = finaldata['Prolific_ID']
-srq["SCS_score"]= SRQ_admiration["SRQ_admiration"]
+srq["SRQ_admiration"]= SRQ_admiration["SRQ_admiration"]
 srq['SRQ_negsocpot'] = SRQ_negsocpot["SRQ_negsocpot"]
 srq['SRQ_prosocint'] = SRQ_prosocint["SRQ_prosocint"]
 srq['SRQ_sexrel'] = SRQ_sexrel["SRQ_sexrel"]

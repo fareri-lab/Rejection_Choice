@@ -21,7 +21,7 @@ participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
 #read in raw qualtrics data
 alldata = pd.read_csv(posttask_survey)
-alldata = alldata.iloc[4:]
+alldata = alldata.iloc[2:]
 alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
@@ -87,10 +87,10 @@ for k in range(0,len(RR_clean)):
 RR_score= RR_score.astype(int)
 RR_score["RR_totalscore"] = RR_score.sum(axis=1)
 #those with no data needs a total score column too
-if len(no_data) > 1:
-    RR_score.loc[len(RR_score)+1] = '-'
-    participants.loc(len(RR_score)+1) = no_data['PROLIFIC_ID'] #!!!!!!!
-RR_score.insert(0, 'PROLIFIC_ID', participants)
+# if len(no_data) > 1:
+#     RR_score.loc[len(RR_score)+1] = '-'
+#     participants.loc(len(RR_score)+1) = no_data['PROLIFIC_ID'] #!!!!!!!
+# RR_score.insert(0, 'PROLIFIC_ID', participants)
 #%%
 
 
@@ -103,7 +103,7 @@ RR_score.insert(0, 'PROLIFIC_ID', participants)
 #%%
 rr = pd.DataFrame()
 rr['Prolific_ID'] = finaldata['Prolific_ID']
-rr['NTBS_score']= RR_score["RR_totalscore"]
+rr['RR_score']= RR_score["RR_totalscore"]
 rr.to_csv('%s/rr.csv' %(path.parent), index=False)
 
 # selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
