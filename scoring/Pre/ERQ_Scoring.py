@@ -81,7 +81,15 @@ ERQ_emosuppression= ERQ_emosuppression.astype(int)
 ERQ_emosuppression["ERQ_emosuppression"] = ERQ_emosuppression.sum(axis=1)/4
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
-selfreportdata['ERQ_emosuppression'] = ERQ_emosuppression["ERQ_emosuppression"]
-selfreportdata['ERQ_cogreappraisal'] = ERQ_cogreappraisal["ERQ_cogreappraisal"]
-selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
+
+erq = pd.DataFrame()
+erq['Prolific_ID'] = finaldata['Prolific_ID']
+erq['ERQ_emosuppression']= ERQ_emosuppression["ERQ_emosuppression"]
+erq['ERQ_cogreappraisal'] = ERQ_cogreappraisal["ERQ_cogreappraisal"]
+erq.to_csv('%s/erq.csv' %(path.parent), index=False)
+
+
+# selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+# selfreportdata['ERQ_emosuppression'] = ERQ_emosuppression["ERQ_emosuppression"]
+# selfreportdata['ERQ_cogreappraisal'] = ERQ_cogreappraisal["ERQ_cogreappraisal"]
+# selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

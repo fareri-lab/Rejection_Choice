@@ -13,18 +13,46 @@ from pathlib import Path
 path = Path(r"%s"%(os.getcwd()))
 # read in participant list
 current_dir = os.getcwd()
-participants = pd.read_excel('%s/participantlist_TEST.xlsx'%(path.parent.parent))
+participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 
-no_data = participants.loc[
-    participants['post-task survey'] == 0].reset_index()
-if len(no_data) > 1:
-    no_data = no_data[no_data['surveys_missing'].str.contains("RR")]
-    no_data = pd.DataFrame(data= no_data['PROLIFIC_ID'])
+# no_data = participants.loc[
+#     participants['post-task survey'] == 0].reset_index()
+# if len(no_data) > 1:
+#     no_data = no_data[no_data['surveys_missing'].str.contains("RR")]
+#     no_data = pd.DataFrame(data= no_data['PROLIFIC_ID'])
 
-participants = participants.loc[
-    participants['post-task survey'] == 1].reset_index()
+# participants = participants.loc[
+#     participants['post-task survey'] == 1].reset_index()
+
+
+
+# import pandas as pd
+# import os
+# from pathlib import Path
+
+# path = Path(r"%s"%(os.getcwd()))
+# # read in participant list
+# current_dir = os.getcwd()
+# participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
+# participants = participants.loc[
+#     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
+# participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
+
+
+# pretask_survey = '%s/' %(str(path.parent.parent)) + [pretask for pretask in os.listdir(path.parent.parent) if pretask.startswith('RejectionChoice_PreTask')][0]
+# #read in raw qualtrics data
+# alldata = pd.read_csv(pretask_survey)
+# alldata = alldata.iloc[4:]
+# alldata = alldata.sort_values(by=['Prolific_ID'])
+# alldata.pop("attnchk")  # remove attention checks
+# # alldata = alldata.reset_index()
+
+# #columns list
+# AQ_cols = [col for col in alldata.columns if 'AQ_' in col]
+# AQ = alldata.filter(regex='AQ_|Prolific_ID')
+
 
 
 

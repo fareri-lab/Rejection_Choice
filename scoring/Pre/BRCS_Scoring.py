@@ -63,8 +63,14 @@ BRCS_score= BRCS_score.astype(int)
 BRCS_score["BRCS_total_score"] = BRCS_score.sum(axis=1)
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
-selfreportdata['BRCS'] = BRCS_score["BRCS_total_score"]
-selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
+
+brcs = pd.DataFrame()
+brcs['Prolific_ID'] = finaldata['Prolific_ID']
+brcs['BCRS_total_score']= BRCS_score["BRCS_total_score"]
+brcs.to_csv('%s/brcs.csv' %(path.parent), index=False)
+
+# selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+# selfreportdata['BRCS'] = BRCS_score["BRCS_total_score"]
+# selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
 
 
