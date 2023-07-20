@@ -63,8 +63,8 @@ BRCS_score= BRCS_score.astype(int)
 BRCS_score["BRCS_total_score"] = BRCS_score.sum(axis=1)
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
 selfreportdata['BRCS'] = BRCS_score["BRCS_total_score"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
 
 
