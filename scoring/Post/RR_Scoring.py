@@ -16,6 +16,23 @@ current_dir = os.getcwd()
 participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
+participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
+
+posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
+#read in raw qualtrics data
+alldata = pd.read_csv(posttask_survey)
+alldata = alldata.iloc[4:]
+alldata = alldata.sort_values(by=['PROLIFIC_ID'])
+alldata.pop("Attnchk")  # remove attention checks
+alldata = alldata.reset_index()
+
+# path = Path(r"%s"%(os.getcwd()))
+# # read in participant list
+# current_dir = os.getcwd()
+# participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
+# participants = participants.loc[
+#     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
+
 
 # no_data = participants.loc[
 #     participants['post-task survey'] == 0].reset_index()
@@ -28,44 +45,10 @@ participants = participants.loc[
 
 
 
-# import pandas as pd
-# import os
-# from pathlib import Path
-
-# path = Path(r"%s"%(os.getcwd()))
-# # read in participant list
-# current_dir = os.getcwd()
-# participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
-# participants = participants.loc[
-#     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
-# participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-
-
-# pretask_survey = '%s/' %(str(path.parent.parent)) + [pretask for pretask in os.listdir(path.parent.parent) if pretask.startswith('RejectionChoice_PreTask')][0]
-# #read in raw qualtrics data
-# alldata = pd.read_csv(pretask_survey)
-# alldata = alldata.iloc[4:]
-# alldata = alldata.sort_values(by=['Prolific_ID'])
-# alldata.pop("attnchk")  # remove attention checks
-# # alldata = alldata.reset_index()
-
-# #columns list
-# AQ_cols = [col for col in alldata.columns if 'AQ_' in col]
-# AQ = alldata.filter(regex='AQ_|Prolific_ID')
 
 
 
 
-participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-
-
-posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
-#read in raw qualtrics data
-alldata = pd.read_csv(posttask_survey)
-alldata = alldata.iloc[4:]
-alldata = alldata.sort_values(by=['PROLIFIC_ID'])
-alldata.pop("Attnchk")  # remove attention checks
-alldata = alldata.reset_index()
 #%%
 
 #columns list
@@ -118,7 +101,12 @@ RR_score.insert(0, 'PROLIFIC_ID', participants)
 
 
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['RR'] = RR_score["RR_totalscore"]
+rr = pd.DataFrame()
+rr['Prolific_ID'] = finaldata['Prolific_ID']
+rr['NTBS_score']= RR_score["RR_totalscore"]
+rr.to_csv('%s/rr.csv' %(path.parent), index=False)
+
+# selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+# selfreportdata['RR'] = RR_score["RR_totalscore"]
 # selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
 
