@@ -72,7 +72,12 @@ PSS_score= PSS_score.astype(int)
 #%%
 PSS_score["PSS_score"] = PSS_score.sum(axis=1)
 #%%
+pss = pd.DataFrame()
+pss['Prolific_ID'] = finaldata['Prolific_ID']
+pss["PSS_score"]= PSS_score["PSS_score"]
+pss.to_csv('%s/pss.csv' %(path.parent), index=False)
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['PSS'] = PSS_score["PSS_score"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+
+# selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+# selfreportdata['PSS'] = PSS_score["PSS_score"]
+# selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)

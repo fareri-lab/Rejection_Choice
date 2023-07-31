@@ -73,7 +73,16 @@ for k in range(0,len(AQ_clean)):
 #%%
 AQ_score["AQ_score"] = AQ_score.sum(axis=1)
 
+
+aq = pd.DataFrame()
+aq['Prolific_ID'] = finaldata['Prolific_ID']
+aq['AQ']= AQ_score['AQ_score']
+aq.to_csv('%s/aq.csv' %(path.parent), index=False)
+#AQ_score["AQ_score"].to_CSV('%/aq.csv')%(path.parent), index = False)
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['AQ'] = AQ_score["AQ_score"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+#selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+#selfreportdata['AQ'] = AQ_score["AQ_score"]
+
+# aq=pd.DataFrame()
+# aq['AQ'] = AQ_score["AQ_score"]
+# aq['AQ_score'].to_csv('%s/aq.csv' %(path.parent), index=False)

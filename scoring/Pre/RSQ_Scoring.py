@@ -91,7 +91,13 @@ RSQ_average['RS_8'] = RSQ_score['RSQ_8a']* RSQ_score['RSQ_8b']
 
 RSQ_average['RSQ_finalscore'] = RSQ_average.sum(axis=1)/8
 #%%
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['RSQ'] = RSQ_average["RSQ_finalscore"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+
+rsq = pd.DataFrame()
+rsq['Prolific_ID'] = finaldata['Prolific_ID']
+rsq["RSQ_finalscore"]= RSQ_average['RSQ_finalscore']
+rsq.to_csv('%s/rsq.csv' %(path.parent), index=False)
+
+# selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+# selfreportdata['RSQ'] = RSQ_average["RSQ_finalscore"]
+# selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
 

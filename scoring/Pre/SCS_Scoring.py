@@ -77,8 +77,12 @@ SCS_score= SCS_score.astype(int)
 SCS_score= SCS_score.astype(int)
 SCS_score["SCS_score"] = SCS_score.sum(axis=1)
 #%%
+scs = pd.DataFrame()
+scs['Prolific_ID'] = finaldata['Prolific_ID']
+scs["SCS_score"]= SCS_score["SCS_score"]
+scs.to_csv('%s/scs.csv' %(path.parent), index=False)
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['SCS'] = SCS_score["SCS_score"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+# selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+# selfreportdata['SCS'] = SCS_score["SCS_score"]
+# selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
 
