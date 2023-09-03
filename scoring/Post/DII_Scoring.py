@@ -137,7 +137,7 @@ DII_score["DII_dysfuntionalimpulsivity"] = DII_dysfuntionalimpulsivity.sum(axis=
 
 dii = pd.DataFrame()
 dii['Prolific_ID'] = finaldata['Prolific_ID']
-dii['"DII_dysfuntionalimpulsivity"']= DII_score["DII_dysfuntionalimpulsivity"]
+dii['DII_dysfuntionalimpulsivity']= DII_score["DII_dysfuntionalimpulsivity"]
 dii['DII_functionalimpulsivity']= DII_score["DII_functionalimpulsivity"]
 dii.to_csv('%s/DII.csv' %(path.parent), index=False)
 

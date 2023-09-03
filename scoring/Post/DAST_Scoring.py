@@ -17,17 +17,15 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-# participants = participants.loc[
-#     participants['post-task survey'] == 1].reset_index()
-
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
 #read in raw qualtrics data
 alldata = pd.read_csv(posttask_survey)
-alldata = alldata.iloc[4:]
+alldata = alldata.iloc[2:]
 alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
+
 
 # %%
 #columns list
@@ -71,7 +69,11 @@ for k in range(0,len(DAST_clean)):
 DAST_score= DAST_score.astype(int)
 DAST_score["DAST"] = DAST_score.sum(axis=1)
 #%%
+dast = pd.DataFrame()
+dast['Prolific_ID'] = finaldata['Prolific_ID']
+dast['DAST_score']= DAST_score["DAST"]
+dast.to_csv('%s/dast.csv' %(path.parent), index=False)
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
-selfreportdata['DAST'] = DAST_score["DAST"]
-selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
+#selfreportdata = pd.read_csv('%s/selfreportdata_master_DF.csv' %(path.parent))
+#selfreportdata['DAST'] = DAST_score["DAST"]
+#selfreportdata.to_csv('%s/selfreportdata_master_DF.csv' %(path.parent), index=False)
