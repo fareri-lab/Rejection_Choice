@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Fri Sep  1 15:07:27 2023
+
+@author: jordansiegel
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Fri Mar  3 14:57:05 2023
 
 @author: jordansiegel
@@ -15,10 +23,11 @@ import os
 current_dir = os.getcwd()
 
 participants = pd.read_excel('participantlist.xlsx')
+
 #toberecoded = participants.loc[participants['afterstresschange']== 0].reset_index(drop=True)
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
-columns = ['PROLIFIC_ID','afterstresschange']
+columns = ['PROLIFIC_ID','afterstresschange','timebetween','sex','age']
 participants =participants[columns]
 participants = pd.DataFrame(data = participants.sort_values(by='PROLIFIC_ID').reset_index(drop=True))
 
@@ -37,8 +46,8 @@ longformtaskdata = pd.read_csv('RejChoice_MasterData.csv')
 path = Path(r"%s"%(os.getcwd()))
 p = Path('%s/data' %(path))
 
-cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue']
-columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue']
+cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue', 'timebetween', 'age', 'sex','choicert']
+columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','timebetween', 'age', 'sex', 'choicert']
 shortform_data= pd.DataFrame(columns = columns2)
 #%%
 
@@ -238,6 +247,49 @@ for csv in sorted(os.listdir(data_path)):
                 # print(neutral_choicemean)
                 
                 neu_df['choice'] = neutral_choicemean
+                
+                #%%
+                
+                rejection_choicert = pd.DataFrame()
+                rejection_choicert['choicert'] = rej_df['choice_keys.rt']
+                
+                rejection_choicert= rejection_choicert.replace('NAN', np.nan,regex = True)
+                rejection_choicert = rejection_choicert.dropna()
+                
+                rejection_choicert= rejection_choicert.astype(int)
+                rejection_choicertmean = rejection_choicert['choicert'].mean()
+                # print(rejection_stressmean)
+                
+                rej_df['choicertmean'] = rejection_choicertmean
+              
+                #%%
+                
+                      
+                acceptance_choicert =acceptance_choicert = pd.DataFrame()
+                acceptance_choicert['choicert'] = acc_df['choice_keys.rt']
+                
+                acceptance_choicert= acceptance_choicert.replace('NAN', np.nan,regex = True)
+                acceptance_choicert = acceptance_choicert.dropna()
+                
+                acceptance_choicert= acceptance_choicert.astype(int)
+                acceptance_choicertmean = acceptance_choicert['choicert'].mean()
+                # print(acceptance_stressmean)
+                
+                acc_df['choicertmean'] = acceptance_choicertmean
+                
+            #%%
+            
+                neutral_choicert =neutral_choicert = pd.DataFrame()
+                neutral_choicert['choicert'] = neu_df['choice_keys.rt']
+
+                neutral_choicert= neutral_choicert.replace('NAN', np.nan,regex = True)
+                neutral_choicert = neutral_choicert.dropna()
+
+                neutral_choicert= neutral_choicert.astype(int)
+                neutral_choicertmean = neutral_choicert['choicert'].mean()
+                # print(neutral_stressmean)
+
+                neu_df['choicertmean'] = neutral_choicertmean
                 #%%
                 # stressdiffscore['PROLIFIC_ID'] [sub]= rej_df['PROLIFIC_ID'][sub]
         
@@ -436,6 +488,7 @@ for i in range(0,len(shortform_data)):
     else:
         shortform_data['ifnegvalue'][i] = 0                            
 #%%
+
 shortform_data=shortform_data.sort_values(['PROLIFIC_ID', 'condition_recode']).reset_index(drop=True)
 shortform_data.to_csv('shortformdata_DF.csv', index=False)                   
 
