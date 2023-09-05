@@ -46,8 +46,8 @@ longformtaskdata = pd.read_csv('RejChoice_MasterData.csv')
 path = Path(r"%s"%(os.getcwd()))
 p = Path('%s/data' %(path))
 
-cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue', 'timebetween', 'age', 'sex','choicert']
-columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','timebetween', 'age', 'sex', 'choicert']
+cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue','choicertmean','timebetween', 'age', 'sex']
+columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','choicertmean', 'timebetween', 'age', 'sex']
 shortform_data= pd.DataFrame(columns = columns2)
 #%%
 
@@ -112,6 +112,20 @@ for csv in sorted(os.listdir(data_path)):
                 rej_df['afterstresschange'] = participants['afterstresschange'][sub]
                 acc_df['afterstresschange'] = participants['afterstresschange'][sub]
                 neu_df['afterstresschange'] =  participants['afterstresschange'][sub]
+                
+                rej_df['timebetween'] = participants['timebetween'][sub]
+                acc_df['timebetween'] = participants['timebetween'][sub]
+                neu_df['timebetween'] =  participants['timebetween'][sub]
+                
+                    
+                rej_df['age'] = participants['age'][sub]
+                acc_df['age'] = participants['age'][sub]
+                neu_df['age'] =  participants['age'][sub]
+                
+                    
+                rej_df['sex'] = participants['sex'][sub]
+                acc_df['sex'] = participants['sex'][sub]
+                neu_df['sex'] =  participants['sex'][sub]
                 
                 #calculate mean salience rating across rejection condition for one participant
                 rejection_salience = pd.DataFrame()
