@@ -92,6 +92,8 @@ for csv in sorted(os.listdir(data_path)):
                         elif participantdata.loc[row+1,'Condition']== 'Acc':
                             participantdata['Condition'][row] =  participantdata['Condition'][row].replace('Empty', 'Acc')
         
+        
+        
             #%%
                 rej_df = participantdata.loc[(participantdata['Condition'] == 'Rej')]
                 rej_df = rej_df.reset_index(drop = True)
