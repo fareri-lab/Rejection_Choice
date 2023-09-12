@@ -18,15 +18,11 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-participants = participants.loc[
-    participants['post-task survey'] == 1].reset_index()
-
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
 #read in raw qualtrics data
 alldata = pd.read_csv(posttask_survey)
-
-alldata = alldata.iloc[4:]
+alldata = alldata.iloc[2:]
 alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
@@ -38,7 +34,7 @@ LSAS_fearcols = [col for col in alldata.columns if 'LSAS_2_' in col]
 ProlificID_cols = [col for col in alldata.columns if 'PROLIFIC_ID' in col]
 
 
-LSAS = alldata.filter(regex='LSAS_|post_task')
+LSAS = alldata.filter(regex='LSAS_|PROLIFIC_ID')
 
 
 # %%
@@ -154,9 +150,14 @@ LSAS_score["LSAS_fear"] = LSAS_fear.sum(axis=1)
 LSAS_score["LSAS_total"] = LSAS_score['LSAS_avoidance'] + LSAS_score['LSAS_fear']
 
 #%%
-
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['LSAS_avoidance'] = LSAS_score["LSAS_avoidance"]
-selfreportdata['LSAS_fear'] = LSAS_score["LSAS_fear"]
-selfreportdata['LSAS_total'] = LSAS_score["LSAS_total"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+lsas = pd.DataFrame()
+lsas['Prolific_ID'] = finaldata['Prolific_ID']
+lsas['"LSAS_avoidance"']= LSAS_score["LSAS_avoidance"]
+lsas['LSAS_fear']= LSAS_score["LSAS_fear"]
+lsas['LSAS_total'] = LSAS_score['LSAS_total']
+lsas.to_csv('%s/LSAS.csv' %(path.parent), index=False)
+#selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+#selfreportdata['LSAS_avoidance'] = LSAS_score["LSAS_avoidance"]
+#selfreportdata['LSAS_fear'] = LSAS_score["LSAS_fear"]
+#selfreportdata['LSAS_total'] = LSAS_score["LSAS_total"]
+#selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)

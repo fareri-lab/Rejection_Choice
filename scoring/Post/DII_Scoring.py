@@ -18,14 +18,13 @@ participants = pd.read_excel('%s/participantlist.xlsx'%(path.parent.parent))
 participants = participants.loc[
     participants['PhotosUploaded? (y/n)'] == 'y'].reset_index()
 participants = pd.DataFrame(data=participants['PROLIFIC_ID'])
-participants = participants.loc[
-    participants['post-task survey'] == 1].reset_index()
+
 
 
 posttask_survey = '%s/' %(str(path.parent.parent)) + [posttask for posttask in os.listdir(path.parent.parent) if posttask.startswith('RejectionChoice_PostTask')][0]
 #read in raw qualtrics data
 alldata = pd.read_csv(posttask_survey)
-alldata = alldata.iloc[4:]
+alldata = alldata.iloc[2:]
 alldata = alldata.sort_values(by=['PROLIFIC_ID'])
 alldata.pop("Attnchk")  # remove attention checks
 alldata = alldata.reset_index()
@@ -35,7 +34,7 @@ alldata = alldata.reset_index()
 DII_cols = [col for col in alldata.columns if 'DII_' in col]
 ProlificID_cols = [col for col in alldata.columns if 'PROLIFIC_ID' in col]
 
-DII = alldata.filter(regex='DII_|post_task')
+DII = alldata.filter(regex='DII_|PROLIFIC_ID')
 
 #%%
 DII_clean = pd.DataFrame()
@@ -136,7 +135,13 @@ DII_score["DII_dysfuntionalimpulsivity"] = DII_dysfuntionalimpulsivity.sum(axis=
 
 #%%
 
-selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
-selfreportdata['DII_functionalimpulsivity'] = DII_score["DII_functionalimpulsivity"]
-selfreportdata['DII_dysfunctionalimpulsivity'] = DII_score["DII_dysfuntionalimpulsivity"]
-selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
+dii = pd.DataFrame()
+dii['Prolific_ID'] = finaldata['Prolific_ID']
+dii['DII_dysfuntionalimpulsivity']= DII_score["DII_dysfuntionalimpulsivity"]
+dii['DII_functionalimpulsivity']= DII_score["DII_functionalimpulsivity"]
+dii.to_csv('%s/DII.csv' %(path.parent), index=False)
+
+#selfreportdata = pd.read_csv('%s/selfreportdata_master.csv' %(path.parent))
+#selfreportdata['DII_functionalimpulsivity'] = DII_score["DII_functionalimpulsivity"]
+#selfreportdata['DII_dysfunctionalimpulsivity'] = DII_score["DII_dysfuntionalimpulsivity"]
+#selfreportdata.to_csv('%s/selfreportdata_master.csv' %(path.parent), index=False)
