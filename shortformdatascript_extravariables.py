@@ -40,7 +40,7 @@ path = Path(r"%s"%(os.getcwd()))
 p = Path('%s/data' %(path))
 
 cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue','choicertmean','timebetween', 'age', 'sex','order' ]
-columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','choicertmean', 'timebetween', 'age', 'sex', 'order']
+columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','choicertmean', 'timebetween', 'age', 'sex', 'order', 'choicedifference_rejneu']
 shortform_data= pd.DataFrame(columns = columns2)
 #%%
 
@@ -77,7 +77,7 @@ for csv in sorted(os.listdir(data_path)):
                 elif participantdata.loc[3,'Condition'] == 'Acc':
                     order= 21
             if order == 12 or order == 21:
-                 participants['order'][sub] = order
+                 participants['order'][sub] = int(order)
             elif order == '' or order == 0:
               if participantdata.loc[39,'TrialNumber'] == 31:
                   if participantdata.loc[39,'Condition'] == 'Neutral':
@@ -87,7 +87,7 @@ for csv in sorted(os.listdir(data_path)):
                   elif participantdata.loc[39,'Condition'] == 'Acc':
                       order= 21    
             if order == 12 or order == 21:
-                   participants['order'][sub] = order
+                   participants['order'][sub] = int(order)
             elif order == '' or order == 0: 
                     if participantdata.loc[75,'TrialNumber'] == 61:
                         if participantdata.loc[75,'Condition'] == 'Neutral':
@@ -97,7 +97,7 @@ for csv in sorted(os.listdir(data_path)):
                         elif participantdata.loc[75,'Condition'] == 'Acc':
                             order= 21
             if order == 12 or order == 21:
-                    participants['order'][sub] = order
+                    participants['order'][sub] = int(order)
 #participantdata = pd.read_csv('/users/jordansiegel/Documents/GitHub/Rejection_Choice/data/5a4636c92f91ec0001dcba07_RejTask_2022-11-21_17h24.19.149.csv')
 
 #%%
@@ -510,12 +510,17 @@ for csv in sorted(os.listdir(data_path)):
                              
                      elif neu_df.loc[i,'afterstresschange'] == 1:
                          neu_df['recoded_stress' ][i] =   neu_df['stress_mean' ][i]
-                         
+            #calculate difference between affect rating following rejection conditions and affect ratings during acceptance condition             
             difference = float(rej_df['recoded_stress'][0]) - float(acc_df['recoded_stress'][0])
+            #caldulate percentage difference for each participant of self-choice during rejection compared to neutral
+            choicedifference_rejneu =float(rej_df['choice'][0]) - float(neu_df['choice'][0])
            
             rej_df['rej-acc'] = difference
             acc_df['rej-acc'] = difference
             neu_df['rej-acc'] = difference
+            rej_df['choicedifference_rejneu'] = choicedifference_rejneu
+            acc_df['choicedifference_rejneu'] = choicedifference_rejneu
+            neu_df['choicedifference_rejneu'] = choicedifference_rejneu
             rej_df['ifnegvalue']= ''
             neu_df['ifnegvalue'] = ''
             acc_df['ifnegvalue'] = ''
