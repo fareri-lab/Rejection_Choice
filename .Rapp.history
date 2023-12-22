@@ -1,0 +1,3 @@
+load("/Users/jordansiegel/Documents/GitHub/Rejection_Choice/logisticRegression.RData")
+view(data)
+View(data)
