@@ -35,3 +35,25 @@ glm4 <- glm(playlottery~recoded_stress*condition_recode + age + sex + timebetwee
 
 plot_model(glm1,type=c("pred"),axis.title = c('Social Condition','Predicted Probability of Playing Lottery'),title='',colors=("circus"),mrdt.values="meansd")
 
+plot_model(model=lm,type="int")
+
+plot_model(model=lm, type = 'int', title = "",
+           +            axis.title = c("Self-Reported Affect", "Likelihood to Share in Future"),
+           +            colors = c("#0073C2FF", "#EFC000FF"),
+           +            legend.title = "Social Condition",
+           +            legend.labels = c("Acceptance", "Rejection"),
+           +            show.values = TRUE,
+           +            value.offset = 0.4,
+           +            value.size = 4) + theme(
+             +     panel.background = element_blank(),
+             +     panel.grid.major = element_blank(),
+             +     panel.grid.minor = element_blank(),
+             +     plot.background = element_blank()
+             + )
+
+ggplot(data3, aes(x = condition_recode, y = playlottery)) +
+  +     geom_point() +
+  +     stat_smooth(method = "glm", color = "green", se = FALSE, 
+                    +                 method.args = list(family = binomial)) +
+  +     labs(x = "Condition Recode", y = "Play Lottery", title = "Logistic Regression with ggplot2") +
+  +     theme_minimal()

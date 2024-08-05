@@ -47,8 +47,8 @@ longformtaskdata = pd.read_csv('RejChoice_MasterData.csv')
 path = Path(r"%s"%(os.getcwd()))
 p = Path('%s/data' %(path))
 
-cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue','choicertmean','timebetween', 'age', 'sex','order', 'overallchoice' ]
-columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','choicertmean', 'timebetween', 'age', 'sex', 'order', 'choicedifference_rejneu', 'overallchoice']
+cols = ['PROLIFIC_ID', 'choice', 'condition', 'salience', 'stress', 'afterstresschange', 'rej-acc', 'ifnegvalue','choicertmean','timebetween', 'age', 'sex','order', 'overallchoice', 'overallaffect']
+columns2 = ['PROLIFIC_ID', 'condition_recode', 'afterstresschange','salience_mean', 'stress_mean', 'recoded_stress', 'choice','rej-acc', 'ifnegvalue','choicertmean', 'timebetween', 'age', 'sex', 'order', 'choicedifference_rejneu', 'overallchoice','overallaffect']
 shortform_data= pd.DataFrame(columns = columns2)
 #%%
 
@@ -357,39 +357,43 @@ for csv in sorted(os.listdir(data_path)):
                 # print(neutral_stressmean)
 
                 neu_df['overallchoice'] = neutral_overallchoicemean
+                acc_df['overallchoice'] = neutral_overallchoicemean
+                rej_df['overallchoice'] = neutral_overallchoicemean
+                   
+                #%%
+             
+       
+               # acceptance_overallchoice = acceptance_overallchoice = pd.DataFrame()
+                # acceptance_overallchoice['overallchoice'] = participantdata['playlottery']
+
+                # acceptance_overallchoice= acceptance_overallchoice.replace('NAN', np.nan,regex = True)
+                # acceptance_overallchoice = acceptance_overallchoice.dropna()
+
+                # acceptance_overallchoice= acceptance_overallchoice.replace(999, np.nan,regex = True)
+                # acceptance_overallchoice = acceptance_overallchoice.dropna()
+
+                # acceptance_overallchoice = acceptance_overallchoice.astype(int)
+                # acceptance_overallchoicemean = acceptance_overallchoice['overallchoice'].mean()
+                # # print(neutral_stressmean)
+
+                # acc_df['overallchoice'] = acceptance_overallchoicemean
                 
                 #%%
-                acceptance_overallchoice = acceptance_overallchoice = pd.DataFrame()
-                acceptance_overallchoice['overallchoice'] = participantdata['playlottery']
-
-                acceptance_overallchoice= acceptance_overallchoice.replace('NAN', np.nan,regex = True)
-                acceptance_overallchoice = acceptance_overallchoice.dropna()
-
-                acceptance_overallchoice= acceptance_overallchoice.replace(999, np.nan,regex = True)
-                acceptance_overallchoice = acceptance_overallchoice.dropna()
-
-                acceptance_overallchoice = acceptance_overallchoice.astype(int)
-                acceptance_overallchoicemean = acceptance_overallchoice['overallchoice'].mean()
-                # print(neutral_stressmean)
-
-                acc_df['overallchoice'] = acceptance_overallchoicemean
                 
-                #%%
-                
-                rejection_overallchoice = rejection_overallchoice = pd.DataFrame()
-                rejection_overallchoice['overallchoice'] = participantdata['playlottery']
+                # rejection_overallchoice = rejection_overallchoice = pd.DataFrame()
+                # rejection_overallchoice['overallchoice'] = participantdata['playlottery']
 
-                rejection_overallchoice= rejection_overallchoice.replace('NAN', np.nan,regex = True)
-                rejection_overallchoice = rejection_overallchoice.dropna()
+                # rejection_overallchoice= rejection_overallchoice.replace('NAN', np.nan,regex = True)
+                # rejection_overallchoice = rejection_overallchoice.dropna()
 
-                rejection_overallchoice= rejection_overallchoice.replace(999, np.nan,regex = True)
-                rejection_overallchoice = rejection_overallchoice.dropna()
+                # rejection_overallchoice= rejection_overallchoice.replace(999, np.nan,regex = True)
+                # rejection_overallchoice = rejection_overallchoice.dropna()
 
-                rejection_overallchoice = rejection_overallchoice.astype(int)
-                rejection_overallchoicemean = rejection_overallchoice['overallchoice'].mean()
-                # print(neutral_stressmean)
+                # rejection_overallchoice = rejection_overallchoice.astype(int)
+                # rejection_overallchoicemean = rejection_overallchoice['overallchoice'].mean()
+                # # print(neutral_stressmean)
 
-                rej_df['overallchoice'] = rejection_overallchoicemean
+                # rej_df['overallchoice'] = rejection_overallchoicemean
                 #%%
                 # stressdiffscore['PROLIFIC_ID'] [sub]= rej_df['PROLIFIC_ID'][sub]
         
@@ -567,6 +571,18 @@ for csv in sorted(os.listdir(data_path)):
                              
                      elif neu_df.loc[i,'afterstresschange'] == 1:
                          neu_df['recoded_stress' ][i] =   neu_df['stress_mean' ][i]
+                         
+            overallaffect = overallaffect = pd.DataFrame()
+            overallaffect['neu'] = neu_df['recoded_stress']
+            overallaffect['acc'] = acc_df['recoded_stress']
+            overallaffect['rej'] = rej_df['recoded_stress']
+            overallaffect_sum = neu_df['recoded_stress'] + acc_df['recoded_stress'] + rej_df['recoded_stress']
+            overallaffect['overall_mean'] = overallaffect_sum/3
+   
+   
+            neu_df['overallaffect'] = overallaffect['overall_mean']
+            acc_df['overallaffect'] = overallaffect['overall_mean']
+            rej_df['overallaffect'] = overallaffect['overall_mean']
             #calculate difference between affect rating following rejection conditions and affect ratings during acceptance condition             
             difference = float(rej_df['recoded_stress'][0]) - float(acc_df['recoded_stress'][0])
             #caldulate percentage difference for each participant of self-choice during rejection compared to neutral
