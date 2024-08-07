@@ -340,11 +340,12 @@ for csv in sorted(os.listdir(data_path)):
             elif participantdata.at[175,'choice'] == 0:
                   participantdata.loc[[171,172,173,174,176],'choice']= 0
                   
+                  
             if participantdata.at[181,'choice'] == 999:
                   participantdata.loc[[177,178,179,180,182],'choice']= 999
             elif participantdata.at[181,'choice'] == 1:
                   participantdata.loc[[177,178,179,180,182],'choice']= 1
-            elif exploratory_df.at[181,'choice'] == 0:
+            elif participantdata.at[181,'choice'] == 0:
                   participantdata.loc[[177,178,179,180,182],'choice']= 0
             
             
