@@ -1579,11 +1579,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5c3272172f0f3500010284c0,78.0,1.0,Acc,liked,-1,-1,-1.0
 5c3272172f0f3500010284c0,79.0,1.0,Acc,liked,-1,-1,-1.0
 5c3272172f0f3500010284c0,80.0,1.0,Acc,liked,-1,-1,-1.0
-5c3272172f0f3500010284c0,81.0,,Acc,did not like,-1,1,1.0
-5c3272172f0f3500010284c0,82.0,,Acc,did not like,-1,1,1.0
-5c3272172f0f3500010284c0,83.0,,Acc,liked,-1,-1,1.0
-5c3272172f0f3500010284c0,84.0,,Acc,did not like,-1,1,1.0
-5c3272172f0f3500010284c0,85.0,,Acc,liked,-1,-1,1.0
+5c3272172f0f3500010284c0,81.0,0.0,Acc,did not like,-1,1,1.0
+5c3272172f0f3500010284c0,82.0,0.0,Acc,did not like,-1,1,1.0
+5c3272172f0f3500010284c0,83.0,0.0,Acc,liked,-1,-1,1.0
+5c3272172f0f3500010284c0,84.0,0.0,Acc,did not like,-1,1,1.0
+5c3272172f0f3500010284c0,85.0,0.0,Acc,liked,-1,-1,1.0
 5c3272172f0f3500010284c0,86.0,999.0,Acc,liked,-1,-1,-1.0
 5c3272172f0f3500010284c0,87.0,999.0,Acc,did not like,-1,1,-1.0
 5c3272172f0f3500010284c0,88.0,999.0,Acc,liked,-1,-1,-1.0
@@ -1729,11 +1729,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5cab944b41de360017e2c3db,78.0,1.0,Rej,did not like,1,1,1.0
 5cab944b41de360017e2c3db,79.0,1.0,Rej,did not like,1,1,1.0
 5cab944b41de360017e2c3db,80.0,1.0,Rej,liked,1,-1,1.0
-5cab944b41de360017e2c3db,81.0,,Rej,did not like,1,1,-1.0
-5cab944b41de360017e2c3db,82.0,,Rej,did not like,1,1,-1.0
-5cab944b41de360017e2c3db,83.0,,Rej,liked,1,-1,-1.0
-5cab944b41de360017e2c3db,84.0,,Rej,liked,1,-1,-1.0
-5cab944b41de360017e2c3db,85.0,,Rej,liked,1,-1,-1.0
+5cab944b41de360017e2c3db,81.0,0.0,Rej,did not like,1,1,-1.0
+5cab944b41de360017e2c3db,82.0,0.0,Rej,did not like,1,1,-1.0
+5cab944b41de360017e2c3db,83.0,0.0,Rej,liked,1,-1,-1.0
+5cab944b41de360017e2c3db,84.0,0.0,Rej,liked,1,-1,-1.0
+5cab944b41de360017e2c3db,85.0,0.0,Rej,liked,1,-1,-1.0
 5cab944b41de360017e2c3db,86.0,1.0,Rej,did not like,1,1,1.0
 5cab944b41de360017e2c3db,87.0,1.0,Rej,did not like,1,1,1.0
 5cab944b41de360017e2c3db,88.0,1.0,Rej,did not like,1,1,1.0
@@ -2514,11 +2514,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5eefc651cb94ad4c4d017b86,113.0,1.0,Rej,liked,1,-1,1.0
 5eefc651cb94ad4c4d017b86,114.0,1.0,Rej,did not like,1,1,1.0
 5eefc651cb94ad4c4d017b86,115.0,1.0,Rej,did not like,1,1,1.0
-5eefc651cb94ad4c4d017b86,116.0,,Rej,did not like,1,1,1.0
-5eefc651cb94ad4c4d017b86,117.0,,Rej,did not like,1,1,1.0
-5eefc651cb94ad4c4d017b86,118.0,,Rej,did not like,1,1,1.0
-5eefc651cb94ad4c4d017b86,119.0,,Rej,did not like,1,1,1.0
-5eefc651cb94ad4c4d017b86,120.0,,Rej,did not like,1,1,1.0
+5eefc651cb94ad4c4d017b86,116.0,0.0,Rej,did not like,1,1,1.0
+5eefc651cb94ad4c4d017b86,117.0,0.0,Rej,did not like,1,1,1.0
+5eefc651cb94ad4c4d017b86,118.0,0.0,Rej,did not like,1,1,1.0
+5eefc651cb94ad4c4d017b86,119.0,0.0,Rej,did not like,1,1,1.0
+5eefc651cb94ad4c4d017b86,120.0,0.0,Rej,did not like,1,1,1.0
 5eefc651cb94ad4c4d017b86,121.0,999.0,Rej,did not like,1,1,1.0
 5eefc651cb94ad4c4d017b86,122.0,999.0,Rej,did not like,1,1,1.0
 5eefc651cb94ad4c4d017b86,123.0,999.0,Rej,did not like,1,1,1.0
@@ -2929,11 +2929,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5f985596be2ea910b23827ed,78.0,0.0,Acc,liked,-1,-1,-1.0
 5f985596be2ea910b23827ed,79.0,0.0,Acc,liked,-1,-1,-1.0
 5f985596be2ea910b23827ed,80.0,0.0,Acc,did not like,-1,1,-1.0
-5f985596be2ea910b23827ed,81.0,,Acc,liked,-1,-1,-1.0
-5f985596be2ea910b23827ed,82.0,,Acc,liked,-1,-1,-1.0
-5f985596be2ea910b23827ed,83.0,,Acc,liked,-1,-1,-1.0
-5f985596be2ea910b23827ed,84.0,,Acc,did not like,-1,1,-1.0
-5f985596be2ea910b23827ed,85.0,,Acc,liked,-1,-1,-1.0
+5f985596be2ea910b23827ed,81.0,0.0,Acc,liked,-1,-1,-1.0
+5f985596be2ea910b23827ed,82.0,0.0,Acc,liked,-1,-1,-1.0
+5f985596be2ea910b23827ed,83.0,0.0,Acc,liked,-1,-1,-1.0
+5f985596be2ea910b23827ed,84.0,0.0,Acc,did not like,-1,1,-1.0
+5f985596be2ea910b23827ed,85.0,0.0,Acc,liked,-1,-1,-1.0
 5f985596be2ea910b23827ed,86.0,0.0,Acc,did not like,-1,1,1.0
 5f985596be2ea910b23827ed,87.0,0.0,Acc,liked,-1,-1,1.0
 5f985596be2ea910b23827ed,88.0,0.0,Acc,did not like,-1,1,1.0
@@ -2964,11 +2964,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5f985596be2ea910b23827ed,113.0,0.0,Rej,did not like,1,1,1.0
 5f985596be2ea910b23827ed,114.0,0.0,Rej,did not like,1,1,1.0
 5f985596be2ea910b23827ed,115.0,0.0,Rej,did not like,1,1,1.0
-5f985596be2ea910b23827ed,116.0,,Rej,did not like,1,1,1.0
-5f985596be2ea910b23827ed,117.0,,Rej,liked,1,-1,1.0
-5f985596be2ea910b23827ed,118.0,,Rej,did not like,1,1,1.0
-5f985596be2ea910b23827ed,119.0,,Rej,did not like,1,1,1.0
-5f985596be2ea910b23827ed,120.0,,Rej,did not like,1,1,1.0
+5f985596be2ea910b23827ed,116.0,0.0,Rej,did not like,1,1,1.0
+5f985596be2ea910b23827ed,117.0,0.0,Rej,liked,1,-1,1.0
+5f985596be2ea910b23827ed,118.0,0.0,Rej,did not like,1,1,1.0
+5f985596be2ea910b23827ed,119.0,0.0,Rej,did not like,1,1,1.0
+5f985596be2ea910b23827ed,120.0,0.0,Rej,did not like,1,1,1.0
 5f985596be2ea910b23827ed,121.0,0.0,Rej,did not like,1,1,1.0
 5f985596be2ea910b23827ed,122.0,0.0,Rej,did not like,1,1,1.0
 5f985596be2ea910b23827ed,123.0,0.0,Rej,did not like,1,1,1.0
@@ -3079,11 +3079,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5f9873550513db147c9d2958,78.0,1.0,Neutral,did not like,0,1,1.0
 5f9873550513db147c9d2958,79.0,1.0,Neutral,did not like,0,1,1.0
 5f9873550513db147c9d2958,80.0,1.0,Neutral,did not like,0,1,1.0
-5f9873550513db147c9d2958,81.0,,Neutral,liked,0,-1,-1.0
-5f9873550513db147c9d2958,82.0,,Neutral,did not like,0,1,-1.0
-5f9873550513db147c9d2958,83.0,,Neutral,liked,0,-1,-1.0
-5f9873550513db147c9d2958,84.0,,Neutral,did not like,0,1,-1.0
-5f9873550513db147c9d2958,85.0,,Neutral,liked,0,-1,-1.0
+5f9873550513db147c9d2958,81.0,0.0,Neutral,liked,0,-1,-1.0
+5f9873550513db147c9d2958,82.0,0.0,Neutral,did not like,0,1,-1.0
+5f9873550513db147c9d2958,83.0,0.0,Neutral,liked,0,-1,-1.0
+5f9873550513db147c9d2958,84.0,0.0,Neutral,did not like,0,1,-1.0
+5f9873550513db147c9d2958,85.0,0.0,Neutral,liked,0,-1,-1.0
 5f9873550513db147c9d2958,86.0,0.0,Neutral,did not like,0,1,1.0
 5f9873550513db147c9d2958,87.0,0.0,Neutral,did not like,0,1,1.0
 5f9873550513db147c9d2958,88.0,0.0,Neutral,liked,0,-1,1.0
@@ -3229,11 +3229,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5fd18d125e1f92195b1717bc,78.0,0.0,Rej,liked,1,-1,-1.0
 5fd18d125e1f92195b1717bc,79.0,0.0,Rej,liked,1,-1,-1.0
 5fd18d125e1f92195b1717bc,80.0,0.0,Rej,did not like,1,1,-1.0
-5fd18d125e1f92195b1717bc,81.0,,Rej,did not like,1,1,1.0
-5fd18d125e1f92195b1717bc,82.0,,Rej,did not like,1,1,1.0
-5fd18d125e1f92195b1717bc,83.0,,Rej,liked,1,-1,1.0
-5fd18d125e1f92195b1717bc,84.0,,Rej,did not like,1,1,1.0
-5fd18d125e1f92195b1717bc,85.0,,Rej,liked,1,-1,1.0
+5fd18d125e1f92195b1717bc,81.0,0.0,Rej,did not like,1,1,1.0
+5fd18d125e1f92195b1717bc,82.0,0.0,Rej,did not like,1,1,1.0
+5fd18d125e1f92195b1717bc,83.0,0.0,Rej,liked,1,-1,1.0
+5fd18d125e1f92195b1717bc,84.0,0.0,Rej,did not like,1,1,1.0
+5fd18d125e1f92195b1717bc,85.0,0.0,Rej,liked,1,-1,1.0
 5fd18d125e1f92195b1717bc,86.0,0.0,Rej,did not like,1,1,1.0
 5fd18d125e1f92195b1717bc,87.0,0.0,Rej,did not like,1,1,1.0
 5fd18d125e1f92195b1717bc,88.0,0.0,Rej,did not like,1,1,1.0
@@ -3264,11 +3264,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 5fd18d125e1f92195b1717bc,113.0,0.0,Neutral,did not like,0,1,1.0
 5fd18d125e1f92195b1717bc,114.0,0.0,Neutral,did not like,0,1,1.0
 5fd18d125e1f92195b1717bc,115.0,0.0,Neutral,did not like,0,1,1.0
-5fd18d125e1f92195b1717bc,116.0,,Neutral,did not like,0,1,1.0
-5fd18d125e1f92195b1717bc,117.0,,Neutral,liked,0,-1,1.0
-5fd18d125e1f92195b1717bc,118.0,,Neutral,did not like,0,1,1.0
-5fd18d125e1f92195b1717bc,119.0,,Neutral,did not like,0,1,1.0
-5fd18d125e1f92195b1717bc,120.0,,Neutral,did not like,0,1,1.0
+5fd18d125e1f92195b1717bc,116.0,0.0,Neutral,did not like,0,1,1.0
+5fd18d125e1f92195b1717bc,117.0,0.0,Neutral,liked,0,-1,1.0
+5fd18d125e1f92195b1717bc,118.0,0.0,Neutral,did not like,0,1,1.0
+5fd18d125e1f92195b1717bc,119.0,0.0,Neutral,did not like,0,1,1.0
+5fd18d125e1f92195b1717bc,120.0,0.0,Neutral,did not like,0,1,1.0
 5fd18d125e1f92195b1717bc,121.0,0.0,Acc,liked,-1,-1,1.0
 5fd18d125e1f92195b1717bc,122.0,0.0,Acc,did not like,-1,1,1.0
 5fd18d125e1f92195b1717bc,123.0,0.0,Acc,did not like,-1,1,1.0
@@ -3679,11 +3679,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 605b5b5feff0e95f2cd60834,78.0,0.0,Rej,did not like,1,1,1.0
 605b5b5feff0e95f2cd60834,79.0,0.0,Rej,liked,1,-1,1.0
 605b5b5feff0e95f2cd60834,80.0,0.0,Rej,did not like,1,1,1.0
-605b5b5feff0e95f2cd60834,81.0,,Rej,did not like,1,1,-1.0
-605b5b5feff0e95f2cd60834,82.0,,Rej,liked,1,-1,-1.0
-605b5b5feff0e95f2cd60834,83.0,,Rej,liked,1,-1,-1.0
-605b5b5feff0e95f2cd60834,84.0,,Rej,did not like,1,1,-1.0
-605b5b5feff0e95f2cd60834,85.0,,Rej,liked,1,-1,-1.0
+605b5b5feff0e95f2cd60834,81.0,0.0,Rej,did not like,1,1,-1.0
+605b5b5feff0e95f2cd60834,82.0,0.0,Rej,liked,1,-1,-1.0
+605b5b5feff0e95f2cd60834,83.0,0.0,Rej,liked,1,-1,-1.0
+605b5b5feff0e95f2cd60834,84.0,0.0,Rej,did not like,1,1,-1.0
+605b5b5feff0e95f2cd60834,85.0,0.0,Rej,liked,1,-1,-1.0
 605b5b5feff0e95f2cd60834,86.0,0.0,Rej,did not like,1,1,1.0
 605b5b5feff0e95f2cd60834,87.0,0.0,Rej,liked,1,-1,1.0
 605b5b5feff0e95f2cd60834,88.0,0.0,Rej,did not like,1,1,1.0
@@ -3714,11 +3714,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 605b5b5feff0e95f2cd60834,113.0,0.0,Acc,did not like,-1,1,-1.0
 605b5b5feff0e95f2cd60834,114.0,0.0,Acc,did not like,-1,1,-1.0
 605b5b5feff0e95f2cd60834,115.0,0.0,Acc,liked,-1,-1,-1.0
-605b5b5feff0e95f2cd60834,116.0,,Acc,did not like,-1,1,-1.0
-605b5b5feff0e95f2cd60834,117.0,,Acc,liked,-1,-1,-1.0
-605b5b5feff0e95f2cd60834,118.0,,Acc,liked,-1,-1,-1.0
-605b5b5feff0e95f2cd60834,119.0,,Acc,liked,-1,-1,-1.0
-605b5b5feff0e95f2cd60834,120.0,,Acc,liked,-1,-1,-1.0
+605b5b5feff0e95f2cd60834,116.0,0.0,Acc,did not like,-1,1,-1.0
+605b5b5feff0e95f2cd60834,117.0,0.0,Acc,liked,-1,-1,-1.0
+605b5b5feff0e95f2cd60834,118.0,0.0,Acc,liked,-1,-1,-1.0
+605b5b5feff0e95f2cd60834,119.0,0.0,Acc,liked,-1,-1,-1.0
+605b5b5feff0e95f2cd60834,120.0,0.0,Acc,liked,-1,-1,-1.0
 605b5b5feff0e95f2cd60834,121.0,0.0,Neutral,liked,0,-1,-1.0
 605b5b5feff0e95f2cd60834,122.0,0.0,Neutral,did not like,0,1,-1.0
 605b5b5feff0e95f2cd60834,123.0,0.0,Neutral,liked,0,-1,-1.0
@@ -4129,11 +4129,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60d2b326161a622cd363268a,78.0,1.0,Acc,did not like,-1,1,-1.0
 60d2b326161a622cd363268a,79.0,1.0,Acc,liked,-1,-1,-1.0
 60d2b326161a622cd363268a,80.0,1.0,Acc,liked,-1,-1,-1.0
-60d2b326161a622cd363268a,81.0,,Acc,liked,-1,-1,1.0
-60d2b326161a622cd363268a,82.0,,Acc,did not like,-1,1,1.0
-60d2b326161a622cd363268a,83.0,,Acc,did not like,-1,1,1.0
-60d2b326161a622cd363268a,84.0,,Acc,did not like,-1,1,1.0
-60d2b326161a622cd363268a,85.0,,Acc,liked,-1,-1,1.0
+60d2b326161a622cd363268a,81.0,0.0,Acc,liked,-1,-1,1.0
+60d2b326161a622cd363268a,82.0,0.0,Acc,did not like,-1,1,1.0
+60d2b326161a622cd363268a,83.0,0.0,Acc,did not like,-1,1,1.0
+60d2b326161a622cd363268a,84.0,0.0,Acc,did not like,-1,1,1.0
+60d2b326161a622cd363268a,85.0,0.0,Acc,liked,-1,-1,1.0
 60d2b326161a622cd363268a,86.0,0.0,Acc,liked,-1,-1,-1.0
 60d2b326161a622cd363268a,87.0,0.0,Acc,did not like,-1,1,-1.0
 60d2b326161a622cd363268a,88.0,0.0,Acc,liked,-1,-1,-1.0
@@ -4164,11 +4164,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60d2b326161a622cd363268a,113.0,0.0,Rej,did not like,1,1,1.0
 60d2b326161a622cd363268a,114.0,0.0,Rej,did not like,1,1,1.0
 60d2b326161a622cd363268a,115.0,0.0,Rej,liked,1,-1,1.0
-60d2b326161a622cd363268a,116.0,,Rej,did not like,1,1,1.0
-60d2b326161a622cd363268a,117.0,,Rej,liked,1,-1,1.0
-60d2b326161a622cd363268a,118.0,,Rej,did not like,1,1,1.0
-60d2b326161a622cd363268a,119.0,,Rej,did not like,1,1,1.0
-60d2b326161a622cd363268a,120.0,,Rej,liked,1,-1,1.0
+60d2b326161a622cd363268a,116.0,0.0,Rej,did not like,1,1,1.0
+60d2b326161a622cd363268a,117.0,0.0,Rej,liked,1,-1,1.0
+60d2b326161a622cd363268a,118.0,0.0,Rej,did not like,1,1,1.0
+60d2b326161a622cd363268a,119.0,0.0,Rej,did not like,1,1,1.0
+60d2b326161a622cd363268a,120.0,0.0,Rej,liked,1,-1,1.0
 60d2b326161a622cd363268a,121.0,1.0,Acc,liked,-1,-1,-1.0
 60d2b326161a622cd363268a,122.0,1.0,Acc,liked,-1,-1,-1.0
 60d2b326161a622cd363268a,123.0,1.0,Acc,liked,-1,-1,-1.0
@@ -4614,11 +4614,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60ef2700e476748689a999f7,113.0,999.0,Acc,did not like,-1,1,1.0
 60ef2700e476748689a999f7,114.0,999.0,Acc,did not like,-1,1,1.0
 60ef2700e476748689a999f7,115.0,999.0,Acc,did not like,-1,1,1.0
-60ef2700e476748689a999f7,116.0,,Acc,did not like,-1,1,1.0
-60ef2700e476748689a999f7,117.0,,Acc,did not like,-1,1,1.0
-60ef2700e476748689a999f7,118.0,,Acc,liked,-1,-1,1.0
-60ef2700e476748689a999f7,119.0,,Acc,did not like,-1,1,1.0
-60ef2700e476748689a999f7,120.0,,Acc,did not like,-1,1,1.0
+60ef2700e476748689a999f7,116.0,0.0,Acc,did not like,-1,1,1.0
+60ef2700e476748689a999f7,117.0,0.0,Acc,did not like,-1,1,1.0
+60ef2700e476748689a999f7,118.0,0.0,Acc,liked,-1,-1,1.0
+60ef2700e476748689a999f7,119.0,0.0,Acc,did not like,-1,1,1.0
+60ef2700e476748689a999f7,120.0,0.0,Acc,did not like,-1,1,1.0
 60ef2700e476748689a999f7,121.0,1.0,Rej,did not like,1,1,1.0
 60ef2700e476748689a999f7,122.0,1.0,Rej,liked,1,-1,1.0
 60ef2700e476748689a999f7,123.0,1.0,Rej,did not like,1,1,1.0
@@ -4879,11 +4879,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60fcebba7345a976efc9c080,78.0,0.0,Acc,liked,-1,-1,-1.0
 60fcebba7345a976efc9c080,79.0,0.0,Acc,liked,-1,-1,-1.0
 60fcebba7345a976efc9c080,80.0,0.0,Acc,liked,-1,-1,-1.0
-60fcebba7345a976efc9c080,81.0,,Acc,liked,-1,-1,-1.0
-60fcebba7345a976efc9c080,82.0,,Acc,liked,-1,-1,-1.0
-60fcebba7345a976efc9c080,83.0,,Acc,did not like,-1,1,-1.0
-60fcebba7345a976efc9c080,84.0,,Acc,liked,-1,-1,-1.0
-60fcebba7345a976efc9c080,85.0,,Acc,liked,-1,-1,-1.0
+60fcebba7345a976efc9c080,81.0,0.0,Acc,liked,-1,-1,-1.0
+60fcebba7345a976efc9c080,82.0,0.0,Acc,liked,-1,-1,-1.0
+60fcebba7345a976efc9c080,83.0,0.0,Acc,did not like,-1,1,-1.0
+60fcebba7345a976efc9c080,84.0,0.0,Acc,liked,-1,-1,-1.0
+60fcebba7345a976efc9c080,85.0,0.0,Acc,liked,-1,-1,-1.0
 60fcebba7345a976efc9c080,86.0,0.0,Acc,liked,-1,-1,-1.0
 60fcebba7345a976efc9c080,87.0,0.0,Acc,did not like,-1,1,-1.0
 60fcebba7345a976efc9c080,88.0,0.0,Acc,liked,-1,-1,-1.0
@@ -4914,11 +4914,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60fcebba7345a976efc9c080,113.0,0.0,Neutral,liked,0,-1,-1.0
 60fcebba7345a976efc9c080,114.0,0.0,Neutral,did not like,0,1,-1.0
 60fcebba7345a976efc9c080,115.0,0.0,Neutral,liked,0,-1,-1.0
-60fcebba7345a976efc9c080,116.0,,Neutral,liked,0,-1,-1.0
-60fcebba7345a976efc9c080,117.0,,Neutral,liked,0,-1,-1.0
-60fcebba7345a976efc9c080,118.0,,Neutral,did not like,0,1,-1.0
-60fcebba7345a976efc9c080,119.0,,Neutral,did not like,0,1,-1.0
-60fcebba7345a976efc9c080,120.0,,Neutral,liked,0,-1,-1.0
+60fcebba7345a976efc9c080,116.0,0.0,Neutral,liked,0,-1,-1.0
+60fcebba7345a976efc9c080,117.0,0.0,Neutral,liked,0,-1,-1.0
+60fcebba7345a976efc9c080,118.0,0.0,Neutral,did not like,0,1,-1.0
+60fcebba7345a976efc9c080,119.0,0.0,Neutral,did not like,0,1,-1.0
+60fcebba7345a976efc9c080,120.0,0.0,Neutral,liked,0,-1,-1.0
 60fcebba7345a976efc9c080,121.0,0.0,Rej,did not like,1,1,1.0
 60fcebba7345a976efc9c080,122.0,0.0,Rej,did not like,1,1,1.0
 60fcebba7345a976efc9c080,123.0,0.0,Rej,did not like,1,1,1.0
@@ -5629,11 +5629,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 60fdb9ec6c3006abe82e5182,78.0,0.0,Acc,liked,-1,-1,-1.0
 60fdb9ec6c3006abe82e5182,79.0,0.0,Acc,liked,-1,-1,-1.0
 60fdb9ec6c3006abe82e5182,80.0,0.0,Acc,liked,-1,-1,-1.0
-60fdb9ec6c3006abe82e5182,81.0,,Acc,did not like,-1,1,-1.0
-60fdb9ec6c3006abe82e5182,82.0,,Acc,liked,-1,-1,-1.0
-60fdb9ec6c3006abe82e5182,83.0,,Acc,did not like,-1,1,-1.0
-60fdb9ec6c3006abe82e5182,84.0,,Acc,liked,-1,-1,-1.0
-60fdb9ec6c3006abe82e5182,85.0,,Acc,liked,-1,-1,-1.0
+60fdb9ec6c3006abe82e5182,81.0,0.0,Acc,did not like,-1,1,-1.0
+60fdb9ec6c3006abe82e5182,82.0,0.0,Acc,liked,-1,-1,-1.0
+60fdb9ec6c3006abe82e5182,83.0,0.0,Acc,did not like,-1,1,-1.0
+60fdb9ec6c3006abe82e5182,84.0,0.0,Acc,liked,-1,-1,-1.0
+60fdb9ec6c3006abe82e5182,85.0,0.0,Acc,liked,-1,-1,-1.0
 60fdb9ec6c3006abe82e5182,86.0,0.0,Acc,liked,-1,-1,-1.0
 60fdb9ec6c3006abe82e5182,87.0,0.0,Acc,liked,-1,-1,-1.0
 60fdb9ec6c3006abe82e5182,88.0,0.0,Acc,liked,-1,-1,-1.0
@@ -6414,11 +6414,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 6100652c5329da76a962cdb3,113.0,1.0,Acc,liked,-1,-1,-1.0
 6100652c5329da76a962cdb3,114.0,1.0,Acc,liked,-1,-1,-1.0
 6100652c5329da76a962cdb3,115.0,1.0,Acc,liked,-1,-1,-1.0
-6100652c5329da76a962cdb3,116.0,,Acc,liked,-1,-1,-1.0
-6100652c5329da76a962cdb3,117.0,,Acc,liked,-1,-1,-1.0
-6100652c5329da76a962cdb3,118.0,,Acc,liked,-1,-1,-1.0
-6100652c5329da76a962cdb3,119.0,,Acc,did not like,-1,1,-1.0
-6100652c5329da76a962cdb3,120.0,,Acc,liked,-1,-1,-1.0
+6100652c5329da76a962cdb3,116.0,0.0,Acc,liked,-1,-1,-1.0
+6100652c5329da76a962cdb3,117.0,0.0,Acc,liked,-1,-1,-1.0
+6100652c5329da76a962cdb3,118.0,0.0,Acc,liked,-1,-1,-1.0
+6100652c5329da76a962cdb3,119.0,0.0,Acc,did not like,-1,1,-1.0
+6100652c5329da76a962cdb3,120.0,0.0,Acc,liked,-1,-1,-1.0
 6100652c5329da76a962cdb3,121.0,1.0,Rej,did not like,1,1,1.0
 6100652c5329da76a962cdb3,122.0,1.0,Rej,did not like,1,1,1.0
 6100652c5329da76a962cdb3,123.0,1.0,Rej,did not like,1,1,1.0
@@ -8479,11 +8479,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 62a1ed3d1357f3e033ae44f9,78.0,0.0,Acc,liked,-1,-1,-1.0
 62a1ed3d1357f3e033ae44f9,79.0,0.0,Acc,did not like,-1,1,-1.0
 62a1ed3d1357f3e033ae44f9,80.0,0.0,Acc,did not like,-1,1,-1.0
-62a1ed3d1357f3e033ae44f9,81.0,,Acc,liked,-1,-1,-1.0
-62a1ed3d1357f3e033ae44f9,82.0,,Acc,liked,-1,-1,-1.0
-62a1ed3d1357f3e033ae44f9,83.0,,Acc,liked,-1,-1,-1.0
-62a1ed3d1357f3e033ae44f9,84.0,,Acc,liked,-1,-1,-1.0
-62a1ed3d1357f3e033ae44f9,85.0,,Acc,liked,-1,-1,-1.0
+62a1ed3d1357f3e033ae44f9,81.0,0.0,Acc,liked,-1,-1,-1.0
+62a1ed3d1357f3e033ae44f9,82.0,0.0,Acc,liked,-1,-1,-1.0
+62a1ed3d1357f3e033ae44f9,83.0,0.0,Acc,liked,-1,-1,-1.0
+62a1ed3d1357f3e033ae44f9,84.0,0.0,Acc,liked,-1,-1,-1.0
+62a1ed3d1357f3e033ae44f9,85.0,0.0,Acc,liked,-1,-1,-1.0
 62a1ed3d1357f3e033ae44f9,86.0,0.0,Acc,did not like,-1,1,-1.0
 62a1ed3d1357f3e033ae44f9,87.0,0.0,Acc,liked,-1,-1,-1.0
 62a1ed3d1357f3e033ae44f9,88.0,0.0,Acc,liked,-1,-1,-1.0
@@ -8514,11 +8514,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 62a1ed3d1357f3e033ae44f9,113.0,0.0,Rej,did not like,1,1,1.0
 62a1ed3d1357f3e033ae44f9,114.0,0.0,Rej,did not like,1,1,1.0
 62a1ed3d1357f3e033ae44f9,115.0,0.0,Rej,liked,1,-1,1.0
-62a1ed3d1357f3e033ae44f9,116.0,,Rej,liked,1,-1,1.0
-62a1ed3d1357f3e033ae44f9,117.0,,Rej,did not like,1,1,1.0
-62a1ed3d1357f3e033ae44f9,118.0,,Rej,did not like,1,1,1.0
-62a1ed3d1357f3e033ae44f9,119.0,,Rej,did not like,1,1,1.0
-62a1ed3d1357f3e033ae44f9,120.0,,Rej,liked,1,-1,1.0
+62a1ed3d1357f3e033ae44f9,116.0,0.0,Rej,liked,1,-1,1.0
+62a1ed3d1357f3e033ae44f9,117.0,0.0,Rej,did not like,1,1,1.0
+62a1ed3d1357f3e033ae44f9,118.0,0.0,Rej,did not like,1,1,1.0
+62a1ed3d1357f3e033ae44f9,119.0,0.0,Rej,did not like,1,1,1.0
+62a1ed3d1357f3e033ae44f9,120.0,0.0,Rej,liked,1,-1,1.0
 62a1ed3d1357f3e033ae44f9,121.0,0.0,Rej,liked,1,-1,1.0
 62a1ed3d1357f3e033ae44f9,122.0,0.0,Rej,liked,1,-1,1.0
 62a1ed3d1357f3e033ae44f9,123.0,0.0,Rej,did not like,1,1,1.0
@@ -9864,11 +9864,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 63d3f98237a95683bfa381e3,113.0,0.0,Rej,did not like,1,1,1.0
 63d3f98237a95683bfa381e3,114.0,0.0,Rej,did not like,1,1,1.0
 63d3f98237a95683bfa381e3,115.0,0.0,Rej,did not like,1,1,1.0
-63d3f98237a95683bfa381e3,116.0,,Rej,did not like,1,1,1.0
-63d3f98237a95683bfa381e3,117.0,,Rej,liked,1,-1,1.0
-63d3f98237a95683bfa381e3,118.0,,Rej,did not like,1,1,1.0
-63d3f98237a95683bfa381e3,119.0,,Rej,liked,1,-1,1.0
-63d3f98237a95683bfa381e3,120.0,,Rej,did not like,1,1,1.0
+63d3f98237a95683bfa381e3,116.0,0.0,Rej,did not like,1,1,1.0
+63d3f98237a95683bfa381e3,117.0,0.0,Rej,liked,1,-1,1.0
+63d3f98237a95683bfa381e3,118.0,0.0,Rej,did not like,1,1,1.0
+63d3f98237a95683bfa381e3,119.0,0.0,Rej,liked,1,-1,1.0
+63d3f98237a95683bfa381e3,120.0,0.0,Rej,did not like,1,1,1.0
 63d3f98237a95683bfa381e3,121.0,0.0,Acc,liked,-1,-1,-1.0
 63d3f98237a95683bfa381e3,122.0,0.0,Acc,did not like,-1,1,-1.0
 63d3f98237a95683bfa381e3,123.0,0.0,Acc,liked,-1,-1,-1.0
@@ -11479,11 +11479,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 63e52399159a69bf0ea848c6,78.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,79.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,80.0,0.0,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,81.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,82.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,83.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,84.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,85.0,,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,81.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,82.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,83.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,84.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,85.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,86.0,0.0,Acc,did not like,-1,1,-1.0
 63e52399159a69bf0ea848c6,87.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,88.0,0.0,Acc,liked,-1,-1,-1.0
@@ -11514,11 +11514,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 63e52399159a69bf0ea848c6,113.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,114.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,115.0,0.0,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,116.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,117.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,118.0,,Acc,did not like,-1,1,-1.0
-63e52399159a69bf0ea848c6,119.0,,Acc,liked,-1,-1,-1.0
-63e52399159a69bf0ea848c6,120.0,,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,116.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,117.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,118.0,0.0,Acc,did not like,-1,1,-1.0
+63e52399159a69bf0ea848c6,119.0,0.0,Acc,liked,-1,-1,-1.0
+63e52399159a69bf0ea848c6,120.0,0.0,Acc,liked,-1,-1,-1.0
 63e52399159a69bf0ea848c6,121.0,0.0,Rej,did not like,1,1,1.0
 63e52399159a69bf0ea848c6,122.0,0.0,Rej,liked,1,-1,1.0
 63e52399159a69bf0ea848c6,123.0,0.0,Rej,did not like,1,1,1.0
@@ -12264,11 +12264,11 @@ PROLIFIC_ID,trialnumber,choice,condition,feedback_words,condition_recode,feedbac
 64023a98627b1116180dff0b,113.0,0.0,Rej,did not like,1,1,1.0
 64023a98627b1116180dff0b,114.0,0.0,Rej,did not like,1,1,1.0
 64023a98627b1116180dff0b,115.0,0.0,Rej,did not like,1,1,1.0
-64023a98627b1116180dff0b,116.0,,Rej,did not like,1,1,1.0
-64023a98627b1116180dff0b,117.0,,Rej,liked,1,-1,1.0
-64023a98627b1116180dff0b,118.0,,Rej,did not like,1,1,1.0
-64023a98627b1116180dff0b,119.0,,Rej,did not like,1,1,1.0
-64023a98627b1116180dff0b,120.0,,Rej,did not like,1,1,1.0
+64023a98627b1116180dff0b,116.0,0.0,Rej,did not like,1,1,1.0
+64023a98627b1116180dff0b,117.0,0.0,Rej,liked,1,-1,1.0
+64023a98627b1116180dff0b,118.0,0.0,Rej,did not like,1,1,1.0
+64023a98627b1116180dff0b,119.0,0.0,Rej,did not like,1,1,1.0
+64023a98627b1116180dff0b,120.0,0.0,Rej,did not like,1,1,1.0
 64023a98627b1116180dff0b,121.0,0.0,Acc,did not like,-1,1,1.0
 64023a98627b1116180dff0b,122.0,0.0,Acc,did not like,-1,1,1.0
 64023a98627b1116180dff0b,123.0,0.0,Acc,liked,-1,-1,1.0

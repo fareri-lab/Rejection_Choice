@@ -57,3 +57,38 @@ ggplot(data3, aes(x = condition_recode, y = playlottery)) +
                     +                 method.args = list(family = binomial)) +
   +     labs(x = "Condition Recode", y = "Play Lottery", title = "Logistic Regression with ggplot2") +
   +     theme_minimal()
+
+learningglm<-glm(choice~chunk*condition_recode, data = learningdata)
+summary(learningglm)
+
+plot_model(model=learningglm,type="int")
+
+learningmodel <-plot_model(model=learningglm,type="int")
+learningmodel +
+  +     theme_minimal() + # Remove the background
+  +     scale_color_manual(values = c("blue", "red", "green")) + # Change the colors
+  +     labs(title = "Customized Interaction Plot", x = "X1", y = "Predicted Y") # Customize label
+
+
+#customizeplot
+# Generate prediction data using ggpredict
+pred_data <- ggpredict(maineffect_affect, terms = "recoded_stress")
+
+# Plot the predictions using ggplot2
+ggplot(pred_data, aes(x = x, y = predicted)) +
+  geom_line(color = "#0073C2FF") +
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2, fill = "#0073C2FF") +
+  labs(
+    x = 'Self-Reported Affect',
+    y = 'Predicted Probability of Playing Lottery',
+    title = ''
+  ) +
+  theme_classic() +
+  theme(
+    panel.grid.major = element_blank(), # Remove major grid lines
+    panel.grid.minor = element_blank(), # Remove minor grid lines
+    axis.line = element_line(color = "black"), # Add axis lines
+    panel.border = element_blank(), # Remove panel border
+    plot.background = element_blank(), # Remove plot background
+    panel.background = element_blank() # Remove panel background
+  )

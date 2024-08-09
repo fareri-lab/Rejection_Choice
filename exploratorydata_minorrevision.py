@@ -127,11 +127,11 @@ for csv in sorted(os.listdir(data_path)):
               #trials 26-30 
               
             if participantdata.at[37,'choice'] == 999:
-                 participantdata.loc[[33,34,35,36,38],'choice']= 999
+                participantdata.loc[[33,34,35,36,38],'choice']= 999
             elif participantdata.at[37,'choice'] == 1:
-                 participantdata.loc[[33,34,35,36,38],'choice']= 1
+                participantdata.loc[[33,34,35,36,38],'choice']= 1
             elif participantdata.at[37,'choice'] == 0:
-                 participantdata.loc[[33,34,35,36,38],'choice']= 0
+                participantdata.loc[[33,34,35,36,38],'choice']= 0
              
              #trials 31-35 
              
@@ -147,9 +147,9 @@ for csv in sorted(os.listdir(data_path)):
             if participantdata.at[49,'choice'] == 999:
                  participantdata.loc[[45,46,47,48,50],'choice']= 999
             elif participantdata.at[49,'choice'] == 1:
-                 participantdata.loc[[45,46,47,48,50],'choice']= 1
+                participantdata.loc[[45,46,47,48,50],'choice']= 1
             elif participantdata.at[49,'choice'] == 0:
-                 participantdata.loc[[45,46,47,48,50],'choice']= 0
+                participantdata.loc[[45,46,47,48,50],'choice']= 0
              
              #trials 41-45 
              
@@ -229,7 +229,7 @@ for csv in sorted(os.listdir(data_path)):
                  participantdata.loc[[99,100,101,102,104],'choice']= 999
             elif participantdata.at[103,'choice'] == 1:
                  participantdata.loc[[99,100,101,102,104],'choice']= 1
-            elif participantdata.at[31,'choice'] == 0:
+            elif participantdata.at[103,'choice'] == 0:
                  participantdata.loc[[99,100,101,102,104],'choice']= 0
                  
              #trials 91-95 
@@ -292,7 +292,7 @@ for csv in sorted(os.listdir(data_path)):
                 participantdata.loc[[141,142,143,144,146],'choice']= 999
             elif participantdata.at[145,'choice'] == 1:
                 participantdata.loc[[141,142,143,144,146],'choice']= 1
-            elif participantdata.at[31,'choice'] == 0:
+            elif participantdata.at[145,'choice'] == 0:
                 participantdata.loc[[141,142,143,144,146],'choice']= 0
                 
               #trials 126-130 
@@ -436,8 +436,35 @@ exploratorydata_foranalysis = pd.DataFrame({
     
 })
 
+#%%
+
+exploratory_rej = pd.DataFrame()
+exploratory_acc = pd.DataFrame()
+exploratory_neu = pd.DataFrame()
+learningdata = pd.DataFrame()
+
+exploratory_rej = exploratorydata_foranalysis.loc[(exploratorydata_foranalysis['condition_recode'] == 1)]
+exploratory_rej = exploratory_rej.reset_index(drop = True)
+
+exploratory_acc = exploratorydata_foranalysis.loc[(exploratorydata_foranalysis['condition_recode'] == -1)]
+exploratory_acc = exploratory_acc.reset_index(drop = True)
+
+exploratory_neu = exploratorydata_foranalysis.loc[(exploratorydata_foranalysis['condition_recode'] == 0)]
+exploratory_neu = exploratory_neu.reset_index(drop = True)
+
+num_rows = len(exploratory_rej)
+exploratory_rej['chunk'] = [(i % 12) + 1 for i in range(num_rows)]
+
+num_rows = len(exploratory_acc)
+exploratory_acc['chunk'] = [(i % 12) + 1 for i in range(num_rows)]
+
+num_rows = len(exploratory_neu)
+exploratory_neu['chunk'] = [(i % 6) + 1 for i in range(num_rows)]
+
+learningdata = pd.concat([exploratory_rej, exploratory_acc, exploratory_neu], ignore_index=True)
 
 
+learningdata.to_csv('learningdata.csv', index=False)     
 exploratorydf_cleaned.to_csv('exploratorydf_cleaned.csv', index=False)     
 exploratorydata_foranalysis.to_csv('exploratorydata_foranalysis.csv', index=False)        
 
