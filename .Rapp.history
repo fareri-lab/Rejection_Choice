@@ -1,3 +1,5 @@
 load("/Users/jordansiegel/Documents/GitHub/Rejection_Choice/logisticRegression.RData")
 view(data)
 View(data)
+load("/Users/jordansiegel/Documents/GitHub/Rejection_Choice/maineffectandlearningmodels.RData")
+load("/Users/jordansiegel/Documents/GitHub/Rejection_Choice/logisticRegression.RData")
