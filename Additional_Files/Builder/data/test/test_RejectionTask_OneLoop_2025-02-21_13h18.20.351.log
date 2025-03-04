@@ -1,0 +1,130 @@
+3.6531 	ERROR 	Support for the `sounddevice` audio backend is not available this session. Please install `psychopy-sounddevice` and restart the session to enable support.
+27.9258 	WARNING 	Font Manager failed to load file /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc
+33.4409 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+33.4431 	INFO 	Loaded monitor calibration from ['2021_10_04 12:10']
+33.9398 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x163afef80>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x163afef20>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1., -1., -1.]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x163afed40>, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x1636d0bb0>, multiSample=False, name='window1', numSamples=2, pos=[520.0, 300.0], screen=0, size=array([1600, 1200]), stencilBits=0, stereo=False, title='PsychoPy', units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+33.9399 	EXP 	window1: backgroundImage = ''
+33.9399 	EXP 	window1: backgroundFit = 'none'
+33.9402 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9408 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9446 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9453 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9602 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9612 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9622 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9635 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9648 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9653 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9663 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9676 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9681 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9686 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9696 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9706 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9715 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9725 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9734 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9744 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9754 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9759 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9764 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9777 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9785 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9792 	DEBUG 	Uploading Texture Font fontname to graphics card
+33.9862 	DEBUG 	Upload of Texture Font fontname complete
+33.9884 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9886 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9894 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9901 	EXP 	window1: mouseVisible = <method-wrapper '__getattribute__' of attributeSetter object at 0x163aff0a0>
+33.9963 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9977 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9990 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+33.9993 	DEBUG 	Uploading Texture Font fontname to graphics card
+34.0028 	DEBUG 	Upload of Texture Font fontname complete
+34.0056 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+34.0056 	EXP 	window1: recordFrameIntervals = False
+34.7642 	EXP 	window1: recordFrameIntervals = True
+34.8975 	WARNING 	t of last frame was 20.99ms (=1/47)
+35.0363 	WARNING 	t of last frame was 34.72ms (=1/28)
+35.6361 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+35.6363 	EXP 	window1: mouseVisible = True
+35.6369 	EXP 	window1: mouseVisible = True
+35.6372 	EXP 	window1: mouseVisible = True
+35.6384 	EXP 	window1: mouseVisible = True
+35.6394 	EXP 	window1: mouseVisible = True
+35.6506 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6514 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6529 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6549 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6566 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6585 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6592 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6605 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6620 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6635 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+35.6639 	DEBUG 	Uploading Texture Font fontname to graphics card
+35.6684 	DEBUG 	Upload of Texture Font fontname complete
+35.6706 	EXP 	window1: mouseVisible = True
+35.6708 	EXP 	window1: mouseVisible = True
+35.6716 	EXP 	window1: mouseVisible = True
+35.6723 	EXP 	window1: mouseVisible = True
+38.8840 	INFO 	keyboard.Keyboard is using ptb backend.
+39.5770 	INFO 	keyboard.Keyboard is using ptb backend.
+40.2718 	INFO 	keyboard.Keyboard is using ptb backend.
+40.9628 	INFO 	keyboard.Keyboard is using ptb backend.
+41.6527 	INFO 	keyboard.Keyboard is using ptb backend.
+42.3440 	INFO 	keyboard.Keyboard is using ptb backend.
+43.0320 	INFO 	keyboard.Keyboard is using ptb backend.
+43.7192 	INFO 	keyboard.Keyboard is using ptb backend.
+44.4066 	INFO 	keyboard.Keyboard is using ptb backend.
+45.1159 	INFO 	keyboard.Keyboard is using ptb backend.
+45.1160 	EXP 	RejectionTask_OneLoop: status = STARTED
+45.1169 	EXP 	window1: mouseVisible = True
+45.1996 	EXP 	Created Welcome = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='Welcome', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+45.1998 	EXP 	window1: mouseVisible = True
+45.2240 	EXP 	Created FirstInstructions = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='FirstInstructions', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+45.2242 	EXP 	window1: mouseVisible = True
+45.2293 	EXP 	Created Match_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='Match_text', opacity=1.0, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+45.2295 	EXP 	window1: mouseVisible = True
+45.2357 	EXP 	Created syncing_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.12, italic=False, languageStyle='LTR', name='syncing_text', opacity=1.0, ori=0.0, pos=array([0. , 0.3]), rgb=UNKNOWN, text='Syncing…', units='norm', win=Window(...), wrapWidth=1)
+45.2358 	EXP 	window1: mouseVisible = True
+45.2406 	EXP 	Created text_0 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_0', opacity=1.0, ori=0.0, pos=array([ 0. , -0.2]), rgb=UNKNOWN, text='0%', units='norm', win=Window(...), wrapWidth=1)
+45.2407 	EXP 	window1: mouseVisible = True
+45.2426 	EXP 	Created Transparent = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-4.0, draggable=False, fillColor=array([0., 0., 0.]), fillColorSpace='rgb', fillRGB=array([0., 0., 0.]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.2, name='Transparent', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1. , 0.1]), units='norm', vertices=ndarray(...), win=Window(...))
+45.2427 	EXP 	window1: mouseVisible = True
+45.2446 	EXP 	Created Loading_25 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-5.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='Loading_25', opacity=1.0, ori=0.0, pos=array([-0.375,  0.   ]), size=array([0.25, 0.1 ]), units='norm', vertices=ndarray(...), win=Window(...))
+45.2447 	EXP 	window1: mouseVisible = True
+45.2484 	EXP 	Created text_25 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-6.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_25', opacity=1.0, ori=0.0, pos=array([ 0. , -0.2]), rgb=UNKNOWN, text='25%', units='norm', win=Window(...), wrapWidth=1)
+45.2485 	EXP 	window1: mouseVisible = True
+45.2503 	EXP 	Created Loading_50 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-7.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='Loading_50', opacity=1.0, ori=0.0, pos=array([-0.25,  0.  ]), size=array([0.5, 0.1]), units='norm', vertices=ndarray(...), win=Window(...))
+45.2505 	EXP 	window1: mouseVisible = True
+45.2544 	EXP 	Created text_50 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-8.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_50', opacity=1.0, ori=0.0, pos=array([ 0. , -0.2]), rgb=UNKNOWN, text='50%', units='norm', win=Window(...), wrapWidth=1)
+45.2546 	EXP 	window1: mouseVisible = True
+45.2564 	EXP 	Created Loading_75 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-9.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='Loading_75', opacity=1.0, ori=0.0, pos=array([-0.125,  0.   ]), size=array([0.75, 0.1 ]), units='norm', vertices=ndarray(...), win=Window(...))
+45.2565 	EXP 	window1: mouseVisible = True
+45.2597 	EXP 	Created text_75 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-10.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_75', opacity=1.0, ori=0.0, pos=array([ 0. , -0.2]), rgb=UNKNOWN, text='75%', units='norm', win=Window(...), wrapWidth=1)
+45.2599 	EXP 	window1: mouseVisible = True
+45.2617 	EXP 	Created Loading_100 = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-11.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='Loading_100', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1. , 0.1]), units='norm', vertices=ndarray(...), win=Window(...))
+45.2618 	EXP 	window1: mouseVisible = True
+45.2650 	EXP 	Created text_100 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-12.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_100', opacity=1.0, ori=0.0, pos=array([ 0. , -0.2]), rgb=UNKNOWN, text='100%', units='norm', win=Window(...), wrapWidth=1)
+45.2652 	EXP 	window1: mouseVisible = True
+45.2664 	EXP 	Created Youhavematched = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='Youhavematched', opacity=1.0, ori=0.0, pos=array([0. , 0.6]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+45.2665 	EXP 	window1: mouseVisible = True
+45.2676 	ERROR 	Couldn't find image default.png; check path? (tried: /Users/jordansiegel/Documents/GitHub/Rejection_Choice/Additional_Files/Builder/default.png)
+45.2882 	EXP 	window1: mouseVisible = True
+45.2883 	DEBUG 	Saving data for RejectionTask_OneLoop ExperimentHandler
+45.2893 	INFO 	saved data to /Users/jordansiegel/Documents/GitHub/Rejection_Choice/Additional_Files/Builder/data/test/test_RejectionTask_OneLoop_2025-02-21_13h18.20.351.psydat
+45.2896 	INFO 	saved data to '/Users/jordansiegel/Documents/GitHub/Rejection_Choice/Additional_Files/Builder/data/test/test_RejectionTask_OneLoop_2025-02-21_13h18.20.351.csv'
+45.2966 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2966 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2967 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2968 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+45.2968 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
