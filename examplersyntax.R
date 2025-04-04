@@ -176,10 +176,16 @@ ggplot(data_new, aes(x = Group, y = predicted_prob, fill = condition_recode)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +  # Format y-axis
   labs(
     x = "Self-Reported Affect",
-    y = "Predicted Probability of Playing Lottery",
+    y = "Probability of Playing Lottery",
     fill = "Condition") +
   theme_minimal() +
-  theme(panel.grid = element_blank())+
+  theme(panel.grid = element_blank(),
+        axis.title.x = element_text(size = 18, face = "bold"),
+        axis.title.y = element_text(size = 18, face = "bold"),
+        axis.text.x = element_text(size = 16),
+        axis.text.y = element_text(size = 16),
+        legend.title = element_text(size = 16),
+        legend.text = element_text(size = 14))+
   scale_fill_manual(values = c("Acceptance" = "#DDCC77", "Rejection" = "#88CCEE"))  # Brown & Gold
 
 ggsave("interaction_barplot.png", width = 8, height = 6, dpi = 300)
@@ -225,11 +231,17 @@ ggplot(data_new, aes(x = Group, y = predicted_salience, fill = condition_recode)
                 position = position_dodge(width = 0.9), width = 0.2, color = "black") +
   labs(
     x = "Self-Reported Affect",
-    y = "Predicted Salience",
+    y = " Likelihood of Future Interaction",
     fill = "Condition"
   ) +
   theme_minimal() +
-  theme(panel.grid = element_blank())+
+  theme(panel.grid = element_blank(),
+        axis.title.x = element_text(size = 18, face = "bold"),
+        axis.title.y = element_text(size = 18, face = "bold"),
+        axis.text.x = element_text(size = 16),
+        axis.text.y = element_text(size = 16),
+        legend.title = element_text(size = 16),
+        legend.text = element_text(size = 14))+
   scale_fill_manual(values = c("Acceptance" = "#DDCC77", "Rejection" = "#88CCEE"))
 
 ggsave("lm_interaction_barplot.png", width = 8, height = 6, dpi = 300)
